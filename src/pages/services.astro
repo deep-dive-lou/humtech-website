@@ -609,19 +609,25 @@ import Container from "@/components/container.astro";
 
             <!-- Carousel Navigation -->
             <div class="flex items-center justify-center gap-4 mt-8">
-              <button id="prev-btn" class="w-12 h-12 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-white hover:bg-yellow/20 hover:border-yellow/40 transition-all duration-300">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <button
+                id="prev-btn"
+                aria-label="Previous slide"
+                class="w-12 h-12 md:w-12 md:h-12 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-white hover:bg-yellow/20 hover:border-yellow/40 active:bg-yellow/30 transition-all duration-300 touch-manipulation">
+                <svg class="w-6 h-6 md:w-5 md:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
                 </svg>
               </button>
               <div class="carousel-dots" id="carousel-dots">
-                <button class="carousel-dot active" data-index="0"></button>
-                <button class="carousel-dot" data-index="1"></button>
-                <button class="carousel-dot" data-index="2"></button>
-                <button class="carousel-dot" data-index="3"></button>
+                <button class="carousel-dot active" data-index="0" aria-label="Go to slide 1"></button>
+                <button class="carousel-dot" data-index="1" aria-label="Go to slide 2"></button>
+                <button class="carousel-dot" data-index="2" aria-label="Go to slide 3"></button>
+                <button class="carousel-dot" data-index="3" aria-label="Go to slide 4"></button>
               </div>
-              <button id="next-btn" class="w-12 h-12 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-white hover:bg-yellow/20 hover:border-yellow/40 transition-all duration-300">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <button
+                id="next-btn"
+                aria-label="Next slide"
+                class="w-12 h-12 md:w-12 md:h-12 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-white hover:bg-yellow/20 hover:border-yellow/40 active:bg-yellow/30 transition-all duration-300 touch-manipulation">
+                <svg class="w-6 h-6 md:w-5 md:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                 </svg>
               </button>
@@ -633,11 +639,18 @@ import Container from "@/components/container.astro";
       <script>
         // Carousel functionality
         const track = document.getElementById('carousel-track');
+        const carousel = document.getElementById('solutions-carousel');
         const dots = document.querySelectorAll('.carousel-dot');
         const prevBtn = document.getElementById('prev-btn');
         const nextBtn = document.getElementById('next-btn');
         let currentSlide = 0;
         const totalSlides = 4;
+        let autoAdvanceInterval;
+
+        // Touch/swipe support
+        let touchStartX = 0;
+        let touchEndX = 0;
+        let isDragging = false;
 
         function updateCarousel() {
           if (track) {
@@ -648,28 +661,99 @@ import Container from "@/components/container.astro";
           });
         }
 
-        prevBtn?.addEventListener('click', () => {
+        function goToSlide(index) {
+          currentSlide = index;
+          updateCarousel();
+          resetAutoAdvance();
+        }
+
+        function nextSlide() {
+          currentSlide = (currentSlide + 1) % totalSlides;
+          updateCarousel();
+        }
+
+        function prevSlide() {
           currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
           updateCarousel();
+        }
+
+        // Button navigation
+        prevBtn?.addEventListener('click', () => {
+          prevSlide();
+          resetAutoAdvance();
         });
 
         nextBtn?.addEventListener('click', () => {
-          currentSlide = (currentSlide + 1) % totalSlides;
-          updateCarousel();
+          nextSlide();
+          resetAutoAdvance();
         });
 
         dots.forEach((dot, index) => {
           dot.addEventListener('click', () => {
-            currentSlide = index;
-            updateCarousel();
+            goToSlide(index);
           });
         });
 
-        // Auto-advance carousel
-        setInterval(() => {
-          currentSlide = (currentSlide + 1) % totalSlides;
-          updateCarousel();
-        }, 8000);
+        // Touch/swipe handlers
+        if (carousel) {
+          carousel.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+            isDragging = true;
+          }, { passive: true });
+
+          carousel.addEventListener('touchmove', (e) => {
+            if (!isDragging) return;
+            touchEndX = e.changedTouches[0].screenX;
+          }, { passive: true });
+
+          carousel.addEventListener('touchend', () => {
+            if (!isDragging) return;
+            isDragging = false;
+
+            const swipeThreshold = 50;
+            const diff = touchStartX - touchEndX;
+
+            if (Math.abs(diff) > swipeThreshold) {
+              if (diff > 0) {
+                // Swipe left - next slide
+                nextSlide();
+              } else {
+                // Swipe right - previous slide
+                prevSlide();
+              }
+              resetAutoAdvance();
+            }
+
+            touchStartX = 0;
+            touchEndX = 0;
+          }, { passive: true });
+        }
+
+        // Auto-advance with pause on interaction
+        function startAutoAdvance() {
+          autoAdvanceInterval = setInterval(() => {
+            nextSlide();
+          }, 8000);
+        }
+
+        function resetAutoAdvance() {
+          clearInterval(autoAdvanceInterval);
+          startAutoAdvance();
+        }
+
+        // Pause auto-advance when user hovers (desktop) or touches (mobile)
+        if (carousel) {
+          carousel.addEventListener('mouseenter', () => {
+            clearInterval(autoAdvanceInterval);
+          });
+
+          carousel.addEventListener('mouseleave', () => {
+            startAutoAdvance();
+          });
+        }
+
+        // Start auto-advance
+        startAutoAdvance();
       </script>
 
       <!-- Fields of Expertise Section -->
