@@ -1,0 +1,255 @@
+---
+import Link from "@/components/ui/link.astro";
+---
+
+<!-- Hero Section -->
+<main class="py-20 md:py-28 bg-navy relative overflow-hidden">
+  <!-- Animated background elements -->
+  <div class="absolute inset-0 pointer-events-none">
+    <div class="absolute top-10 left-1/4 w-96 h-96 bg-blue/10 rounded-full blur-3xl animate-float"></div>
+    <div class="absolute bottom-10 right-1/4 w-80 h-80 bg-yellow/10 rounded-full blur-3xl animate-float delay-200"></div>
+    <div class="absolute top-1/2 left-10 w-64 h-64 bg-green/10 rounded-full blur-3xl animate-float delay-400"></div>
+  </div>
+
+  <!-- Gradient overlay -->
+  <div class="absolute inset-0 bg-gradient-to-b from-navy via-transparent to-navy pointer-events-none"></div>
+
+  <div class="text-center max-w-4xl mx-auto px-4 relative z-10">
+    <h1
+      class="text-5xl lg:text-6xl xl:text-7xl font-bold lg:tracking-tight xl:tracking-tighter text-white animate-fade-in-up">
+      Losing leads while your competitors embrace AI?
+    </h1>
+    <p class="text-xl mt-6 text-yellow font-semibold animate-fade-in-up delay-100">
+      Answer 15 questions to find out
+    </p>
+    <div class="mt-8 flex flex-col sm:flex-row gap-3 justify-center animate-fade-in-up delay-200">
+      <button
+        onclick="openAssessmentModal()"
+        class="group px-8 py-4 rounded-xl font-semibold bg-gradient-to-r from-yellow to-yellow-light text-navy hover:shadow-lg hover:shadow-yellow/30 transition-all duration-300 flex gap-2 items-center justify-center cursor-pointer text-lg">
+        Start Free Assessment
+        <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+        </svg>
+      </button>
+    </div>
+    <p class="text-sm mt-4 text-white/50 animate-fade-in-up delay-300">
+      Takes less than 3 minutes. Get immediate results. Completely free.
+    </p>
+  </div>
+</main>
+
+<!-- Assessment Benefits Section -->
+<section class="py-20 md:py-28 bg-navy border-t border-white/10 relative overflow-hidden">
+  <!-- Subtle background pattern -->
+  <div class="absolute inset-0 opacity-30 pointer-events-none">
+    <div class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-blue/5 to-transparent"></div>
+  </div>
+
+  <div class="max-w-4xl mx-auto px-4 relative z-10">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl lg:text-4xl font-bold text-white mb-4">
+        What You'll Discover
+      </h2>
+      <p class="text-lg text-white/70">
+        This assessment will help you measure and improve:
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="group p-6 rounded-xl bg-white/5 border border-white/10 card-hover relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-yellow/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        <div class="relative z-10">
+          <div class="w-12 h-12 bg-gradient-to-br from-yellow/30 to-yellow/10 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+            <span class="text-yellow font-bold text-xl">1</span>
+          </div>
+          <p class="text-white/80">
+            Your proportion of new business lost to competitors due to engagement method and response time
+          </p>
+        </div>
+      </div>
+      <div class="group p-6 rounded-xl bg-white/5 border border-white/10 card-hover relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-blue/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        <div class="relative z-10">
+          <div class="w-12 h-12 bg-gradient-to-br from-blue/30 to-blue/10 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+            <span class="text-blue font-bold text-xl">2</span>
+          </div>
+          <p class="text-white/80">
+            Your 'handling time' vs 'deflection savings' — how much time and money could be saved through hands-free automation
+          </p>
+        </div>
+      </div>
+      <div class="group p-6 rounded-xl bg-white/5 border border-white/10 card-hover relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-green/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        <div class="relative z-10">
+          <div class="w-12 h-12 bg-gradient-to-br from-green/30 to-green/10 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+            <span class="text-green font-bold text-xl">3</span>
+          </div>
+          <p class="text-white/80">
+            Your overall opportunity cost of current AI strategies and the impact on your team and operational efficiency
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center mt-12">
+      <button
+        onclick="openAssessmentModal()"
+        class="group px-8 py-4 rounded-xl font-semibold bg-gradient-to-r from-yellow to-yellow-light text-navy hover:shadow-lg hover:shadow-yellow/30 transition-all duration-300 inline-flex items-center justify-center cursor-pointer text-lg gap-2">
+        Find out exactly where you're losing business
+        <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- Value Proposition Section -->
+<section class="py-20 md:py-28 bg-navy border-t border-white/10">
+  <div class="max-w-4xl mx-auto px-4 text-center">
+    <h2 class="text-4xl lg:text-5xl xl:text-6xl font-bold lg:tracking-tight text-white mb-6">
+      In 2026, your business needs an AI department, without the price tag.
+    </h2>
+    <p class="text-xl text-white/70 max-w-2xl mx-auto">
+      Get 3 AI Directors for 70% less than hiring one — with zero risk and results guaranteed.
+    </p>
+  </div>
+</section>
+
+<!-- Social Proof / Credibility Section -->
+<section class="py-20 md:py-28 bg-navy border-t border-white/10">
+  <div class="max-w-4xl mx-auto px-4">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight text-white">
+        We Solved This Problem — For Ourselves First
+      </h2>
+    </div>
+
+    <!-- Story Block -->
+    <div class="prose prose-lg prose-invert max-w-none text-white/70 mb-16">
+      <p>
+        In two years, we built the number one-rated advertising agency on Trustpilot — with a team of just four people.
+      </p>
+      <p>
+        When starting out, we discovered a major bottleneck: only 50% of new enquiries responded to outreach, and just half of them attended booked consultations. Moreover, our small team were constantly drawn into repetitive admin tasks and distractions which took them away from revenue-producing duties.
+      </p>
+      <p>
+        We experimented with countless 'out the box' third-party AI tools (multiple different log-ins!), yet conversions actually got worse.
+      </p>
+      <p class="font-semibold text-white text-xl">
+        So we rolled up our sleeves. One year later, the results speak for themselves...
+      </p>
+    </div>
+
+    <!-- Results Block -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
+      <div class="moving-box text-center p-6 bg-gradient-to-br from-yellow/10 to-yellow/5 rounded-xl border border-yellow/20">
+        <div class="text-4xl lg:text-5xl font-bold text-yellow">98%</div>
+        <div class="text-sm text-white/60 mt-2">client appointment booking rate</div>
+      </div>
+      <div class="moving-box text-center p-6 bg-gradient-to-br from-yellow/10 to-yellow/5 rounded-xl border border-yellow/20">
+        <div class="text-4xl lg:text-5xl font-bold text-yellow">90%+</div>
+        <div class="text-sm text-white/60 mt-2">appointment attendance</div>
+      </div>
+      <div class="moving-box text-center p-6 bg-gradient-to-br from-green/10 to-green/5 rounded-xl border border-green/20">
+        <div class="text-4xl lg:text-5xl font-bold text-green">50%</div>
+        <div class="text-sm text-white/60 mt-2">increase in revenue</div>
+      </div>
+      <div class="moving-box text-center p-6 bg-gradient-to-br from-blue/10 to-blue/5 rounded-xl border border-blue/20">
+        <div class="text-4xl lg:text-5xl font-bold text-blue">Zero</div>
+        <div class="text-sm text-white/60 mt-2">additional team members hired</div>
+      </div>
+    </div>
+
+    <!-- The Secret -->
+    <div class="text-center p-8 glass rounded-2xl animate-pulse-glow">
+      <h3 class="text-2xl font-semibold mb-4 text-yellow">The Secret?</h3>
+      <p class="text-lg text-white/70 max-w-2xl mx-auto">
+        A team of expert AI, sales and marketing directors available on demand — overseeing consultation, implementation, training and ROI target delivery.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Meet HumTech Section -->
+<section class="py-20 md:py-28 bg-navy border-t border-white/10">
+  <div class="max-w-4xl mx-auto px-4">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl lg:text-4xl font-bold text-white mb-4">
+        Why HumTech?
+      </h2>
+    </div>
+
+    <div class="space-y-8">
+      <div class="text-center">
+        <p class="text-xl lg:text-2xl text-white/80 leading-relaxed">
+          Access your very own team of specialist directors with <span class="text-yellow font-semibold">BSc(Hons) and MSc qualifications</span> in computer science and psychology from top 10 universities, and <span class="text-yellow font-semibold">over 15 years experience</span> in building customer acquisition systems.
+        </p>
+      </div>
+
+      <div class="text-center py-6">
+        <span class="text-5xl lg:text-6xl font-bold text-yellow">70%</span>
+        <p class="text-lg text-white/70 mt-2">less than hiring just ONE in-house AI director</p>
+      </div>
+
+      <div class="text-center pt-4 border-t border-white/10">
+        <p class="text-xl lg:text-2xl text-white/80 leading-relaxed">
+          We understand AI isn't about replacing humans. It's about <span class="text-green font-semibold">freeing your team</span> from repetitive, non-revenue generating tasks so they can do what they do best: <span class="text-white font-semibold">delivering an exceptional service to your clients, and keeping them longer.</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Backed By Research Section -->
+<section class="py-20 md:py-28 bg-navy border-t border-white/10">
+  <div class="max-w-4xl mx-auto px-4">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight text-white">
+        Backed By Research
+      </h2>
+    </div>
+
+    <div class="space-y-8">
+      <!-- Citation 1 -->
+      <blockquote class="p-8 bg-white/5 rounded-xl border-l-4 border-blue">
+        <p class="text-lg text-white/80 mb-4">
+          "AI-human combination results in higher engagement/conversion rates, reduced costs and optimized lead generation. <strong class="text-yellow">3x more calls connected, 20% higher meeting hold rate.</strong>"
+        </p>
+        <cite class="text-sm text-white/50 not-italic">
+          — Koch, S. (2024). A Case Study in AI-Augmented Cold Outreach. <em>The Journal of Business and Artificial Intelligence</em>, 1(1), 1-5
+        </cite>
+      </blockquote>
+
+      <!-- Citation 2 -->
+      <blockquote class="p-8 bg-white/5 rounded-xl border-l-4 border-green">
+        <p class="text-lg text-white/80 mb-4">
+          "AI chat and scheduling bot reduces 'no show rates', reduces administrative burden, improves client satisfaction and increases overall efficiency."
+        </p>
+        <cite class="text-sm text-white/50 not-italic">
+          — Nyako Alhaji Baba et al. (2024). Development of an intelligent chatbot for patient appointment booking system. <em>International Journal of Engineering and Applied Information Systems</em>, 8(10), 55-65
+        </cite>
+      </blockquote>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonial Section -->
+<section class="py-20 md:py-28 bg-navy border-t border-white/10">
+  <div class="max-w-4xl mx-auto px-4">
+    <div class="relative p-10 md:p-16 bg-white/5 rounded-2xl border border-white/10">
+      <!-- Quote mark decoration -->
+      <div class="absolute top-6 left-8 text-yellow/30 text-8xl font-serif leading-none">"</div>
+
+      <blockquote class="relative z-10">
+        <p class="text-xl md:text-2xl text-white/90 leading-relaxed mb-8">
+          "I took the assessment and found we were losing new clients by leaving outreach to our sales team and failing on response time. This was easily verifiable through cold outreach, which identified that almost all initial non-responders had been served by our competitors. We also found how much time our team members were wasting on non-conversions and repetitive tasks."
+        </p>
+        <cite class="not-italic flex items-center gap-3">
+          <span class="w-12 h-1 bg-yellow rounded-full"></span>
+          <span class="text-lg font-semibold text-yellow">RESG UK</span>
+        </cite>
+      </blockquote>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,109 @@
+---
+import { SEO } from "astro-seo";
+import Footer from "@/components/footer.astro";
+import Navbar from "@/components/navbar/navbar.astro";
+import "@fontsource-variable/inter/index.css";
+import "../styles/global.css";
+
+export interface Props {
+  title: string;
+}
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
+
+const resolvedImageWithDomain = new URL(
+  "/opengraph.jpg",
+  Astro.site
+).toString();
+
+const { title } = Astro.props;
+
+const makeTitle = title
+  ? title + " | " + "HumTech"
+  : "HumTech - AI Solutions for Business";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/png" href="/public/logo.png" />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- <link rel="preload" as="image" href={src} alt="Hero" /> -->
+    <SEO
+      title={makeTitle}
+      description="HumTech - AI solutions to help your business grow with zero risk and guaranteed results."
+      canonical={canonicalURL}
+      twitter={{
+        card: "summary_large_image",
+      }}
+      openGraph={{
+        basic: {
+          url: canonicalURL,
+          type: "website",
+          title: `HumTech - AI Solutions for Business`,
+          image: resolvedImageWithDomain,
+        },
+        image: {
+          alt: "HumTech",
+        },
+      }}
+    />
+  </head>
+  <body>
+    <Navbar />
+    <slot />
+    <Footer />
+    <style is:global>
+      /* Improve Page speed */
+      /* https://css-tricks.com/almanac/properties/c/content-visibility/ */
+      img {
+        content-visibility: auto;
+      }
+    </style>
+
+    <!-- Assessment Modal -->
+    <div
+      id="assessment-modal"
+      style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(25,48,80,0.9); z-index:9999; overflow:auto;">
+      <div style="position:relative; width:90%; max-width:900px; height:90vh; margin:5vh auto; background:white; border-radius:12px; overflow:hidden; box-shadow: 0 10px 40px rgba(0,0,0,0.3);">
+        <button
+          onclick="document.getElementById('assessment-modal').style.display='none'"
+          style="position:absolute; top:15px; right:20px; font-size:32px; cursor:pointer; z-index:10000; background:none; border:none; color:#193050; font-weight:bold; line-height:1;"
+          aria-label="Close">
+          &times;
+        </button>
+        <iframe
+          src="https://humtech-scorecard-v2.vercel.app"
+          style="width:100%; height:100%; border:none;"
+          title="AI Readiness Assessment">
+        </iframe>
+      </div>
+    </div>
+
+    <script is:inline>
+      // Close modal when clicking outside the content
+      document.getElementById('assessment-modal')?.addEventListener('click', function(e) {
+        if (e.target === this) {
+          this.style.display = 'none';
+        }
+      });
+
+      // Close modal on Escape key
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+          const modal = document.getElementById('assessment-modal');
+          if (modal) modal.style.display = 'none';
+        }
+      });
+
+      // Global function to open modal
+      window.openAssessmentModal = function() {
+        const modal = document.getElementById('assessment-modal');
+        if (modal) modal.style.display = 'block';
+      };
+    </script>
+  </body>
+</html>
