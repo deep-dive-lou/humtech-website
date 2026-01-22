@@ -76,13 +76,9 @@ import Layout from "@/layouts/Layout.astro";
               <h3 class="text-xl font-bold text-white mb-6">Send us a message</h3>
 
               <form
-                action="https://api.web3forms.com/submit"
-                method="POST"
                 id="form"
                 class="needs-validation space-y-5"
                 novalidate>
-                <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE" />
-                <input type="checkbox" class="hidden" style="display:none" name="botcheck" />
 
                 <div>
                   <input
@@ -192,23 +188,21 @@ import Layout from "@/layouts/Layout.astro";
     result.innerHTML = "Sending...";
     result.className = "text-center text-white/70";
 
-    fetch("https://api.web3forms.com/submit", {
+    fetch("https://services.leadconnectorhq.com/hooks/V7m7dlgTERFjn0t4soSv/webhook-trigger/df75c785-e015-4136-a2a8-67abc4f809d6", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        Accept: "application/json",
       },
       body: json,
     })
       .then(async (response) => {
-        let json = await response.json();
-        if (response.status == 200) {
+        if (response.ok) {
           result.className = "text-center text-green";
-          result.innerHTML = json.message;
+          result.innerHTML = "Message sent successfully!";
         } else {
           console.log(response);
           result.className = "text-center text-red-400";
-          result.innerHTML = json.message;
+          result.innerHTML = "Something went wrong. Please try again.";
         }
       })
       .catch((error) => {
