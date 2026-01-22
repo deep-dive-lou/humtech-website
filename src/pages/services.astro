@@ -326,7 +326,7 @@ import Container from "@/components/container.astro";
         </div>
       </section>
 
-      <!-- Custom Solutions Section with Carousel -->
+      <!-- Custom Solutions Section -->
       <section class="pb-20 md:pb-28 border-t border-white/10 pt-16 relative overflow-hidden">
         <!-- Animated background elements -->
         <div class="absolute top-20 left-10 w-72 h-72 bg-yellow/5 rounded-full blur-3xl animate-float"></div>
@@ -342,419 +342,223 @@ import Container from "@/components/container.astro";
             </p>
           </div>
 
-          <!-- Solutions Carousel -->
-          <div class="carousel-container rounded-2xl" id="solutions-carousel">
-            <div class="carousel-track" id="carousel-track">
-              <!-- Solution 1: 24/7 Lead Triage -->
-              <div class="carousel-slide px-2">
-                <div class="grid lg:grid-cols-5 gap-6">
-                  <!-- Left side: Content -->
-                  <div class="lg:col-span-3 p-8 rounded-2xl glass">
-                    <div class="flex items-center gap-4 mb-6">
-                      <span class="w-14 h-14 bg-gradient-to-br from-yellow to-yellow-light rounded-xl flex items-center justify-center text-navy font-bold text-xl shadow-lg animate-pulse-glow">01</span>
-                      <h3 class="text-2xl lg:text-3xl font-bold text-white">24/7 Lead Triage & Scheduling AI</h3>
-                    </div>
-                    <p class="text-white/80 mb-6 text-lg">
-                      Not your average 'out the box' booking bot. Whether you want a 24/7 member of your sales team to triage leads before booking a call, or an expert at maximising appointment bookings, this system has you covered.
-                    </p>
-                    <ul class="space-y-3 text-white/70">
-                      <li class="flex items-start gap-3">
-                        <svg class="w-5 h-5 text-yellow mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                          <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                        </svg>
-                        Optimise bookings in the crucial '60 second interest window'
-                      </li>
-                      <li class="flex items-start gap-3">
-                        <svg class="w-5 h-5 text-yellow mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                          <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                        </svg>
-                        Full integration with your existing CRM & systems
-                      </li>
-                      <li class="flex items-start gap-3">
-                        <svg class="w-5 h-5 text-yellow mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                          <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                        </svg>
-                        In-person or remote training included
-                      </li>
-                      <li class="flex items-start gap-3">
-                        <svg class="w-5 h-5 text-yellow mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                          <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                        </svg>
-                        50% of clients respond to conversational AI but not basic automation
-                      </li>
-                    </ul>
-                  </div>
-
-                  <!-- Right side: Stats boxes with moving animation -->
-                  <div class="lg:col-span-2 grid grid-cols-2 gap-4">
-                    <div class="moving-box p-6 rounded-xl bg-gradient-to-br from-yellow/20 to-yellow/5 border border-yellow/30 text-center">
-                      <div class="text-4xl font-bold text-yellow">70%</div>
-                      <div class="text-sm text-white/60 mt-2">inquiry time savings</div>
-                    </div>
-                    <div class="moving-box p-6 rounded-xl bg-gradient-to-br from-green/20 to-green/5 border border-green/30 text-center delay-100">
-                      <div class="text-4xl font-bold text-green">40-50%</div>
-                      <div class="text-sm text-white/60 mt-2">increased sales & bookings</div>
-                    </div>
-                    <div class="moving-box p-6 rounded-xl bg-gradient-to-br from-blue/20 to-blue/5 border border-blue/30 text-center col-span-2 delay-200">
-                      <div class="text-2xl font-bold text-blue">Never lose a lead to competitors</div>
-                      <div class="text-sm text-white/60 mt-2">Your clients never get ignored when their motivation is highest</div>
-                    </div>
-                    <!-- Image placeholder -->
-                    <div class="col-span-2 rounded-xl bg-gradient-to-br from-navy-light to-navy border border-white/10 flex items-center justify-center h-32 overflow-hidden">
-                      <div class="text-center">
-                        <svg class="w-12 h-12 text-white/20 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-                        </svg>
-                        <span class="text-white/30 text-sm">AI Chat Interface Preview</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+          <!-- Solutions Stack -->
+          <div class="space-y-8">
+            <!-- Solution 1: 24/7 Lead Triage -->
+            <div class="p-6 md:p-8 rounded-2xl bg-white/5 border border-yellow/20">
+              <div class="flex items-center gap-4 mb-6">
+                <span class="w-12 h-12 md:w-14 md:h-14 bg-gradient-to-br from-yellow to-yellow-light rounded-xl flex items-center justify-center text-navy font-bold text-lg md:text-xl shadow-lg flex-shrink-0">01</span>
+                <h3 class="text-xl md:text-2xl lg:text-3xl font-bold text-white">24/7 Lead Triage & Scheduling AI</h3>
               </div>
-
-              <!-- Solution 2: Document Portal -->
-              <div class="carousel-slide px-2">
-                <div class="grid lg:grid-cols-5 gap-6">
-                  <div class="lg:col-span-3 p-8 rounded-2xl glass">
-                    <div class="flex items-center gap-4 mb-6">
-                      <span class="w-14 h-14 bg-gradient-to-br from-blue to-blue-light rounded-xl flex items-center justify-center text-navy font-bold text-xl shadow-lg">02</span>
-                      <h3 class="text-2xl lg:text-3xl font-bold text-white">Branded Document & E-Signature Portal</h3>
-                    </div>
-                    <p class="text-white/80 mb-6 text-lg">
-                      Your business needs to look professional. When staff manually send document requests, evidence shows that client engagement is poor due to trust in your competency.
-                    </p>
-                    <ul class="space-y-3 text-white/70">
-                      <li class="flex items-start gap-3">
-                        <svg class="w-5 h-5 text-blue mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                          <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                        </svg>
-                        Remove the frustration and GDPR risk of chasing documents via email
-                      </li>
-                      <li class="flex items-start gap-3">
-                        <svg class="w-5 h-5 text-blue mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                          <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                        </svg>
-                        All client document requests in one branded workspace
-                      </li>
-                      <li class="flex items-start gap-3">
-                        <svg class="w-5 h-5 text-blue mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                          <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                        </svg>
-                        System automatically chases via email/SMS
-                      </li>
-                      <li class="flex items-start gap-3">
-                        <svg class="w-5 h-5 text-blue mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                          <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                        </svg>
-                        Data stored in UK data centres, not overseas
-                      </li>
-                    </ul>
-                  </div>
-
-                  <div class="lg:col-span-2 grid grid-cols-2 gap-4">
-                    <div class="moving-box p-6 rounded-xl bg-gradient-to-br from-blue/20 to-blue/5 border border-blue/30 text-center">
-                      <div class="text-4xl font-bold text-blue">40%</div>
-                      <div class="text-sm text-white/60 mt-2">increase in response rates</div>
-                    </div>
-                    <div class="moving-box p-6 rounded-xl bg-gradient-to-br from-green/20 to-green/5 border border-green/30 text-center">
-                      <div class="text-4xl font-bold text-green">40-70%</div>
-                      <div class="text-sm text-white/60 mt-2">email volume reduction</div>
-                    </div>
-                    <div class="moving-box p-6 rounded-xl bg-gradient-to-br from-yellow/20 to-yellow/5 border border-yellow/30 text-center col-span-2">
-                      <div class="text-2xl font-bold text-yellow">Your branding, your trust</div>
-                      <div class="text-sm text-white/60 mt-2">No third-party logos — display your branding to elicit trust</div>
-                    </div>
-                    <!-- Image placeholder -->
-                    <div class="col-span-2 rounded-xl bg-gradient-to-br from-navy-light to-navy border border-white/10 flex items-center justify-center h-32 overflow-hidden">
-                      <div class="text-center">
-                        <svg class="w-12 h-12 text-white/20 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
-                        </svg>
-                        <span class="text-white/30 text-sm">Document Portal Preview</span>
-                      </div>
-                    </div>
-                  </div>
+              <p class="text-white/80 mb-6 text-base md:text-lg">
+                Not your average 'out the box' booking bot. Whether you want a 24/7 member of your sales team to triage leads before booking a call, or an expert at maximising appointment bookings, this system has you covered.
+              </p>
+              <ul class="space-y-3 text-white/70 mb-6">
+                <li class="flex items-start gap-3">
+                  <svg class="w-5 h-5 text-yellow mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                  </svg>
+                  Optimise bookings in the crucial '60 second interest window'
+                </li>
+                <li class="flex items-start gap-3">
+                  <svg class="w-5 h-5 text-yellow mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                  </svg>
+                  Full integration with your existing CRM & systems
+                </li>
+                <li class="flex items-start gap-3">
+                  <svg class="w-5 h-5 text-yellow mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                  </svg>
+                  In-person or remote training included
+                </li>
+                <li class="flex items-start gap-3">
+                  <svg class="w-5 h-5 text-yellow mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                  </svg>
+                  50% of clients respond to conversational AI but not basic automation
+                </li>
+              </ul>
+              <!-- Stats -->
+              <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                <div class="p-4 rounded-xl bg-gradient-to-br from-yellow/20 to-yellow/5 border border-yellow/30 text-center">
+                  <div class="text-2xl md:text-3xl font-bold text-yellow">70%</div>
+                  <div class="text-xs md:text-sm text-white/60 mt-1">inquiry time savings</div>
                 </div>
-              </div>
-
-              <!-- Solution 3: Automation Suite -->
-              <div class="carousel-slide px-2">
-                <div class="grid lg:grid-cols-5 gap-6">
-                  <div class="lg:col-span-3 p-8 rounded-2xl glass">
-                    <div class="flex items-center gap-4 mb-6">
-                      <span class="w-14 h-14 bg-gradient-to-br from-green to-green-light rounded-xl flex items-center justify-center text-navy font-bold text-xl shadow-lg">03</span>
-                      <h3 class="text-2xl lg:text-3xl font-bold text-white">Comprehensive Automation Suite</h3>
-                    </div>
-                    <p class="text-white/80 mb-6 text-lg">
-                      Most businesses utilise just 20-40% of their CRM system functions. CRM systems provide a 'one size fits all' approach, leaving businesses unable to observe macro-level data without time-consuming workarounds.
-                    </p>
-                    <ul class="space-y-3 text-white/70">
-                      <li class="flex items-start gap-3">
-                        <svg class="w-5 h-5 text-green mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                          <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                        </svg>
-                        Data entry bots to deflect manual data entry and repetitive tasks
-                      </li>
-                      <li class="flex items-start gap-3">
-                        <svg class="w-5 h-5 text-green mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                          <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                        </svg>
-                        Invoice chasing, new client setup, lead engagement, KPI logging
-                      </li>
-                      <li class="flex items-start gap-3">
-                        <svg class="w-5 h-5 text-green mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                          <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                        </svg>
-                        High-performing messaging sequences to maximise revenue
-                      </li>
-                      <li class="flex items-start gap-3">
-                        <svg class="w-5 h-5 text-green mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                          <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                        </svg>
-                        Chasing and nurture sequences from existing data
-                      </li>
-                    </ul>
-                  </div>
-
-                  <div class="lg:col-span-2 flex flex-col gap-4">
-                    <div class="moving-box p-8 rounded-xl bg-gradient-to-br from-green/20 to-green/5 border border-green/30 flex-1 flex flex-col justify-center">
-                      <div class="text-center">
-                        <div class="text-5xl font-bold text-green mb-2">Company-Wide</div>
-                        <div class="text-xl text-white/80 mb-4">Time Saver</div>
-                        <p class="text-white/60">
-                          Time saving automations across multiple departments — freeing your team from non-revenue generating tasks
-                        </p>
-                      </div>
-                    </div>
-                    <!-- Image placeholder -->
-                    <div class="rounded-xl bg-gradient-to-br from-navy-light to-navy border border-white/10 flex items-center justify-center h-32 overflow-hidden">
-                      <div class="text-center">
-                        <svg class="w-12 h-12 text-white/20 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                        </svg>
-                        <span class="text-white/30 text-sm">Automation Dashboard Preview</span>
-                      </div>
-                    </div>
-                  </div>
+                <div class="p-4 rounded-xl bg-gradient-to-br from-green/20 to-green/5 border border-green/30 text-center">
+                  <div class="text-2xl md:text-3xl font-bold text-green">40-50%</div>
+                  <div class="text-xs md:text-sm text-white/60 mt-1">increased sales & bookings</div>
                 </div>
-              </div>
-
-              <!-- Solution 4: Marketing Performance Suite -->
-              <div class="carousel-slide px-2">
-                <div class="p-8 rounded-2xl glass">
-                  <div class="flex items-center gap-4 mb-8">
-                    <span class="w-14 h-14 bg-gradient-to-br from-yellow to-yellow-light rounded-xl flex items-center justify-center text-navy font-bold text-xl shadow-lg">04</span>
-                    <h3 class="text-2xl lg:text-3xl font-bold text-white">Marketing Performance Suite</h3>
-                  </div>
-
-                  <div class="grid lg:grid-cols-3 gap-6">
-                    <!-- Marketing Audit -->
-                    <div class="group moving-box p-6 rounded-xl bg-white/5 border border-white/10 hover:border-yellow/30 transition-all duration-300">
-                      <div class="w-12 h-12 bg-gradient-to-br from-yellow/30 to-yellow/10 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                        <span class="text-yellow font-bold text-lg">1</span>
-                      </div>
-                      <h4 class="text-lg font-semibold text-white mb-3">Marketing Systems Audit</h4>
-                      <p class="text-white/70 text-sm mb-4">
-                        Identify revenue leaks, inefficiencies, and risk before they impact growth.
-                      </p>
-                      <ul class="space-y-2 text-white/60 text-sm">
-                        <li>Acquisition Performance</li>
-                        <li>Attribution Accuracy & Tracking</li>
-                        <li>Offer Performance & Conversion</li>
-                        <li>Channel ROI & Spend Efficiency</li>
-                        <li>Competitive Positioning</li>
-                      </ul>
-                    </div>
-
-                    <!-- Optimization Session -->
-                    <div class="group moving-box p-6 rounded-xl bg-white/5 border border-white/10 hover:border-blue/30 transition-all duration-300">
-                      <div class="w-12 h-12 bg-gradient-to-br from-blue/30 to-blue/10 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                        <span class="text-blue font-bold text-lg">2</span>
-                      </div>
-                      <h4 class="text-lg font-semibold text-white mb-3">Executive Optimization Session</h4>
-                      <p class="text-white/70 text-sm mb-4">
-                        Convert performance data into leadership decisions.
-                      </p>
-                      <ul class="space-y-2 text-white/60 text-sm">
-                        <li>Review audit findings</li>
-                        <li>Validate growth assumptions</li>
-                        <li>Align marketing with revenue targets</li>
-                        <li>Optimization roadmap delivery</li>
-                        <li>Budget reallocation recommendations</li>
-                      </ul>
-                    </div>
-
-                    <!-- Strategic Oversight -->
-                    <div class="group moving-box p-6 rounded-xl bg-white/5 border border-white/10 hover:border-green/30 transition-all duration-300">
-                      <div class="w-12 h-12 bg-gradient-to-br from-green/30 to-green/10 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                        <span class="text-green font-bold text-lg">3</span>
-                      </div>
-                      <h4 class="text-lg font-semibold text-white mb-3">Strategic Oversight & Advisory</h4>
-                      <p class="text-white/70 text-sm mb-4">
-                        On-demand executive judgment when you need it.
-                      </p>
-                      <ul class="space-y-2 text-white/60 text-sm">
-                        <li>Asynchronous advisory access</li>
-                        <li>Review of critical growth assets</li>
-                        <li>Campaign & offer assessment</li>
-                        <li>Second-opinion on major decisions</li>
-                        <li>Budget & positioning support</li>
-                      </ul>
-                    </div>
-                  </div>
+                <div class="p-4 rounded-xl bg-gradient-to-br from-blue/20 to-blue/5 border border-blue/30 text-center col-span-2 md:col-span-1">
+                  <div class="text-lg md:text-xl font-bold text-blue">Never lose a lead</div>
+                  <div class="text-xs md:text-sm text-white/60 mt-1">to competitors</div>
                 </div>
               </div>
             </div>
 
-            <!-- Carousel Navigation -->
-            <div class="flex items-center justify-center gap-4 mt-8">
-              <button
-                id="prev-btn"
-                aria-label="Previous slide"
-                class="w-12 h-12 md:w-12 md:h-12 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-white hover:bg-yellow/20 hover:border-yellow/40 active:bg-yellow/30 transition-all duration-300 touch-manipulation">
-                <svg class="w-6 h-6 md:w-5 md:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
-                </svg>
-              </button>
-              <div class="carousel-dots" id="carousel-dots">
-                <button class="carousel-dot active" data-index="0" aria-label="Go to slide 1"></button>
-                <button class="carousel-dot" data-index="1" aria-label="Go to slide 2"></button>
-                <button class="carousel-dot" data-index="2" aria-label="Go to slide 3"></button>
-                <button class="carousel-dot" data-index="3" aria-label="Go to slide 4"></button>
+            <!-- Solution 2: Document Portal -->
+            <div class="p-6 md:p-8 rounded-2xl bg-white/5 border border-blue/20">
+              <div class="flex items-center gap-4 mb-6">
+                <span class="w-12 h-12 md:w-14 md:h-14 bg-gradient-to-br from-blue to-blue-light rounded-xl flex items-center justify-center text-navy font-bold text-lg md:text-xl shadow-lg flex-shrink-0">02</span>
+                <h3 class="text-xl md:text-2xl lg:text-3xl font-bold text-white">Branded Document & E-Signature Portal</h3>
               </div>
-              <button
-                id="next-btn"
-                aria-label="Next slide"
-                class="w-12 h-12 md:w-12 md:h-12 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-white hover:bg-yellow/20 hover:border-yellow/40 active:bg-yellow/30 transition-all duration-300 touch-manipulation">
-                <svg class="w-6 h-6 md:w-5 md:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                </svg>
-              </button>
+              <p class="text-white/80 mb-6 text-base md:text-lg">
+                Your business needs to look professional. When staff manually send document requests, evidence shows that client engagement is poor due to trust in your competency.
+              </p>
+              <ul class="space-y-3 text-white/70 mb-6">
+                <li class="flex items-start gap-3">
+                  <svg class="w-5 h-5 text-blue mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                  </svg>
+                  Remove the frustration and GDPR risk of chasing documents via email
+                </li>
+                <li class="flex items-start gap-3">
+                  <svg class="w-5 h-5 text-blue mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                  </svg>
+                  All client document requests in one branded workspace
+                </li>
+                <li class="flex items-start gap-3">
+                  <svg class="w-5 h-5 text-blue mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                  </svg>
+                  System automatically chases via email/SMS
+                </li>
+                <li class="flex items-start gap-3">
+                  <svg class="w-5 h-5 text-blue mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                  </svg>
+                  Data stored in UK data centres, not overseas
+                </li>
+              </ul>
+              <!-- Stats -->
+              <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                <div class="p-4 rounded-xl bg-gradient-to-br from-blue/20 to-blue/5 border border-blue/30 text-center">
+                  <div class="text-2xl md:text-3xl font-bold text-blue">40%</div>
+                  <div class="text-xs md:text-sm text-white/60 mt-1">increase in response rates</div>
+                </div>
+                <div class="p-4 rounded-xl bg-gradient-to-br from-green/20 to-green/5 border border-green/30 text-center">
+                  <div class="text-2xl md:text-3xl font-bold text-green">40-70%</div>
+                  <div class="text-xs md:text-sm text-white/60 mt-1">email volume reduction</div>
+                </div>
+                <div class="p-4 rounded-xl bg-gradient-to-br from-yellow/20 to-yellow/5 border border-yellow/30 text-center col-span-2 md:col-span-1">
+                  <div class="text-lg md:text-xl font-bold text-yellow">Your branding</div>
+                  <div class="text-xs md:text-sm text-white/60 mt-1">your trust</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Solution 3: Automation Suite -->
+            <div class="p-6 md:p-8 rounded-2xl bg-white/5 border border-green/20">
+              <div class="flex items-center gap-4 mb-6">
+                <span class="w-12 h-12 md:w-14 md:h-14 bg-gradient-to-br from-green to-green-light rounded-xl flex items-center justify-center text-navy font-bold text-lg md:text-xl shadow-lg flex-shrink-0">03</span>
+                <h3 class="text-xl md:text-2xl lg:text-3xl font-bold text-white">Comprehensive Automation Suite</h3>
+              </div>
+              <p class="text-white/80 mb-6 text-base md:text-lg">
+                Most businesses utilise just 20-40% of their CRM system functions. CRM systems provide a 'one size fits all' approach, leaving businesses unable to observe macro-level data without time-consuming workarounds.
+              </p>
+              <ul class="space-y-3 text-white/70 mb-6">
+                <li class="flex items-start gap-3">
+                  <svg class="w-5 h-5 text-green mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                  </svg>
+                  Data entry bots to deflect manual data entry and repetitive tasks
+                </li>
+                <li class="flex items-start gap-3">
+                  <svg class="w-5 h-5 text-green mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                  </svg>
+                  Invoice chasing, new client setup, lead engagement, KPI logging
+                </li>
+                <li class="flex items-start gap-3">
+                  <svg class="w-5 h-5 text-green mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                  </svg>
+                  High-performing messaging sequences to maximise revenue
+                </li>
+                <li class="flex items-start gap-3">
+                  <svg class="w-5 h-5 text-green mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                  </svg>
+                  Chasing and nurture sequences from existing data
+                </li>
+              </ul>
+              <!-- Stats -->
+              <div class="p-6 rounded-xl bg-gradient-to-br from-green/20 to-green/5 border border-green/30 text-center">
+                <div class="text-3xl md:text-4xl font-bold text-green mb-2">Company-Wide</div>
+                <div class="text-lg md:text-xl text-white/80 mb-2">Time Saver</div>
+                <p class="text-white/60 text-sm md:text-base">
+                  Time saving automations across multiple departments — freeing your team from non-revenue generating tasks
+                </p>
+              </div>
+            </div>
+
+            <!-- Solution 4: Marketing Performance Suite -->
+            <div class="p-6 md:p-8 rounded-2xl bg-white/5 border border-yellow/20">
+              <div class="flex items-center gap-4 mb-6">
+                <span class="w-12 h-12 md:w-14 md:h-14 bg-gradient-to-br from-yellow to-yellow-light rounded-xl flex items-center justify-center text-navy font-bold text-lg md:text-xl shadow-lg flex-shrink-0">04</span>
+                <h3 class="text-xl md:text-2xl lg:text-3xl font-bold text-white">Marketing Performance Suite</h3>
+              </div>
+
+              <div class="grid md:grid-cols-3 gap-4 md:gap-6">
+                <!-- Marketing Audit -->
+                <div class="p-5 md:p-6 rounded-xl bg-white/5 border border-white/10">
+                  <div class="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-yellow/30 to-yellow/10 rounded-xl flex items-center justify-center mb-4">
+                    <span class="text-yellow font-bold text-base md:text-lg">1</span>
+                  </div>
+                  <h4 class="text-base md:text-lg font-semibold text-white mb-3">Marketing Systems Audit</h4>
+                  <p class="text-white/70 text-sm mb-4">
+                    Identify revenue leaks, inefficiencies, and risk before they impact growth.
+                  </p>
+                  <ul class="space-y-2 text-white/60 text-sm">
+                    <li>Acquisition Performance</li>
+                    <li>Attribution Accuracy & Tracking</li>
+                    <li>Offer Performance & Conversion</li>
+                    <li>Channel ROI & Spend Efficiency</li>
+                    <li>Competitive Positioning</li>
+                  </ul>
+                </div>
+
+                <!-- Optimization Session -->
+                <div class="p-5 md:p-6 rounded-xl bg-white/5 border border-white/10">
+                  <div class="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-blue/30 to-blue/10 rounded-xl flex items-center justify-center mb-4">
+                    <span class="text-blue font-bold text-base md:text-lg">2</span>
+                  </div>
+                  <h4 class="text-base md:text-lg font-semibold text-white mb-3">Executive Optimization Session</h4>
+                  <p class="text-white/70 text-sm mb-4">
+                    Convert performance data into leadership decisions.
+                  </p>
+                  <ul class="space-y-2 text-white/60 text-sm">
+                    <li>Review audit findings</li>
+                    <li>Validate growth assumptions</li>
+                    <li>Align marketing with revenue targets</li>
+                    <li>Optimization roadmap delivery</li>
+                    <li>Budget reallocation recommendations</li>
+                  </ul>
+                </div>
+
+                <!-- Strategic Oversight -->
+                <div class="p-5 md:p-6 rounded-xl bg-white/5 border border-white/10">
+                  <div class="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-green/30 to-green/10 rounded-xl flex items-center justify-center mb-4">
+                    <span class="text-green font-bold text-base md:text-lg">3</span>
+                  </div>
+                  <h4 class="text-base md:text-lg font-semibold text-white mb-3">Strategic Oversight & Advisory</h4>
+                  <p class="text-white/70 text-sm mb-4">
+                    On-demand executive judgment when you need it.
+                  </p>
+                  <ul class="space-y-2 text-white/60 text-sm">
+                    <li>Asynchronous advisory access</li>
+                    <li>Review of critical growth assets</li>
+                    <li>Campaign & offer assessment</li>
+                    <li>Second-opinion on major decisions</li>
+                    <li>Budget & positioning support</li>
+                  </ul>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
-
-      <script>
-        // Carousel functionality
-        const track = document.getElementById('carousel-track');
-        const carousel = document.getElementById('solutions-carousel');
-        const dots = document.querySelectorAll('.carousel-dot');
-        const prevBtn = document.getElementById('prev-btn');
-        const nextBtn = document.getElementById('next-btn');
-        let currentSlide = 0;
-        const totalSlides = 4;
-        let autoAdvanceInterval;
-
-        // Touch/swipe support
-        let touchStartX = 0;
-        let touchEndX = 0;
-        let isDragging = false;
-
-        function updateCarousel() {
-          if (track) {
-            track.style.transform = `translateX(-${currentSlide * 100}%)`;
-          }
-          dots.forEach((dot, index) => {
-            dot.classList.toggle('active', index === currentSlide);
-          });
-        }
-
-        function goToSlide(index) {
-          currentSlide = index;
-          updateCarousel();
-          resetAutoAdvance();
-        }
-
-        function nextSlide() {
-          currentSlide = (currentSlide + 1) % totalSlides;
-          updateCarousel();
-        }
-
-        function prevSlide() {
-          currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-          updateCarousel();
-        }
-
-        // Button navigation
-        prevBtn?.addEventListener('click', () => {
-          prevSlide();
-          resetAutoAdvance();
-        });
-
-        nextBtn?.addEventListener('click', () => {
-          nextSlide();
-          resetAutoAdvance();
-        });
-
-        dots.forEach((dot, index) => {
-          dot.addEventListener('click', () => {
-            goToSlide(index);
-          });
-        });
-
-        // Touch/swipe handlers
-        if (carousel) {
-          carousel.addEventListener('touchstart', (e) => {
-            touchStartX = e.changedTouches[0].screenX;
-            isDragging = true;
-          }, { passive: true });
-
-          carousel.addEventListener('touchmove', (e) => {
-            if (!isDragging) return;
-            touchEndX = e.changedTouches[0].screenX;
-          }, { passive: true });
-
-          carousel.addEventListener('touchend', () => {
-            if (!isDragging) return;
-            isDragging = false;
-
-            const swipeThreshold = 50;
-            const diff = touchStartX - touchEndX;
-
-            if (Math.abs(diff) > swipeThreshold) {
-              if (diff > 0) {
-                // Swipe left - next slide
-                nextSlide();
-              } else {
-                // Swipe right - previous slide
-                prevSlide();
-              }
-              resetAutoAdvance();
-            }
-
-            touchStartX = 0;
-            touchEndX = 0;
-          }, { passive: true });
-        }
-
-        // Auto-advance with pause on interaction
-        function startAutoAdvance() {
-          autoAdvanceInterval = setInterval(() => {
-            nextSlide();
-          }, 8000);
-        }
-
-        function resetAutoAdvance() {
-          clearInterval(autoAdvanceInterval);
-          startAutoAdvance();
-        }
-
-        // Pause auto-advance when user hovers (desktop) or touches (mobile)
-        if (carousel) {
-          carousel.addEventListener('mouseenter', () => {
-            clearInterval(autoAdvanceInterval);
-          });
-
-          carousel.addEventListener('mouseleave', () => {
-            startAutoAdvance();
-          });
-        }
-
-        // Start auto-advance
-        startAutoAdvance();
-      </script>
 
       <!-- Fields of Expertise Section -->
       <section class="pb-20 md:pb-28 border-t border-white/10 pt-16 relative overflow-hidden">
