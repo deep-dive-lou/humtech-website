@@ -1,9 +1,10 @@
 ---
-import Link from "@/components/ui/link.astro";
+import { Image } from "astro:assets";
+import heroCoreGraphic from "@/assets/hero-core-graphic.png";
 ---
 
 <!-- Hero Section -->
-<main class="py-20 md:py-28 bg-navy relative overflow-hidden">
+<main class="py-20 md:py-32 bg-navy relative overflow-hidden">
   <!-- Animated background elements -->
   <div class="absolute inset-0 pointer-events-none">
     <div class="absolute top-10 left-1/4 w-96 h-96 bg-blue/10 rounded-full blur-3xl animate-float"></div>
@@ -14,29 +15,30 @@ import Link from "@/components/ui/link.astro";
   <!-- Gradient overlay -->
   <div class="absolute inset-0 bg-gradient-to-b from-navy via-transparent to-navy pointer-events-none"></div>
 
-  <div class="text-center max-w-4xl mx-auto px-4 relative z-10">
+  <div class="text-center max-w-5xl mx-auto px-4 relative z-10">
+    <p class="text-sm md:text-base font-bold text-yellow tracking-widest uppercase mb-6 animate-fade-in-up">
+      IF YOU'RE NOT DOING THIS IN 2026 THEN YOU'RE FALLING BEHIND...
+    </p>
     <h1
-      class="text-5xl lg:text-6xl xl:text-7xl font-bold lg:tracking-tight xl:tracking-tighter text-white animate-fade-in-up">
-      Find out how many leads you're losing if you're NOT embracing AI
+      class="text-4xl lg:text-5xl xl:text-6xl font-bold lg:tracking-tight xl:tracking-tighter text-white animate-fade-in-up delay-100">
+      Every Business NOT Using AI to Enhance Performance is Losing Profitability by the Minute
     </h1>
-    <p class="text-xl mt-6 text-yellow font-semibold animate-fade-in-up delay-100">
-      Because your competition is already starting to use it
+    <p class="text-xl md:text-2xl mt-6 text-yellow font-semibold italic animate-fade-in-up delay-200">
+      Eliminate Friction and Accelerate Revenue Using Our Dedicated Fractional AI Growth Team
     </p>
-    <p class="text-lg mt-4 text-white/70 animate-fade-in-up delay-150">
-      Answer 15 questions to find out
-    </p>
-    <div class="mt-8 flex flex-col sm:flex-row gap-3 justify-center animate-fade-in-up delay-200">
-      <button
-        onclick="openAssessmentModal()"
-        class="group px-8 py-4 rounded-xl font-semibold bg-yellow text-navy shadow-md shadow-black/20 hover:bg-green hover:shadow-lg hover:shadow-black/30 transition-all duration-300 flex gap-2 items-center justify-center cursor-pointer text-lg">
-        Start Free Assessment
-        <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
-        </svg>
-      </button>
+
+    <div class="mt-10 mb-8 animate-fade-in-up delay-300">
+      <Image
+        src={heroCoreGraphic}
+        alt="HumTech Core - ROI Delivery, AI Strategy, Training, Sales Psychology, Implementation"
+        class="mx-auto max-w-3xl w-full"
+        widths={[400, 768, 1024]}
+        sizes="(max-width: 768px) 100vw, 768px"
+      />
     </div>
-    <p class="text-sm mt-4 text-white/50 animate-fade-in-up delay-300">
-      Takes less than 3 minutes. Get immediate results. Completely free.
+
+    <p class="text-lg text-white/70 animate-fade-in-up delay-400">
+      Performance Based Billing With Guaranteed ROI Commitments
     </p>
   </div>
 </main>
