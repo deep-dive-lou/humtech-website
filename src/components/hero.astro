@@ -1811,7 +1811,7 @@ const trustedLogos = [
     }
 
     main > section {
-      padding-top: 1.5rem;
+      padding-top: 0.75rem;
     }
 
     .hero-core-shell {
@@ -1966,7 +1966,7 @@ const trustedLogos = [
 
     .hero-support {
       margin-top: -1rem;
-      margin-bottom: -0.2rem;
+      margin-bottom: -0.6rem;
     }
 
     .section-title {
@@ -2055,13 +2055,22 @@ const trustedLogos = [
       height: 20px;
     }
     .kill-zone-wrapper {
-      padding-bottom: 0;
+      padding-bottom: 3.3rem;
     }
     .kill-zone-sublabel {
-      position: static;
-      margin-top: 0.75rem;
-      display: block;
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -3.05rem;
+      margin-top: 0;
       padding-inline: 0.45rem;
+      z-index: 2;
+    }
+    .kill-zone-caption {
+      display: block;
+      max-width: calc(100% - 0.6rem);
+      margin-inline: auto;
+      line-height: 1.24;
     }
 
     .section-eight-copy {
