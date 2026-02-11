@@ -1802,6 +1802,10 @@ const trustedLogos = [
   }
 
   @media (max-width: 640px) {
+    main {
+      padding-top: 6.8rem;
+    }
+
     main > .absolute.inset-0.pointer-events-none {
       display: none;
     }
@@ -1828,6 +1832,11 @@ const trustedLogos = [
 
     .hero-core-diagram {
       aspect-ratio: 1 / 1.2;
+    }
+
+    .hero-core-lines,
+    .hero-core-dots {
+      display: none;
     }
 
     .hero-core-hex-ring {
@@ -1875,7 +1884,7 @@ const trustedLogos = [
     .node-right-middle {
       left: 50%;
       right: auto;
-      top: 78%;
+      top: 84%;
       transform: translate(-50%, -50%);
     }
 
