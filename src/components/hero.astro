@@ -1802,6 +1802,14 @@ const trustedLogos = [
   }
 
   @media (max-width: 640px) {
+    main > .absolute.inset-0.pointer-events-none {
+      display: none;
+    }
+
+    main > .absolute.inset-0.bg-gradient-to-b {
+      display: none;
+    }
+
     main > section {
       padding-top: 1.5rem;
     }
@@ -1835,9 +1843,9 @@ const trustedLogos = [
     }
 
     .hero-core-node {
-      width: 108px;
+      width: 98px;
       font-size: 0.7rem;
-      padding: 0.32rem 0.42rem;
+      padding: 0.3rem 0.36rem;
       line-height: 1.16;
       border-width: 1.5px;
     }
@@ -1860,19 +1868,19 @@ const trustedLogos = [
 
     .node-right-top {
       left: auto;
-      right: 0.8%;
+      right: 4.2%;
       top: 27%;
     }
 
     .node-right-middle {
       left: auto;
-      right: 0.8%;
+      right: 4.2%;
       top: 50%;
     }
 
     .node-right-bottom {
       left: auto;
-      right: 0.8%;
+      right: 4.2%;
       top: 73%;
     }
 
@@ -1957,8 +1965,8 @@ const trustedLogos = [
     }
 
     .hero-support {
-      margin-top: -0.7rem;
-      margin-bottom: 0.25rem;
+      margin-top: -1rem;
+      margin-bottom: -0.2rem;
     }
 
     .section-title {
@@ -2047,14 +2055,12 @@ const trustedLogos = [
       height: 20px;
     }
     .kill-zone-wrapper {
-      padding-bottom: 3rem;
+      padding-bottom: 0;
     }
     .kill-zone-sublabel {
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: -2.35rem;
-      margin-top: 0;
+      position: static;
+      margin-top: 0.75rem;
+      display: block;
       padding-inline: 0.45rem;
     }
 
