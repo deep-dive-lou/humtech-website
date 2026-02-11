@@ -1,10 +1,22 @@
 ---
 import { Image } from "astro:assets";
-import heroCoreGraphic from "@/assets/hero-core-graphic.png";
+import trustedLogoEcop from "@/assets/trusted-logo-ecop.webp";
+import trustedLogoLmf from "@/assets/trusted-logo-lmf.webp";
+import trustedLogoGhs from "@/assets/trusted-logo-ghs.webp";
+import trustedLogoResg from "@/assets/trusted-logo-resg.png";
+import frictionGraphic from "@/assets/friction-graphic-bg.png";
+import cycleHireGraphic from "@/assets/cycle-hire-bg.png";
+import latencyGraphic from "@/assets/latency-bg.png";
+const trustedLogos = [
+  { src: trustedLogoEcop, alt: "ECOP" },
+  { src: trustedLogoLmf, alt: "LMF" },
+  { src: trustedLogoGhs, alt: "GHS" },
+  { src: trustedLogoResg, alt: "RESG" },
+];
 ---
 
 <!-- Hero Section -->
-<main class="py-20 md:py-32 bg-navy relative overflow-hidden">
+<main class="pt-14 md:pt-20 pb-0 bg-navy relative overflow-hidden">
   <!-- Animated background elements -->
   <div class="absolute inset-0 pointer-events-none">
     <div class="absolute top-10 left-1/4 w-96 h-96 bg-blue/10 rounded-full blur-3xl animate-float"></div>
@@ -16,269 +28,2027 @@ import heroCoreGraphic from "@/assets/hero-core-graphic.png";
   <div class="absolute inset-0 bg-gradient-to-b from-navy via-transparent to-navy pointer-events-none"></div>
 
   <div class="text-center max-w-5xl mx-auto px-4 relative z-10">
-    <p class="text-sm md:text-base font-bold text-yellow tracking-widest uppercase mb-6 animate-fade-in-up">
+    <p class="hero-eyebrow text-sm md:text-base font-bold text-yellow tracking-widest uppercase mb-6 animate-fade-in-up max-w-3xl mx-auto">
       IF YOU'RE NOT DOING THIS IN 2026 THEN YOU'RE FALLING BEHIND...
     </p>
     <h1
-      class="text-4xl lg:text-5xl xl:text-6xl font-bold lg:tracking-tight xl:tracking-tighter text-white animate-fade-in-up delay-100">
+      class="hero-main-title text-4xl lg:text-5xl xl:text-6xl font-bold lg:tracking-tight xl:tracking-tighter text-white animate-fade-in-up delay-100 max-w-3xl mx-auto">
       Every Business NOT Using AI to Enhance Performance is Losing Profitability by the Minute
     </h1>
-    <p class="text-xl md:text-2xl mt-6 text-yellow font-semibold italic animate-fade-in-up delay-200">
+    <p class="hero-subtitle text-xl md:text-2xl mt-6 text-yellow font-semibold animate-fade-in-up delay-200 max-w-3xl mx-auto">
       Eliminate Friction and Accelerate Revenue Using Our Dedicated Fractional AI Growth Team
     </p>
 
-    <div class="mt-10 mb-8 animate-fade-in-up delay-300">
+    <div class="mt-2 mb-3 animate-fade-in-up delay-300">
+      <div class="hero-core-shell mx-auto max-w-4xl">
+        <div class="hero-core-glow" aria-hidden="true"></div>
+        <div class="hero-core-grid" aria-hidden="true"></div>
+        <div class="hero-core-techlines" aria-hidden="true"></div>
+        <div class="hero-core-diagram" role="img" aria-label="HumTech Core - ROI Delivery, AI Strategy, Training, Sales Psychology, Implementation">
+          <svg class="hero-core-links hero-core-lines" viewBox="0 0 1000 420" preserveAspectRatio="none" aria-hidden="true">
+            <line x1="472" y1="210" x2="347" y2="158" />
+            <line x1="472" y1="210" x2="347" y2="262" />
+            <line x1="528" y1="210" x2="680" y2="137" />
+            <line x1="528" y1="210" x2="680" y2="210" />
+            <line x1="528" y1="210" x2="680" y2="283" />
+          </svg>
+          <svg class="hero-core-links hero-core-dots" viewBox="0 0 1000 420" preserveAspectRatio="none" aria-hidden="true">
+            <circle cx="347" cy="158" r="5.8"></circle>
+            <circle cx="347" cy="262" r="5.8"></circle>
+            <circle cx="680" cy="137" r="5.8"></circle>
+            <circle cx="680" cy="210" r="5.8"></circle>
+            <circle cx="680" cy="283" r="5.8"></circle>
+          </svg>
+
+          <div class="hero-core-hex-wrap">
+            <div class="hero-core-hex-ring">
+              <div class="hero-core-hex">
+                <img src="/public/bg-logo.png" alt="" class="hero-core-logo" aria-hidden="true" />
+                <span>HumTech<br/>Core</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-core-node node-left-top">ROI Delivery</div>
+          <div class="hero-core-node node-left-bottom">Training</div>
+          <div class="hero-core-node node-right-top">AI Strategy</div>
+          <div class="hero-core-node node-right-middle">Sales Psychology</div>
+          <div class="hero-core-node node-right-bottom">Implementation</div>
+        </div>
+      </div>
+    </div>
+
+    <p class="hero-support text-lg text-white/70 animate-fade-in-up delay-400 max-w-3xl mx-auto">
+      Performance Based Billing With Guaranteed ROI Commitments
+    </p>
+  </div>
+  <!-- Trusted By & Credentials Section -->
+  <section class="pt-10 md:pt-12 pb-14 md:pb-16">
+  <div class="max-w-5xl mx-auto px-4">
+    <!-- Trusted By -->
+    <div class="text-center mb-10">
+      <div class="trusted-by-head-wrap">
+        <h3 class="trusted-by-heading">Trusted by:</h3>
+      </div>
+      <div class="trusted-carousel-wrapper">
+        <div class="trusted-carousel">
+          {[...trustedLogos, ...trustedLogos].map((logo) => (
+            <div class="trusted-logo-item">
+              <Image
+                src={logo.src}
+                alt={logo.alt}
+                class="h-12 md:h-16 w-auto object-contain brightness-0 invert opacity-70 hover:opacity-100 transition-opacity duration-300"
+                height={64}
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    <!-- Credential Cards -->
+    <div class="grid md:grid-cols-3 gap-6 mt-10">
+      <!-- Card 1: Qualifications -->
+      <div class="cred-card group">
+        <div class="cred-card-inner">
+          <div class="mb-4">
+            <svg class="w-12 h-12 text-yellow" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+              <circle cx="24" cy="24" r="6" />
+              <circle cx="12" cy="12" r="4" />
+              <circle cx="36" cy="12" r="4" />
+              <circle cx="12" cy="36" r="4" />
+              <circle cx="36" cy="36" r="4" />
+              <line x1="18" y1="18" x2="20" y2="20" />
+              <line x1="30" y1="18" x2="28" y2="20" />
+              <line x1="18" y1="30" x2="20" y2="28" />
+              <line x1="30" y1="30" x2="28" y2="28" />
+              <circle cx="8" cy="24" r="3" />
+              <circle cx="40" cy="24" r="3" />
+              <line x1="11" y1="24" x2="18" y2="24" />
+              <line x1="30" y1="24" x2="37" y2="24" />
+            </svg>
+          </div>
+          <p class="text-white/80 text-sm md:text-base leading-relaxed">
+            Specialists with BSc (Hons) and MSc qualifications in computer science and psychology
+          </p>
+        </div>
+      </div>
+
+      <!-- Card 2: Universities -->
+      <div class="cred-card group">
+        <div class="cred-card-inner">
+          <div class="mb-4">
+            <svg class="w-12 h-12 text-yellow" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M24 4L4 16h40L24 4z" />
+              <line x1="10" y1="16" x2="10" y2="36" />
+              <line x1="18" y1="16" x2="18" y2="36" />
+              <line x1="30" y1="16" x2="30" y2="36" />
+              <line x1="38" y1="16" x2="38" y2="36" />
+              <rect x="4" y="36" width="40" height="4" />
+              <rect x="2" y="40" width="44" height="4" />
+            </svg>
+          </div>
+          <p class="text-white/80 text-sm md:text-base leading-relaxed">
+            Graduates from top 10 universities.
+          </p>
+        </div>
+      </div>
+
+      <!-- Card 3: Experience -->
+      <div class="cred-card group">
+        <div class="cred-card-inner">
+          <div class="mb-4">
+            <svg class="w-12 h-12 text-yellow" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+              <circle cx="24" cy="24" r="18" />
+              <circle cx="24" cy="24" r="14" />
+              <path d="M24 12v12l8 6" />
+              <circle cx="24" cy="24" r="2" fill="currentColor" />
+              <line x1="24" y1="6" x2="24" y2="10" />
+              <line x1="24" y1="38" x2="24" y2="42" />
+              <line x1="6" y1="24" x2="10" y2="24" />
+              <line x1="38" y1="24" x2="42" y2="24" />
+            </svg>
+          </div>
+          <p class="text-white/80 text-sm md:text-base leading-relaxed">
+            Over 15 years experience in building and optimizing client acquisition systems.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  </section>
+</main>
+
+<!-- Kill Zone / Engagement Latency Section -->
+<section class="pt-12 pb-16 md:pt-16 md:pb-24 bg-navy">
+  <div class="max-w-4xl mx-auto px-4">
+    <!-- Headline -->
+    <h2 class="section-title text-3xl lg:text-4xl xl:text-5xl font-bold text-yellow text-center mb-12 leading-tight">
+      It's no longer "the big that beats the small" it's "the fast that runs over the slow"
+    </h2>
+
+    <!-- Kill Zone Graphic (CSS/SVG) -->
+    <div class="kill-zone-graphic mx-auto max-w-3xl mb-6">
+      <div class="kill-zone-wrapper">
+        <!-- Labels -->
+        <div class="kill-zone-labels">
+          <div class="kill-zone-label-left">
+            <span class="text-white font-bold text-sm md:text-base">Customer<br/>Interest</span>
+          </div>
+          <div class="kill-zone-label-right">
+            <span class="text-white font-bold text-sm md:text-base">Business<br/>Response</span>
+          </div>
+        </div>
+
+        <!-- The hazard bar -->
+        <div class="kill-zone-bar">
+          <!-- Left icon circle -->
+          <div class="kill-zone-icon kill-zone-icon-left">
+            <svg class="w-8 h-8 text-navy" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M3 13h1v7c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2v-7h1a1 1 0 0 0 .7-1.7l-9-9a1 1 0 0 0-1.4 0l-9 9A1 1 0 0 0 3 13z"/>
+            </svg>
+          </div>
+          <!-- Center text -->
+          <div class="kill-zone-center-text">
+            <span class="text-white font-bold text-sm md:text-lg whitespace-nowrap">The Kill Zone (Engagement Latency)</span>
+          </div>
+          <!-- Right icon circle -->
+          <div class="kill-zone-icon kill-zone-icon-right">
+            <svg class="w-8 h-8 text-navy" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M20 3H4c-1.1 0-2 .9-2 2v11c0 1.1.9 2 2 2h7v2H8v2h8v-2h-3v-2h7c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 13H4V5h16v11z"/>
+            </svg>
+          </div>
+          <!-- Caption below bar -->
+          <div class="kill-zone-sublabel">
+            <span class="text-white/60 text-xs md:text-sm">Engagement Latency: The time gap between customer interest and your business's meaningful response.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Copy blocks -->
+    <div class="readable-prose max-w-3xl mx-auto mt-12 space-y-6">
+      <div>
+        <p class="text-lg md:text-xl text-white font-bold leading-relaxed">
+          Your competition is already <span class="text-yellow">closing this gap with AI.</span><br/>
+          If you don't program <span class="text-yellow">instantaneous response, you're invisible.</span>
+        </p>
+      </div>
+
+      <p class="text-lg md:text-xl text-white font-bold leading-relaxed">
+        Speed is now the ultimate currency and 'lead response latency' is the difference between closing a deal and losing it to a competitor who instantly responds.
+      </p>
+
+      <p class="text-lg md:text-xl text-white font-bold leading-relaxed">
+        Most companies believe buying updated software fixes this, but they lack the adaptive ecosystem to make it work.
+      </p>
+
+      <p class="text-lg md:text-xl text-white font-bold leading-relaxed">
+        You have the tools... but not the strategy.
+      </p>
+    </div>
+
+    <!-- Friction Graphic -->
+    <div class="mt-12">
       <Image
-        src={heroCoreGraphic}
-        alt="HumTech Core - ROI Delivery, AI Strategy, Training, Sales Psychology, Implementation"
-        class="mx-auto max-w-3xl w-full"
+        src={frictionGraphic}
+        alt="Friction - workflow showing Login, Data Entry, Form Submission, Platform Switch, Approval Workflow, Report Generation, Client Portal, Syncing, Task Manager, Server"
+        class="mx-auto max-w-3xl w-full friction-graphic"
         widths={[400, 768, 1024]}
         sizes="(max-width: 768px) 100vw, 768px"
       />
     </div>
-
-    <p class="text-lg text-white/70 animate-fade-in-up delay-400">
-      Performance Based Billing With Guaranteed ROI Commitments
-    </p>
   </div>
-</main>
+</section>
 
-<!-- Assessment Measures Section -->
-<section class="py-20 md:py-28 bg-navy border-t border-white/10 relative overflow-hidden">
-  <!-- Subtle background pattern -->
-  <div class="absolute inset-0 opacity-30 pointer-events-none">
-    <div class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-blue/5 to-transparent"></div>
-  </div>
+<!-- 3 Metrics Section -->
+<section class="pt-2 pb-16 md:pt-4 md:pb-24 bg-navy">
+  <div class="max-w-5xl mx-auto px-4">
+    <!-- Headline -->
+    <h2 class="section-title text-3xl lg:text-4xl xl:text-5xl font-bold text-yellow text-center mb-12 leading-tight">
+      You Need a Fractional AI Growth Team That Measures and Optimizes These 3 Metrics
+    </h2>
 
-  <div class="max-w-4xl mx-auto px-4 relative z-10">
-    <div class="text-center mb-16">
-      <h2 class="text-3xl lg:text-4xl font-bold text-white mb-4">
-        This Assessment Measures Your "Engagement Latency"
-      </h2>
-      <p class="text-lg text-yellow font-semibold">
-        These results give insights to improve:
-      </p>
+    <!-- Metrics Grid -->
+    <div class="grid md:grid-cols-3 gap-x-8 md:gap-x-12 gap-y-0 metrics-grid">
+      <!-- Row 1: Titles -->
+      <div class="text-center flex items-start justify-center pb-6">
+        <h3 class="metrics-title font-bold text-lg md:text-xl"><span class="text-yellow">Metric 1:</span><br/><span class="text-white">Engagement Latency</span></h3>
+      </div>
+      <div class="text-center flex items-start justify-center pb-6">
+        <h3 class="metrics-title font-bold text-lg md:text-xl"><span class="text-yellow">Metric 2:</span><br/><span class="text-white">Handling Time<br/>vs. Deflection Savings</span></h3>
+      </div>
+      <div class="text-center flex items-start justify-center pb-6">
+        <h3 class="metrics-title font-bold text-lg md:text-xl"><span class="text-yellow">Metric 3:</span><br/><span class="text-white">Opportunity Cost</span></h3>
+      </div>
+
+      <!-- Row 2: Icons -->
+      <div class="flex justify-center pb-6">
+        <!-- Stopwatch icon -->
+        <svg class="w-28 h-28 md:w-36 md:h-36 text-white/80" viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="55" y="8" width="10" height="12" rx="2" stroke="currentColor" fill="none" />
+          <line x1="90" y1="30" x2="98" y2="22" stroke-width="3" stroke-linecap="round" />
+          <circle cx="60" cy="68" r="40" />
+          <circle cx="60" cy="68" r="36" />
+          <line x1="60" y1="32" x2="60" y2="38" />
+          <line x1="60" y1="98" x2="60" y2="104" />
+          <line x1="24" y1="68" x2="30" y2="68" />
+          <line x1="90" y1="68" x2="96" y2="68" />
+          <line x1="60" y1="68" x2="42" y2="50" stroke-width="2.5" stroke-linecap="round" />
+          <circle cx="60" cy="68" r="3" fill="currentColor" />
+        </svg>
+      </div>
+      <div class="flex justify-center pb-6">
+        <!-- Scales icon -->
+        <svg class="w-28 h-28 md:w-36 md:h-36 text-white/80" viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="2">
+          <polygon points="60,12 54,24 66,24" fill="currentColor" stroke="none" />
+          <line x1="20" y1="24" x2="100" y2="24" stroke-width="2.5" />
+          <line x1="60" y1="24" x2="60" y2="100" stroke-width="2" />
+          <line x1="40" y1="100" x2="80" y2="100" stroke-width="2.5" stroke-linecap="round" />
+          <line x1="20" y1="24" x2="14" y2="60" />
+          <line x1="20" y1="24" x2="46" y2="60" />
+          <path d="M10,60 Q30,72 50,60" stroke-width="2" />
+          <line x1="100" y1="24" x2="74" y2="60" />
+          <line x1="100" y1="24" x2="106" y2="60" />
+          <path d="M70,60 Q90,72 110,60" stroke-width="2" />
+        </svg>
+      </div>
+      <div class="flex justify-center pb-6">
+        <!-- Bar chart icon -->
+        <svg class="w-28 h-28 md:w-36 md:h-36 text-white/80" viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="20" y1="100" x2="110" y2="100" stroke-width="2" />
+          <line x1="20" y1="16" x2="20" y2="100" stroke-width="2" />
+          <rect x="28" y="60" width="14" height="40" fill="currentColor" opacity="0.3" stroke="currentColor" />
+          <rect x="48" y="40" width="14" height="60" fill="currentColor" opacity="0.3" stroke="currentColor" />
+          <rect x="68" y="28" width="14" height="72" fill="currentColor" opacity="0.3" stroke="currentColor" />
+          <rect x="88" y="50" width="14" height="50" fill="currentColor" opacity="0.3" stroke="currentColor" />
+          <polyline points="35,55 55,35 75,22 95,45" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+          <polygon points="95,45 100,38 92,40" fill="currentColor" stroke="none" />
+        </svg>
+      </div>
+
+      <!-- Row 3: Descriptions -->
+      <div class="text-center">
+        <p class="text-white text-sm md:text-base leading-relaxed">
+          The portion of new business lost to competitors due to engagement method and response time.
+        </p>
+      </div>
+      <div class="text-center">
+        <p class="text-white text-sm md:text-base leading-relaxed">
+          The specific calculation of time and money that could be reclaimed through hands-free automation.
+        </p>
+      </div>
+      <div class="text-center">
+        <p class="text-white text-sm md:text-base leading-relaxed">
+          The impact of current, inefficient strategies on team morale and revenue generation.
+        </p>
+      </div>
     </div>
+  </div>
+</section>
+
+<!-- Economics of Fractional Expertise Section -->
+<section class="pt-8 pb-16 md:pt-12 md:pb-24 bg-navy">
+  <div class="max-w-5xl mx-auto px-4">
+    <h2 class="section-title text-3xl lg:text-4xl xl:text-5xl font-bold text-yellow text-center mb-12 leading-tight">
+      The Economics of Fractional Expertise
+    </h2>
+
+    <div class="flex flex-col md:flex-row items-center md:items-center gap-10 md:gap-12 max-w-4xl mx-auto">
+      <!-- Bar Chart -->
+      <div class="economics-chart flex-1">
+        <div class="economics-plot">
+          <div class="economics-axis-y" aria-hidden="true"></div>
+          <div class="economics-axis-x" aria-hidden="true"></div>
+
+          <div class="economics-bars">
+            <div class="economics-bar-stack">
+              <div class="economics-bar economics-bar-traditional"></div>
+            </div>
+
+            <div class="economics-bar-stack economics-bar-stack-fractional">
+              <p class="economics-delta">** 70% Less the<br/>Cost of a Full-<br/>Time Director **</p>
+              <svg class="economics-arrow" viewBox="0 0 24 48" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <line x1="12" y1="0" x2="12" y2="42" />
+                <polyline points="6,36 12,44 18,36" />
+              </svg>
+              <div class="economics-bar economics-bar-fractional"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="economics-label-row">
+          <p class="economics-label">1 In-House AI<br/>Director</p>
+          <p class="economics-label">HumTech<br/>Team</p>
+        </div>
+      </div>
+
+      <!-- Right side copy -->
+      <div class="readable-prose economics-copy flex-1 space-y-6">
+        <p class="text-white font-bold text-lg md:text-xl leading-relaxed">
+          Instead of just managing another person...
+        </p>
+        <p class="text-white font-bold text-lg md:text-xl leading-relaxed">
+          Plus you get the technical and marketing expertise to properly utilize AI.
+        </p>
+      </div>
+    </div>
+
+    <div class="max-w-4xl mx-auto px-4 mt-14 md:mt-16">
+      <h2 class="section-title text-3xl lg:text-4xl xl:text-5xl font-bold text-white text-center mb-12 leading-tight">
+      The Financial Logic of the Fractional Model
+      </h2>
+
+      <div class="financial-logic-shell overflow-x-auto">
+        <table class="financial-logic-table w-full border-collapse">
+          <thead>
+            <tr>
+              <th class="p-4 md:p-6 text-left border-b border-white/20"></th>
+              <th class="p-4 md:p-6 text-left text-white/60 font-normal text-sm md:text-base border-b border-white/20">Traditional Model</th>
+              <th class="p-4 md:p-6 text-left text-white font-bold text-sm md:text-base border-b border-white/20">
+                <span class="flex items-center gap-3">Fractional Model
+                  <svg class="w-7 h-7 text-yellow" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                  </svg>
+                </span>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="financial-row" tabindex="0">
+              <td class="p-4 md:p-6 text-white font-bold text-sm md:text-base border-b border-white/10">Cost Efficiency</td>
+              <td class="p-4 md:p-6 text-white/60 text-sm md:text-base border-b border-white/10">Full Time<br/>180,000 Salary</td>
+              <td class="p-4 md:p-6 text-white text-sm md:text-base border-b border-white/10 font-bold"><span class="text-yellow">70% less cost</span> than hiring a single in-house AI Director</td>
+            </tr>
+            <tr class="financial-row" tabindex="0">
+              <td class="p-4 md:p-6 text-white font-bold text-sm md:text-base border-b border-white/10">Risk Mitigation</td>
+              <td class="p-4 md:p-6 text-white/60 text-sm md:text-base border-b border-white/10">SLA's tied to<br/>deliverables & time</td>
+              <td class="p-4 md:p-6 text-white text-sm md:text-base border-b border-white/10 font-bold">Performance-Based Billing with Guaranteed ROI Commitments</td>
+            </tr>
+            <tr class="financial-row" tabindex="0">
+              <td class="p-4 md:p-6 text-white font-bold text-sm md:text-base">Value Add</td>
+              <td class="p-4 md:p-6 text-white/60 text-sm md:text-base">None</td>
+              <td class="p-4 md:p-6 text-white text-sm md:text-base font-bold">On-Demand Technical and Marketing expertise included</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Why This Works Section -->
+<section class="py-16 md:py-24 bg-navy border-t border-white/10">
+  <div class="max-w-5xl mx-auto px-4">
+    <h2 class="section-title text-3xl lg:text-4xl xl:text-5xl font-bold text-white text-center mb-12 leading-tight">
+      Why This Works
+    </h2>
 
     <div class="grid md:grid-cols-3 gap-6">
-      <div class="group p-6 rounded-xl bg-white/5 border border-white/10 card-hover relative overflow-hidden">
-        <div class="absolute inset-0 bg-gradient-to-br from-yellow/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-        <div class="relative z-10">
-          <div class="w-12 h-12 bg-gradient-to-br from-yellow/30 to-yellow/10 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-            <span class="text-yellow font-bold text-xl">1</span>
+      <!-- Card 1: Performance-Based SLA's -->
+      <div class="cred-card group">
+        <div class="cred-card-inner">
+          <div class="mb-4">
+            <div class="w-10 h-10 rounded-lg bg-green/20 flex items-center justify-center">
+              <svg class="w-5 h-5 text-green" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                <polyline points="22 4 12 14.01 9 11.01"/>
+              </svg>
+            </div>
           </div>
-          <p class="text-white/80">
-            Your proportion of new business lost to competitors due to engagement method and response time
+          <h3 class="text-white font-bold text-base md:text-lg mb-3">Performance-Based SLA's</h3>
+          <p class="text-white/70 text-sm md:text-base leading-relaxed">
+            We work to hit your ROI targets, and stay with you to set new goals
           </p>
         </div>
       </div>
-      <div class="group p-6 rounded-xl bg-white/5 border border-white/10 card-hover relative overflow-hidden">
-        <div class="absolute inset-0 bg-gradient-to-br from-yellow/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-        <div class="relative z-10">
-          <div class="w-12 h-12 bg-gradient-to-br from-yellow/30 to-yellow/10 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-            <span class="text-yellow font-bold text-xl">2</span>
+
+      <!-- Card 2: Direct Strategist Access -->
+      <div class="cred-card group">
+        <div class="cred-card-inner">
+          <div class="mb-4">
+            <div class="w-10 h-10 rounded-lg bg-yellow/20 flex items-center justify-center">
+              <svg class="w-5 h-5 text-yellow" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
+              </svg>
+            </div>
           </div>
-          <p class="text-white/80">
-            Your 'handling time' vs 'deflection savings' - how much time and money could be saved through hands-free automation
+          <h3 class="text-white font-bold text-base md:text-lg mb-3">Direct Strategist Access</h3>
+          <p class="text-white/70 text-sm md:text-base leading-relaxed">
+            Direct access to senior strategists with extensive experience - no junior teams or service desks
           </p>
         </div>
       </div>
-      <div class="group p-6 rounded-xl bg-white/5 border border-white/10 card-hover relative overflow-hidden">
-        <div class="absolute inset-0 bg-gradient-to-br from-yellow/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-        <div class="relative z-10">
-          <div class="w-12 h-12 bg-gradient-to-br from-yellow/30 to-yellow/10 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-            <span class="text-yellow font-bold text-xl">3</span>
+
+      <!-- Card 3: Futureproofing -->
+      <div class="cred-card group">
+        <div class="cred-card-inner">
+          <div class="mb-4">
+            <div class="w-10 h-10 rounded-lg bg-blue/20 flex items-center justify-center">
+              <svg class="w-5 h-5 text-blue" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+              </svg>
+            </div>
           </div>
-          <p class="text-white/80">
-            Your overall opportunity cost of current AI strategies and the impact on your team and operational efficiency
+          <h3 class="text-white font-bold text-base md:text-lg mb-3">Futureproofing</h3>
+          <p class="text-white/70 text-sm md:text-base leading-relaxed">
+            Stay ahead with the latest AI implementations and strategic enhancements from proven industry leaders
+          </p>
+        </div>
+      </div>
+
+      <!-- Card 4: Enterprise Strategy, SME Price -->
+      <div class="cred-card group">
+        <div class="cred-card-inner">
+          <div class="mb-4">
+            <div class="w-10 h-10 rounded-lg bg-green/20 flex items-center justify-center">
+              <svg class="w-5 h-5 text-green" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="12" y1="1" x2="12" y2="23"/>
+                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+              </svg>
+            </div>
+          </div>
+          <h3 class="text-white font-bold text-base md:text-lg mb-3">Enterprise Strategy, SME Price</h3>
+          <p class="text-white/70 text-sm md:text-base leading-relaxed">
+            Get top-tier AI planning, technical execution, and support without full-time overheads
+          </p>
+        </div>
+      </div>
+
+      <!-- Card 5: Hands-Off Implementation -->
+      <div class="cred-card group">
+        <div class="cred-card-inner">
+          <div class="mb-4">
+            <div class="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center">
+              <svg class="w-5 h-5 text-white/70" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="3"/>
+                <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+              </svg>
+            </div>
+          </div>
+          <h3 class="text-white font-bold text-base md:text-lg mb-3">Hands-Off Implementation</h3>
+          <p class="text-white/70 text-sm md:text-base leading-relaxed">
+            Zero technical knowledge needed - our team builds, deploys, trains and maintains custom branded systems
+          </p>
+        </div>
+      </div>
+
+      <!-- Card 6: Tailored Solutions -->
+      <div class="cred-card group">
+        <div class="cred-card-inner">
+          <div class="mb-4">
+            <div class="w-10 h-10 rounded-lg bg-blue/20 flex items-center justify-center">
+              <svg class="w-5 h-5 text-blue" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                <polyline points="22 4 12 14.01 9 11.01"/>
+              </svg>
+            </div>
+          </div>
+          <h3 class="text-white font-bold text-base md:text-lg mb-3">Tailored Solutions</h3>
+          <p class="text-white/70 text-sm md:text-base leading-relaxed">
+            Unlike generic one-size-fits-all solutions, we deliver fully branded custom systems with rigorous ongoing guidance
           </p>
         </div>
       </div>
     </div>
 
+    <!-- CTA Button -->
     <div class="text-center mt-12">
-      <button
-        onclick="openAssessmentModal()"
-        class="group px-8 py-4 rounded-xl font-semibold bg-yellow text-navy shadow-md shadow-black/20 hover:bg-green hover:shadow-lg hover:shadow-black/30 transition-all duration-300 inline-flex items-center justify-center cursor-pointer text-lg gap-2">
-        Find out exactly where you're losing business
-        <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
-        </svg>
+      <button onclick="openAssessmentModal()" class="bg-yellow hover:bg-yellow-light text-navy font-bold text-lg px-10 py-4 rounded-full transition-all duration-300 hover:shadow-lg hover:shadow-yellow/30 cursor-pointer">
+        Yes, I Want Fractional AI
       </button>
     </div>
   </div>
 </section>
 
-<!-- 2026 Section -->
-<section class="py-20 md:py-28 bg-navy border-t border-white/10">
-  <div class="max-w-4xl mx-auto px-4 text-center">
-    <h2 class="text-4xl lg:text-5xl xl:text-6xl font-bold lg:tracking-tight text-white mb-6">
-      In 2026, Your Business Needs to Keep Up With the Continuously Evolving AI Landscape
+<!-- The Trap of In-House Hiring Section -->
+<section class="py-16 md:py-24 bg-navy border-t border-white/10">
+  <div class="max-w-5xl mx-auto px-4">
+    <h2 class="section-title text-3xl lg:text-4xl xl:text-5xl font-bold text-white text-center mb-12 leading-tight">
+      The Trap of In-House Hiring and Costly "Employee Obsolescence"
     </h2>
-    <p class="text-xl text-yellow font-semibold mb-4">
-      A dedicated fractional growth team powered by our continuously evolving AI systems
-    </p>
-    <p class="text-lg text-white/70">
-      Performance Based Billing With Guaranteed ROI Committments
-    </p>
-  </div>
-</section>
 
-<!-- Bottleneck / Problem Section -->
-<section class="py-20 md:py-28 bg-navy border-t border-white/10">
-  <div class="max-w-4xl mx-auto px-4">
-    <div class="text-center mb-12">
-      <h2 class="text-3xl lg:text-4xl font-bold text-white mb-4">
-        You know the bottleneck... 50% of inquiries vanish before your sales team gets to them...
-      </h2>
-      <p class="text-2xl text-yellow font-semibold">
+    <div class="flex flex-col md:flex-row items-center gap-10 md:gap-12">
+      <!-- Cycle Diagram Image -->
+      <div class="flex-1">
+        <Image
+          src={cycleHireGraphic}
+          alt="The cycle of hiring - Hire, Train, AI changes, skills become obsolete, re-train or replace, repeat"
+          class="w-full max-w-md mx-auto cycle-hire-graphic"
+          widths={[400, 768]}
+          sizes="(max-width: 768px) 100vw, 400px"
+        />
+      </div>
+
+      <!-- Copy -->
+      <div class="readable-prose flex-1 space-y-6">
+        <p class="text-lg md:text-xl text-white font-bold leading-relaxed">
+          Internal employees are focused on keeping up with the directives of the company's existing "Eco-Chamber".
+        </p>
+        <p class="text-lg md:text-xl text-white font-bold leading-relaxed">
+          They don't consistently have the time to stay plugged into constantly changing applications, methods, and updates.
+        </p>
+        <p class="text-lg md:text-xl text-white font-bold leading-relaxed">
+          The investment is not yet worth a full-time hire.
+        </p>
+        <p class="text-lg md:text-xl text-yellow font-bold leading-relaxed">
+          That's why we exist.
+        </p>
+      </div>
+    </div>
+
+    <!-- Bottleneck callout -->
+    <div class="mt-14 text-center">
+      <h3 class="text-2xl lg:text-3xl xl:text-4xl font-bold text-yellow leading-tight">
+        You know the bottleneck... 50% of inquiries vanish before your sales team gets to them
+      </h3>
+    </div>
+
+    <!-- We faced this exact problem -->
+    <div class="mt-14">
+      <h3 class="text-2xl lg:text-3xl xl:text-4xl font-bold text-white text-center mb-8">
         We faced this exact problem
-      </p>
-    </div>
+      </h3>
 
-    <!-- Story Block -->
-    <div class="prose prose-lg prose-invert max-w-none text-white/70 mb-12">
-      <p>
-        When starting out, we discovered that only 50% of new enquiries responded to outreach, and just half of them attended booked consultations. Moreover, our small team were constantly drawn into repetitive admin tasks and distractions which took them away from revenue-producing duties.
-      </p>
-      <p class="text-yellow font-semibold">
-        We experimented with countless 'out the box' third-party AI tools (multiple diferent log-ins!), yet conversions actually got worse.
-      </p>
-      <p>
-        So we rolled up our sleeves... and we figured it out on our own.
-      </p>
-      <p class="font-semibold text-white text-xl">
-        One year later, the results speak for themselves...
-      </p>
-    </div>
+      <!-- Latency Flow Diagram -->
+      <div class="max-w-3xl mx-auto">
+        <Image
+          src={latencyGraphic}
+          alt="First Response, Total Inquiries (100%), Responded, Lost to Latency"
+          class="mx-auto w-full latency-graphic"
+          widths={[400, 768, 1024]}
+          sizes="(max-width: 768px) 100vw, 768px"
+        />
+      </div>
 
-    <div class="text-center p-8 glass rounded-2xl">
-      <p class="text-lg text-white/90">
-        In two years, Our marketing agency powered the #1 rated Green Energy Supplier on Trustpilot with 4.9 out of 5.0 Stars with a team of only four people.
-      </p>
+      <!-- Story Block -->
+      <div class="section-eight-story max-w-3xl mx-auto mt-12 mb-10">
+        <p class="section-eight-copy">
+          When starting out, we discovered that only 50% of new enquiries responded to outreach, and just half of them attended booked consultations.
+        </p>
+        <p class="section-eight-copy">
+          Moreover, our small team were constantly drawn into repetitive admin tasks and distractions which took them away from revenue-producing duties.
+        </p>
+        <p class="section-eight-copy">
+          We experimented with countless 'out the box' third-party AI tools (multiple diferent log-ins!), yet conversions actually got worse.
+        </p>
+        <p class="section-eight-copy">
+          So we rolled up our sleeves... and we figured it out on our own.
+        </p>
+        <p class="section-eight-copy section-eight-emphasis">
+          One year later, the results speak for themselves...
+        </p>
+      </div>
+
+      <div class="results-panel max-w-3xl mx-auto">
+        <div class="results-panel-grid">
+          <div class="results-panel-cell">
+            <div class="results-panel-value text-yellow">98%</div>
+            <div class="results-panel-label">client appointment booking rate</div>
+          </div>
+          <div class="results-panel-cell">
+            <div class="results-panel-value text-yellow">90%+</div>
+            <div class="results-panel-label">appointment attendance</div>
+          </div>
+          <div class="results-panel-cell">
+            <div class="results-panel-value text-yellow">50%</div>
+            <div class="results-panel-label">increase in revenue</div>
+          </div>
+          <div class="results-panel-cell">
+            <div class="results-panel-value text-white">Zero</div>
+            <div class="results-panel-label">additional team members hired</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="results-proof max-w-3xl mx-auto text-center mt-10">
+        <p class="results-proof-copy">
+          In two years, Our marketing agency powered the #1 rated Green Energy Supplier on Trustpilot with 4.9 out of 5.0 Stars with a team of only four people.
+        </p>
+
+        <div class="trustpilot-stars" aria-hidden="true">
+          <span class="trustpilot-star trustpilot-star-filled">&starf;</span>
+          <span class="trustpilot-star trustpilot-star-filled">&starf;</span>
+          <span class="trustpilot-star trustpilot-star-filled">&starf;</span>
+          <span class="trustpilot-star trustpilot-star-filled">&starf;</span>
+          <span class="trustpilot-star trustpilot-star-partial">&starf;</span>
+        </div>
+
+        <p class="trustpilot-caption">4.9/5.0 Stars on Trustpilot - #1 Rated Green Energy Supplier.</p>
+
+        <div class="mt-10">
+          <button onclick="openAssessmentModal()" class="proof-cta-button">
+            Yes, I Want Fractional AI
+          </button>
+        </div>
+
+        <div class="section-eight-finish">
+          <div class="section-eight-proof-grid">
+            <blockquote class="section-eight-proof-card">
+              <p class="section-eight-proof-text">
+                "AI-human combination results in higher engagement/conversion rates, reduced costs and optimized lead generation. <span class="section-eight-proof-highlight">3x more calls connected, 20% higher meeting hold rate.</span>"
+              </p>
+              <cite class="section-eight-proof-cite not-italic">
+                -Koch, S. (2024). A Case Study in AI-Augmented Cold Outreach. The Journal of Business and Artificial Intelligence, 1(1), 1-5
+              </cite>
+            </blockquote>
+
+            <blockquote class="section-eight-proof-card">
+              <p class="section-eight-proof-text">
+                "AI chat and scheduling bot reduces 'no show rates', reduces administrative burden, improves client satisfaction and <span class="section-eight-proof-highlight">increases overall efficiency.</span>"
+              </p>
+              <cite class="section-eight-proof-cite not-italic">
+                - Nyako Alhaji Baba et al. (2024). Development of an intelligent chatbot for patient appointment booking system. International Journal of Engineering and Applied Information Systems, 8(10), 55-65
+              </cite>
+            </blockquote>
+          </div>
+
+          <blockquote class="section-eight-testimonial">
+            <p class="section-eight-testimonial-text">
+              "I took the assessment and found we were losing new clients by leaving outreach to our sales team and failing on response time. This was easily verifiable through cold outreach, which identified that almost all initial non-responders had been served by our competitors. We also found how much time our team members were wasting on non-conversions and repetitive tasks."
+            </p>
+            <cite class="section-eight-testimonial-cite not-italic">RESG UK</cite>
+          </blockquote>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- Results Stats Section -->
-<section class="py-20 md:py-28 bg-navy border-t border-white/10">
-  <div class="max-w-4xl mx-auto px-4">
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
-      <div class="moving-box text-center p-6 bg-gradient-to-br from-yellow/10 to-yellow/5 rounded-xl border border-yellow/20">
-        <div class="text-4xl lg:text-5xl font-bold text-yellow">98%</div>
-        <div class="text-sm text-white/60 mt-2">client appointment booking rate</div>
+<!-- Final Assessment Section -->
+<section class="py-16 md:py-24 bg-navy border-t border-white/10">
+  <div class="max-w-5xl mx-auto px-4 text-center">
+    <h2 class="final-assessment-headline">
+      Find out how many leads you're losing if you're NOT embracing AI
+    </h2>
+
+    <div class="final-assessment-grid">
+      <div class="final-assessment-card">
+        <div class="final-assessment-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M12 3v8" />
+            <path d="M8.5 8.5A5 5 0 1 0 17 12.5" />
+            <path d="M19 17v4h-4" />
+            <path d="M15 21l4-4" />
+          </svg>
+        </div>
+        <p class="final-assessment-card-copy">
+          Your proportion of <span class="final-assessment-highlight">new business lost</span> to competitors due to engagement method and response time.
+        </p>
       </div>
-      <div class="moving-box text-center p-6 bg-gradient-to-br from-yellow/10 to-yellow/5 rounded-xl border border-yellow/20">
-        <div class="text-4xl lg:text-5xl font-bold text-yellow">90%+</div>
-        <div class="text-sm text-white/60 mt-2">appointment attendance</div>
+
+      <div class="final-assessment-card">
+        <div class="final-assessment-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M3 17h18" />
+            <path d="M7 14l4-7 3 5 2-3 2 5" />
+            <circle cx="6" cy="7" r="2" />
+            <circle cx="18" cy="6" r="2" />
+          </svg>
+        </div>
+        <p class="final-assessment-card-copy">
+          Your <span class="final-assessment-highlight">"handling time"</span> vs <span class="final-assessment-highlight">"deflection savings"</span> - how much time and money could be saved through hands-free automation.
+        </p>
       </div>
-      <div class="moving-box text-center p-6 bg-gradient-to-br from-green/10 to-green/5 rounded-xl border border-green/20">
-        <div class="text-4xl lg:text-5xl font-bold text-green">50%</div>
-        <div class="text-sm text-white/60 mt-2">increase in revenue</div>
-      </div>
-      <div class="moving-box text-center p-6 bg-gradient-to-br from-blue/10 to-blue/5 rounded-xl border border-blue/20">
-        <div class="text-4xl lg:text-5xl font-bold text-blue">Zero</div>
-        <div class="text-sm text-white/60 mt-2">additional team members hired</div>
+
+      <div class="final-assessment-card">
+        <div class="final-assessment-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M4 19l6-6 4 3 6-8" />
+            <path d="M15 8h5v5" />
+            <circle cx="7" cy="7" r="3" />
+            <path d="M7 4v6M4 7h6" />
+          </svg>
+        </div>
+        <p class="final-assessment-card-copy">
+          Your overall <span class="final-assessment-highlight">opportunity cost</span> of current AI strategies and the impact on your team and operational efficiency.
+        </p>
       </div>
     </div>
 
-    <!-- What made the difference -->
-    <div class="text-center p-8 glass rounded-2xl">
-      <h3 class="text-2xl font-semibold mb-4 text-yellow">What made the difference?</h3>
-      <p class="text-lg text-white/70 max-w-2xl mx-auto">
-        A team of expert AI, sales and marketing strategists to oversee consultation, implementation, training and ROI target delivery.
-      </p>
-    </div>
-  </div>
-</section>
-
-<!-- Why HumTech Section -->
-<section class="py-20 md:py-28 bg-navy border-t border-white/10">
-  <div class="max-w-4xl mx-auto px-4">
-    <div class="text-center mb-12">
-      <h2 class="text-3xl lg:text-4xl font-bold text-white mb-8">
-        Why HumTech?
-      </h2>
-      <p class="text-xl text-white/70 leading-relaxed mb-8">
-        Internal employees are focused on keeping up with the directives of the business. They don't have the time to stay plugged into constantly changing AI applications, methods and updates. AI becomes a fast-track for "employee obsolescence" and having to constantly retrain skills.
-      </p>
-      <p class="text-2xl text-yellow font-semibold mb-8">
-        This is where HumTech comes in.
-      </p>
-    </div>
-
-    <div class="text-center py-8">
-      <span class="text-6xl lg:text-7xl font-bold text-yellow">70%</span>
-      <p class="text-xl text-white/70 mt-4">less than hiring just ONE in-house AI director</p>
-      <p class="text-lg text-white/50 mt-2 italic">*Plus you get the technical and marketing expertise to properly utilize AI</p>
-    </div>
-  </div>
-</section>
-
-<!-- We understand AI Section -->
-<section class="py-20 md:py-28 bg-navy border-t border-white/10">
-  <div class="max-w-4xl mx-auto px-4 text-center">
-    <p class="text-2xl text-yellow font-semibold mb-6">
-      We understand AI isn't about replacing humans.
+    <p class="final-assessment-subhead">
+      Answer 15 questions to find out how many leads you're losing
     </p>
-    <p class="text-xl text-white/80 leading-relaxed">
-      It's about freeing your team from repetitive, non-revenue generating tasks so they can focus on delivering an exceptional service to your clients, and keep them longer.
+    <p class="final-assessment-support">
+      Takes less than 3 minutes - Get immediate results - Completely free.
     </p>
-  </div>
-</section>
 
-<!-- What You Get Section -->
-<section class="py-20 md:py-28 bg-navy border-t border-white/10">
-  <div class="max-w-4xl mx-auto px-4">
-    <div class="text-center mb-16">
-      <h2 class="text-3xl lg:text-4xl font-bold text-white mb-6">
-        What You Get
-      </h2>
-      <p class="text-xl text-white/80 leading-relaxed">
-        Your very own on-demand fractional growth team of specialists with <span class="text-yellow font-semibold">BSc(Hons) and MSc qualifications</span> in computer science and psychology from top 10 universities, and <span class="text-yellow font-semibold">over 15 years experience</span> in building customer acquisition systems.
-      </p>
-    </div>
-
-    <div class="space-y-8">
-      <!-- Citation 1 -->
-      <blockquote class="p-8 bg-white/5 rounded-xl border-l-4 border-yellow">
-        <p class="text-lg text-white/80 mb-4">
-          "AI-human combination results in higher engagement/conversion rates, reduced costs and optimized lead generation. 3x more calls connected, 20% higher meeting hold rate."
-        </p>
-        <cite class="text-sm text-white/50 not-italic">
-          -Koch, S. (2024). A Case Study in AI-Augmented Cold Outreach. The Journal of Business and Artificial Intelligence, 1(1), 1-5
-        </cite>
-      </blockquote>
-
-      <!-- Citation 2 -->
-      <blockquote class="p-8 bg-white/5 rounded-xl border-l-4 border-yellow">
-        <p class="text-lg text-white/80 mb-4">
-          "AI chat and scheduling bot reduces 'no show rates', reduces administrative burden, improves client satisfaction and increases overall efficiency."
-        </p>
-        <cite class="text-sm text-white/50 not-italic">
-          - Nyako Alhaji Baba et al. (2024). Development of an intelligent chatbot for patient appointment booking system. International Journal of Engineering and Applied Information Systems, 8(10), 55-65
-        </cite>
-      </blockquote>
+    <div class="mt-10">
+      <button onclick="openAssessmentModal()" class="final-assessment-button">
+        Start Free Assessment &rarr;
+      </button>
     </div>
   </div>
 </section>
 
-<!-- Testimonial Section -->
-<section class="py-20 md:py-28 bg-navy border-t border-white/10">
-  <div class="max-w-4xl mx-auto px-4">
-    <div class="relative p-10 md:p-16 bg-white/5 rounded-2xl border border-white/10">
-      <!-- Quote mark decoration -->
-      <div class="absolute top-6 left-8 text-yellow/30 text-8xl font-serif leading-none">"</div>
+<script is:inline>
+  const financialRows = Array.from(document.querySelectorAll(".financial-row"));
 
-      <blockquote class="relative z-10">
-        <p class="text-xl md:text-2xl text-white/90 leading-relaxed mb-8">
-          "I took the assessment and found we were losing new clients by leaving outreach to our sales team and failing on response time. This was easily verifiable through cold outreach, which identified that almost all initial non-responders had been served by our competitors. We also found how much time our team members were wasting on non-conversions and repetitive tasks."
-        </p>
-        <cite class="not-italic flex items-center gap-3">
-          <span class="w-12 h-1 bg-yellow rounded-full"></span>
-          <span class="text-lg font-semibold text-yellow">RESG UK</span>
-        </cite>
-      </blockquote>
-    </div>
-  </div>
-</section>
+  function setActiveFinancialRow(targetRow) {
+    financialRows.forEach((row) => row.classList.remove("is-active"));
+    targetRow.classList.add("is-active");
+  }
+
+  financialRows.forEach((row, index) => {
+    if (index === 0) row.classList.add("is-active");
+
+    row.addEventListener("click", () => setActiveFinancialRow(row));
+    row.addEventListener("keydown", (event) => {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        setActiveFinancialRow(row);
+      }
+    });
+  });
+</script>
+
+<style>
+  .hero-eyebrow {
+    font-size: clamp(0.88rem, 0.82rem + 0.28vw, 1rem);
+    letter-spacing: 0.1em;
+    line-height: 1.4;
+  }
+
+  .hero-main-title {
+    font-size: clamp(2.2rem, 4.6vw, 4.9rem);
+    line-height: 1.1;
+  }
+
+  .hero-subtitle {
+    font-size: clamp(1.15rem, 2vw, 1.85rem);
+    line-height: 1.35;
+  }
+
+  .hero-support {
+    font-size: clamp(1rem, 1.15vw, 1.2rem);
+    line-height: 1.45;
+  }
+
+  .section-title {
+    font-size: clamp(2rem, 3.05vw, 3.15rem);
+    line-height: 1.16;
+    max-width: 34ch;
+    margin-inline: auto;
+    letter-spacing: -0.01em;
+  }
+
+  .readable-prose p {
+    font-size: clamp(1.05rem, 1.2vw, 1.42rem);
+    line-height: 1.5;
+    letter-spacing: 0.002em;
+    max-width: 62ch;
+  }
+
+  .readable-prose p:last-child {
+    margin-bottom: 0;
+  }
+
+  .metrics-grid .text-center p {
+    max-width: 30ch;
+    margin-inline: auto;
+    font-size: clamp(0.98rem, 0.98vw, 1.08rem);
+    line-height: 1.45;
+  }
+
+  .metrics-title {
+    min-height: 5.9rem;
+    line-height: 1.2;
+    max-width: 14ch;
+    margin-inline: auto;
+  }
+
+  .cred-card-inner p {
+    font-size: clamp(0.98rem, 0.95vw, 1.08rem);
+    line-height: 1.45;
+  }
+
+  table th,
+  table td {
+    line-height: 1.45;
+  }
+
+  .economics-chart {
+    width: 100%;
+    max-width: 560px;
+  }
+
+  .economics-plot {
+    position: relative;
+    padding: 0.85rem 0.8rem 0.35rem 1.1rem;
+  }
+
+  .economics-axis-y {
+    position: absolute;
+    left: 0.45rem;
+    top: 0.8rem;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.42), rgba(255, 255, 255, 0.2));
+  }
+
+  .economics-axis-x {
+    position: absolute;
+    left: 0.45rem;
+    right: 0.35rem;
+    bottom: 0;
+    height: 2px;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.45), rgba(255, 255, 255, 0.16));
+  }
+
+  .economics-bars {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(1.3rem, 3vw, 2.2rem);
+    align-items: end;
+    padding-inline: 0.55rem;
+  }
+
+  .economics-bar-stack {
+    min-height: 320px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .economics-bar {
+    width: min(170px, 92%);
+    border-radius: 6px 6px 0 0;
+  }
+
+  .economics-bar-traditional {
+    height: clamp(220px, 23vw, 305px);
+    background: #5b6778;
+  }
+
+  .economics-bar-stack-fractional {
+    gap: 0.5rem;
+  }
+
+  .economics-delta {
+    color: #d8b743;
+    font-weight: 700;
+    text-align: center;
+    font-size: clamp(1.05rem, 1.2vw, 1.8rem);
+    line-height: 1.35;
+    margin-bottom: 0.2rem;
+  }
+
+  .economics-arrow {
+    width: 24px;
+    height: 48px;
+    color: rgba(255, 255, 255, 0.65);
+  }
+
+  .economics-bar-fractional {
+    height: clamp(105px, 10.5vw, 145px);
+    background: #d1b447;
+  }
+
+  .economics-label-row {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(1.3rem, 3vw, 2.2rem);
+    padding: 0.8rem 1.35rem 0;
+  }
+
+  .economics-label {
+    color: #ffffff;
+    font-weight: 700;
+    text-align: center;
+    font-size: clamp(1.05rem, 1.25vw, 1.9rem);
+    line-height: 1.3;
+  }
+
+  .economics-copy p {
+    font-size: clamp(1.05rem, 1.18vw, 1.45rem);
+    line-height: 1.48;
+    max-width: 34ch;
+  }
+
+  .financial-logic-shell {
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 14px;
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.015));
+    box-shadow: inset 0 0 24px rgba(0, 0, 0, 0.18);
+  }
+
+  .financial-logic-table thead th {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    background: rgba(6, 21, 40, 0.9);
+    backdrop-filter: blur(4px);
+  }
+
+  .financial-logic-table th:nth-child(3),
+  .financial-logic-table td:nth-child(3) {
+    background: linear-gradient(120deg, rgba(216, 183, 67, 0.1), rgba(216, 183, 67, 0.04));
+  }
+
+  .financial-row {
+    cursor: pointer;
+    transition: transform 180ms ease, background-color 180ms ease;
+  }
+
+  .financial-row td {
+    transition: color 180ms ease, background-color 180ms ease;
+  }
+
+  .financial-row:hover,
+  .financial-row:focus-visible,
+  .financial-row.is-active {
+    transform: translateY(-1px);
+    background: rgba(255, 255, 255, 0.045);
+    outline: none;
+  }
+
+  .financial-row:hover td:nth-child(3),
+  .financial-row:focus-visible td:nth-child(3),
+  .financial-row.is-active td:nth-child(3) {
+    background: linear-gradient(120deg, rgba(216, 183, 67, 0.22), rgba(216, 183, 67, 0.08));
+  }
+
+  .hero-core-shell {
+    position: relative;
+    padding: 0;
+    background: transparent;
+    box-shadow: none;
+    border-radius: 0;
+  }
+
+  .hero-core-shell::before {
+    content: none;
+  }
+
+  .hero-core-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.024) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.024) 1px, transparent 1px);
+    background-size: 30px 30px;
+    mask-image: radial-gradient(circle at 50% 48%, rgba(0, 0, 0, 0.88), rgba(0, 0, 0, 0.35) 70%, transparent 100%);
+    opacity: 0.18;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  .hero-core-techlines {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    opacity: 0.22;
+    pointer-events: none;
+    background:
+      linear-gradient(165deg, transparent 37%, rgba(216, 183, 67, 0.32) 37.2%, transparent 37.4%) left 12% top 26% / 30% 40% no-repeat,
+      linear-gradient(15deg, transparent 37%, rgba(216, 183, 67, 0.32) 37.2%, transparent 37.4%) right 12% top 26% / 30% 40% no-repeat,
+      linear-gradient(145deg, transparent 53%, rgba(216, 183, 67, 0.23) 53.2%, transparent 53.4%) left 16% bottom 12% / 22% 30% no-repeat,
+      linear-gradient(35deg, transparent 53%, rgba(216, 183, 67, 0.23) 53.2%, transparent 53.4%) right 16% bottom 12% / 22% 30% no-repeat,
+      linear-gradient(90deg, rgba(216, 183, 67, 0.24), transparent) left 8% top 18% / 26% 1px no-repeat,
+      linear-gradient(90deg, rgba(216, 183, 67, 0.24), transparent) right 8% top 18% / 26% 1px no-repeat,
+      linear-gradient(0deg, rgba(216, 183, 67, 0.24), transparent) left 11% top 12% / 1px 20% no-repeat,
+      linear-gradient(0deg, rgba(216, 183, 67, 0.24), transparent) right 11% top 12% / 1px 20% no-repeat,
+      radial-gradient(circle at 24% 33%, rgba(216, 183, 67, 0.38) 0 1.8px, transparent 2.2px),
+      radial-gradient(circle at 76% 33%, rgba(216, 183, 67, 0.38) 0 1.8px, transparent 2.2px),
+      radial-gradient(circle at 20% 68%, rgba(216, 183, 67, 0.24) 0 1.8px, transparent 2.2px),
+      radial-gradient(circle at 80% 68%, rgba(216, 183, 67, 0.24) 0 1.8px, transparent 2.2px);
+    animation: techLinePulse 7.5s ease-in-out infinite alternate;
+  }
+
+  @keyframes techLinePulse {
+    from {
+      opacity: 0.18;
+    }
+    to {
+      opacity: 0.28;
+    }
+  }
+
+  .hero-core-glow {
+    display: none;
+  }
+
+  .hero-core-diagram {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 960px;
+    aspect-ratio: 1000 / 340;
+    margin: 0 auto;
+    border-radius: 0;
+    background: transparent;
+    -webkit-mask-image: none;
+    mask-image: none;
+    overflow: hidden;
+  }
+
+  .hero-core-diagram::before {
+    content: none;
+  }
+
+  .hero-core-links {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.95;
+    pointer-events: none;
+  }
+
+  .hero-core-lines {
+    z-index: 2;
+  }
+
+  .hero-core-dots {
+    z-index: 4;
+  }
+
+  .hero-core-lines line {
+    stroke: rgba(216, 183, 67, 0.68);
+    stroke-width: 1.7;
+    stroke-linecap: round;
+    stroke-dasharray: 4 9;
+    animation: coreLineFlow 3.2s linear infinite, coreLinePulse 2.2s ease-in-out infinite;
+  }
+
+  @keyframes coreLineFlow {
+    to {
+      stroke-dashoffset: -104;
+    }
+  }
+
+  @keyframes coreLinePulse {
+    0%, 100% {
+      stroke-opacity: 0.52;
+    }
+    50% {
+      stroke-opacity: 0.92;
+    }
+  }
+
+  .hero-core-dots circle {
+    fill: #d8b743;
+    filter: drop-shadow(0 0 6px rgba(216, 183, 67, 0.65));
+    animation: coreDotPulse 1.8s ease-in-out infinite;
+  }
+
+  .hero-core-dots circle:nth-of-type(2),
+  .hero-core-dots circle:nth-of-type(4) {
+    animation-delay: 280ms;
+  }
+
+  @keyframes coreDotPulse {
+    0%, 100% { opacity: 0.55; }
+    50% { opacity: 1; }
+  }
+
+  .hero-core-hex-wrap {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+  }
+
+  .hero-core-hex-ring {
+    padding: 8px;
+    clip-path: polygon(25% 6%, 75% 6%, 94% 50%, 75% 94%, 25% 94%, 6% 50%);
+    background: linear-gradient(160deg, rgba(245, 213, 102, 0.9), rgba(216, 183, 67, 0.78));
+    box-shadow:
+      0 0 16px rgba(216, 183, 67, 0.5),
+      0 0 34px rgba(216, 183, 67, 0.25);
+  }
+
+  .hero-core-hex {
+    width: 210px;
+    height: 190px;
+    clip-path: polygon(25% 6%, 75% 6%, 94% 50%, 75% 94%, 25% 94%, 6% 50%);
+    background: linear-gradient(180deg, rgba(10, 33, 61, 0.96), rgba(8, 25, 47, 0.9));
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 1.35rem;
+    text-align: center;
+    color: #f0d980;
+    font-size: clamp(1.6rem, 1.9vw, 2.2rem);
+    font-weight: 800;
+    line-height: 1.12;
+    letter-spacing: 0.01em;
+    text-shadow: 0 0 10px rgba(216, 183, 67, 0.3);
+  }
+
+  .hero-core-logo {
+    position: absolute;
+    top: 12%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 44%;
+    max-width: 90px;
+    opacity: 0.28;
+    filter: brightness(2.2) saturate(0);
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .hero-core-hex span {
+    position: relative;
+    z-index: 2;
+    margin-top: 0;
+  }
+
+  .hero-core-node {
+    position: absolute;
+    width: 248px;
+    text-align: left;
+    padding: 0.82rem 1.22rem;
+    border-radius: 10px;
+    border: 2px solid rgba(216, 183, 67, 0.74);
+    color: rgba(255, 255, 255, 0.95);
+    background: linear-gradient(145deg, rgba(18, 42, 71, 0.9), rgba(13, 33, 55, 0.9));
+    font-size: clamp(1rem, 1.2vw, 1.38rem);
+    font-weight: 700;
+    letter-spacing: 0.005em;
+    line-height: 1.1;
+    box-shadow:
+      inset 0 0 12px rgba(255, 255, 255, 0.05),
+      0 0 12px rgba(216, 183, 67, 0.24);
+    z-index: 3;
+    transition: box-shadow 220ms ease, border-color 220ms ease, background 220ms ease;
+  }
+
+  .hero-core-node:hover {
+    border-color: rgba(216, 183, 67, 0.95);
+    background: linear-gradient(145deg, rgba(24, 52, 86, 0.95), rgba(15, 39, 66, 0.95));
+    box-shadow:
+      inset 0 0 12px rgba(255, 255, 255, 0.07),
+      0 0 18px rgba(216, 183, 67, 0.45);
+  }
+
+  .hero-core-node:active {
+    box-shadow:
+      inset 0 0 12px rgba(255, 255, 255, 0.08),
+      0 0 14px rgba(216, 183, 67, 0.38);
+  }
+
+  .node-left-top {
+    left: 6%;
+    top: 37.5%;
+    transform: translateY(-50%);
+  }
+
+  .node-left-bottom {
+    left: 6%;
+    top: 62.5%;
+    transform: translateY(-50%);
+  }
+
+  .node-right-top {
+    left: 69%;
+    top: 31%;
+    transform: translateY(-50%);
+  }
+
+  .node-right-middle {
+    left: 69%;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .node-right-bottom {
+    left: 69%;
+    top: 69%;
+    transform: translateY(-50%);
+  }
+
+  .trusted-by-head-wrap {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.4rem;
+  }
+
+  .trusted-by-heading {
+    color: rgba(255, 255, 255, 0.82);
+    font-size: clamp(1rem, 1.2vw, 1.25rem);
+    font-weight: 600;
+    letter-spacing: 0.03em;
+  }
+
+  /* Trusted logos infinite carousel */
+  .trusted-carousel-wrapper {
+    overflow: hidden;
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  }
+
+  .trusted-carousel {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    width: max-content;
+    animation: scrollLogos 20s linear infinite;
+  }
+
+  .trusted-logo-item {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 1rem;
+  }
+
+  @keyframes scrollLogos {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  .trusted-carousel:hover {
+    animation-play-state: paused;
+  }
+
+  /* Credential cards - double-border gold style */
+  .cred-card {
+    position: relative;
+    padding: 3px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, rgba(216, 183, 67, 0.6), rgba(216, 183, 67, 0.2));
+  }
+
+  .cred-card-inner {
+    background: #0a1e35;
+    border-radius: 10px;
+    padding: 1.5rem;
+    height: 100%;
+    border: 1px solid rgba(216, 183, 67, 0.15);
+  }
+
+  .cred-card:hover .cred-card-inner {
+    background: #0d2340;
+  }
+
+  .cred-card::before {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    border-radius: 13px;
+    border: 1px solid rgba(216, 183, 67, 0.3);
+    pointer-events: none;
+  }
+
+  /* Kill Zone Graphic */
+  .kill-zone-wrapper {
+    position: relative;
+  }
+
+  .kill-zone-labels {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .kill-zone-label-left,
+  .kill-zone-label-right {
+    text-align: center;
+  }
+
+  .kill-zone-bar {
+    position: relative;
+    height: 60px;
+    background: repeating-linear-gradient(
+      -45deg,
+      #D8B743,
+      #D8B743 10px,
+      #1a1a1a 10px,
+      #1a1a1a 20px
+    );
+    border: 2px solid #D8B743;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: visible;
+    box-shadow: 0 0 20px rgba(216, 183, 67, 0.2), inset 0 0 30px rgba(0, 0, 0, 0.5);
+  }
+
+  .kill-zone-center-text {
+    background: rgba(6, 21, 40, 0.9);
+    padding: 6px 20px;
+    border-radius: 4px;
+    border: 1px solid rgba(216, 183, 67, 0.4);
+    z-index: 2;
+  }
+
+  .kill-zone-icon {
+    position: absolute;
+    width: 52px;
+    height: 52px;
+    background: #D8B743;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid #D8B743;
+    box-shadow: 0 0 15px rgba(216, 183, 67, 0.4);
+    z-index: 3;
+  }
+
+  .kill-zone-icon-left {
+    left: -26px;
+  }
+
+  .kill-zone-icon-right {
+    right: -26px;
+  }
+
+  .kill-zone-sublabel {
+    position: absolute;
+    bottom: -28px;
+    left: 0;
+    right: 0;
+    text-align: center;
+  }
+
+  .latency-graphic {
+    display: block;
+    height: auto;
+  }
+
+  .section-eight-story {
+    text-align: left;
+  }
+
+  .section-eight-copy {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: clamp(1.08rem, 1.5vw, 1.52rem);
+    line-height: 1.42;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    max-width: 58ch;
+  }
+
+  .section-eight-emphasis {
+    margin-bottom: 0;
+  }
+
+  .results-panel {
+    position: relative;
+    border: 1px solid rgba(216, 183, 67, 0.35);
+    background:
+      radial-gradient(120% 100% at 85% 10%, rgba(216, 183, 67, 0.12) 0%, rgba(216, 183, 67, 0) 38%),
+      linear-gradient(140deg, #0b2241 0%, #0b1f39 45%, #091a33 100%);
+    border-radius: 10px;
+    box-shadow:
+      inset 0 0 35px rgba(0, 0, 0, 0.2),
+      0 0 26px rgba(216, 183, 67, 0.12);
+    overflow: hidden;
+  }
+
+  .results-panel::before,
+  .results-panel::after {
+    content: "";
+    position: absolute;
+    width: 110px;
+    height: 110px;
+    pointer-events: none;
+    border: 1px solid rgba(216, 183, 67, 0.35);
+    filter: drop-shadow(0 0 10px rgba(216, 183, 67, 0.35));
+  }
+
+  .results-panel::before {
+    top: 8px;
+    right: 8px;
+    border-left: 0;
+    border-bottom: 0;
+  }
+
+  .results-panel::after {
+    bottom: 8px;
+    left: 8px;
+    border-right: 0;
+    border-top: 0;
+  }
+
+  .results-panel-grid {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .results-panel-cell {
+    padding: 1rem 1.1rem 0.95rem;
+    min-height: 112px;
+  }
+
+  .results-panel-cell:nth-child(1),
+  .results-panel-cell:nth-child(2) {
+    border-bottom: 1px solid rgba(216, 183, 67, 0.5);
+  }
+
+  .results-panel-cell:nth-child(1),
+  .results-panel-cell:nth-child(3) {
+    border-right: 1px solid rgba(216, 183, 67, 0.5);
+  }
+
+  .results-panel-value {
+    font-size: clamp(2.55rem, 4.6vw, 4rem);
+    line-height: 1;
+    font-weight: 800;
+    letter-spacing: -0.015em;
+    margin-bottom: 0.4rem;
+  }
+
+  .results-panel-label {
+    color: rgba(255, 255, 255, 0.86);
+    font-size: 1rem;
+    line-height: 1.25;
+    font-weight: 500;
+    max-width: 90%;
+  }
+
+  .results-proof-copy {
+    color: rgba(255, 255, 255, 0.95);
+    font-size: clamp(1.08rem, 1.65vw, 1.75rem);
+    line-height: 1.4;
+    font-weight: 700;
+    max-width: 44ch;
+    margin: 0 auto;
+  }
+
+  .trustpilot-stars {
+    margin-top: 1.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.25rem;
+  }
+
+  .trustpilot-star {
+    font-size: clamp(2.2rem, 4.1vw, 3.4rem);
+    line-height: 1;
+  }
+
+  .trustpilot-star-filled {
+    color: #d8b743;
+    text-shadow: 0 0 10px rgba(216, 183, 67, 0.4);
+  }
+
+  .trustpilot-star-outline {
+    color: #d8b743;
+    text-shadow: 0 0 10px rgba(216, 183, 67, 0.2);
+  }
+
+  .trustpilot-star-partial {
+    position: relative;
+    color: rgba(216, 183, 67, 0.22);
+    text-shadow: none;
+  }
+
+  .trustpilot-star-partial::before {
+    content: "\2605";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 90%;
+    overflow: hidden;
+    color: #d8b743;
+    text-shadow: 0 0 10px rgba(216, 183, 67, 0.35);
+  }
+
+  .trustpilot-caption {
+    margin-top: 0.6rem;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.95rem;
+    font-weight: 600;
+  }
+
+  .proof-cta-button {
+    background: #d8b743;
+    color: #06182f;
+    font-weight: 700;
+    font-size: 1.125rem;
+    line-height: 1.2;
+    border-radius: 14px;
+    padding: 1rem 2.5rem;
+    border: 0;
+    box-shadow: 7px 7px 0 #000000;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .proof-cta-button:hover {
+    transform: translateY(-1px);
+    box-shadow: 9px 9px 0 #000000;
+  }
+
+  .section-eight-finish {
+    margin-top: 4.5rem;
+  }
+
+  .section-eight-proof-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+  }
+
+  .section-eight-proof-card {
+    position: relative;
+    margin: 0;
+    text-align: left;
+    padding: 1.15rem 1rem 0.95rem;
+    border: 1px solid rgba(216, 183, 67, 0.42);
+    border-radius: 8px;
+    background:
+      linear-gradient(140deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.02)),
+      radial-gradient(90% 140% at 90% 10%, rgba(216, 183, 67, 0.1), rgba(216, 183, 67, 0)),
+      #0b2141;
+    box-shadow:
+      inset 0 0 24px rgba(255, 255, 255, 0.03),
+      0 14px 28px rgba(0, 0, 0, 0.28);
+  }
+
+  .section-eight-proof-text {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.05rem;
+    line-height: 1.32;
+    margin-bottom: 0.85rem;
+    font-weight: 500;
+  }
+
+  .section-eight-proof-highlight {
+    color: #d8b743;
+    font-weight: 700;
+  }
+
+  .section-eight-proof-cite {
+    display: block;
+    color: rgba(255, 255, 255, 0.56);
+    font-size: 0.72rem;
+    line-height: 1.3;
+    font-weight: 500;
+  }
+
+  .section-eight-testimonial {
+    margin: 3rem auto 0;
+    max-width: 44ch;
+    text-align: left;
+  }
+
+  .section-eight-testimonial-text {
+    color: rgba(255, 255, 255, 0.87);
+    font-size: clamp(1.08rem, 1.6vw, 1.5rem);
+    line-height: 1.52;
+    font-style: italic;
+    font-weight: 600;
+    margin-bottom: 0.6rem;
+  }
+
+  .section-eight-testimonial-cite {
+    color: #d8b743;
+    font-size: clamp(1.2rem, 1.5vw, 1.7rem);
+    font-weight: 700;
+  }
+
+  .final-assessment-headline {
+    color: #f0cb53;
+    font-size: clamp(2rem, 3.45vw, 3.4rem);
+    line-height: 1.14;
+    font-weight: 800;
+    max-width: 30ch;
+    margin: 0 auto 3rem;
+    letter-spacing: -0.01em;
+  }
+
+  .final-assessment-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+    max-width: 1040px;
+    margin: 0 auto;
+  }
+
+  .final-assessment-card {
+    text-align: left;
+    border: 1px solid rgba(216, 183, 67, 0.55);
+    border-radius: 8px;
+    padding: 1rem 0.95rem 1.1rem;
+    background:
+      radial-gradient(130% 120% at 85% 15%, rgba(216, 183, 67, 0.1), rgba(216, 183, 67, 0)),
+      linear-gradient(130deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02)),
+      #0b2141;
+    box-shadow:
+      inset 0 0 24px rgba(255, 255, 255, 0.02),
+      0 0 16px rgba(216, 183, 67, 0.1);
+  }
+
+  .final-assessment-icon {
+    color: #d8b743;
+    width: 28px;
+    height: 28px;
+    margin-bottom: 0.85rem;
+  }
+
+  .final-assessment-icon svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  .final-assessment-card-copy {
+    color: rgba(255, 255, 255, 0.92);
+    font-size: 1rem;
+    line-height: 1.32;
+    font-weight: 500;
+  }
+
+  .final-assessment-highlight {
+    color: #d8b743;
+    font-weight: 700;
+  }
+
+  .final-assessment-subhead {
+    margin-top: 2rem;
+    color: #f0cb53;
+    font-size: clamp(1.2rem, 1.85vw, 1.85rem);
+    line-height: 1.32;
+    font-weight: 700;
+    max-width: 40ch;
+    margin-inline: auto;
+  }
+
+  .final-assessment-support {
+    margin-top: 0.9rem;
+    color: rgba(255, 255, 255, 0.88);
+    font-size: clamp(1rem, 1.2vw, 1.3rem);
+    line-height: 1.42;
+    font-weight: 600;
+    max-width: 54ch;
+    margin-inline: auto;
+  }
+
+  .final-assessment-button {
+    background: #d8b743;
+    color: #06182f;
+    font-weight: 700;
+    font-size: 1.125rem;
+    line-height: 1.2;
+    border-radius: 14px;
+    padding: 1rem 2rem;
+    border: 0;
+    box-shadow: 7px 7px 0 #000000;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .final-assessment-button:hover {
+    transform: translateY(-1px);
+    box-shadow: 9px 9px 0 #000000;
+  }
+
+  @media (max-width: 640px) {
+    .hero-core-shell {
+      padding: 0;
+    }
+
+    .hero-core-grid {
+      background-size: 18px 18px;
+      opacity: 0.16;
+    }
+
+    .hero-core-techlines {
+      inset: 0;
+      opacity: 0.14;
+    }
+
+    .hero-core-diagram {
+      aspect-ratio: 1 / 1.05;
+    }
+
+    .hero-core-hex-ring {
+      padding: 5px;
+    }
+
+    .hero-core-hex {
+      width: 128px;
+      height: 116px;
+      font-size: 1.1rem;
+      line-height: 1.15;
+    }
+
+    .hero-core-node {
+      width: 148px;
+      font-size: 0.86rem;
+      padding: 0.42rem 0.58rem;
+      line-height: 1.2;
+      border-width: 1.5px;
+    }
+
+    .hero-core-logo {
+      width: 46%;
+      max-width: 90px;
+      top: 16%;
+    }
+
+    .node-left-top {
+      left: 2.5%;
+      top: 37.8%;
+    }
+
+    .node-left-bottom {
+      left: 2.5%;
+      top: 62.2%;
+    }
+
+    .node-right-top {
+      left: 60%;
+      top: 34%;
+    }
+
+    .node-right-middle {
+      left: 60%;
+      top: 50%;
+    }
+
+    .node-right-bottom {
+      left: 60%;
+      top: 66%;
+    }
+
+    .trusted-by-heading {
+      font-size: 0.95rem;
+    }
+
+    .economics-plot {
+      padding: 0.65rem 0.5rem 0.28rem 0.85rem;
+    }
+
+    .economics-axis-y {
+      left: 0.3rem;
+      top: 0.68rem;
+    }
+
+    .economics-axis-x {
+      left: 0.3rem;
+      right: 0.25rem;
+    }
+
+    .economics-bars {
+      gap: 1rem;
+      padding-inline: 0.35rem;
+    }
+
+    .economics-bar-stack {
+      min-height: 252px;
+    }
+
+    .economics-bar {
+      width: min(146px, 96%);
+    }
+
+    .economics-bar-traditional {
+      height: 178px;
+    }
+
+    .economics-bar-fractional {
+      height: 98px;
+    }
+
+    .economics-delta {
+      font-size: 0.98rem;
+      line-height: 1.32;
+    }
+
+    .economics-arrow {
+      width: 20px;
+      height: 40px;
+    }
+
+    .economics-label-row {
+      gap: 1rem;
+      padding: 0.7rem 0.85rem 0;
+    }
+
+    .economics-label {
+      font-size: 0.98rem;
+      line-height: 1.32;
+    }
+
+    .economics-copy p {
+      max-width: 100%;
+      font-size: 1.02rem;
+      line-height: 1.5;
+    }
+
+    .hero-main-title {
+      font-size: clamp(2.1rem, 10.2vw, 3.2rem);
+      line-height: 1.12;
+    }
+
+    .hero-subtitle {
+      font-size: 1.15rem;
+      line-height: 1.38;
+    }
+
+    .section-title {
+      font-size: clamp(1.8rem, 6.8vw, 2.4rem);
+      line-height: 1.18;
+      max-width: 26ch;
+    }
+
+    .readable-prose p {
+      font-size: 1.04rem;
+      line-height: 1.55;
+      max-width: 100%;
+    }
+
+    .metrics-grid .text-center p {
+      font-size: 0.95rem;
+      line-height: 1.5;
+      max-width: 34ch;
+    }
+
+    .metrics-title {
+      min-height: 4.8rem;
+      max-width: 12ch;
+    }
+
+    .cred-card-inner p {
+      font-size: 0.96rem;
+      line-height: 1.48;
+    }
+
+    .kill-zone-labels {
+      padding: 0 0.5rem;
+    }
+    .kill-zone-bar {
+      height: 48px;
+    }
+    .kill-zone-icon {
+      width: 40px;
+      height: 40px;
+    }
+    .kill-zone-icon-left {
+      left: -20px;
+    }
+    .kill-zone-icon-right {
+      right: -20px;
+    }
+    .kill-zone-icon svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    .section-eight-copy {
+      font-size: 1.03rem;
+      line-height: 1.55;
+      max-width: 100%;
+    }
+
+    .results-panel-cell {
+      min-height: 92px;
+      padding: 0.85rem 0.75rem 0.8rem;
+    }
+
+    .results-panel-label {
+      font-size: 0.8rem;
+      max-width: 100%;
+    }
+
+    .results-proof-copy {
+      font-size: 1.08rem;
+      line-height: 1.45;
+      max-width: 30ch;
+    }
+
+    .trustpilot-stars {
+      gap: 0.1rem;
+    }
+
+    .trustpilot-caption {
+      font-size: 0.78rem;
+    }
+
+    .proof-cta-button {
+      border-radius: 12px;
+      box-shadow: 5px 5px 0 #000000;
+    }
+
+    .section-eight-finish {
+      margin-top: 3rem;
+    }
+
+    .section-eight-proof-grid {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+
+    .section-eight-proof-card {
+      padding: 1rem 0.85rem 0.8rem;
+    }
+
+    .section-eight-proof-text {
+      font-size: 1rem;
+    }
+
+    .section-eight-proof-cite {
+      font-size: 0.68rem;
+    }
+
+    .section-eight-testimonial {
+      margin-top: 2rem;
+    }
+
+    .section-eight-testimonial-text {
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+
+    .section-eight-testimonial-cite {
+      font-size: 1.05rem;
+    }
+
+    .final-assessment-headline {
+      margin-bottom: 1.75rem;
+      font-size: clamp(1.9rem, 8vw, 2.6rem);
+      line-height: 1.16;
+      max-width: 20ch;
+    }
+
+    .final-assessment-grid {
+      grid-template-columns: 1fr;
+      gap: 0.85rem;
+    }
+
+    .final-assessment-card {
+      padding: 0.9rem 0.8rem 0.95rem;
+    }
+
+    .final-assessment-card-copy {
+      font-size: 0.95rem;
+    }
+
+    .final-assessment-subhead {
+      margin-top: 1.5rem;
+      font-size: 1.15rem;
+      max-width: 27ch;
+    }
+
+    .final-assessment-support {
+      font-size: 0.98rem;
+      max-width: 33ch;
+    }
+
+    .final-assessment-button {
+      font-size: 1.05rem;
+      padding: 0.9rem 1.4rem;
+      border-radius: 12px;
+      box-shadow: 5px 5px 0 #000000;
+    }
+  }
+</style>
