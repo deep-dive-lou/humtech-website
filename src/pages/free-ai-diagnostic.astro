@@ -48,7 +48,9 @@ import Layout from "@/layouts/Layout.astro";
         const nextHeight = Number(data.height);
         if (!Number.isFinite(nextHeight) || nextHeight <= 0) return;
 
-        iframe.style.height = `${Math.round(nextHeight)}px`;
+        const isMobile = window.matchMedia("(max-width: 767px)").matches;
+        const adjustedHeight = Math.round(nextHeight - (isMobile ? 72 : 0));
+        iframe.style.height = `${Math.max(320, adjustedHeight)}px`;
       });
     })();
   </script>
