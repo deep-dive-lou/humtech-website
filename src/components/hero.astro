@@ -7,6 +7,7 @@ import trustedLogoResg from "@/assets/trusted-logo-resg.png";
 import frictionGraphic from "@/assets/friction-graphic-bg.png";
 import cycleHireGraphic from "@/assets/cycle-hire-bg.png";
 import latencyGraphic from "@/assets/latency-bg.png";
+import heroGraphic from "@/assets/hero.png";
 const trustedLogos = [
   { src: trustedLogoEcop, alt: "ECOP" },
   { src: trustedLogoLmf, alt: "LMF" },
@@ -41,10 +42,21 @@ const trustedLogos = [
 
     <div class="mt-2 mb-3 animate-fade-in-up delay-300">
       <div class="hero-core-shell mx-auto max-w-4xl">
-        <div class="hero-core-glow" aria-hidden="true"></div>
-        <div class="hero-core-grid" aria-hidden="true"></div>
-        <div class="hero-core-techlines" aria-hidden="true"></div>
-        <div class="hero-core-diagram" role="img" aria-label="HumTech Core - ROI Delivery, AI Strategy, Training, Sales Psychology, Implementation">
+        <div class="block md:hidden">
+          <Image
+            src={heroGraphic}
+            alt="HumTech Core"
+            class="mx-auto w-full max-w-md h-auto"
+            widths={[400, 640, 768]}
+            sizes="(max-width: 768px) 100vw, 640px"
+          />
+        </div>
+
+        <div class="hidden md:block">
+          <div class="hero-core-glow" aria-hidden="true"></div>
+          <div class="hero-core-grid" aria-hidden="true"></div>
+          <div class="hero-core-techlines" aria-hidden="true"></div>
+          <div class="hero-core-diagram" role="img" aria-label="HumTech Core - ROI Delivery, AI Strategy, Training, Sales Psychology, Implementation">
           <svg class="hero-core-links hero-core-lines hero-core-links-desktop" viewBox="0 0 1000 420" preserveAspectRatio="none" aria-hidden="true">
             <line x1="472" y1="210" x2="347" y2="158" />
             <line x1="472" y1="210" x2="347" y2="262" />
@@ -88,6 +100,7 @@ const trustedLogos = [
           <div class="hero-core-node node-right-top">AI Strategy</div>
           <div class="hero-core-node node-right-middle">Sales Psychology</div>
           <div class="hero-core-node node-right-bottom">Implementation</div>
+        </div>
         </div>
       </div>
     </div>

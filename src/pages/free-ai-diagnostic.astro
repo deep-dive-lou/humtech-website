@@ -21,11 +21,12 @@ import Layout from "@/layouts/Layout.astro";
 
           <div class="order-1 md:order-2">
             <iframe
+              id="scorecard-embed"
               src="https://assessment.humtech.ai/"
               title="HumTech Scorecard"
-              style="width:100%;max-width:780px;height:clamp(640px,78vh,900px);border:0;outline:0;box-shadow:none;background:transparent;display:block;margin:0 auto;"
+              style="width:100%;max-width:780px;height:900px;border:0;outline:0;box-shadow:none;background:transparent;display:block;margin:0 auto;"
               loading="lazy"
-              scrolling="auto">
+              scrolling="no">
             </iframe>
           </div>
         </div>
@@ -33,4 +34,22 @@ import Layout from "@/layouts/Layout.astro";
 
     </section>
   </main>
+
+  <script is:inline>
+    (() => {
+      const iframe = document.getElementById("scorecard-embed");
+      if (!iframe) return;
+
+      window.addEventListener("message", (event) => {
+        if (event.origin !== "https://assessment.humtech.ai") return;
+        const data = event.data;
+        if (!data || data.type !== "humtech-scorecard-height") return;
+
+        const nextHeight = Number(data.height);
+        if (!Number.isFinite(nextHeight) || nextHeight <= 0) return;
+
+        iframe.style.height = `${Math.max(640, Math.round(nextHeight))}px`;
+      });
+    })();
+  </script>
 </Layout>
