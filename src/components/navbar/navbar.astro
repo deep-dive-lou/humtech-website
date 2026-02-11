@@ -1,10 +1,13 @@
 ---
 import Container from "@/components/container.astro";
-import Link from "@/components/ui/link.astro";
 import Dropdown from "./dropdown.astro";
 import { Astronav, MenuItems, MenuIcon } from "astro-navbar";
 
 const menuitems = [
+  {
+    title: "Free AI Diagnostic",
+    path: "/free-ai-diagnostic",
+  },
   {
     title: "Home",
     path: "/",
@@ -56,7 +59,12 @@ const menuitems = [
                       <li>
                         <a
                           href={item.path}
-                          class="flex lg:px-3 py-2 items-center text-white/70 hover:text-white transition-colors">
+                          class:list={[
+                            "flex lg:px-3 py-2 items-center transition-colors",
+                            item.title === "Free AI Diagnostic"
+                              ? "text-yellow hover:text-yellow-light font-semibold"
+                              : "text-white/70 hover:text-white",
+                          ]}>
                           <span> {item.title}</span>
                           {item.badge && (
                             <span class="ml-1 px-2 py-0.5 text-[10px] animate-pulse font-semibold uppercase text-navy bg-yellow rounded-full">
@@ -70,25 +78,9 @@ const menuitems = [
                 ))
               }
             </ul>
-            <div class="lg:hidden flex items-center mt-3 gap-4">
-              <button
-                onclick="openAssessmentModal()"
-                class="px-4 py-2 rounded-md font-semibold bg-yellow text-navy hover:bg-yellow/90 transition-colors cursor-pointer">
-                Take Assessment
-              </button>
-            </div>
           </MenuItems>
         </div>
       </Astronav>
-      <div>
-        <div class="hidden lg:flex items-center gap-4">
-          <button
-            onclick="openAssessmentModal()"
-            class="px-4 py-2 rounded-md font-semibold bg-yellow text-navy hover:bg-yellow/90 transition-colors cursor-pointer">
-            Take Assessment
-          </button>
-        </div>
-      </div>
     </header>
   </Container>
 </div>
