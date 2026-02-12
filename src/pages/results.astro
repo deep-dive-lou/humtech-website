@@ -21,15 +21,15 @@
       } else {
         fetch(`/api/results?submission=${encodeURIComponent(submission)}`)
           .then(async (response) => {
-            const data = await response.json();
+            const html = await response.text();
             if (!response.ok) {
-              throw new Error(data?.error || "Request failed");
+              throw new Error(html || "Request failed");
             }
-            if (!data.html) {
+            if (!html) {
               throw new Error("No HTML returned");
             }
             document.open();
-            document.write(data.html);
+            document.write(html);
             document.close();
           })
           .catch((error) => {
