@@ -108,11 +108,21 @@ import Layout from "@/layouts/Layout.astro";
           const value = payload[key];
           if (typeof value === "string" && value.trim()) return value.trim();
         }
+        const nestedKeys = ["payload", "data", "result", "body"];
+        for (const nestedKey of nestedKeys) {
+          const nested = payload[nestedKey];
+          if (nested && typeof nested === "object") {
+            const nestedId = getSubmissionId(nested);
+            if (nestedId) return nestedId;
+          }
+        }
         return null;
       };
 
       window.addEventListener("message", (event) => {
-        if (event.origin !== "https://assessment.humtech.ai") return;
+        if (!/^https:\/\/([a-z0-9-]+\.)?assessment\.humtech\.ai$/i.test(event.origin)) {
+          return;
+        }
         let data = event.data;
         if (typeof data === "string") {
           try {
