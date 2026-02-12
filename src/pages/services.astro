@@ -1,745 +1,515 @@
 ---
 import Layout from "@/layouts/Layout.astro";
 import Container from "@/components/container.astro";
+
+const whyThisWorks = [
+  {
+    title: "Performance-Based SLA's",
+    copy: "We work to hit your ROI targets, and stay with you to set new goals."
+  },
+  {
+    title: "Direct Strategist Access",
+    copy: "Direct access to senior strategists with extensive experience."
+  },
+  {
+    title: "Futureproofing",
+    copy: "Stay ahead with the latest AI implementations and strategic enhancements."
+  },
+  {
+    title: "Enterprise Strategy, SME Price",
+    copy: "Top-tier AI planning and execution without full-time overheads."
+  },
+  {
+    title: "Hands-Off Implementation",
+    copy: "We build, deploy, train, and maintain systems with minimal disruption."
+  },
+  {
+    title: "Tailored Solutions",
+    copy: "Custom systems and ongoing guidance aligned to your business model."
+  }
+];
+
+const solutions = [
+  {
+    number: "01",
+    title: "24/7 Lead Engagement System",
+    objective: "Ensure every new lead is engaged immediately to reduce delay and protect revenue.",
+    coverage: [
+      "In-hours and out-of-hours response",
+      "Qualification and intent capture",
+      "Booking and confirmation flow"
+    ],
+    delivery: [
+      "System design and implementation",
+      "CRM, calendar, and workflow integration",
+      "Training, handover, and optimisation"
+    ],
+    clarity: [
+      "Enquiry-to-response speed",
+      "Lead-to-booking conversion",
+      "Attendance and no-show rates"
+    ]
+  },
+  {
+    number: "02",
+    title: "Branded Document/E-Signature Portal",
+    objective: "Reduce admin drag and completion delay while improving trust and compliance.",
+    coverage: [
+      "Document requests and e-signatures",
+      "Automated reminders and follow-up",
+      "Centralised request visibility"
+    ],
+    delivery: [
+      "Branded portal build",
+      "Automation of requests and confirmations",
+      "Secure storage and process alignment"
+    ],
+    clarity: [
+      "Request-to-completion time",
+      "Manual chasing reduction",
+      "Completion rates by request type"
+    ]
+  },
+  {
+    number: "03",
+    title: "Business Clarity Engine",
+    objective: "Create a repeatable operating model with stronger visibility and less manual effort.",
+    coverage: [
+      "Workflow and CRM optimisation",
+      "Repetitive task automation",
+      "KPI and reporting alignment"
+    ],
+    delivery: [
+      "Workflow and reporting review",
+      "High-friction process automation",
+      "Dashboard and summary deployment"
+    ],
+    clarity: [
+      "Where time is being lost",
+      "Which metrics leadership should trust",
+      "What needs immediate attention"
+    ]
+  },
+  {
+    number: "04",
+    title: "Marketing Performance Suite",
+    objective: "Strengthen acquisition performance with clearer decision-making and tighter budget-to-return alignment.",
+    coverage: [
+      "Acquisition and conversion performance analysis",
+      "Channel efficiency and spend allocation",
+      "Offer and messaging optimisation"
+    ],
+    delivery: [
+      "Marketing systems audit",
+      "Executive optimisation session",
+      "Ongoing strategic oversight and advisory"
+    ],
+    clarity: [
+      "Where performance is leaking",
+      "Which channels and campaigns should be scaled",
+      "How marketing decisions affect pipeline and revenue"
+    ]
+  }
+];
+
+const roadmap = [
+  {
+    title: "Baseline Assessment",
+    copy: "A focused review of your current systems, workflows, and operating constraints to establish a clear starting point."
+  },
+  {
+    title: "Strategic Direction",
+    copy: "A prioritised, outcome-led plan showing where to intervene first and why, aligned to your commercial goals."
+  },
+  {
+    title: "Implementation",
+    copy: "Design, build, and integration of agreed systems into your existing operations, with minimal disruption."
+  },
+  {
+    title: "Go-Live and Optimisation",
+    copy: "Systems are launched, monitored, and refined to ensure stability, performance, and early impact."
+  },
+  {
+    title: "Ongoing Strategic Leadership",
+    copy: "Continued oversight, optimisation, and guidance to maintain performance and support evolving targets."
+  }
+];
+
+const expertise = [
+  {
+    title: "Lead Velocity",
+    copy: "Faster first response, stronger qualification, and higher booking momentum."
+  },
+  {
+    title: "Automation",
+    copy: "Lower manual load through practical workflow and process automation."
+  },
+  {
+    title: "Operational Clarity",
+    copy: "Cleaner reporting, aligned KPIs, and sharper leadership decisions."
+  }
+];
 ---
 
 <Layout title="Services" visioptPid={169}>
   <div class="bg-navy">
     <Container>
-      <!-- Page Header -->
-      <section class="py-20 md:py-28">
-        <div class="text-center max-w-4xl mx-auto px-4">
-          <h1 class="text-4xl lg:text-5xl xl:text-6xl font-bold lg:tracking-tight text-white mb-6">
-            Fractional AI Directors
+      <section class="py-16 md:py-24">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+          <h1 class="services-hero-title text-yellow font-bold mb-8">
+            Strategic AI Leadership and Systems Infrastructure
           </h1>
-          <p class="text-xl text-white/70 max-w-2xl mx-auto mb-8">
-            A full-time AI Director costs between £150k-£400k annually, plus recruitment fees, NI, benefits, holiday, and sick pay.
-          </p>
-          <p class="text-2xl text-yellow font-semibold">
-            HumTech provides 3 experienced AI Directors for a fraction of this cost.
-          </p>
-        </div>
-      </section>
-
-      <!-- Why Fractioned AI Section -->
-      <section class="pb-20 md:pb-28 border-t border-white/10 pt-16 relative overflow-hidden">
-        <!-- Background gradient accent -->
-        <div class="absolute inset-0 gradient-radial opacity-50 pointer-events-none"></div>
-
-        <div class="max-w-5xl mx-auto px-4 relative z-10">
-          <h2 class="text-3xl lg:text-4xl font-bold text-white mb-4 text-center animate-fade-in-up">
-            Why Fractional AI?
-          </h2>
-          <p class="text-lg text-white/60 text-center mb-12 max-w-2xl mx-auto animate-fade-in-up delay-100">
-            Enterprise-grade AI leadership without the enterprise price tag
-          </p>
-
-          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-            <div class="group p-6 rounded-xl bg-white/5 border border-white/10 card-hover relative overflow-hidden animate-fade-in-up delay-100">
-              <!-- Hover gradient overlay -->
-              <div class="absolute inset-0 bg-gradient-to-br from-green/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              <div class="relative z-10">
-                <div class="w-14 h-14 bg-green/20 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                  <svg class="w-7 h-7 text-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                  </svg>
-                </div>
-                <h3 class="text-xl font-semibold text-white mb-3">Zero Risk</h3>
-                <p class="text-white/70">
-                  We work to hit your ROI targets, and stay with you to set new goals.
-                </p>
-              </div>
-            </div>
-
-            <div class="group p-6 rounded-xl bg-white/5 border border-white/10 card-hover relative overflow-hidden animate-fade-in-up delay-200">
-              <div class="absolute inset-0 bg-gradient-to-br from-yellow/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              <div class="relative z-10">
-                <div class="w-14 h-14 bg-yellow/20 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                  <svg class="w-7 h-7 text-yellow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
-                  </svg>
-                </div>
-                <h3 class="text-xl font-semibold text-white mb-3">Direct Director Access</h3>
-                <p class="text-white/70">
-                  Partner exclusively with senior AI Directors with extensive experience — no junior teams or service desks.
-                </p>
-              </div>
-            </div>
-
-            <div class="group p-6 rounded-xl bg-white/5 border border-white/10 card-hover relative overflow-hidden animate-fade-in-up delay-300">
-              <div class="absolute inset-0 bg-gradient-to-br from-blue/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              <div class="relative z-10">
-                <div class="w-14 h-14 bg-blue/20 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                  <svg class="w-7 h-7 text-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-                  </svg>
-                </div>
-                <h3 class="text-xl font-semibold text-white mb-3">Cutting-Edge Futureproofing</h3>
-                <p class="text-white/70">
-                  Stay ahead with the latest AI implementations and strategic enhancements from proven industry leaders.
-                </p>
-              </div>
-            </div>
-
-            <div class="group p-6 rounded-xl bg-white/5 border border-white/10 card-hover relative overflow-hidden animate-fade-in-up delay-400">
-              <div class="absolute inset-0 bg-gradient-to-br from-green/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              <div class="relative z-10">
-                <div class="w-14 h-14 bg-green/20 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                  <svg class="w-7 h-7 text-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                  </svg>
-                </div>
-                <h3 class="text-xl font-semibold text-white mb-3">Enterprise Strategy, SME Price</h3>
-                <p class="text-white/70">
-                  Get top-tier AI planning, technical execution, and support without full-time overheads.
-                </p>
-              </div>
-            </div>
-
-            <div class="group p-6 rounded-xl bg-white/5 border border-white/10 card-hover relative overflow-hidden animate-fade-in-up delay-500">
-              <div class="absolute inset-0 bg-gradient-to-br from-yellow/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              <div class="relative z-10">
-                <div class="w-14 h-14 bg-yellow/20 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                  <svg class="w-7 h-7 text-yellow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                  </svg>
-                </div>
-                <h3 class="text-xl font-semibold text-white mb-3">Hands-Off Implementation</h3>
-                <p class="text-white/70">
-                  Zero technical knowledge needed — our team builds, deploys, trains and maintains custom branded systems.
-                </p>
-              </div>
-            </div>
-
-            <div class="group p-6 rounded-xl bg-white/5 border border-white/10 card-hover relative overflow-hidden animate-fade-in-up delay-600">
-              <div class="absolute inset-0 bg-gradient-to-br from-blue/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              <div class="relative z-10">
-                <div class="w-14 h-14 bg-blue/20 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                  <svg class="w-7 h-7 text-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
-                  </svg>
-                </div>
-                <h3 class="text-xl font-semibold text-white mb-3">Tailored Solutions</h3>
-                <p class="text-white/70">
-                  Unlike generic one-size-fits-all solutions, we deliver fully branded custom systems with rigorous ongoing guidance.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Comparison Table Section -->
-      <section class="pb-20 md:pb-28 border-t border-white/10 pt-16">
-        <div class="max-w-5xl mx-auto px-4">
-          <div class="text-center mb-12">
-            <h2 class="text-3xl lg:text-4xl font-bold text-white mb-4">
-              How We Compare
-            </h2>
-            <p class="text-lg text-white/70 max-w-2xl mx-auto">
-              See how HumTech stacks up against traditional hiring or generic AI agencies
+          <div class="mx-auto space-y-4 services-hero-subwrap">
+            <p class="services-hero-sub text-white font-bold">
+              HumTech builds and implements AI systems that improve lead velocity, automation, and operational clarity.
+            </p>
+            <p class="services-hero-sub text-yellow font-bold">
+              Measurable ROI is the standard.
             </p>
           </div>
-
-          <!-- Desktop Table -->
-          <div class="hidden md:block overflow-x-auto">
-            <table class="w-full text-left">
-              <thead>
-                <tr class="border-b border-white/20">
-                  <th class="py-4 px-4 text-white/60 font-medium"></th>
-                  <th class="py-4 px-6 text-center">
-                    <div class="inline-block px-4 py-2 bg-yellow/20 rounded-lg border border-yellow/30">
-                      <span class="text-yellow font-bold text-lg">HumTech.ai</span>
+          <h2 class="section-title text-3xl lg:text-4xl xl:text-5xl font-bold text-white text-center mt-14 mb-12 leading-tight">
+            Why This Works
+          </h2>
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {whyThisWorks.map((card) => (
+              <article class="cred-card group">
+                <div class="cred-card-inner">
+                  <div class="mb-4">
+                    <div class="w-10 h-10 rounded-lg bg-yellow/20 flex items-center justify-center">
+                      <svg class="w-5 h-5 text-yellow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                        <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                      </svg>
                     </div>
-                  </th>
-                  <th class="py-4 px-6 text-center">
-                    <span class="text-white/80 font-semibold">Full-Time AI Director</span>
-                  </th>
-                  <th class="py-4 px-6 text-center">
-                    <span class="text-white/80 font-semibold">Other AI Agencies</span>
+                  </div>
+                  <h3 class="text-yellow font-bold text-base md:text-lg mb-3">{card.title}</h3>
+                  <p class="text-white/70 text-sm md:text-base leading-relaxed">{card.copy}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section class="py-16 md:py-24 border-t border-white/10">
+        <div class="max-w-6xl mx-auto px-4">
+          <h2 class="section-title text-3xl lg:text-4xl xl:text-5xl font-bold text-white text-center mb-12 leading-tight">
+            Custom Solutions
+          </h2>
+          <div class="solution-accordion-wrap max-w-4xl mx-auto space-y-4">
+            {solutions.map((solution) => (
+              <details class="solution-item">
+                <summary class="solution-summary">
+                  <div class="flex items-center gap-3">
+                    <span class="w-9 h-9 rounded-full border border-yellow/60 bg-yellow/10 text-yellow font-bold flex items-center justify-center text-xs">
+                      {solution.number}
+                    </span>
+                    <h3 class="text-yellow font-bold text-base md:text-lg">{solution.title}</h3>
+                  </div>
+                  <svg class="w-5 h-5 text-yellow solution-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <path d="M6 9l6 6 6-6"></path>
+                  </svg>
+                </summary>
+                <div class="solution-content">
+                  <p class="text-white/80 text-sm md:text-base leading-relaxed mb-5">
+                    <span class="font-semibold text-white">Objective:</span> {solution.objective}
+                  </p>
+                  <div class="space-y-3 text-white/70 text-sm md:text-base leading-relaxed">
+                    <div>
+                      <p class="text-white font-semibold mb-1">System Coverage</p>
+                      <ul class="list-disc list-inside space-y-1">
+                        {solution.coverage.map((item) => <li>{item}</li>)}
+                      </ul>
+                    </div>
+                    <div>
+                      <p class="text-white font-semibold mb-1">Delivery</p>
+                      <ul class="list-disc list-inside space-y-1">
+                        {solution.delivery.map((item) => <li>{item}</li>)}
+                      </ul>
+                    </div>
+                    <div>
+                      <p class="text-white font-semibold mb-1">What becomes clear</p>
+                      <ul class="list-disc list-inside space-y-1">
+                        {solution.clarity.map((item) => <li>{item}</li>)}
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section class="py-16 md:py-24 border-t border-white/10">
+        <div class="max-w-6xl mx-auto px-4">
+          <div class="text-center mb-16">
+            <h2 class="section-title text-3xl lg:text-4xl xl:text-5xl font-bold text-yellow mb-4 leading-tight">Roadmap</h2>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-12">
+            <div class="space-y-8">
+              {roadmap.map((step, idx) => (
+                <div class="flex gap-4">
+                  <div class="flex flex-col items-center">
+                    <div class="w-4 h-4 bg-yellow rounded-full"></div>
+                    {idx < roadmap.length - 1 && <div class="w-0.5 h-full bg-white/20"></div>}
+                  </div>
+                  <div class={idx < roadmap.length - 1 ? "pb-8" : ""}>
+                    <h3 class="text-lg font-bold text-yellow mb-2">{step.title}</h3>
+                    <p class="text-white/70 text-base leading-relaxed">{step.copy}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <article class="cred-card h-fit">
+              <div class="cred-card-inner">
+                <h3 class="text-white font-bold text-xl mb-4">Outcome Focus</h3>
+                <p class="text-white/70 text-base leading-relaxed mb-4">
+                  A clear path from baseline to live deployment.
+                </p>
+                <p class="text-white/70 text-base leading-relaxed">
+                  The outcome is stronger lead response, better automation leverage, and clearer operational control.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="py-16 md:py-24 border-t border-white/10">
+        <div class="max-w-6xl mx-auto px-4">
+          <div class="text-center mb-14">
+            <h2 class="section-title text-3xl lg:text-4xl xl:text-5xl font-bold text-yellow mb-4 leading-tight">Areas of Expertise</h2>
+            <p class="text-white/70 text-lg max-w-3xl mx-auto">
+              Strategic leadership and implementation support across the systems that directly affect growth and performance.
+            </p>
+          </div>
+          <div class="grid md:grid-cols-3 gap-6">
+            {expertise.map((item) => (
+              <article class="cred-card">
+                <div class="cred-card-inner">
+                  <h3 class="text-yellow font-bold text-lg mb-3">{item.title}</h3>
+                  <p class="text-white/70 text-base leading-relaxed">{item.copy}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+
+          <h2 class="section-title financial-title text-3xl lg:text-4xl xl:text-5xl font-bold text-yellow text-center mt-16 mb-12 leading-tight">
+            The Financial Logic of the Fractional Model
+          </h2>
+          <div class="financial-logic-shell overflow-x-auto">
+            <table class="financial-logic-table w-full border-collapse min-w-[760px]">
+              <thead>
+                <tr>
+                  <th class="p-4 md:p-6 text-left border-b border-white/20"></th>
+                  <th class="p-4 md:p-6 text-left text-white/60 font-normal text-sm md:text-base border-b border-white/20">Traditional Model</th>
+                  <th class="p-4 md:p-6 text-left text-white font-bold text-sm md:text-base border-b border-white/20">
+                    <span class="flex items-center gap-3">
+                      Fractional Model
+                      <svg class="w-7 h-7 text-yellow" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"></path>
+                      </svg>
+                    </span>
                   </th>
                 </tr>
               </thead>
-              <tbody class="divide-y divide-white/10">
-                <tr class="hover:bg-white/5 transition-colors">
-                  <td class="py-5 px-4 text-white font-medium">Annual Cost</td>
-                  <td class="py-5 px-6 text-center">
-                    <span class="text-yellow font-bold text-xl">~£71k</span>
-                    <div class="text-white/50 text-sm">£5,950/month</div>
-                  </td>
-                  <td class="py-5 px-6 text-center">
-                    <span class="text-white/80 font-semibold">£150k–£400k+</span>
-                    <div class="text-white/50 text-sm">+ 30-50% overhead</div>
-                  </td>
-                  <td class="py-5 px-6 text-center">
-                    <span class="text-white/80 font-semibold">£36k–£96k</span>
-                    <div class="text-white/50 text-sm">+ setup fees</div>
-                  </td>
+              <tbody>
+                <tr class="financial-row" tabindex="0">
+                  <td class="p-4 md:p-6 text-white font-bold text-sm md:text-base border-b border-white/10">Cost Efficiency</td>
+                  <td class="p-4 md:p-6 text-white/60 text-sm md:text-base border-b border-white/10">Full-time in-house leadership hire and overhead</td>
+                  <td class="p-4 md:p-6 text-white text-sm md:text-base border-b border-white/10 font-bold"><span class="text-yellow">70% less cost</span> than a comparable in-house setup</td>
                 </tr>
-                <tr class="hover:bg-white/5 transition-colors">
-                  <td class="py-5 px-4 text-white font-medium">Leadership Access</td>
-                  <td class="py-5 px-6 text-center">
-                    <span class="text-green font-bold">3 Specialist Directors</span>
-                    <div class="text-white/50 text-sm">Strategy, Technical, Marketing</div>
-                  </td>
-                  <td class="py-5 px-6 text-center">
-                    <span class="text-white/80">1 Person</span>
-                    <div class="text-white/50 text-sm">Limited skillset</div>
-                  </td>
-                  <td class="py-5 px-6 text-center">
-                    <span class="text-white/80">1 Lead</span>
-                    <div class="text-white/50 text-sm">Junior team delivery</div>
-                  </td>
+                <tr class="financial-row" tabindex="0">
+                  <td class="p-4 md:p-6 text-white font-bold text-sm md:text-base border-b border-white/10">Risk Mitigation</td>
+                  <td class="p-4 md:p-6 text-white/60 text-sm md:text-base border-b border-white/10">Salary and fixed commitment</td>
+                  <td class="p-4 md:p-6 text-white text-sm md:text-base border-b border-white/10 font-bold">Performance-Based Billing with Guaranteed ROI Commitments</td>
                 </tr>
-                <tr class="hover:bg-white/5 transition-colors">
-                  <td class="py-5 px-4 text-white font-medium">Expertise Coverage</td>
-                  <td class="py-5 px-6 text-center">
-                    <span class="text-green font-bold">Multi-Domain</span>
-                    <div class="text-white/50 text-sm">Sales, Marketing, Automation, Strategy</div>
-                  </td>
-                  <td class="py-5 px-6 text-center">
-                    <span class="text-white/80">Narrow Focus</span>
-                    <div class="text-white/50 text-sm">1-2 specialisations</div>
-                  </td>
-                  <td class="py-5 px-6 text-center">
-                    <span class="text-white/80">Narrow Focus</span>
-                    <div class="text-white/50 text-sm">Product-specific</div>
-                  </td>
-                </tr>
-                <tr class="hover:bg-white/5 transition-colors">
-                  <td class="py-5 px-4 text-white font-medium">ROI Guarantee</td>
-                  <td class="py-5 px-6 text-center">
-                    <div class="inline-flex items-center gap-2">
-                      <svg class="w-6 h-6 text-green" fill="currentColor" viewBox="0 0 20 20">
-                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                      </svg>
-                      <span class="text-green font-bold">Yes</span>
-                    </div>
-                    <div class="text-white/50 text-sm">Tied to targets</div>
-                  </td>
-                  <td class="py-5 px-6 text-center">
-                    <div class="inline-flex items-center gap-2">
-                      <svg class="w-6 h-6 text-red-400" fill="currentColor" viewBox="0 0 20 20">
-                        <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
-                      </svg>
-                      <span class="text-white/60">No</span>
-                    </div>
-                    <div class="text-white/50 text-sm">Salary-based</div>
-                  </td>
-                  <td class="py-5 px-6 text-center">
-                    <div class="inline-flex items-center gap-2">
-                      <svg class="w-6 h-6 text-red-400" fill="currentColor" viewBox="0 0 20 20">
-                        <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
-                      </svg>
-                      <span class="text-white/60">No</span>
-                    </div>
-                    <div class="text-white/50 text-sm">Retainer-based</div>
-                  </td>
-                </tr>
-                <tr class="hover:bg-white/5 transition-colors">
-                  <td class="py-5 px-4 text-white font-medium">Commitment</td>
-                  <td class="py-5 px-6 text-center">
-                    <span class="text-green font-bold">Flexible</span>
-                    <div class="text-white/50 text-sm">Scale as needed</div>
-                  </td>
-                  <td class="py-5 px-6 text-center">
-                    <span class="text-white/80">Fixed</span>
-                    <div class="text-white/50 text-sm">Long-term contract</div>
-                  </td>
-                  <td class="py-5 px-6 text-center">
-                    <span class="text-white/80">Variable</span>
-                    <div class="text-white/50 text-sm">Project-based</div>
-                  </td>
-                </tr>
-                <tr class="hover:bg-white/5 transition-colors">
-                  <td class="py-5 px-4 text-white font-medium">Implementation</td>
-                  <td class="py-5 px-6 text-center">
-                    <span class="text-green font-bold">Hands-Off</span>
-                    <div class="text-white/50 text-sm">We build, deploy & train</div>
-                  </td>
-                  <td class="py-5 px-6 text-center">
-                    <span class="text-white/80">Self-Managed</span>
-                    <div class="text-white/50 text-sm">Needs team support</div>
-                  </td>
-                  <td class="py-5 px-6 text-center">
-                    <span class="text-white/80">Mixed</span>
-                    <div class="text-white/50 text-sm">Varies by agency</div>
-                  </td>
+                <tr class="financial-row" tabindex="0">
+                  <td class="p-4 md:p-6 text-white font-bold text-sm md:text-base">Value Add</td>
+                  <td class="p-4 md:p-6 text-white/60 text-sm md:text-base">Single lane capability</td>
+                  <td class="p-4 md:p-6 text-white text-sm md:text-base font-bold">On-Demand technical and strategic expertise included</td>
                 </tr>
               </tbody>
             </table>
           </div>
 
-          <!-- Mobile Cards -->
-          <div class="md:hidden space-y-6">
-            <!-- HumTech Card -->
-            <div class="p-6 rounded-xl bg-yellow/10 border-2 border-yellow/30">
-              <div class="text-center mb-4">
-                <span class="text-yellow font-bold text-xl">HumTech.ai</span>
-                <div class="text-white/50 text-sm">Recommended</div>
-              </div>
-              <ul class="space-y-3 text-white/80">
-                <li class="flex justify-between"><span>Annual Cost:</span><span class="text-yellow font-bold">~£71k</span></li>
-                <li class="flex justify-between"><span>Leadership:</span><span class="text-green font-semibold">3 Directors</span></li>
-                <li class="flex justify-between"><span>ROI Guarantee:</span><span class="text-green font-semibold">Yes</span></li>
-                <li class="flex justify-between"><span>Commitment:</span><span>Flexible</span></li>
-              </ul>
-            </div>
-
-            <!-- Full-Time Card -->
-            <div class="p-6 rounded-xl bg-white/5 border border-white/10">
-              <div class="text-center mb-4">
-                <span class="text-white/80 font-bold text-lg">Full-Time AI Director</span>
-              </div>
-              <ul class="space-y-3 text-white/70">
-                <li class="flex justify-between"><span>Annual Cost:</span><span>£150k–£400k+</span></li>
-                <li class="flex justify-between"><span>Leadership:</span><span>1 Person</span></li>
-                <li class="flex justify-between"><span>ROI Guarantee:</span><span class="text-red-400">No</span></li>
-                <li class="flex justify-between"><span>Commitment:</span><span>Fixed</span></li>
-              </ul>
-            </div>
-
-            <!-- Other Agencies Card -->
-            <div class="p-6 rounded-xl bg-white/5 border border-white/10">
-              <div class="text-center mb-4">
-                <span class="text-white/80 font-bold text-lg">Other AI Agencies</span>
-              </div>
-              <ul class="space-y-3 text-white/70">
-                <li class="flex justify-between"><span>Annual Cost:</span><span>£36k–£96k</span></li>
-                <li class="flex justify-between"><span>Leadership:</span><span>1 Lead + juniors</span></li>
-                <li class="flex justify-between"><span>ROI Guarantee:</span><span class="text-red-400">No</span></li>
-                <li class="flex justify-between"><span>Commitment:</span><span>Variable</span></li>
-              </ul>
-            </div>
-          </div>
-
-          <!-- Bottom highlight -->
-          <div class="mt-10 p-6 rounded-xl bg-gradient-to-r from-yellow/10 to-green/10 border border-yellow/20 text-center">
-            <p class="text-xl text-white font-semibold mb-2">
-              3x the leadership bandwidth at 70-80% below full-time costs
+          <div class="max-w-2xl mx-auto px-4 text-center mt-14 md:mt-16">
+            <h2 class="text-3xl lg:text-4xl font-bold text-yellow mb-4">Ready to Move Faster?</h2>
+            <p class="text-lg text-white/70 mb-8">
+              Start your Free AI Diagnostic to identify the highest-leverage systems for your business.
             </p>
-            <p class="text-white/60">
-              With ROI tied to actual business targets — not just time spent
-            </p>
+            <button
+              onclick="openAssessmentModal()"
+              class="px-8 py-4 rounded-md font-semibold bg-yellow text-navy hover:bg-yellow/90 transition-colors cursor-pointer text-lg">
+              Start Free AI Diagnostic
+            </button>
           </div>
-        </div>
-      </section>
-
-      <!-- Custom Solutions Section -->
-      <section class="pb-20 md:pb-28 border-t border-white/10 pt-16 relative overflow-hidden">
-        <!-- Animated background elements -->
-        <div class="absolute top-20 left-10 w-72 h-72 bg-yellow/5 rounded-full blur-3xl animate-float"></div>
-        <div class="absolute bottom-20 right-10 w-96 h-96 bg-blue/5 rounded-full blur-3xl animate-float delay-200"></div>
-
-        <div class="max-w-5xl mx-auto px-4 relative z-10">
-          <div class="text-center mb-16">
-            <h2 class="text-3xl lg:text-4xl font-bold text-white mb-4 animate-fade-in-up">
-              Our Custom Solutions
-            </h2>
-            <p class="text-lg text-white/70 max-w-2xl mx-auto animate-fade-in-up delay-100">
-              Tailored AI systems built specifically for your business needs
-            </p>
-          </div>
-
-          <!-- Solutions Stack -->
-          <div class="space-y-8">
-            <!-- Solution 1: 24/7 Lead Triage -->
-            <div class="p-6 md:p-8 rounded-2xl bg-white/5 border border-yellow/20">
-              <div class="flex items-center gap-4 mb-6">
-                <span class="w-12 h-12 md:w-14 md:h-14 bg-gradient-to-br from-yellow to-yellow-light rounded-xl flex items-center justify-center text-navy font-bold text-lg md:text-xl shadow-lg flex-shrink-0">01</span>
-                <h3 class="text-xl md:text-2xl lg:text-3xl font-bold text-white">24/7 Lead Triage & Scheduling AI</h3>
-              </div>
-              <p class="text-white/80 mb-6 text-base md:text-lg">
-                Not your average 'out the box' booking bot. Whether you want a 24/7 member of your sales team to triage leads before booking a call, or an expert at maximising appointment bookings, this system has you covered.
-              </p>
-              <ul class="space-y-3 text-white/70 mb-6">
-                <li class="flex items-start gap-3">
-                  <svg class="w-5 h-5 text-yellow mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                  </svg>
-                  Optimise bookings in the crucial '60 second interest window'
-                </li>
-                <li class="flex items-start gap-3">
-                  <svg class="w-5 h-5 text-yellow mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                  </svg>
-                  Full integration with your existing CRM & systems
-                </li>
-                <li class="flex items-start gap-3">
-                  <svg class="w-5 h-5 text-yellow mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                  </svg>
-                  In-person or remote training included
-                </li>
-                <li class="flex items-start gap-3">
-                  <svg class="w-5 h-5 text-yellow mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                  </svg>
-                  50% of clients respond to conversational AI but not basic automation
-                </li>
-              </ul>
-              <!-- Stats -->
-              <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-                <div class="p-4 rounded-xl bg-gradient-to-br from-yellow/20 to-yellow/5 border border-yellow/30 text-center">
-                  <div class="text-2xl md:text-3xl font-bold text-yellow">70%</div>
-                  <div class="text-xs md:text-sm text-white/60 mt-1">inquiry time savings</div>
-                </div>
-                <div class="p-4 rounded-xl bg-gradient-to-br from-green/20 to-green/5 border border-green/30 text-center">
-                  <div class="text-2xl md:text-3xl font-bold text-green">40-50%</div>
-                  <div class="text-xs md:text-sm text-white/60 mt-1">increased sales & bookings</div>
-                </div>
-                <div class="p-4 rounded-xl bg-gradient-to-br from-blue/20 to-blue/5 border border-blue/30 text-center col-span-2 md:col-span-1">
-                  <div class="text-lg md:text-xl font-bold text-blue">Never lose a lead</div>
-                  <div class="text-xs md:text-sm text-white/60 mt-1">to competitors</div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Solution 2: Document Portal -->
-            <div class="p-6 md:p-8 rounded-2xl bg-white/5 border border-blue/20">
-              <div class="flex items-center gap-4 mb-6">
-                <span class="w-12 h-12 md:w-14 md:h-14 bg-gradient-to-br from-blue to-blue-light rounded-xl flex items-center justify-center text-navy font-bold text-lg md:text-xl shadow-lg flex-shrink-0">02</span>
-                <h3 class="text-xl md:text-2xl lg:text-3xl font-bold text-white">Branded Document & E-Signature Portal</h3>
-              </div>
-              <p class="text-white/80 mb-6 text-base md:text-lg">
-                Your business needs to look professional. When staff manually send document requests, evidence shows that client engagement is poor due to trust in your competency.
-              </p>
-              <ul class="space-y-3 text-white/70 mb-6">
-                <li class="flex items-start gap-3">
-                  <svg class="w-5 h-5 text-blue mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                  </svg>
-                  Remove the frustration and GDPR risk of chasing documents via email
-                </li>
-                <li class="flex items-start gap-3">
-                  <svg class="w-5 h-5 text-blue mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                  </svg>
-                  All client document requests in one branded workspace
-                </li>
-                <li class="flex items-start gap-3">
-                  <svg class="w-5 h-5 text-blue mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                  </svg>
-                  System automatically chases via email/SMS
-                </li>
-                <li class="flex items-start gap-3">
-                  <svg class="w-5 h-5 text-blue mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                  </svg>
-                  Data stored in UK data centres, not overseas
-                </li>
-              </ul>
-              <!-- Stats -->
-              <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-                <div class="p-4 rounded-xl bg-gradient-to-br from-blue/20 to-blue/5 border border-blue/30 text-center">
-                  <div class="text-2xl md:text-3xl font-bold text-blue">40%</div>
-                  <div class="text-xs md:text-sm text-white/60 mt-1">increase in response rates</div>
-                </div>
-                <div class="p-4 rounded-xl bg-gradient-to-br from-green/20 to-green/5 border border-green/30 text-center">
-                  <div class="text-2xl md:text-3xl font-bold text-green">40-70%</div>
-                  <div class="text-xs md:text-sm text-white/60 mt-1">email volume reduction</div>
-                </div>
-                <div class="p-4 rounded-xl bg-gradient-to-br from-yellow/20 to-yellow/5 border border-yellow/30 text-center col-span-2 md:col-span-1">
-                  <div class="text-lg md:text-xl font-bold text-yellow">Your branding</div>
-                  <div class="text-xs md:text-sm text-white/60 mt-1">your trust</div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Solution 3: Automation Suite -->
-            <div class="p-6 md:p-8 rounded-2xl bg-white/5 border border-green/20">
-              <div class="flex items-center gap-4 mb-6">
-                <span class="w-12 h-12 md:w-14 md:h-14 bg-gradient-to-br from-green to-green-light rounded-xl flex items-center justify-center text-navy font-bold text-lg md:text-xl shadow-lg flex-shrink-0">03</span>
-                <h3 class="text-xl md:text-2xl lg:text-3xl font-bold text-white">Comprehensive Automation Suite</h3>
-              </div>
-              <p class="text-white/80 mb-6 text-base md:text-lg">
-                Most businesses utilise just 20-40% of their CRM system functions. CRM systems provide a 'one size fits all' approach, leaving businesses unable to observe macro-level data without time-consuming workarounds.
-              </p>
-              <ul class="space-y-3 text-white/70 mb-6">
-                <li class="flex items-start gap-3">
-                  <svg class="w-5 h-5 text-green mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                  </svg>
-                  Data entry bots to deflect manual data entry and repetitive tasks
-                </li>
-                <li class="flex items-start gap-3">
-                  <svg class="w-5 h-5 text-green mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                  </svg>
-                  Invoice chasing, new client setup, lead engagement, KPI logging
-                </li>
-                <li class="flex items-start gap-3">
-                  <svg class="w-5 h-5 text-green mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                  </svg>
-                  High-performing messaging sequences to maximise revenue
-                </li>
-                <li class="flex items-start gap-3">
-                  <svg class="w-5 h-5 text-green mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                  </svg>
-                  Chasing and nurture sequences from existing data
-                </li>
-              </ul>
-              <!-- Stats -->
-              <div class="p-6 rounded-xl bg-gradient-to-br from-green/20 to-green/5 border border-green/30 text-center">
-                <div class="text-3xl md:text-4xl font-bold text-green mb-2">Company-Wide</div>
-                <div class="text-lg md:text-xl text-white/80 mb-2">Time Saver</div>
-                <p class="text-white/60 text-sm md:text-base">
-                  Time saving automations across multiple departments — freeing your team from non-revenue generating tasks
-                </p>
-              </div>
-            </div>
-
-            <!-- Solution 4: Marketing Performance Suite -->
-            <div class="p-6 md:p-8 rounded-2xl bg-white/5 border border-yellow/20">
-              <div class="flex items-center gap-4 mb-6">
-                <span class="w-12 h-12 md:w-14 md:h-14 bg-gradient-to-br from-yellow to-yellow-light rounded-xl flex items-center justify-center text-navy font-bold text-lg md:text-xl shadow-lg flex-shrink-0">04</span>
-                <h3 class="text-xl md:text-2xl lg:text-3xl font-bold text-white">Marketing Performance Suite</h3>
-              </div>
-
-              <div class="grid md:grid-cols-3 gap-4 md:gap-6">
-                <!-- Marketing Audit -->
-                <div class="p-5 md:p-6 rounded-xl bg-white/5 border border-white/10">
-                  <div class="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-yellow/30 to-yellow/10 rounded-xl flex items-center justify-center mb-4">
-                    <span class="text-yellow font-bold text-base md:text-lg">1</span>
-                  </div>
-                  <h4 class="text-base md:text-lg font-semibold text-white mb-3">Marketing Systems Audit</h4>
-                  <p class="text-white/70 text-sm mb-4">
-                    Identify revenue leaks, inefficiencies, and risk before they impact growth.
-                  </p>
-                  <ul class="space-y-2 text-white/60 text-sm">
-                    <li>Acquisition Performance</li>
-                    <li>Attribution Accuracy & Tracking</li>
-                    <li>Offer Performance & Conversion</li>
-                    <li>Channel ROI & Spend Efficiency</li>
-                    <li>Competitive Positioning</li>
-                  </ul>
-                </div>
-
-                <!-- Optimization Session -->
-                <div class="p-5 md:p-6 rounded-xl bg-white/5 border border-white/10">
-                  <div class="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-blue/30 to-blue/10 rounded-xl flex items-center justify-center mb-4">
-                    <span class="text-blue font-bold text-base md:text-lg">2</span>
-                  </div>
-                  <h4 class="text-base md:text-lg font-semibold text-white mb-3">Executive Optimization Session</h4>
-                  <p class="text-white/70 text-sm mb-4">
-                    Convert performance data into leadership decisions.
-                  </p>
-                  <ul class="space-y-2 text-white/60 text-sm">
-                    <li>Review audit findings</li>
-                    <li>Validate growth assumptions</li>
-                    <li>Align marketing with revenue targets</li>
-                    <li>Optimization roadmap delivery</li>
-                    <li>Budget reallocation recommendations</li>
-                  </ul>
-                </div>
-
-                <!-- Strategic Oversight -->
-                <div class="p-5 md:p-6 rounded-xl bg-white/5 border border-white/10">
-                  <div class="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-green/30 to-green/10 rounded-xl flex items-center justify-center mb-4">
-                    <span class="text-green font-bold text-base md:text-lg">3</span>
-                  </div>
-                  <h4 class="text-base md:text-lg font-semibold text-white mb-3">Strategic Oversight & Advisory</h4>
-                  <p class="text-white/70 text-sm mb-4">
-                    On-demand executive judgment when you need it.
-                  </p>
-                  <ul class="space-y-2 text-white/60 text-sm">
-                    <li>Asynchronous advisory access</li>
-                    <li>Review of critical growth assets</li>
-                    <li>Campaign & offer assessment</li>
-                    <li>Second-opinion on major decisions</li>
-                    <li>Budget & positioning support</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Fields of Expertise Section -->
-      <section class="pb-20 md:pb-28 border-t border-white/10 pt-16 relative overflow-hidden">
-        <!-- Animated background -->
-        <div class="absolute inset-0 pointer-events-none">
-          <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-1/2 bg-gradient-to-t from-navy-dark/50 to-transparent"></div>
-        </div>
-
-        <div class="max-w-5xl mx-auto px-4 relative z-10">
-          <div class="text-center mb-16">
-            <h2 class="text-3xl lg:text-4xl font-bold text-white mb-4 animate-fade-in-up">
-              Fields of Expertise
-            </h2>
-            <p class="text-lg text-white/70 max-w-2xl mx-auto animate-fade-in-up delay-100">
-              A single AI Director hire will have a niche skillset. Your HumTech directors deliver AI enhancements across all these areas and more.
-            </p>
-          </div>
-
-          <div class="grid md:grid-cols-3 gap-8">
-            <div class="group text-center p-8 rounded-2xl glass card-hover relative overflow-hidden animate-fade-in-up delay-100">
-              <!-- Animated border gradient -->
-              <div class="absolute inset-0 rounded-2xl bg-gradient-to-br from-yellow/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              <div class="relative z-10">
-                <div class="w-20 h-20 bg-gradient-to-br from-yellow/30 to-yellow/10 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
-                  <svg class="w-10 h-10 text-yellow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
-                  </svg>
-                </div>
-                <h3 class="text-xl font-semibold text-white mb-4">Sales & Front of House</h3>
-                <p class="text-white/70">
-                  Deflection ROI means no more manual outreach. Your team have warm leads in their diaries and only focus on their primary role, while AI does the heavy lifting.
-                </p>
-              </div>
-            </div>
-
-            <div class="group text-center p-8 rounded-2xl glass card-hover relative overflow-hidden animate-fade-in-up delay-200">
-              <div class="absolute inset-0 rounded-2xl bg-gradient-to-br from-blue/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              <div class="relative z-10">
-                <div class="w-20 h-20 bg-gradient-to-br from-blue/30 to-blue/10 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
-                  <svg class="w-10 h-10 text-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z"></path>
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z"></path>
-                  </svg>
-                </div>
-                <h3 class="text-xl font-semibold text-white mb-4">Lead Generation & Marketing</h3>
-                <p class="text-white/70">
-                  Enhancing every vital metric including CRO, CPA, CAC, while advising on creatives and copywriting to procure clients at the lowest possible cost.
-                </p>
-              </div>
-            </div>
-
-            <div class="group text-center p-8 rounded-2xl glass card-hover relative overflow-hidden animate-fade-in-up delay-300">
-              <div class="absolute inset-0 rounded-2xl bg-gradient-to-br from-green/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              <div class="relative z-10">
-                <div class="w-20 h-20 bg-gradient-to-br from-green/30 to-green/10 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
-                  <svg class="w-10 h-10 text-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
-                  </svg>
-                </div>
-                <h3 class="text-xl font-semibold text-white mb-4">Automation & Zero Touch</h3>
-                <p class="text-white/70">
-                  Remove manual document processing including compliance docs and signature requests — no more 'chasing' via email, your system follows up for you.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Roadmap Section -->
-      <section class="pb-20 md:pb-28 border-t border-white/10 pt-16">
-        <div class="max-w-5xl mx-auto px-4">
-          <div class="text-center mb-16">
-            <h2 class="text-3xl lg:text-4xl font-bold text-white mb-4">
-              Roadmap
-            </h2>
-          </div>
-
-          <div class="grid md:grid-cols-2 gap-12">
-            <!-- Left: Timeline -->
-            <div class="space-y-8">
-              <!-- Step 1 -->
-              <div class="flex gap-4">
-                <div class="flex flex-col items-center">
-                  <div class="w-4 h-4 bg-yellow rounded-full"></div>
-                  <div class="w-0.5 h-full bg-white/20"></div>
-                </div>
-                <div class="pb-8">
-                  <h3 class="text-lg font-bold text-yellow mb-2">Baseline Assessment</h3>
-                  <p class="text-white/70">
-                    A focused review of your current systems, workflows, and operating constraints to establish a clear starting point.
-                  </p>
-                </div>
-              </div>
-
-              <!-- Step 2 -->
-              <div class="flex gap-4">
-                <div class="flex flex-col items-center">
-                  <div class="w-4 h-4 bg-yellow rounded-full"></div>
-                  <div class="w-0.5 h-full bg-white/20"></div>
-                </div>
-                <div class="pb-8">
-                  <h3 class="text-lg font-bold text-yellow mb-2">Strategic Direction</h3>
-                  <p class="text-white/70">
-                    A prioritised, outcome-led plan showing where to intervene first and why — aligned to your commercial goals.
-                  </p>
-                </div>
-              </div>
-
-              <!-- Step 3 -->
-              <div class="flex gap-4">
-                <div class="flex flex-col items-center">
-                  <div class="w-4 h-4 bg-yellow rounded-full"></div>
-                  <div class="w-0.5 h-full bg-white/20"></div>
-                </div>
-                <div class="pb-8">
-                  <h3 class="text-lg font-bold text-yellow mb-2">Implementation</h3>
-                  <p class="text-white/70">
-                    Design, build, and integration of agreed systems into your existing operations, with minimal disruption.
-                  </p>
-                </div>
-              </div>
-
-              <!-- Step 4 -->
-              <div class="flex gap-4">
-                <div class="flex flex-col items-center">
-                  <div class="w-4 h-4 bg-yellow rounded-full"></div>
-                  <div class="w-0.5 h-full bg-white/20"></div>
-                </div>
-                <div class="pb-8">
-                  <h3 class="text-lg font-bold text-yellow mb-2">Go-Live & Optimisation</h3>
-                  <p class="text-white/70">
-                    Systems are launched, monitored, and refined to ensure stability, performance, and early impact.
-                  </p>
-                </div>
-              </div>
-
-              <!-- Step 5 -->
-              <div class="flex gap-4">
-                <div class="flex flex-col items-center">
-                  <div class="w-4 h-4 bg-yellow rounded-full"></div>
-                </div>
-                <div>
-                  <h3 class="text-lg font-bold text-yellow mb-2">Fractional AI Leadership</h3>
-                  <p class="text-white/70">
-                    Continued oversight, optimisation, and guidance to maintain performance and support evolving targets.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <!-- Right: What This Delivers -->
-            <div class="p-8 rounded-2xl bg-white/5 border border-white/10 h-fit">
-              <h3 class="text-2xl font-bold text-white mb-6">What This Delivers</h3>
-              <p class="text-white/70 mb-6">
-                A clear, structured path from assessment to measurable improvement — with ongoing oversight to ensure systems continue to perform as your business evolves.
-              </p>
-              <p class="text-white/70">
-                Our focus is not one-off implementation, but sustained operational clarity, reduced friction, and long-term ROI.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- CTA Section -->
-      <section class="py-16 border-t border-white/10">
-        <div class="max-w-2xl mx-auto px-4 text-center">
-          <h2 class="text-3xl lg:text-4xl font-bold text-white mb-4">
-            Ready to Transform Your Business?
-          </h2>
-          <p class="text-lg text-white/70 mb-8">
-            Take our free assessment to discover which solutions will have the biggest impact on your growth.
-          </p>
-          <button
-            onclick="openAssessmentModal()"
-            class="px-8 py-4 rounded-md font-semibold bg-yellow text-navy hover:bg-yellow/90 transition-colors cursor-pointer text-lg">
-            Start Free Assessment
-          </button>
         </div>
       </section>
     </Container>
   </div>
 </Layout>
+
+<style>
+  .section-title {
+    font-size: clamp(2.1rem, 3.2vw, 3.35rem);
+    line-height: 1.16;
+    max-width: 30ch;
+    margin-inline: auto;
+    letter-spacing: -0.01em;
+  }
+
+  .readable-prose p {
+    font-size: clamp(1.05rem, 1.2vw, 1.42rem);
+    line-height: 1.5;
+    letter-spacing: 0.002em;
+    max-width: 62ch;
+    margin-inline: auto;
+  }
+
+  .cred-card {
+    position: relative;
+    padding: 3px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, rgba(216, 183, 67, 0.6), rgba(216, 183, 67, 0.2));
+  }
+
+  .cred-card-inner {
+    background: #0a1e35;
+    border-radius: 10px;
+    padding: 1.5rem;
+    height: 100%;
+    border: 1px solid rgba(216, 183, 67, 0.15);
+  }
+
+  .cred-card:hover .cred-card-inner {
+    background: #0d2340;
+  }
+
+  .cred-card::before {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    border-radius: 13px;
+    border: 1px solid rgba(216, 183, 67, 0.3);
+    pointer-events: none;
+  }
+
+  .solution-content ul {
+    margin: 0;
+    padding-left: 0;
+    list-style: none;
+  }
+
+  .solution-content ul li {
+    position: relative;
+    padding-left: 1rem;
+  }
+
+  .solution-content ul li::before {
+    content: "";
+    position: absolute;
+    top: 0.65rem;
+    left: 0;
+    width: 0.34rem;
+    height: 0.34rem;
+    border-radius: 999px;
+    background: #d8b743;
+    box-shadow: 0 0 8px rgba(216, 183, 67, 0.5);
+  }
+
+  .solution-item {
+    border: 1px solid rgba(216, 183, 67, 0.3);
+    border-radius: 12px;
+    background: #0a1e35;
+    overflow: hidden;
+  }
+
+  .solution-summary {
+    list-style: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1rem 1.1rem;
+    background: linear-gradient(180deg, rgba(13, 35, 64, 0.9) 0%, rgba(10, 30, 53, 0.9) 100%);
+    border-bottom: 1px solid rgba(216, 183, 67, 0.15);
+  }
+
+  .solution-summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .solution-content {
+    padding: 1rem 1.1rem 1.1rem;
+  }
+
+  .solution-chevron {
+    transition: transform 0.2s ease;
+  }
+
+  .solution-item[open] .solution-chevron {
+    transform: rotate(180deg);
+  }
+
+  .financial-logic-shell {
+    border: 1px solid rgba(214, 181, 74, 0.35);
+    border-radius: 1rem;
+    background: linear-gradient(180deg, rgba(8, 38, 74, 0.92) 0%, rgba(5, 28, 56, 0.92) 100%);
+    overflow: hidden;
+  }
+
+  .financial-logic-table th:nth-child(3),
+  .financial-logic-table td:nth-child(3) {
+    background: rgba(214, 181, 74, 0.08);
+  }
+
+  .financial-row {
+    transition: background-color 0.2s ease;
+  }
+
+  .financial-row:hover,
+  .financial-row:focus {
+    background: rgba(255, 255, 255, 0.05);
+    outline: none;
+  }
+
+  .intro-prose p {
+    max-width: 46ch;
+    font-size: clamp(1.16rem, 1.35vw, 1.55rem);
+    line-height: 1.45;
+  }
+
+  .services-hero-title {
+    font-size: clamp(2.15rem, 3.95vw, 4.2rem);
+    line-height: 1.12;
+    letter-spacing: -0.018em;
+    max-width: 24ch;
+    margin-inline: auto;
+  }
+
+  .services-hero-subwrap {
+    max-width: 64ch;
+  }
+
+  .services-hero-sub {
+    font-size: clamp(1.22rem, 1.55vw, 1.7rem);
+    line-height: 1.38;
+    letter-spacing: -0.004em;
+  }
+
+  .financial-title {
+    max-width: none;
+  }
+
+  @media (min-width: 1024px) {
+    .financial-title {
+      white-space: nowrap;
+      font-size: clamp(2.2rem, 3.05vw, 3.35rem);
+    }
+  }
+
+</style>
