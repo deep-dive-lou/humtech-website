@@ -1,40 +1,20 @@
 import type { APIRoute } from "astro";
-
 export const prerender = false;
 
 export const GET: APIRoute = async ({ url }) => {
   const submission = url.searchParams.get("submission");
+  if (!submission) return new Response("Missing submission", { status: 400 });
 
-  if (!submission) {
-    return new Response(JSON.stringify({ error: "Missing submission" }), {
-      status: 400,
-    });
-  }
+  const base = import.meta.env.N8N_RESULTS_LOOKUP_URL;
+  if (!base)
+    return new Response("N8N_RESULTS_LOOKUP_URL not set", { status: 500 });
 
-  try {
-    const lookupUrl = `${import.meta.env.N8N_RESULTS_LOOKUP_URL}?submission=${encodeURIComponent(submission)}`;
+  const lookupUrl = `${base}?submission=${encodeURIComponent(submission)}`;
+  const r = await fetch(lookupUrl);
+  const html = await r.text();
 
-    const response = await fetch(lookupUrl);
-
-    if (!response.ok) {
-      return new Response(JSON.stringify({ error: "Not found" }), {
-        status: 404,
-      });
-    }
-
-    const data = await response.json();
-
-    return new Response(JSON.stringify(data), {
-      status: 200,
-      headers: { "Content-Type": "application/json" },
-    });
-  } catch (error) {
-    return new Response(
-      JSON.stringify({
-        error: "Internal server error",
-        detail: error instanceof Error ? error.message : "Unknown error",
-      }),
-      { status: 500 }
-    );
-  }
+  return new Response(html, {
+    status: r.status,
+    headers: { "Content-Type": "text/html; charset=utf-8" },
+  });
 };
