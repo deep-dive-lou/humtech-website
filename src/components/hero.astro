@@ -207,11 +207,13 @@ const trustedLogos = [
 </main>
 
 <!-- Kill Zone / Engagement Latency Section -->
-<section class="pt-12 pb-16 md:pt-16 md:pb-24 bg-navy">
+<section class="kill-zone-section pt-12 pb-16 md:pt-16 md:pb-24 bg-navy">
   <div class="max-w-4xl mx-auto px-4">
     <!-- Headline -->
     <h2 class="kill-zone-headline font-bold text-yellow text-center mb-12 italic">
-      It's no longer "the big that beats the small" it's "the fast that runs over the slow"
+      It's no longer "the big that beats the small"
+      <br class="md:hidden" />
+      it's "the fast that runs over the slow"
     </h2>
 
     <!-- Kill Zone Graphic (CSS/SVG) -->
@@ -1841,6 +1843,11 @@ const trustedLogos = [
       padding-top: 4.6rem;
     }
 
+    .kill-zone-section {
+      padding-top: 1.75rem;
+      padding-bottom: 3.25rem;
+    }
+
     main > .absolute.inset-0.pointer-events-none {
       display: none;
     }
@@ -2029,8 +2036,13 @@ const trustedLogos = [
     .kill-zone-headline {
       font-size: clamp(1.24rem, 4.3vw, 1.58rem);
       line-height: 1.18;
-      max-width: 28ch;
-      margin-bottom: 0.95rem;
+      max-width: 31ch;
+      margin-bottom: 0.8rem;
+    }
+
+    .kill-zone-graphic {
+      margin-top: 0.55rem;
+      margin-bottom: 1.35rem;
     }
 
     .readable-prose p {
@@ -2077,6 +2089,7 @@ const trustedLogos = [
 
     .kill-zone-labels {
       padding: 0 0.5rem;
+      margin-bottom: 0.7rem;
     }
     .kill-zone-end-label {
       font-size: 0.8rem;
@@ -2095,7 +2108,7 @@ const trustedLogos = [
       font-size: 0.82rem;
     }
     .kill-zone-copy-wrap {
-      margin-top: 2.8rem;
+      margin-top: 3.35rem;
     }
     .kill-zone-copy {
       font-size: 1.02rem;
@@ -2117,13 +2130,13 @@ const trustedLogos = [
       height: 20px;
     }
     .kill-zone-wrapper {
-      padding-bottom: 4.1rem;
+      padding-bottom: 3.9rem;
     }
     .kill-zone-sublabel {
       position: absolute;
       left: 0;
       right: 0;
-      bottom: -3.45rem;
+      bottom: -3.2rem;
       margin-top: 0;
       padding-inline: 0.45rem;
       z-index: 2;
@@ -2132,7 +2145,7 @@ const trustedLogos = [
       display: block;
       max-width: calc(100% - 0.6rem);
       margin-inline: auto;
-      margin-top: 0.6rem;
+      margin-top: 0.42rem;
       line-height: 1.24;
     }
 
