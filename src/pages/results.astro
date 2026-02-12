@@ -8,12 +8,11 @@
     <main>
       <h1>Results</h1>
       <p id="status">Loading...</p>
-      <pre id="results"></pre>
+      <div id="results"></div>
     </main>
 
     <script>
       const statusEl = document.getElementById("status");
-      const resultsEl = document.getElementById("results");
       const params = new URLSearchParams(window.location.search);
       const submission = params.get("submission");
 
@@ -26,8 +25,12 @@
             if (!response.ok) {
               throw new Error(data?.error || "Request failed");
             }
-            statusEl.textContent = "Loaded.";
-            resultsEl.textContent = JSON.stringify(data, null, 2);
+            if (!data.html) {
+              throw new Error("No HTML returned");
+            }
+            document.open();
+            document.write(data.html);
+            document.close();
           })
           .catch((error) => {
             statusEl.textContent = `Error: ${error.message}`;
