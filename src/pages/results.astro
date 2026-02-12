@@ -1,7 +1,3 @@
----
-const submission = Astro.url.searchParams.get("submission");
----
-
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -15,9 +11,11 @@ const submission = Astro.url.searchParams.get("submission");
       <pre id="results"></pre>
     </main>
 
-    <script define:vars={{ submission }}>
+    <script>
       const statusEl = document.getElementById("status");
       const resultsEl = document.getElementById("results");
+      const params = new URLSearchParams(window.location.search);
+      const submission = params.get("submission");
 
       if (!submission) {
         statusEl.textContent = "Missing submission query parameter.";
