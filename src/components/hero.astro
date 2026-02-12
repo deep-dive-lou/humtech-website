@@ -7,7 +7,7 @@ import trustedLogoResg from "@/assets/trusted-logo-resg.png";
 import frictionGraphic from "@/assets/friction-graphic-bg.png";
 import cycleHireGraphic from "@/assets/cycle-hire-bg.png";
 import latencyGraphic from "@/assets/latency-bg.png";
-import heroGraphic from "@/assets/hero.png";
+import heroCoreGraphic from "@/assets/hero-core-graphic.png";
 const trustedLogos = [
   { src: trustedLogoEcop, alt: "ECOP" },
   { src: trustedLogoLmf, alt: "LMF" },
@@ -29,22 +29,22 @@ const trustedLogos = [
   <div class="absolute inset-0 bg-gradient-to-b from-navy via-transparent to-navy pointer-events-none"></div>
 
   <div class="text-center max-w-5xl mx-auto px-4 relative z-10">
-    <p class="hero-eyebrow text-sm md:text-base font-bold text-yellow tracking-widest uppercase mb-6 animate-fade-in-up max-w-3xl mx-auto">
+    <p class="hero-eyebrow text-sm md:text-base font-bold text-yellow tracking-widest uppercase mb-4 animate-fade-in-up max-w-4xl mx-auto">
       IF YOU'RE NOT DOING THIS IN 2026 THEN YOU'RE FALLING BEHIND...
     </p>
     <h1
-      class="hero-main-title text-4xl lg:text-5xl xl:text-6xl font-bold lg:tracking-tight xl:tracking-tighter text-white animate-fade-in-up delay-100 max-w-3xl mx-auto">
+      class="hero-main-title text-4xl lg:text-5xl xl:text-6xl font-extrabold lg:tracking-tight xl:tracking-tighter text-white animate-fade-in-up delay-100 mx-auto">
       Every Business NOT Using AI to Enhance Performance is Losing Profitability by the Minute
     </h1>
-    <p class="hero-subtitle text-xl md:text-2xl mt-6 text-yellow font-semibold animate-fade-in-up delay-200 max-w-3xl mx-auto">
+    <p class="hero-subtitle text-xl md:text-2xl mt-4 text-yellow font-bold animate-fade-in-up delay-200 max-w-4xl mx-auto">
       Eliminate Friction and Accelerate Revenue Using Our Dedicated Fractional AI Growth Team
     </p>
 
-    <div class="mt-2 mb-3 animate-fade-in-up delay-300">
+    <div class="mt-4 mb-3 animate-fade-in-up delay-300">
       <div class="hero-core-shell mx-auto max-w-4xl">
         <div class="block md:hidden">
           <Image
-            src={heroGraphic}
+            src={heroCoreGraphic}
             alt="HumTech Core"
             class="mx-auto w-full max-w-md h-auto"
             widths={[400, 640, 768]}
@@ -210,7 +210,7 @@ const trustedLogos = [
 <section class="pt-12 pb-16 md:pt-16 md:pb-24 bg-navy">
   <div class="max-w-4xl mx-auto px-4">
     <!-- Headline -->
-    <h2 class="section-title kill-zone-headline text-3xl lg:text-4xl xl:text-5xl font-bold text-yellow text-center mb-12 leading-tight">
+    <h2 class="kill-zone-headline font-bold text-yellow text-center mb-12 italic">
       It's no longer "the big that beats the small" it's "the fast that runs over the slow"
     </h2>
 
@@ -831,30 +831,34 @@ const trustedLogos = [
 
 <style>
   .hero-eyebrow {
-    font-size: clamp(0.88rem, 0.82rem + 0.28vw, 1rem);
-    letter-spacing: 0.1em;
-    line-height: 1.4;
+    font-size: clamp(0.88rem, 0.8rem + 0.25vw, 1.05rem);
+    letter-spacing: 0.06em;
+    line-height: 1.35;
   }
 
   .hero-main-title {
-    font-size: clamp(2.05rem, 4.15vw, 4.45rem);
-    line-height: 1.1;
+    font-size: clamp(2rem, 3.6vw, 3.5rem);
+    line-height: 1.14;
+    text-wrap: balance;
+    max-width: 42ch;
   }
 
   .kill-zone-headline {
     font-size: clamp(1.82rem, 2.72vw, 2.85rem);
     line-height: 1.2;
-    max-width: 36ch;
+    max-width: 48ch;
   }
 
   .hero-subtitle {
-    font-size: clamp(1.15rem, 2vw, 1.85rem);
-    line-height: 1.35;
+    font-size: clamp(1.15rem, 1.8vw, 1.65rem);
+    line-height: 1.28;
+    max-width: 46ch;
+    text-wrap: balance;
   }
 
   .hero-support {
-    font-size: clamp(1rem, 1.15vw, 1.2rem);
-    line-height: 1.45;
+    font-size: clamp(0.98rem, 0.95vw, 1.15rem);
+    line-height: 1.35;
   }
 
   .section-title {
@@ -2000,13 +2004,15 @@ const trustedLogos = [
     }
 
     .hero-main-title {
-      font-size: clamp(2.1rem, 10.2vw, 3.2rem);
-      line-height: 1.12;
+      font-size: clamp(2rem, 10.5vw, 3.05rem);
+      line-height: 1.14;
+      max-width: 16ch;
     }
 
     .hero-subtitle {
-      font-size: 1.15rem;
-      line-height: 1.38;
+      font-size: 1.25rem;
+      line-height: 1.28;
+      max-width: 24ch;
     }
 
     .hero-support {
@@ -2018,6 +2024,13 @@ const trustedLogos = [
       font-size: clamp(1.8rem, 6.8vw, 2.4rem);
       line-height: 1.18;
       max-width: 26ch;
+    }
+
+    .kill-zone-headline {
+      font-size: clamp(1.45rem, 5.1vw, 1.95rem);
+      line-height: 1.2;
+      max-width: 20ch;
+      margin-bottom: 1.75rem;
     }
 
     .readable-prose p {
