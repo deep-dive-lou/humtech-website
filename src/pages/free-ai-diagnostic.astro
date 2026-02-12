@@ -101,15 +101,40 @@ import Layout from "@/layouts/Layout.astro";
       const iframe = document.getElementById("scorecard-embed");
       if (!iframe) return;
 
+      const getSubmissionId = (payload) => {
+        if (!payload || typeof payload !== "object") return null;
+        const keys = ["submission", "submissionId", "submission_id", "id"];
+        for (const key of keys) {
+          const value = payload[key];
+          if (typeof value === "string" && value.trim()) return value.trim();
+        }
+        return null;
+      };
+
       window.addEventListener("message", (event) => {
         if (event.origin !== "https://assessment.humtech.ai") return;
-        const data = event.data;
-        if (!data || data.type !== "humtech-scorecard-height") return;
+        let data = event.data;
+        if (typeof data === "string") {
+          try {
+            data = JSON.parse(data);
+          } catch {
+            return;
+          }
+        }
 
-        const nextHeight = Number(data.height);
-        if (!Number.isFinite(nextHeight) || nextHeight <= 0) return;
+        if (data && data.type === "humtech-scorecard-height") {
+          const nextHeight = Number(data.height);
+          if (!Number.isFinite(nextHeight) || nextHeight <= 0) return;
+          iframe.style.height = `${Math.round(nextHeight)}px`;
+          return;
+        }
 
-        iframe.style.height = `${Math.round(nextHeight)}px`;
+        const submission = getSubmissionId(data);
+        if (submission) {
+          window.location.assign(
+            `/results?submission=${encodeURIComponent(submission)}`
+          );
+        }
       });
     })();
   </script>
