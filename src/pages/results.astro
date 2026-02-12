@@ -1,0 +1,40 @@
+---
+const submission = Astro.url.searchParams.get("submission");
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Results</title>
+  </head>
+  <body>
+    <main>
+      <h1>Results</h1>
+      <p id="status">Loading...</p>
+      <pre id="results"></pre>
+    </main>
+
+    <script define:vars={{ submission }}>
+      const statusEl = document.getElementById("status");
+      const resultsEl = document.getElementById("results");
+
+      if (!submission) {
+        statusEl.textContent = "Missing submission query parameter.";
+      } else {
+        fetch(`/api/results?submission=${encodeURIComponent(submission)}`)
+          .then(async (response) => {
+            const data = await response.json();
+            if (!response.ok) {
+              throw new Error(data?.error || "Request failed");
+            }
+            statusEl.textContent = "Loaded.";
+            resultsEl.textContent = JSON.stringify(data, null, 2);
+          })
+          .catch((error) => {
+            statusEl.textContent = `Error: ${error.message}`;
+          });
+      }
+    </script>
+  </body>
+</html>
