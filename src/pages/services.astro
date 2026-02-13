@@ -4,28 +4,16 @@ import Container from "@/components/container.astro";
 
 const keyBenefits = [
   {
-    title: "Zero Risk",
-    copy: "We work to hit your ROI targets, and stay with you to set and achieve new goals."
+    title: "Zero Risk, Cancel Anytime",
+    copy: "30-day rolling contract — no lock-ins. We hit your ROI targets and stay because results retain relationships, not contracts."
   },
   {
-    title: "Cancel Anytime, 30 Day Rolling Contract",
-    copy: "We know the utility and impact of our systems, and do not need to tie our partners in. Results retain our relationships, not contracts."
+    title: "Senior-Only Access",
+    copy: "Partner exclusively with experienced AI leaders. No junior teams, no service desks — enterprise-level strategy at SME pricing."
   },
   {
-    title: "Senior Level Access",
-    copy: "Partner exclusively with AI leaders with extensive experience, with no junior teams or service desks diluting expertise."
-  },
-  {
-    title: "Cutting-Edge Futureproofing",
-    copy: "Stay ahead with the latest AI implementations and strategic enhancements from proven industry leaders. AI changes rapidly, and we keep your business ahead of the curve."
-  },
-  {
-    title: "Enterprise Strategy, SME Price",
-    copy: "Get top-tier AI planning, technical execution, and support without full-time overheads."
-  },
-  {
-    title: "Hands-Off Implementation",
-    copy: "Zero technical knowledge needed. Our team builds, deploys, trains, and maintains custom branded systems while you capture the gains."
+    title: "Hands-Off & Futureproof",
+    copy: "Zero technical knowledge needed. We build, deploy, train, and maintain your systems while keeping you ahead as AI evolves."
   }
 ];
 
@@ -202,6 +190,47 @@ const deliveryFlow = [
             </div>
           </div>
 
+          <!-- Who is this ideal for? -->
+          <div class="ideal-for mt-16">
+            <h2 class="text-2xl lg:text-3xl font-bold text-white leading-tight mb-8 text-center">
+              Who is this ideal for?
+            </h2>
+            <div class="grid sm:grid-cols-2 gap-4">
+              <div class="ideal-card card-hover">
+                <div class="ideal-icon ideal-icon--yellow">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                  </svg>
+                </div>
+                <p class="text-white/80 text-base leading-relaxed">UK businesses with 10 to 200 employees looking to use AI without the big project headaches</p>
+              </div>
+              <div class="ideal-card card-hover">
+                <div class="ideal-icon ideal-icon--blue">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"></path>
+                  </svg>
+                </div>
+                <p class="text-white/80 text-base leading-relaxed">Companies with legacy systems, messy data, and small teams who need practical solutions</p>
+              </div>
+              <div class="ideal-card card-hover">
+                <div class="ideal-icon ideal-icon--green">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                  </svg>
+                </div>
+                <p class="text-white/80 text-base leading-relaxed">Business owners who've tried AI tools but couldn't make them work across the business</p>
+              </div>
+              <div class="ideal-card card-hover">
+                <div class="ideal-icon ideal-icon--yellow">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+                  </svg>
+                </div>
+                <p class="text-white/80 text-base leading-relaxed">Teams that can't justify a full-time AI hire but know they're falling behind</p>
+              </div>
+            </div>
+          </div>
+
           <div class="mt-14 border border-white/10 rounded-xl p-6 md:p-8 bg-white/[0.02]">
             <h2 class="text-2xl lg:text-3xl font-bold text-yellow leading-tight">Fractional AI Growth Team</h2>
             <p class="text-white/70 mt-3 text-lg">Why Fractioned AI?</p>
@@ -209,7 +238,7 @@ const deliveryFlow = [
               Unlike most AI providers who deploy generic, one-size-fits-all tools with near-zero aftercare, HumTech delivers tailored consultations, fully branded custom systems, and rigorous ongoing guidance for sustained ROI.
             </p>
 
-            <div class="mt-8 grid md:grid-cols-2 xl:grid-cols-3 gap-4" aria-label="Why Fractioned AI key benefits">
+            <div class="mt-8 grid md:grid-cols-3 gap-4" aria-label="Why Fractioned AI key benefits">
               {keyBenefits.map((item, idx) => (
                 <article class={`benefit-tile card-hover delay-${(idx + 1) * 100}`}>
                   <div class="benefit-num" aria-hidden="true">{idx + 1}</div>
@@ -613,6 +642,49 @@ const deliveryFlow = [
   .quote-accent {
     border-left: 3px solid #D8B743;
     padding-left: 1.5rem;
+  }
+
+  /* Ideal for cards */
+  .ideal-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.25rem 1.5rem;
+    border-radius: 0.75rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .ideal-card:hover {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(255, 255, 255, 0.15);
+  }
+
+  .ideal-icon {
+    flex-shrink: 0;
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0.1rem;
+  }
+
+  .ideal-icon--yellow {
+    background: rgba(216, 183, 67, 0.15);
+    color: #D8B743;
+  }
+
+  .ideal-icon--blue {
+    background: rgba(61, 178, 221, 0.15);
+    color: #3DB2DD;
+  }
+
+  .ideal-icon--green {
+    background: rgba(107, 183, 144, 0.15);
+    color: #6BB790;
   }
 
   /* Section dividers */
