@@ -6,34 +6,17 @@ import Container from "@/components/container.astro";
 <Layout title="Meet the Team" visioptPid={170}>
   <div class="bg-navy">
     <Container>
-      <!-- Page Header -->
+      <!-- Hero + Team -->
       <section class="py-20 md:py-28">
-        <div class="text-center max-w-4xl mx-auto px-4">
+        <div class="text-center max-w-4xl mx-auto px-4 mb-16">
           <h1 class="text-4xl lg:text-5xl xl:text-6xl font-bold lg:tracking-tight text-white mb-6">
-            Meet Our Founders
+            Meet Our Fractional Growth Team
           </h1>
-          <p class="text-xl text-white/70 max-w-2xl mx-auto">
-            Three experienced AI specialists with the expertise to transform your business - available on demand, for a fraction of the cost.
+          <p class="text-xl lg:text-2xl text-yellow font-semibold">
+            Your HumTech specialists deliver AI enhancements across strategy, technical implementation, and marketing.
           </p>
         </div>
-      </section>
 
-      <!-- Value Proposition -->
-      <section class="pb-16 border-t border-white/10 pt-16">
-        <div class="max-w-4xl mx-auto px-4">
-          <div class="text-center mb-12">
-            <p class="text-xl lg:text-2xl text-white/80 leading-relaxed">
-              A single AI hire or remote consultant often has a niche skillset focused on one core area of AI. Your business needs high-level expertise and implementation across all revenue-impacting domains.
-            </p>
-            <p class="text-2xl lg:text-3xl text-yellow font-semibold mt-6">
-              Your HumTech specialists deliver AI enhancements across strategy, technical implementation, and marketing.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <!-- Team Grid -->
-      <section class="pb-20 md:pb-28">
         <div class="max-w-5xl mx-auto px-4">
           <div class="grid md:grid-cols-3 gap-8">
             <!-- Chris Silver -->
@@ -46,10 +29,10 @@ import Container from "@/components/container.astro";
                 />
               </div>
               <h3 class="text-2xl font-bold text-white mb-1">Chris Silver</h3>
-              <p class="text-yellow font-semibold mb-2">Strategic AI Specialist</p>
+              <p class="text-yellow font-semibold mb-2">AI Strategy Director</p>
               <p class="text-white/60 text-sm mb-4">BSc (Hons)</p>
               <p class="text-white/70">
-                Former NHS Psychologist turned AI strategist, Chris combines behavioural science with advanced automation to engineer high-converting sales systems. His AI frameworks have delivered sustained 98% close rates - outperforming larger teams with radically lean infrastructure.
+                Used AI theory to build one of the UK's top performing sales systems. Expert in deflection ROI and strategic AI implementation.
               </p>
             </div>
 
@@ -63,10 +46,10 @@ import Container from "@/components/container.astro";
                 />
               </div>
               <h3 class="text-2xl font-bold text-white mb-1">Louise Oram-Knight</h3>
-              <p class="text-blue font-semibold mb-2">Technical AI Specialist</p>
+              <p class="text-blue font-semibold mb-2">AI Technical Director</p>
               <p class="text-white/60 text-sm mb-4">BSc (Hons), MSc</p>
               <p class="text-white/70">
-                Louise architects the intelligent systems behind the operation. With a scientific and computational background, she designs custom AI infrastructures that remove operational drag, surface hidden opportunity cost, and transform complexity into measurable growth.
+                Custom built AI and automation systems responsible for highest industry conversions. Specialist in technical implementation and integration.
               </p>
             </div>
 
@@ -80,13 +63,151 @@ import Container from "@/components/container.astro";
                 />
               </div>
               <h3 class="text-2xl font-bold text-white mb-1">Chris Rocheleau</h3>
-              <p class="text-green font-semibold mb-2">Marketing AI Specialist</p>
-              <p class="text-white/60 text-sm mb-4">&nbsp;</p>
+              <p class="text-green font-semibold mb-2">AI Marketing Director</p>
+              <p class="text-white/60 text-sm mb-4">15 Years Experience</p>
               <p class="text-white/70">
-                With over 15 years in customer acquisition, Chris builds AI-enhanced marketing systems that optimise performance at scale. From multivariate analysis to full-funnel optimisation, he engineers predictable, data-driven growth.
+                Extensive experience in building high-level customer acquisition systems. Expert in CRO, CPA, CAC optimisation and marketing automation.
               </p>
             </div>
           </div>
+        </div>
+      </section>
+
+      <!-- Our Story + Results -->
+      <section class="pb-20 md:pb-28 border-t border-white/10 pt-16">
+        <div class="max-w-4xl mx-auto px-4">
+          <div class="text-center mb-14">
+            <h2 class="text-3xl lg:text-4xl font-bold text-white mb-4">
+              We Solved This Problem — For Ourselves First
+            </h2>
+          </div>
+
+          <!-- Story timeline -->
+          <div class="story-timeline">
+            <!-- Step 1: Achievement -->
+            <div class="story-step">
+              <div class="story-icon story-icon--yellow">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
+                </svg>
+              </div>
+              <div class="story-content">
+                <p class="text-white text-lg font-semibold leading-relaxed">
+                  In two years, we built the number one-rated advertising agency on Trustpilot — with a team of just four people.
+                </p>
+              </div>
+            </div>
+
+            <!-- Step 2: Problem -->
+            <div class="story-step">
+              <div class="story-icon story-icon--red">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.34 16.5c-.77.833.192 2.5 1.732 2.5z"></path>
+                </svg>
+              </div>
+              <div class="story-content">
+                <p class="text-white/70 text-base md:text-lg leading-relaxed">
+                  When starting out, we discovered a major bottleneck: only 50% of new enquiries responded to outreach, and just half of them attended booked consultations. Moreover, our small team were constantly drawn into repetitive admin tasks and distractions which took them away from revenue-producing duties.
+                </p>
+              </div>
+            </div>
+
+            <!-- Step 3: Failed attempts -->
+            <div class="story-step">
+              <div class="story-icon story-icon--blue">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728L5.636 5.636m12.728 12.728A9 9 0 015.636 5.636"></path>
+                </svg>
+              </div>
+              <div class="story-content">
+                <p class="text-white/70 text-base md:text-lg leading-relaxed">
+                  We experimented with countless 'out the box' third-party AI tools (multiple different log-ins!), yet conversions actually got worse.
+                </p>
+              </div>
+            </div>
+
+            <!-- Step 4: Solution -->
+            <div class="story-step story-step--highlight">
+              <div class="story-icon story-icon--green">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                </svg>
+              </div>
+              <div class="story-content">
+                <p class="text-white text-lg md:text-xl font-bold leading-relaxed">
+                  So we rolled up our sleeves. One year later, the results speak for themselves...
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Results -->
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12">
+            <div class="text-center p-6 bg-white/5 rounded-xl border border-white/10 card-hover">
+              <div class="text-3xl lg:text-4xl font-bold text-yellow">98%</div>
+              <div class="text-sm text-white/60 mt-2">client appointment booking rate</div>
+            </div>
+            <div class="text-center p-6 bg-white/5 rounded-xl border border-white/10 card-hover">
+              <div class="text-3xl lg:text-4xl font-bold text-yellow">90%+</div>
+              <div class="text-sm text-white/60 mt-2">appointment attendance</div>
+            </div>
+            <div class="text-center p-6 bg-white/5 rounded-xl border border-white/10 card-hover">
+              <div class="text-3xl lg:text-4xl font-bold text-green">50%</div>
+              <div class="text-sm text-white/60 mt-2">increase in revenue</div>
+            </div>
+            <div class="text-center p-6 bg-white/5 rounded-xl border border-white/10 card-hover">
+              <div class="text-3xl lg:text-4xl font-bold text-blue">Zero</div>
+              <div class="text-sm text-white/60 mt-2">additional hires needed</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Why Choose Us -->
+      <section class="pb-20 md:pb-28 border-t border-white/10 pt-16">
+        <div class="max-w-4xl mx-auto px-4">
+          <div class="text-center mb-12">
+            <h2 class="text-3xl lg:text-4xl font-bold text-white mb-4">
+              Why Choose HumTech?
+            </h2>
+          </div>
+
+          <div class="space-y-6">
+            <div class="p-6 rounded-xl bg-white/5 border border-white/10 flex gap-4">
+              <div class="w-10 h-10 bg-yellow/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                <svg class="w-5 h-5 text-yellow" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-lg font-semibold text-white mb-1">3 Specialists for 70% Less</h3>
+                <p class="text-white/70">Get access to three specialist AI experts for less than the cost of hiring one in-house.</p>
+              </div>
+            </div>
+
+            <div class="p-6 rounded-xl bg-white/5 border border-white/10 flex gap-4">
+              <div class="w-10 h-10 bg-blue/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                <svg class="w-5 h-5 text-blue" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-lg font-semibold text-white mb-1">Proven Academic Background</h3>
+                <p class="text-white/70">BSc(Hons) and MSc qualifications in computer science and psychology from top 10 universities.</p>
+              </div>
+            </div>
+
+            <div class="p-6 rounded-xl bg-white/5 border border-white/10 flex gap-4">
+              <div class="w-10 h-10 bg-green/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                <svg class="w-5 h-5 text-green" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-lg font-semibold text-white mb-1">15+ Years Experience</h3>
+                <p class="text-white/70">Combined experience in building high-level customer acquisition and AI automation systems.</p>
+              </div>
+            </div>
         </div>
       </section>
 
@@ -140,54 +261,8 @@ import Container from "@/components/container.astro";
         </div>
       </section>
 
-      <!-- Our Story Section -->
-      <section class="pb-20 md:pb-28 border-t border-white/10 pt-16">
-        <div class="max-w-4xl mx-auto px-4">
-          <div class="text-center mb-12">
-            <h2 class="text-3xl lg:text-4xl font-bold text-white mb-4">
-              We Solved This Problem — For Ourselves First
-            </h2>
-          </div>
-
-          <div class="prose prose-lg prose-invert max-w-none text-white/70 mb-12">
-            <p>
-              In two years, we built the number one-rated advertising agency on Trustpilot — with a team of just four people.
-            </p>
-            <p>
-              When starting out, we discovered a major bottleneck: only 50% of new enquiries responded to outreach, and just half of them attended booked consultations. Moreover, our small team were constantly drawn into repetitive admin tasks and distractions which took them away from revenue-producing duties.
-            </p>
-            <p>
-              We experimented with countless 'out the box' third-party AI tools (multiple different log-ins!), yet conversions actually got worse.
-            </p>
-            <p class="font-semibold text-white text-xl">
-              So we rolled up our sleeves. One year later, the results speak for themselves...
-            </p>
-          </div>
-
-          <!-- Results -->
-          <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
-            <div class="text-center p-6 bg-white/5 rounded-xl border border-white/10">
-              <div class="text-3xl lg:text-4xl font-bold text-yellow">98%</div>
-              <div class="text-sm text-white/60 mt-2">client appointment booking rate</div>
-            </div>
-            <div class="text-center p-6 bg-white/5 rounded-xl border border-white/10">
-              <div class="text-3xl lg:text-4xl font-bold text-yellow">90%+</div>
-              <div class="text-sm text-white/60 mt-2">appointment attendance</div>
-            </div>
-            <div class="text-center p-6 bg-white/5 rounded-xl border border-white/10">
-              <div class="text-3xl lg:text-4xl font-bold text-green">50%</div>
-              <div class="text-sm text-white/60 mt-2">increase in revenue</div>
-            </div>
-            <div class="text-center p-6 bg-white/5 rounded-xl border border-white/10">
-              <div class="text-3xl lg:text-4xl font-bold text-blue">Zero</div>
-              <div class="text-sm text-white/60 mt-2">additional hires needed</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Our Mission -->
-      <section class="pb-20 md:pb-28 border-t border-white/10 pt-16">
+      <!-- Mission + CTA -->
+      <section class="py-20 md:py-28 border-t border-white/10">
         <div class="max-w-4xl mx-auto px-4 text-center">
           <h2 class="text-3xl lg:text-4xl font-bold text-white mb-8">
             Our Mission
@@ -195,95 +270,131 @@ import Container from "@/components/container.astro";
           <p class="text-xl lg:text-2xl text-white/80 leading-relaxed mb-8">
             HumTech transforms SMEs into AI-powered leaders, through unparalleled fractional AI expertise and flawless client experience.
           </p>
-          <p class="text-xl lg:text-2xl text-white/80 leading-relaxed mb-8">
-            We deliver custom AI systems and strategic guidance that guarantee measurable ROI, treating every client as our most important partnership.
-          </p>
-          <div class="p-8 bg-white/5 rounded-xl border border-white/10 inline-block">
+          <div class="p-8 bg-white/5 rounded-xl border border-white/10 inline-block mb-12">
             <p class="text-2xl lg:text-3xl font-bold text-yellow">
               "Our measure is your success"
             </p>
           </div>
-        </div>
-      </section>
-
-      <!-- Why Choose Us -->
-      <section class="pb-20 md:pb-28 border-t border-white/10 pt-16">
-        <div class="max-w-4xl mx-auto px-4">
-          <div class="text-center mb-12">
-            <h2 class="text-3xl lg:text-4xl font-bold text-white mb-4">
-              Why Choose HumTech?
-            </h2>
+          <div>
+            <p class="text-lg text-white/70 mb-8">
+              Start your Free AI Diagnostic to discover how our founders can transform your business.
+            </p>
+            <button
+              onclick="openAssessmentModal()"
+              class="px-8 py-4 rounded-md font-semibold bg-yellow text-navy hover:bg-yellow/90 transition-colors cursor-pointer text-lg">
+              Start Free AI Diagnostic
+            </button>
           </div>
-
-          <div class="space-y-6">
-            <div class="p-6 rounded-xl bg-white/5 border border-white/10 flex gap-4">
-              <div class="w-10 h-10 bg-yellow/20 rounded-lg flex items-center justify-center flex-shrink-0">
-                <svg class="w-5 h-5 text-yellow" fill="currentColor" viewBox="0 0 20 20">
-                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                </svg>
-              </div>
-              <div>
-                <h3 class="text-lg font-semibold text-white mb-1">3 Specialists for 70% Less</h3>
-                <p class="text-white/70">Get access to three specialist AI experts for less than the cost of hiring one in-house.</p>
-              </div>
-            </div>
-
-            <div class="p-6 rounded-xl bg-white/5 border border-white/10 flex gap-4">
-              <div class="w-10 h-10 bg-blue/20 rounded-lg flex items-center justify-center flex-shrink-0">
-                <svg class="w-5 h-5 text-blue" fill="currentColor" viewBox="0 0 20 20">
-                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                </svg>
-              </div>
-              <div>
-                <h3 class="text-lg font-semibold text-white mb-1">Proven Academic Background</h3>
-                <p class="text-white/70">BSc(Hons) and MSc qualifications in computer science and psychology from top 10 universities.</p>
-              </div>
-            </div>
-
-            <div class="p-6 rounded-xl bg-white/5 border border-white/10 flex gap-4">
-              <div class="w-10 h-10 bg-green/20 rounded-lg flex items-center justify-center flex-shrink-0">
-                <svg class="w-5 h-5 text-green" fill="currentColor" viewBox="0 0 20 20">
-                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                </svg>
-              </div>
-              <div>
-                <h3 class="text-lg font-semibold text-white mb-1">15+ Years Experience</h3>
-                <p class="text-white/70">Combined experience in building high-level customer acquisition and AI automation systems.</p>
-              </div>
-            </div>
-
-            <div class="p-6 rounded-xl bg-white/5 border border-white/10 flex gap-4">
-              <div class="w-10 h-10 bg-yellow/20 rounded-lg flex items-center justify-center flex-shrink-0">
-                <svg class="w-5 h-5 text-yellow" fill="currentColor" viewBox="0 0 20 20">
-                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                </svg>
-              </div>
-              <div>
-                <h3 class="text-lg font-semibold text-white mb-1">Humans First, AI Second</h3>
-                <p class="text-white/70">We understand AI isn't about replacing humans — it's about freeing your team to deliver exceptional service to your clients.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- CTA Section -->
-      <section class="py-16 border-t border-white/10">
-        <div class="max-w-2xl mx-auto px-4 text-center">
-          <h2 class="text-3xl lg:text-4xl font-bold text-white mb-4">
-            Ready to Meet Your AI Team?
-          </h2>
-          <p class="text-lg text-white/70 mb-8">
-            Start your Free AI Diagnostic to discover how our founders can transform your business.
-          </p>
-          <button
-            onclick="openAssessmentModal()"
-            class="px-8 py-4 rounded-md font-semibold bg-yellow text-navy hover:bg-yellow/90 transition-colors cursor-pointer text-lg">
-            Start Free AI Diagnostic
-          </button>
         </div>
       </section>
     </Container>
   </div>
 </Layout>
+
+<style>
+  /* Story timeline */
+  .story-timeline {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    padding-left: 2rem;
+  }
+
+  /* Vertical connecting line */
+  .story-timeline::before {
+    content: '';
+    position: absolute;
+    left: 1.25rem;
+    top: 1.25rem;
+    bottom: 1.25rem;
+    width: 2px;
+    background: linear-gradient(
+      to bottom,
+      rgba(216, 183, 67, 0.4),
+      rgba(61, 178, 221, 0.4),
+      rgba(107, 183, 144, 0.4)
+    );
+  }
+
+  .story-step {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    gap: 1.25rem;
+    padding: 1.5rem 1.5rem 1.5rem 1.75rem;
+    border-radius: 0.75rem;
+    transition: background 0.3s ease;
+  }
+
+  .story-step:hover {
+    background: rgba(255, 255, 255, 0.03);
+  }
+
+  .story-step--highlight {
+    background: rgba(107, 183, 144, 0.06);
+    border: 1px solid rgba(107, 183, 144, 0.15);
+  }
+
+  .story-step--highlight:hover {
+    background: rgba(107, 183, 144, 0.1);
+  }
+
+  /* Icon circle */
+  .story-icon {
+    flex-shrink: 0;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  .story-icon--yellow {
+    background: rgba(216, 183, 67, 0.15);
+    color: #D8B743;
+    box-shadow: 0 0 12px rgba(216, 183, 67, 0.2);
+  }
+
+  .story-icon--red {
+    background: rgba(239, 68, 68, 0.15);
+    color: #ef4444;
+    box-shadow: 0 0 12px rgba(239, 68, 68, 0.15);
+  }
+
+  .story-icon--blue {
+    background: rgba(61, 178, 221, 0.15);
+    color: #3DB2DD;
+    box-shadow: 0 0 12px rgba(61, 178, 221, 0.15);
+  }
+
+  .story-icon--green {
+    background: rgba(107, 183, 144, 0.15);
+    color: #6BB790;
+    box-shadow: 0 0 12px rgba(107, 183, 144, 0.2);
+  }
+
+  .story-content {
+    flex: 1;
+    padding-top: 0.35rem;
+  }
+
+  @media (max-width: 640px) {
+    .story-timeline {
+      padding-left: 0.5rem;
+    }
+
+    .story-step {
+      padding: 1rem 1rem 1rem 1.25rem;
+      gap: 1rem;
+    }
+
+    .story-timeline::before {
+      left: 0.75rem;
+    }
+  }
+</style>
 
