@@ -2,151 +2,98 @@
 import Layout from "@/layouts/Layout.astro";
 import Container from "@/components/container.astro";
 
-const whyThisWorks = [
+const keyBenefits = [
   {
-    title: "Performance-Based SLA's",
-    copy: "We work to hit your ROI targets, and stay with you to set new goals."
+    title: "Zero Risk",
+    copy: "We work to hit your ROI targets, and stay with you to set and achieve new goals."
   },
   {
-    title: "Direct Strategist Access",
-    copy: "Direct access to senior strategists with extensive experience."
+    title: "Cancel Anytime, 30 Day Rolling Contract",
+    copy: "We know the utility and impact of our systems, and do not need to tie our partners in. Results retain our relationships, not contracts."
   },
   {
-    title: "Futureproofing",
-    copy: "Stay ahead with the latest AI implementations and strategic enhancements."
+    title: "Senior Level Access",
+    copy: "Partner exclusively with AI leaders with extensive experience, with no junior teams or service desks diluting expertise."
+  },
+  {
+    title: "Cutting-Edge Futureproofing",
+    copy: "Stay ahead with the latest AI implementations and strategic enhancements from proven industry leaders. AI changes rapidly, and we keep your business ahead of the curve."
   },
   {
     title: "Enterprise Strategy, SME Price",
-    copy: "Top-tier AI planning and execution without full-time overheads."
+    copy: "Get top-tier AI planning, technical execution, and support without full-time overheads."
   },
   {
     title: "Hands-Off Implementation",
-    copy: "We build, deploy, train, and maintain systems with minimal disruption."
-  },
-  {
-    title: "Tailored Solutions",
-    copy: "Custom systems and ongoing guidance aligned to your business model."
-  }
-];
-
-const solutions = [
-  {
-    number: "01",
-    title: "24/7 Lead Engagement System",
-    objective: "Ensure every new lead is engaged immediately to reduce delay and protect revenue.",
-    coverage: [
-      "In-hours and out-of-hours response",
-      "Qualification and intent capture",
-      "Booking and confirmation flow"
-    ],
-    delivery: [
-      "System design and implementation",
-      "CRM, calendar, and workflow integration",
-      "Training, handover, and optimisation"
-    ],
-    clarity: [
-      "Enquiry-to-response speed",
-      "Lead-to-booking conversion",
-      "Attendance and no-show rates"
-    ]
-  },
-  {
-    number: "02",
-    title: "Branded Document/E-Signature Portal",
-    objective: "Reduce admin drag and completion delay while improving trust and compliance.",
-    coverage: [
-      "Document requests and e-signatures",
-      "Automated reminders and follow-up",
-      "Centralised request visibility"
-    ],
-    delivery: [
-      "Branded portal build",
-      "Automation of requests and confirmations",
-      "Secure storage and process alignment"
-    ],
-    clarity: [
-      "Request-to-completion time",
-      "Manual chasing reduction",
-      "Completion rates by request type"
-    ]
-  },
-  {
-    number: "03",
-    title: "Business Clarity Engine",
-    objective: "Create a repeatable operating model with stronger visibility and less manual effort.",
-    coverage: [
-      "Workflow and CRM optimisation",
-      "Repetitive task automation",
-      "KPI and reporting alignment"
-    ],
-    delivery: [
-      "Workflow and reporting review",
-      "High-friction process automation",
-      "Dashboard and summary deployment"
-    ],
-    clarity: [
-      "Where time is being lost",
-      "Which metrics leadership should trust",
-      "What needs immediate attention"
-    ]
-  },
-  {
-    number: "04",
-    title: "Marketing Performance Suite",
-    objective: "Strengthen acquisition performance with clearer decision-making and tighter budget-to-return alignment.",
-    coverage: [
-      "Acquisition and conversion performance analysis",
-      "Channel efficiency and spend allocation",
-      "Offer and messaging optimisation"
-    ],
-    delivery: [
-      "Marketing systems audit",
-      "Executive optimisation session",
-      "Ongoing strategic oversight and advisory"
-    ],
-    clarity: [
-      "Where performance is leaking",
-      "Which channels and campaigns should be scaled",
-      "How marketing decisions affect pipeline and revenue"
-    ]
+    copy: "Zero technical knowledge needed. Our team builds, deploys, trains, and maintains custom branded systems while you capture the gains."
   }
 ];
 
 const roadmap = [
   {
     title: "Baseline Assessment",
-    copy: "A focused review of your current systems, workflows, and operating constraints to establish a clear starting point."
+    copy: "Review of current systems and constraints."
   },
   {
     title: "Strategic Direction",
-    copy: "A prioritised, outcome-led plan showing where to intervene first and why, aligned to your commercial goals."
+    copy: "Prioritized plan aligned to your goals."
   },
   {
     title: "Implementation",
-    copy: "Design, build, and integration of agreed systems into your existing operations, with minimal disruption."
+    copy: "Build and integrate with minimal disruption."
   },
   {
-    title: "Go-Live and Optimisation",
-    copy: "Systems are launched, monitored, and refined to ensure stability, performance, and early impact."
+    title: "Go-Live & Optimization",
+    copy: "Launch, monitor, and refine for impact."
   },
   {
-    title: "Ongoing Strategic Leadership",
-    copy: "Continued oversight, optimisation, and guidance to maintain performance and support evolving targets."
+    title: "Ongoing Leadership",
+    copy: "Continued oversight and strategic guidance."
   }
 ];
+
+const circleSteps = roadmap.map((step, i) => {
+  const angleDeg = -90 + i * 72;
+  const angleRad = angleDeg * Math.PI / 180;
+  const r = 28;
+  return {
+    ...step,
+    dotX: +(50 + r * Math.cos(angleRad)).toFixed(1),
+    dotY: +(50 + r * Math.sin(angleRad)).toFixed(1),
+    idx: i
+  };
+});
 
 const expertise = [
   {
     title: "Lead Velocity",
-    copy: "Faster first response, stronger qualification, and higher booking momentum."
+    copy: "Faster first response, stronger qualification, and higher booking momentum.",
+    icon: "lightning"
   },
   {
     title: "Automation",
-    copy: "Lower manual load through practical workflow and process automation."
+    copy: "Lower manual load through practical workflow and process automation.",
+    icon: "cog"
   },
   {
     title: "Operational Clarity",
-    copy: "Cleaner reporting, aligned KPIs, and sharper leadership decisions."
+    copy: "Cleaner reporting, aligned KPIs, and sharper leadership decisions.",
+    icon: "chart"
+  }
+];
+
+const deliveryFlow = [
+  {
+    title: "Diagnose",
+    copy: "We identify the highest-value AI opportunities based on your commercial goals."
+  },
+  {
+    title: "Deploy",
+    copy: "We build and integrate custom branded systems into your existing operation."
+  },
+  {
+    title: "Optimize",
+    copy: "We monitor, improve, and guide strategy so ROI compounds over time."
   }
 ];
 ---
@@ -154,149 +101,132 @@ const expertise = [
 <Layout title="Services" visioptPid={169}>
   <div class="bg-navy">
     <Container>
-      <section class="py-16 md:py-24">
-        <div class="max-w-6xl mx-auto px-4 text-center">
-          <h1 class="services-hero-title text-yellow font-bold mb-8">
-            Strategic AI Leadership and Systems Infrastructure
-          </h1>
-          <div class="mx-auto space-y-4 services-hero-subwrap">
-            <p class="services-hero-sub text-white font-bold">
-              HumTech builds and implements AI systems that improve lead velocity, automation, and operational clarity.
-            </p>
-            <p class="services-hero-sub text-yellow font-bold">
-              Measurable ROI is the standard.
-            </p>
+      <section class="py-16 md:py-24 relative overflow-hidden">
+        <!-- Floating background orbs -->
+        <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
+          <div class="absolute top-10 left-1/4 w-96 h-96 bg-blue/10 rounded-full blur-3xl animate-float"></div>
+          <div class="absolute bottom-10 right-1/4 w-80 h-80 bg-yellow/10 rounded-full blur-3xl animate-float delay-200"></div>
+          <div class="absolute top-1/2 left-10 w-64 h-64 bg-green/10 rounded-full blur-3xl animate-float delay-400"></div>
+        </div>
+        <!-- Gradient overlay -->
+        <div class="absolute inset-0 bg-gradient-to-b from-navy via-transparent to-navy pointer-events-none" aria-hidden="true"></div>
+
+        <div class="max-w-6xl mx-auto px-4 relative z-10">
+          <div class="text-center">
+            <h1 class="services-hero-title text-yellow font-bold mb-8 animate-fade-in-up">
+              Fractional AI Growth Team and Systems Infrastructure That Scale With You
+            </h1>
+            <div class="mx-auto space-y-4 services-hero-subwrap">
+              <p class="services-hero-sub text-white font-bold animate-fade-in-up delay-100">
+                HumTech builds and implements AI systems that improve lead velocity, automation, and operational clarity.
+              </p>
+              <p class="services-hero-roi text-yellow font-bold animate-fade-in-up delay-200">
+                Measurable ROI is the standard.
+              </p>
+            </div>
           </div>
-          <h2 class="section-title text-3xl lg:text-4xl xl:text-5xl font-bold text-white text-center mt-14 mb-12 leading-tight">
-            Why This Works
-          </h2>
-          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {whyThisWorks.map((card) => (
-              <article class="cred-card group">
-                <div class="cred-card-inner">
-                  <div class="mb-4">
-                    <div class="w-10 h-10 rounded-lg bg-yellow/20 flex items-center justify-center">
-                      <svg class="w-5 h-5 text-yellow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-                        <polyline points="22 4 12 14.01 9 11.01"></polyline>
-                      </svg>
-                    </div>
+
+          <!-- Delivery cards centered -->
+          <div class="delivery-pipeline mt-14 max-w-6xl mx-auto">
+            {deliveryFlow.map((step, idx) => (
+              <>
+                <article class="delivery-node card-hover">
+                  <div class="delivery-badge">{idx + 1}</div>
+                  <h3 class="text-yellow font-bold text-lg">{step.title}</h3>
+                  <p class="text-white/70 text-sm leading-relaxed mt-2">{step.copy}</p>
+                </article>
+                {idx < deliveryFlow.length - 1 && (
+                  <div class="delivery-arrow" aria-hidden="true">
+                    <svg viewBox="0 0 40 24" fill="none" class="w-10 h-6">
+                      <path d="M0 12h32m0 0l-8-8m8 8l-8 8" stroke="rgba(216,183,67,0.5)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
                   </div>
-                  <h3 class="text-yellow font-bold text-base md:text-lg mb-3">{card.title}</h3>
-                  <p class="text-white/70 text-sm md:text-base leading-relaxed">{card.copy}</p>
-                </div>
-              </article>
+                )}
+              </>
             ))}
           </div>
-        </div>
-      </section>
 
-      <section class="py-16 md:py-24 border-t border-white/10">
-        <div class="max-w-6xl mx-auto px-4">
-          <h2 class="section-title text-3xl lg:text-4xl xl:text-5xl font-bold text-white text-center mb-12 leading-tight">
-            Custom Solutions
-          </h2>
-          <div class="solution-accordion-wrap max-w-4xl mx-auto space-y-4">
-            {solutions.map((solution) => (
-              <details class="solution-item">
-                <summary class="solution-summary">
-                  <div class="flex items-center gap-3">
-                    <span class="w-9 h-9 rounded-full border border-yellow/60 bg-yellow/10 text-yellow font-bold flex items-center justify-center text-xs">
-                      {solution.number}
-                    </span>
-                    <h3 class="text-yellow font-bold text-base md:text-lg">{solution.title}</h3>
-                  </div>
-                  <svg class="w-5 h-5 text-yellow solution-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                    <path d="M6 9l6 6 6-6"></path>
-                  </svg>
-                </summary>
-                <div class="solution-content">
-                  <p class="text-white/80 text-sm md:text-base leading-relaxed mb-5">
-                    <span class="font-semibold text-white">Objective:</span> {solution.objective}
-                  </p>
-                  <div class="space-y-3 text-white/70 text-sm md:text-base leading-relaxed">
-                    <div>
-                      <p class="text-white font-semibold mb-1">System Coverage</p>
-                      <ul class="list-disc list-inside space-y-1">
-                        {solution.coverage.map((item) => <li>{item}</li>)}
-                      </ul>
-                    </div>
-                    <div>
-                      <p class="text-white font-semibold mb-1">Delivery</p>
-                      <ul class="list-disc list-inside space-y-1">
-                        {solution.delivery.map((item) => <li>{item}</li>)}
-                      </ul>
-                    </div>
-                    <div>
-                      <p class="text-white font-semibold mb-1">What becomes clear</p>
-                      <ul class="list-disc list-inside space-y-1">
-                        {solution.clarity.map((item) => <li>{item}</li>)}
-                      </ul>
+          <!-- Quote -->
+          <blockquote class="quote-accent mt-16 max-w-3xl mx-auto">
+            <p class="text-white/85 text-lg md:text-xl leading-relaxed italic">
+              "Companies that will succeed will be the ones that most effectively use Artificial Intelligence. If you are making maximum use of AI and are competing against someone who is not, you will win."
+            </p>
+            <cite class="block mt-4 text-yellow/70 text-sm font-bold not-italic tracking-wide">— Elon Musk</cite>
+          </blockquote>
+
+          <!-- Roadmap + Service Overview -->
+          <div class="mt-20 grid lg:grid-cols-[1fr_1.1fr] gap-10 lg:gap-14 items-center">
+            <div>
+              <div class="roadmap-circle-container">
+                <svg class="roadmap-ring-svg" viewBox="0 0 100 100" fill="none">
+                  <circle cx="50" cy="50" r="28" stroke="rgba(216,183,67,0.15)" stroke-width="0.5" fill="none" />
+                  <circle cx="50" cy="50" r="28" stroke="rgba(216,183,67,0.35)" stroke-width="1" stroke-dasharray="3 5" fill="none" class="roadmap-arc-path" />
+                </svg>
+                {circleSteps.map((step) => (
+                  <div class={`rc-node rc-pos-${step.idx}`} style={`left:${step.dotX}%;top:${step.dotY}%`}>
+                    <div class="rc-dot roadmap-dot-pulse"></div>
+                    <div class="rc-content">
+                      <span class="rc-step-num">Step {step.idx + 1}</span>
+                      <h3 class="rc-title">{step.title}</h3>
+                      <p class="rc-desc">{step.copy}</p>
                     </div>
                   </div>
-                </div>
-              </details>
-            ))}
-          </div>
-        </div>
-      </section>
+                ))}
+              </div>
 
-      <section class="py-16 md:py-24 border-t border-white/10">
-        <div class="max-w-6xl mx-auto px-4">
-          <div class="text-center mb-16">
-            <h2 class="section-title text-3xl lg:text-4xl xl:text-5xl font-bold text-yellow mb-4 leading-tight">Roadmap</h2>
+              <div class="roadmap-mobile">
+                {roadmap.map((step, idx) => (
+                  <div class="flex gap-4">
+                    <div class="flex flex-col items-center">
+                      <div class="w-3.5 h-3.5 bg-yellow rounded-full shrink-0" style="box-shadow:0 0 10px rgba(216,183,67,0.4)"></div>
+                      {idx < roadmap.length - 1 && <div class="w-0.5 flex-1 bg-white/15"></div>}
+                    </div>
+                    <div class={idx < roadmap.length - 1 ? "pb-6" : ""}>
+                      <span class="text-yellow/50 font-bold text-xs tracking-widest uppercase">Step {idx + 1}</span>
+                      <h3 class="text-base font-bold text-yellow mt-1">{step.title}</h3>
+                      <p class="text-white/60 text-sm leading-relaxed mt-1">{step.copy}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div>
+              <h2 class="text-2xl lg:text-3xl font-bold text-yellow leading-tight mb-4">Service Overview</h2>
+              <p class="text-white/75 text-base md:text-lg leading-relaxed">
+                HumTech transforms SMEs into AI-powered leaders through fractional AI expertise, custom systems, and measurable ROI delivery.
+              </p>
+              <p class="text-white/75 text-base md:text-lg leading-relaxed mt-4">
+                We provide executive-level support across strategy, implementation, and optimization without enterprise overheads.
+              </p>
+            </div>
           </div>
 
-          <div class="grid md:grid-cols-2 gap-12">
-            <div class="space-y-8">
-              {roadmap.map((step, idx) => (
-                <div class="flex gap-4">
-                  <div class="flex flex-col items-center">
-                    <div class="w-4 h-4 bg-yellow rounded-full"></div>
-                    {idx < roadmap.length - 1 && <div class="w-0.5 h-full bg-white/20"></div>}
-                  </div>
-                  <div class={idx < roadmap.length - 1 ? "pb-8" : ""}>
-                    <h3 class="text-lg font-bold text-yellow mb-2">{step.title}</h3>
-                    <p class="text-white/70 text-base leading-relaxed">{step.copy}</p>
-                  </div>
-                </div>
+          <div class="mt-14 border border-white/10 rounded-xl p-6 md:p-8 bg-white/[0.02]">
+            <h2 class="text-2xl lg:text-3xl font-bold text-yellow leading-tight">Fractional AI Growth Team</h2>
+            <p class="text-white/70 mt-3 text-lg">Why Fractioned AI?</p>
+            <p class="text-white/70 mt-4 max-w-4xl">
+              Unlike most AI providers who deploy generic, one-size-fits-all tools with near-zero aftercare, HumTech delivers tailored consultations, fully branded custom systems, and rigorous ongoing guidance for sustained ROI.
+            </p>
+
+            <div class="mt-8 grid md:grid-cols-2 xl:grid-cols-3 gap-4" aria-label="Why Fractioned AI key benefits">
+              {keyBenefits.map((item, idx) => (
+                <article class={`benefit-tile card-hover delay-${(idx + 1) * 100}`}>
+                  <div class="benefit-num" aria-hidden="true">{idx + 1}</div>
+                  <h3 class="text-yellow font-bold text-lg">{item.title}</h3>
+                  <p class="text-white/70 text-base leading-relaxed mt-3">{item.copy}</p>
+                </article>
               ))}
             </div>
-            <article class="cred-card h-fit">
-              <div class="cred-card-inner">
-                <h3 class="text-white font-bold text-xl mb-4">Outcome Focus</h3>
-                <p class="text-white/70 text-base leading-relaxed mb-4">
-                  A clear path from baseline to live deployment.
-                </p>
-                <p class="text-white/70 text-base leading-relaxed">
-                  The outcome is stronger lead response, better automation leverage, and clearer operational control.
-                </p>
-              </div>
-            </article>
           </div>
         </div>
       </section>
 
-      <section class="py-16 md:py-24 border-t border-white/10">
-        <div class="max-w-6xl mx-auto px-4">
-          <div class="text-center mb-14">
-            <h2 class="section-title text-3xl lg:text-4xl xl:text-5xl font-bold text-yellow mb-4 leading-tight">Areas of Expertise</h2>
-            <p class="text-white/70 text-lg max-w-3xl mx-auto">
-              Strategic leadership and implementation support across the systems that directly affect growth and performance.
-            </p>
-          </div>
-          <div class="grid md:grid-cols-3 gap-6">
-            {expertise.map((item) => (
-              <article class="cred-card">
-                <div class="cred-card-inner">
-                  <h3 class="text-yellow font-bold text-lg mb-3">{item.title}</h3>
-                  <p class="text-white/70 text-base leading-relaxed">{item.copy}</p>
-                </div>
-              </article>
-            ))}
-          </div>
+      <div class="section-divider" aria-hidden="true"><div class="section-divider-line"></div></div>
 
-          <h2 class="section-title financial-title text-3xl lg:text-4xl xl:text-5xl font-bold text-yellow text-center mt-16 mb-12 leading-tight">
+      <section class="py-16 md:py-24">
+        <div class="max-w-6xl mx-auto px-4">
+          <h2 class="section-title financial-title text-3xl lg:text-4xl xl:text-5xl font-bold text-yellow text-center mb-12 leading-tight">
             The Financial Logic of the Fractional Model
           </h2>
           <div class="financial-logic-shell overflow-x-auto">
@@ -335,16 +265,58 @@ const expertise = [
             </table>
           </div>
 
-          <div class="max-w-2xl mx-auto px-4 text-center mt-14 md:mt-16">
-            <h2 class="text-3xl lg:text-4xl font-bold text-yellow mb-4">Ready to Move Faster?</h2>
-            <p class="text-lg text-white/70 mb-8">
-              Start your Free AI Diagnostic to identify the highest-leverage systems for your business.
+          <div class="section-divider mt-12" aria-hidden="true"><div class="section-divider-line"></div></div>
+
+          <div class="text-center mb-14">
+            <h2 class="section-title text-3xl lg:text-4xl xl:text-5xl font-bold text-yellow mt-16 mb-4 leading-tight">Areas of Expertise</h2>
+            <p class="text-white/70 text-lg max-w-3xl mx-auto">
+              Strategic leadership and implementation support across the systems that directly affect growth and performance.
             </p>
-            <button
-              onclick="openAssessmentModal()"
-              class="px-8 py-4 rounded-md font-semibold bg-yellow text-navy hover:bg-yellow/90 transition-colors cursor-pointer text-lg">
-              Start Free AI Diagnostic
-            </button>
+          </div>
+          <div class="grid md:grid-cols-3 gap-6">
+            {expertise.map((item) => (
+              <article class="cred-card card-hover">
+                <div class="cred-card-inner">
+                  <div class="expertise-icon-wrap mb-4">
+                    {item.icon === "lightning" && (
+                      <svg class="w-8 h-8 text-yellow" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                      </svg>
+                    )}
+                    {item.icon === "cog" && (
+                      <svg class="w-8 h-8 text-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.573-1.066z"/>
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                      </svg>
+                    )}
+                    {item.icon === "chart" && (
+                      <svg class="w-8 h-8 text-green" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                      </svg>
+                    )}
+                  </div>
+                  <h3 class="text-yellow font-bold text-lg mb-3">{item.title}</h3>
+                  <p class="text-white/70 text-base leading-relaxed">{item.copy}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+
+          <div class="section-divider mt-10" aria-hidden="true"><div class="section-divider-line"></div></div>
+
+          <div class="max-w-2xl mx-auto px-4 text-center mt-14 md:mt-16 relative">
+            <div class="absolute inset-0 cta-radial-bg pointer-events-none" aria-hidden="true"></div>
+            <div class="relative z-10">
+              <h2 class="text-3xl lg:text-4xl font-bold text-yellow mb-4">Ready to Diagnose Your Business?</h2>
+              <p class="text-lg text-white/70 mb-8">
+                Start your Free AI Diagnostic to identify your highest-leverage AI opportunities.
+              </p>
+              <button
+                onclick="openAssessmentModal()"
+                class="px-8 py-4 rounded-md font-semibold bg-yellow text-navy hover:bg-yellow/90 transition-colors cursor-pointer text-lg animate-pulse-glow">
+                Diagnose My Business
+              </button>
+            </div>
           </div>
         </div>
       </section>
@@ -356,19 +328,12 @@ const expertise = [
   .section-title {
     font-size: clamp(2.1rem, 3.2vw, 3.35rem);
     line-height: 1.16;
-    max-width: 30ch;
+    max-width: none;
     margin-inline: auto;
     letter-spacing: -0.01em;
   }
 
-  .readable-prose p {
-    font-size: clamp(1.05rem, 1.2vw, 1.42rem);
-    line-height: 1.5;
-    letter-spacing: 0.002em;
-    max-width: 62ch;
-    margin-inline: auto;
-  }
-
+  /* Expertise cards */
   .cred-card {
     position: relative;
     padding: 3px;
@@ -389,7 +354,7 @@ const expertise = [
   }
 
   .cred-card::before {
-    content: '';
+    content: "";
     position: absolute;
     inset: -1px;
     border-radius: 13px;
@@ -397,64 +362,229 @@ const expertise = [
     pointer-events: none;
   }
 
-  .solution-content ul {
-    margin: 0;
-    padding-left: 0;
-    list-style: none;
-  }
-
-  .solution-content ul li {
-    position: relative;
-    padding-left: 1rem;
-  }
-
-  .solution-content ul li::before {
-    content: "";
-    position: absolute;
-    top: 0.65rem;
-    left: 0;
-    width: 0.34rem;
-    height: 0.34rem;
-    border-radius: 999px;
-    background: #d8b743;
-    box-shadow: 0 0 8px rgba(216, 183, 67, 0.5);
-  }
-
-  .solution-item {
-    border: 1px solid rgba(216, 183, 67, 0.3);
-    border-radius: 12px;
-    background: #0a1e35;
-    overflow: hidden;
-  }
-
-  .solution-summary {
-    list-style: none;
-    cursor: pointer;
+  .expertise-icon-wrap {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 0.5rem;
+    background: rgba(216, 183, 67, 0.1);
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    gap: 1rem;
-    padding: 1rem 1.1rem;
-    background: linear-gradient(180deg, rgba(13, 35, 64, 0.9) 0%, rgba(10, 30, 53, 0.9) 100%);
-    border-bottom: 1px solid rgba(216, 183, 67, 0.15);
+    justify-content: center;
   }
 
-  .solution-summary::-webkit-details-marker {
+  /* Roadmap circle */
+  .roadmap-circle-container {
+    position: relative;
+    max-width: 360px;
+    margin: 0 auto;
+    aspect-ratio: 1;
+  }
+
+  .roadmap-ring-svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 52%;
+    height: 52%;
+    transform: translate(-50%, -50%);
+    overflow: visible;
+  }
+
+  .rc-node {
+    position: absolute;
+    width: 0;
+    height: 0;
+  }
+
+  .rc-dot {
+    position: absolute;
+    width: 11px;
+    height: 11px;
+    background: #d8b743;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 10px rgba(216, 183, 67, 0.4);
+    z-index: 2;
+  }
+
+  @keyframes dot-pulse {
+    0%, 100% {
+      box-shadow: 0 0 8px rgba(216, 183, 67, 0.4);
+      transform: translate(-50%, -50%) scale(1);
+    }
+    50% {
+      box-shadow: 0 0 16px rgba(216, 183, 67, 0.7);
+      transform: translate(-50%, -50%) scale(1.2);
+    }
+  }
+
+  .roadmap-dot-pulse {
+    animation: dot-pulse 2.5s ease-in-out infinite;
+  }
+
+  .rc-pos-0 .roadmap-dot-pulse { animation-delay: 0s; }
+  .rc-pos-1 .roadmap-dot-pulse { animation-delay: 0.5s; }
+  .rc-pos-2 .roadmap-dot-pulse { animation-delay: 1.0s; }
+  .rc-pos-3 .roadmap-dot-pulse { animation-delay: 1.5s; }
+  .rc-pos-4 .roadmap-dot-pulse { animation-delay: 2.0s; }
+
+  @keyframes dash-rotate {
+    to { stroke-dashoffset: -50; }
+  }
+
+  .roadmap-arc-path {
+    animation: dash-rotate 12s linear infinite;
+  }
+
+  .rc-content {
+    position: absolute;
+    width: 136px;
+  }
+
+  .rc-step-num {
+    display: block;
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(216, 183, 67, 0.5);
+  }
+
+  .rc-title {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #d8b743;
+    margin-top: 0.1rem;
+    line-height: 1.2;
+  }
+
+  .rc-desc {
+    font-size: 0.64rem;
+    color: rgba(255, 255, 255, 0.45);
+    line-height: 1.35;
+    margin-top: 0.2rem;
+  }
+
+  .rc-pos-0 .rc-content {
+    bottom: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+  }
+
+  .rc-pos-1 .rc-content {
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: left;
+  }
+
+  .rc-pos-2 .rc-content {
+    left: 16px;
+    top: 50%;
+    transform: translateY(-30%);
+    text-align: left;
+  }
+
+  .rc-pos-3 .rc-content {
+    right: 16px;
+    top: 50%;
+    transform: translateY(-30%);
+    text-align: right;
+  }
+
+  .rc-pos-4 .rc-content {
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: right;
+  }
+
+  .roadmap-mobile {
     display: none;
   }
 
-  .solution-content {
-    padding: 1rem 1.1rem 1.1rem;
+  /* Delivery pipeline */
+  .delivery-pipeline {
+    display: flex;
+    align-items: stretch;
   }
 
-  .solution-chevron {
-    transition: transform 0.2s ease;
+  .delivery-node {
+    flex: 1;
+    border: 1px solid rgba(216, 183, 67, 0.25);
+    border-radius: 0.75rem;
+    background: rgba(8, 30, 56, 0.7);
+    padding: 1.25rem;
+    position: relative;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
-  .solution-item[open] .solution-chevron {
-    transform: rotate(180deg);
+  .delivery-node:hover {
+    border-color: rgba(216, 183, 67, 0.6);
+    box-shadow: 0 0 25px rgba(216, 183, 67, 0.15);
   }
 
+  .delivery-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 3rem;
+  }
+
+  .delivery-badge {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 999px;
+    border: 1px solid rgba(216, 183, 67, 0.5);
+    color: #d8b743;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    background: rgba(216, 183, 67, 0.12);
+  }
+
+  /* Benefit tiles */
+  .benefit-tile {
+    border: 1px solid rgba(216, 183, 67, 0.25);
+    border-radius: 0.75rem;
+    background: rgba(8, 30, 56, 0.7);
+    padding: 1.25rem;
+    min-height: 220px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .benefit-tile::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #D8B743, #3DB2DD);
+    border-radius: 0.75rem 0.75rem 0 0;
+  }
+
+  .benefit-num {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background: rgba(216, 183, 67, 0.12);
+    border: 1px solid rgba(216, 183, 67, 0.4);
+    color: #d8b743;
+    font-weight: 700;
+    font-size: 0.85rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.75rem;
+  }
+
+  /* Financial table */
   .financial-logic-shell {
     border: 1px solid rgba(214, 181, 74, 0.35);
     border-radius: 1rem;
@@ -479,17 +609,40 @@ const expertise = [
     outline: none;
   }
 
-  .intro-prose p {
-    max-width: 46ch;
-    font-size: clamp(1.16rem, 1.35vw, 1.55rem);
-    line-height: 1.45;
+  /* Quote accent */
+  .quote-accent {
+    border-left: 3px solid #D8B743;
+    padding-left: 1.5rem;
   }
 
+  /* Section dividers */
+  .section-divider {
+    display: flex;
+    justify-content: center;
+    padding: 2rem 0;
+  }
+
+  .section-divider-line {
+    width: 120px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #D8B743, #3DB2DD, transparent);
+    background-size: 200% 100%;
+    animation: gradient-shift 4s ease infinite;
+    border-radius: 1px;
+  }
+
+  /* CTA radial background */
+  .cta-radial-bg {
+    background: radial-gradient(ellipse at center, rgba(216, 183, 67, 0.08) 0%, transparent 70%);
+    border-radius: 2rem;
+  }
+
+  /* Hero typography */
   .services-hero-title {
     font-size: clamp(2.15rem, 3.95vw, 4.2rem);
     line-height: 1.12;
     letter-spacing: -0.018em;
-    max-width: 24ch;
+    max-width: none;
     margin-inline: auto;
   }
 
@@ -503,8 +656,37 @@ const expertise = [
     letter-spacing: -0.004em;
   }
 
+  .services-hero-roi {
+    font-size: clamp(1rem, 1.2vw, 1.3rem);
+    line-height: 1.4;
+    letter-spacing: 0.01em;
+  }
+
   .financial-title {
     max-width: none;
+  }
+
+  /* Mobile breakpoint */
+  @media (max-width: 767px) {
+    .roadmap-circle-container {
+      display: none;
+    }
+
+    .roadmap-mobile {
+      display: block;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    .delivery-pipeline {
+      flex-direction: column;
+    }
+
+    .delivery-arrow {
+      width: auto;
+      height: 2.5rem;
+      transform: rotate(90deg);
+    }
   }
 
   @media (min-width: 1024px) {
@@ -513,5 +695,4 @@ const expertise = [
       font-size: clamp(2.2rem, 3.05vw, 3.35rem);
     }
   }
-
 </style>

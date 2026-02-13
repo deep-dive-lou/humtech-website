@@ -1,13 +1,8 @@
 ---
 import Container from "@/components/container.astro";
-import Dropdown from "./dropdown.astro";
 import { Astronav, MenuItems, MenuIcon } from "astro-navbar";
 
 const menuitems = [
-  {
-    title: "Free AI Diagnostic",
-    path: "/free-ai-diagnostic",
-  },
   {
     title: "Home",
     path: "/",
@@ -33,51 +28,38 @@ const menuitems = [
 
 <div class="bg-navy fixed top-0 left-0 right-0 z-50 shadow-lg shadow-black/20">
   <Container>
-    <header class="flex flex-col lg:flex-row justify-between items-center py-3">
-      <Astronav>
-        <div class="flex w-full lg:w-auto items-center justify-between gap-8">
-          <a href="/">
-            <img src="/public/bg-humtech.png" alt="HumTech Logo" class="h-20 lg:h-24 w-auto" />
-          </a>
-          <div class="block lg:hidden">
-            <MenuIcon class="w-4 h-4 text-white" />
+    <header class="py-3">
+      <Astronav closeOnClick>
+        <div class="lg:flex lg:w-full lg:items-center lg:justify-between lg:gap-8">
+          <div class="flex w-full lg:w-auto items-center justify-between gap-6">
+            <a href="/" class="shrink-0">
+              <img src="/public/bg-humtech.png" alt="HumTech Logo" class="h-20 lg:h-24 w-auto" />
+            </a>
+            <div class="block lg:hidden">
+              <MenuIcon class="h-6 w-6 text-white" />
+            </div>
           </div>
-          <MenuItems class="hidden w-full lg:w-auto mt-2 lg:flex lg:mt-0">
-            <ul class="flex flex-col lg:flex-row lg:gap-3">
-              {
-                menuitems.map((item, index) => (
-                  <>
-                    {item.children && (
-                      <Dropdown
-                        title={item.title}
-                        children={item.children}
-                        lastItem={index === menuitems.length - 1}
-                      />
-                    )}
 
-                    {!item.children && (
-                      <li>
-                        <a
-                          href={item.path}
-                          class:list={[
-                            "flex lg:px-3 py-2 items-center transition-colors",
-                            item.title === "Free AI Diagnostic"
-                              ? "text-yellow hover:text-yellow-light font-semibold"
-                              : "text-white/70 hover:text-white",
-                          ]}>
-                          <span> {item.title}</span>
-                          {item.badge && (
-                            <span class="ml-1 px-2 py-0.5 text-[10px] animate-pulse font-semibold uppercase text-navy bg-yellow rounded-full">
-                              New
-                            </span>
-                          )}
-                        </a>
-                      </li>
-                    )}
-                  </>
+          <MenuItems class="hidden w-full lg:mt-0 lg:flex lg:flex-1 lg:items-center lg:justify-between lg:gap-8">
+            <ul class="mt-2 flex flex-col border-t border-white/20 py-3 lg:mt-0 lg:flex-row lg:items-center lg:gap-3 lg:border-0 lg:py-0 lg:flex-nowrap">
+              {
+                menuitems.map((item) => (
+                  <li>
+                    <a
+                      href={item.path}
+                      class="flex px-3 py-2 items-center text-white/80 hover:text-white transition-colors">
+                      <span>{item.title}</span>
+                    </a>
+                  </li>
                 ))
               }
             </ul>
+
+            <a
+              href="/free-ai-diagnostic"
+              class="mb-3 inline-flex w-full items-center justify-center rounded-md bg-yellow px-5 py-2.5 font-semibold text-navy transition-colors hover:bg-yellow-light lg:mb-0 lg:w-auto">
+              Free AI Diagnostic
+            </a>
           </MenuItems>
         </div>
       </Astronav>
