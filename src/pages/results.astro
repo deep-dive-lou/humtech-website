@@ -52,7 +52,7 @@
   </head>
   <body>
     <div id="loading-screen">
-      <img src="/public/logo.png" alt="HumTech" />
+      <img src="/public/bg-logo.png" alt="HumTech" />
       <div class="spinner" id="spinner"></div>
       <p id="status-error"></p>
     </div>
@@ -76,12 +76,24 @@
             if (!html) {
               throw new Error("No HTML returned");
             }
+            // Ensure viewport meta exists
             if (!html.includes('name="viewport"')) {
               html = html.replace(
                 /<head>/i,
                 '<head><meta name="viewport" content="width=device-width, initial-scale=1">'
               );
             }
+
+            // Inject mobile overflow fixes
+            const injectStyles = `<style>
+              *, *::before, *::after { box-sizing: border-box; }
+              body { overflow-x: hidden; }
+              img, video, iframe, table, pre { max-width: 100% !important; height: auto; }
+              td, th { word-break: break-word; }
+            </style>`;
+
+            html = html.replace(/<\/head>/i, injectStyles + '</head>');
+
             document.open();
             document.write(html);
             document.close();
