@@ -69,7 +69,7 @@
       } else {
         fetch(`/api/results?submission=${encodeURIComponent(submission)}`)
           .then(async (response) => {
-            const html = await response.text();
+            let html = await response.text();
             if (!response.ok) {
               throw new Error(html || "Request failed");
             }
