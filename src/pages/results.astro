@@ -87,9 +87,43 @@
             // Inject mobile overflow fixes
             const injectStyles = `<style>
               *, *::before, *::after { box-sizing: border-box; }
-              body { overflow-x: hidden; }
+              html, body { overflow-x: hidden; max-width: 100%; }
               img, video, iframe, table, pre { max-width: 100% !important; height: auto; }
               td, th { word-break: break-word; }
+
+              @media (max-width: 640px) {
+                .page { padding: 12px !important; gap: 10px !important; }
+
+                /* Header stacks vertically */
+                .header { flex-direction: column !important; gap: 16px !important; }
+                .header-right { text-align: left !important; align-items: flex-start !important; }
+                .score-block { justify-content: flex-start !important; }
+                .score-num { font-size: 36px !important; }
+
+                /* Pillar grid: 5 cols → 2 cols */
+                .pillar-stat-grid { grid-template-columns: 1fr 1fr !important; }
+                .pillar-stat { border-right: 1px solid rgba(25,48,80,0.10) !important; }
+                .pillar-stat:nth-child(2n) { border-right: none !important; }
+                .pillar-stat:last-child:nth-child(odd) { grid-column: 1 / -1 !important; }
+
+                /* Waterfall: hide bar column */
+                .wf-row { grid-template-columns: 26px 1fr 80px !important; }
+                .wf-bar-col { display: none !important; }
+                .wf-amount { font-size: 12px !important; }
+
+                /* Qual grid: 2 cols → 1 col */
+                .qual-grid { grid-template-columns: 1fr !important; }
+                .qual-item { border-right: none !important; }
+                .qual-item:last-child:nth-child(odd) {
+                  grid-column: auto !important;
+                  grid-template-columns: 1fr !important;
+                  gap: 0 !important;
+                }
+
+                /* Waterfall summary strip: 3 cols → 1 col */
+                .wf-summary-strip { grid-template-columns: 1fr !important; }
+                .wf-stat { border-right: none !important; border-top: 1px solid rgba(25,48,80,0.10) !important; }
+              }
             </style>`;
 
             html = html.replace(/<\/head>/i, injectStyles + '</head>');
