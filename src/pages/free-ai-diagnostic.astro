@@ -4,10 +4,10 @@ import Layout from "@/layouts/Layout.astro";
 
 <Layout title="Free AI Diagnostic" visioptPid={174}>
   <main class="bg-navy min-h-screen text-white">
-    <section class="pt-16 md:pt-20 pb-12 md:pb-16">
+    <section class="pt-6 md:pt-20 pb-12 md:pb-16">
       <section class="max-w-6xl mx-auto px-4">
         <div class="grid md:grid-cols-2 gap-8 md:gap-10 items-center">
-          <div class="order-1 md:order-1 text-center md:text-left">
+          <div class="order-2 md:order-1 text-center md:text-left">
             <h1 class="text-2xl md:text-5xl font-bold text-yellow leading-tight">
               Find out how many leads you're losing if you're NOT embracing AI
             </h1>
@@ -63,13 +63,13 @@ import Layout from "@/layouts/Layout.astro";
             </p>
           </div>
 
-          <div class="order-2 md:order-2">
+          <div class="order-1 md:order-2">
             <iframe
               id="scorecard-embed"
               src="https://assessment.humtech.ai/"
               title="HumTech Scorecard"
               style="width:100%;max-width:780px;height:900px;border:0;outline:0;box-shadow:none;background:transparent;display:block;margin:0 auto;"
-              loading="lazy"
+              loading="eager"
               scrolling="no">
             </iframe>
           </div>
