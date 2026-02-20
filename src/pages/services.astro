@@ -35,8 +35,8 @@ const roadmap = [
     copy: "Launch, monitor, and refine for impact."
   },
   {
-    title: "Ongoing Leadership",
-    copy: "Continued oversight and strategic guidance."
+    title: "On Demand Support",
+    copy: "Ongoing oversight and strategic guidance to ensure continued revenue growth."
   }
 ];
 
@@ -54,19 +54,24 @@ const circleSteps = roadmap.map((step, i) => {
 
 const expertise = [
   {
-    title: "Lead Velocity",
-    copy: "Faster first response, stronger qualification, and higher booking momentum.",
+    title: "Agents/Conversational AI",
+    copy: "Faster first response, stronger qualification, higher booking momentum and conversion rates.",
     icon: "lightning"
   },
   {
     title: "Automation",
-    copy: "Lower manual load through practical workflow and process automation.",
+    copy: "Lower manual load through practical workflow and process automation. Increased output per unit of time.",
     icon: "cog"
   },
   {
     title: "Operational Clarity",
     copy: "Cleaner reporting, aligned KPIs, and sharper leadership decisions.",
     icon: "chart"
+  },
+  {
+    title: "Done For You Marketing & Lead Generation",
+    copy: "The latest martech provides industry leading CAC, CPL and ROAS.",
+    icon: "megaphone"
   }
 ];
 
@@ -77,11 +82,11 @@ const deliveryFlow = [
   },
   {
     title: "Deploy",
-    copy: "We build and integrate custom branded systems into your existing operation."
+    copy: "We simply add a layer to your existing setup, so you can carry on doing what you do best with zero disruption."
   },
   {
     title: "Optimize",
-    copy: "We monitor, improve, and guide strategy so ROI compounds over time."
+    copy: "We monitor, improve, and guide strategy for continuous revenue growth. Ongoing optimisation keeps you ahead of the competition."
   }
 ];
 ---
@@ -102,14 +107,11 @@ const deliveryFlow = [
         <div class="max-w-6xl mx-auto px-4 relative z-10">
           <div class="text-center">
             <h1 class="services-hero-title text-yellow font-bold mb-8 animate-fade-in-up">
-              Fractional AI Growth Team and Systems Infrastructure That Scale With You
+              Your Own AI Multidisciplinary Team, On Demand
             </h1>
             <div class="mx-auto space-y-4 services-hero-subwrap">
               <p class="services-hero-sub text-white font-bold animate-fade-in-up delay-100">
-                HumTech builds and implements AI systems that improve lead velocity, automation, and operational clarity.
-              </p>
-              <p class="services-hero-roi text-yellow font-bold animate-fade-in-up delay-200">
-                Measurable ROI is the standard.
+                HumTech builds, implements, maintains and optimises your custom AI Revenue Engine&trade;
               </p>
             </div>
           </div>
@@ -180,40 +182,56 @@ const deliveryFlow = [
             </div>
 
             <div>
-              <h2 class="text-2xl lg:text-3xl font-bold text-yellow leading-tight mb-4">Service Overview</h2>
-              <p class="text-white/75 text-base md:text-lg leading-relaxed">
-                We do not sell generic AI packages. We scope, build, and operate practical AI systems tied directly to revenue, efficiency, and decision quality.
-              </p>
-              <p class="text-white/75 text-base md:text-lg leading-relaxed mt-4">
-                Every engagement is delivered by senior specialists and integrated into your existing stack, including CRM and workflow tools, so implementation is fast and disruption stays low.
-              </p>
-              <div class="mt-6 space-y-3">
-                <div class="caio-check">
-                  <svg class="w-5 h-5 text-yellow flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path>
-                  </svg>
-                  <p class="text-white/80 text-sm md:text-base leading-relaxed">
-                    <span class="text-white font-semibold">Strategy and prioritization:</span> Opportunity mapping, ROI ranking, and a focused implementation plan aligned to your business goals.
-                  </p>
-                </div>
-                <div class="caio-check">
-                  <svg class="w-5 h-5 text-yellow flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path>
-                  </svg>
-                  <p class="text-white/80 text-sm md:text-base leading-relaxed">
-                    <span class="text-white font-semibold">Custom system delivery:</span> Lead response automation, branded client workflows, document/signature flows, and reporting layers built for your operation.
-                  </p>
-                </div>
-                <div class="caio-check">
-                  <svg class="w-5 h-5 text-yellow flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path>
-                  </svg>
-                  <p class="text-white/80 text-sm md:text-base leading-relaxed">
-                    <span class="text-white font-semibold">Ongoing optimization:</span> Continuous performance tuning, leadership guidance, team enablement, and governance support to keep results compounding.
-                  </p>
-                </div>
+              <h2 class="text-2xl lg:text-3xl font-bold text-yellow leading-tight mb-6">Service Overview</h2>
+              <div class="flex flex-col gap-5 max-w-sm">
+                <p class="text-white/75 text-base leading-relaxed">
+                  HumTech do not deliver "out-the-box" AI packages. We scope, build, and operate practical AI systems tied directly to revenue, efficiency, and decision quality.
+                </p>
+                <div class="w-8 h-px bg-yellow/30"></div>
+                <p class="text-white/75 text-base leading-relaxed">
+                  Your engine is delivered by senior specialists and integrated into your existing stack, so implementation is fast and minimally disruptive.
+                </p>
               </div>
             </div>
+          </div>
+
+          <div class="section-divider mt-12" aria-hidden="true"><div class="section-divider-line"></div></div>
+
+          <div class="text-center mb-14">
+            <h2 class="section-title text-3xl lg:text-4xl xl:text-5xl font-bold text-yellow mt-16 mb-4 leading-tight">Typical Deployments</h2>
+          </div>
+          <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {expertise.map((item) => (
+              <article class="cred-card card-hover">
+                <div class="cred-card-inner">
+                  <div class="expertise-icon-wrap mb-4">
+                    {item.icon === "lightning" && (
+                      <svg class="w-8 h-8 text-yellow" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                      </svg>
+                    )}
+                    {item.icon === "cog" && (
+                      <svg class="w-8 h-8 text-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 001.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 00-1.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.573-1.066z"/>
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                      </svg>
+                    )}
+                    {item.icon === "chart" && (
+                      <svg class="w-8 h-8 text-green" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                      </svg>
+                    )}
+                    {item.icon === "megaphone" && (
+                      <svg class="w-8 h-8 text-yellow" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z"/>
+                      </svg>
+                    )}
+                  </div>
+                  <h3 class="text-yellow font-bold text-lg mb-3">{item.title}</h3>
+                  <p class="text-white/70 text-base leading-relaxed">{item.copy}</p>
+                </div>
+              </article>
+            ))}
           </div>
 
           <!-- Who is this ideal for? -->
@@ -221,14 +239,14 @@ const deliveryFlow = [
             <h2 class="text-2xl lg:text-3xl font-bold text-white leading-tight mb-8 text-center">
               Who is this ideal for?
             </h2>
-            <div class="grid sm:grid-cols-2 gap-4">
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
               <div class="ideal-card card-hover">
                 <div class="ideal-icon ideal-icon--yellow">
                   <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
                   </svg>
                 </div>
-                <p class="text-white/80 text-base leading-relaxed">Businesses with &pound;4M+ turnover and/or 10+ employees looking to use AI without the big project headaches</p>
+                <p class="text-white/80 text-base leading-relaxed">Businesses with &pound;5M+ turnover looking for rapid revenue growth without upfront costs or retainers</p>
               </div>
               <div class="ideal-card card-hover">
                 <div class="ideal-icon ideal-icon--blue">
@@ -236,7 +254,7 @@ const deliveryFlow = [
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"></path>
                   </svg>
                 </div>
-                <p class="text-white/80 text-base leading-relaxed">Companies with legacy systems, messy data, and small teams who need practical solutions</p>
+                <p class="text-white/80 text-base leading-relaxed">Companies with legacy systems, messy data, or growth ceilings who need fast results</p>
               </div>
               <div class="ideal-card card-hover">
                 <div class="ideal-icon ideal-icon--green">
@@ -254,21 +272,24 @@ const deliveryFlow = [
                 </div>
                 <p class="text-white/80 text-base leading-relaxed">Teams that can't justify a full-time AI hire but know they're falling behind</p>
               </div>
+              <div class="ideal-card card-hover">
+                <div class="ideal-icon ideal-icon--blue">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                  </svg>
+                </div>
+                <p class="text-white/80 text-base leading-relaxed">Businesses looking for time-saving deflection and reduced staff frustration/turnover from manual repetitive tasks</p>
+              </div>
             </div>
           </div>
 
           <!-- When does a Fractional CAIO make sense? -->
           <div class="caio-section mt-16">
-            <div class="grid lg:grid-cols-[1fr_1.2fr] gap-10 lg:gap-14 items-start">
-              <div>
-                <h2 class="text-2xl lg:text-3xl font-bold text-white leading-tight mb-4">
-                  When Does a Fractional Chief AI Officer Make Sense?
-                </h2>
-                <p class="text-white/70 text-base md:text-lg leading-relaxed">
-                  The UK Government's AI Regulation White Paper (2023) recommends that organisations designate senior leadership responsibility for AI governance. A fractional CAIO fills that role. Fractional CAIO support is usually the right move if:
-                </p>
-              </div>
-              <div class="space-y-4">
+            <div>
+              <h2 class="text-2xl lg:text-3xl font-bold text-white leading-tight mb-8 text-center">
+                When Does It Make Sense?
+              </h2>
+              <div class="grid sm:grid-cols-2 gap-4">
                 <div class="caio-check">
                   <svg class="w-5 h-5 text-blue flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path>
@@ -285,7 +306,7 @@ const deliveryFlow = [
                   <svg class="w-5 h-5 text-blue flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path>
                   </svg>
-                  <p class="text-white/80 text-base leading-relaxed">You want guidance on where to invest in AI without being sold a platform or a product first.</p>
+                  <p class="text-white/80 text-base leading-relaxed">You want guidance on AI without being sold a platform or a product first.</p>
                 </div>
                 <div class="caio-check">
                   <svg class="w-5 h-5 text-blue flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -297,7 +318,7 @@ const deliveryFlow = [
             </div>
 
             <!-- Governance strip -->
-            <div class="governance-strip mt-10">
+            <div class="governance-strip mt-10 mx-auto" style="width:fit-content;">
               <div class="flex items-center gap-3 mb-2">
                 <svg class="w-5 h-5 text-green flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
@@ -305,114 +326,17 @@ const deliveryFlow = [
                 <span class="text-white font-bold text-base">Built-In Governance &amp; Compliance</span>
               </div>
               <p class="text-white/65 text-sm leading-relaxed">
-                Every system we build is designed with GDPR, ICO guidelines, and responsible AI principles from day one — not bolted on afterwards. Our fractional CAIO oversight ensures your AI adoption stays compliant, auditable, and aligned with UK regulatory frameworks.
+                Every system we build is designed with GDPR, ICO guidelines, and responsible AI principles from day one.
               </p>
             </div>
           </div>
 
-          <div class="mt-14 border border-white/10 rounded-xl p-6 md:p-8 bg-white/[0.02]">
-            <h2 class="text-2xl lg:text-3xl font-bold text-yellow leading-tight">Fractional AI Growth Team</h2>
-            <p class="text-white/70 mt-3 text-lg">Why Fractioned AI?</p>
-            <p class="text-white/70 mt-4 max-w-4xl">
-              Unlike most AI providers who deploy generic, one-size-fits-all tools with near-zero aftercare, HumTech delivers tailored consultations, fully branded custom systems, and rigorous ongoing guidance for sustained ROI.
-            </p>
-
-            <div class="mt-8 grid md:grid-cols-3 gap-4" aria-label="Why Fractioned AI key benefits">
-              {keyBenefits.map((item, idx) => (
-                <article class={`benefit-tile card-hover delay-${(idx + 1) * 100}`}>
-                  <div class="benefit-num" aria-hidden="true">{idx + 1}</div>
-                  <h3 class="text-yellow font-bold text-lg">{item.title}</h3>
-                  <p class="text-white/70 text-base leading-relaxed mt-3">{item.copy}</p>
-                </article>
-              ))}
-            </div>
-          </div>
         </div>
       </section>
 
-      <div class="section-divider" aria-hidden="true"><div class="section-divider-line"></div></div>
-
-      <section class="py-16 md:py-24">
+      <section class="pt-6 pb-16 md:pt-8 md:pb-20">
         <div class="max-w-6xl mx-auto px-4">
-          <h2 class="section-title financial-title text-3xl lg:text-4xl xl:text-5xl font-bold text-yellow text-center mb-12 leading-tight">
-            The Financial Logic of the Fractional Model
-          </h2>
-          <div class="financial-logic-shell overflow-x-auto">
-            <table class="financial-logic-table w-full border-collapse min-w-[760px]">
-              <thead>
-                <tr>
-                  <th class="p-4 md:p-6 text-left border-b border-white/20"></th>
-                  <th class="p-4 md:p-6 text-left text-white/60 font-normal text-sm md:text-base border-b border-white/20">Traditional Model</th>
-                  <th class="p-4 md:p-6 text-left text-white font-bold text-sm md:text-base border-b border-white/20">
-                    <span class="flex items-center gap-3">
-                      Fractional Model
-                      <svg class="w-7 h-7 text-yellow" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"></path>
-                      </svg>
-                    </span>
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr class="financial-row" tabindex="0">
-                  <td class="p-4 md:p-6 text-white font-bold text-sm md:text-base border-b border-white/10">Cost Efficiency</td>
-                  <td class="p-4 md:p-6 text-white/60 text-sm md:text-base border-b border-white/10">Full-time in-house leadership hire and overhead</td>
-                  <td class="p-4 md:p-6 text-white text-sm md:text-base border-b border-white/10 font-bold"><span class="text-yellow">70% less cost</span> than a comparable in-house setup</td>
-                </tr>
-                <tr class="financial-row" tabindex="0">
-                  <td class="p-4 md:p-6 text-white font-bold text-sm md:text-base border-b border-white/10">Risk Mitigation</td>
-                  <td class="p-4 md:p-6 text-white/60 text-sm md:text-base border-b border-white/10">Salary and fixed commitment</td>
-                  <td class="p-4 md:p-6 text-white text-sm md:text-base border-b border-white/10 font-bold">Performance-Based Billing with Guaranteed ROI Commitments</td>
-                </tr>
-                <tr class="financial-row" tabindex="0">
-                  <td class="p-4 md:p-6 text-white font-bold text-sm md:text-base">Value Add</td>
-                  <td class="p-4 md:p-6 text-white/60 text-sm md:text-base">Single lane capability</td>
-                  <td class="p-4 md:p-6 text-white text-sm md:text-base font-bold">On-Demand technical and strategic expertise included</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-
-          <div class="section-divider mt-12" aria-hidden="true"><div class="section-divider-line"></div></div>
-
-          <div class="text-center mb-14">
-            <h2 class="section-title text-3xl lg:text-4xl xl:text-5xl font-bold text-yellow mt-16 mb-4 leading-tight">Areas of Expertise</h2>
-            <p class="text-white/70 text-lg max-w-3xl mx-auto">
-              Strategic leadership and implementation support across the systems that directly affect growth and performance.
-            </p>
-          </div>
-          <div class="grid md:grid-cols-3 gap-6">
-            {expertise.map((item) => (
-              <article class="cred-card card-hover">
-                <div class="cred-card-inner">
-                  <div class="expertise-icon-wrap mb-4">
-                    {item.icon === "lightning" && (
-                      <svg class="w-8 h-8 text-yellow" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/>
-                      </svg>
-                    )}
-                    {item.icon === "cog" && (
-                      <svg class="w-8 h-8 text-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.573-1.066z"/>
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
-                      </svg>
-                    )}
-                    {item.icon === "chart" && (
-                      <svg class="w-8 h-8 text-green" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
-                      </svg>
-                    )}
-                  </div>
-                  <h3 class="text-yellow font-bold text-lg mb-3">{item.title}</h3>
-                  <p class="text-white/70 text-base leading-relaxed">{item.copy}</p>
-                </div>
-              </article>
-            ))}
-          </div>
-
-          <div class="section-divider mt-10" aria-hidden="true"><div class="section-divider-line"></div></div>
-
-          <div class="max-w-2xl mx-auto px-4 text-center mt-14 md:mt-16 relative">
+          <div class="max-w-2xl mx-auto px-4 text-center relative">
             <div class="absolute inset-0 cta-radial-bg pointer-events-none" aria-hidden="true"></div>
             <div class="relative z-10">
               <h2 class="text-3xl lg:text-4xl font-bold text-yellow mb-4">Ready to Diagnose Your Business?</h2>
@@ -446,7 +370,7 @@ const deliveryFlow = [
     position: relative;
     padding: 3px;
     border-radius: 12px;
-    background: linear-gradient(135deg, rgba(216, 183, 67, 0.6), rgba(216, 183, 67, 0.2));
+    background: linear-gradient(135deg, rgba(216, 183, 67, 0.7), rgba(61, 178, 221, 0.7));
   }
 
   .cred-card-inner {
@@ -454,7 +378,6 @@ const deliveryFlow = [
     border-radius: 10px;
     padding: 1.5rem;
     height: 100%;
-    border: 1px solid rgba(216, 183, 67, 0.15);
   }
 
   .cred-card:hover .cred-card-inner {
@@ -546,12 +469,12 @@ const deliveryFlow = [
 
   .rc-content {
     position: absolute;
-    width: 136px;
+    width: 160px;
   }
 
   .rc-step-num {
     display: block;
-    font-size: 0.6rem;
+    font-size: 0.72rem;
     font-weight: 700;
     letter-spacing: 0.08em;
     text-transform: uppercase;
@@ -559,7 +482,7 @@ const deliveryFlow = [
   }
 
   .rc-title {
-    font-size: 0.8rem;
+    font-size: 1rem;
     font-weight: 700;
     color: #d8b743;
     margin-top: 0.1rem;
@@ -567,7 +490,7 @@ const deliveryFlow = [
   }
 
   .rc-desc {
-    font-size: 0.64rem;
+    font-size: 0.78rem;
     color: rgba(255, 255, 255, 0.45);
     line-height: 1.35;
     margin-top: 0.2rem;
@@ -747,6 +670,25 @@ const deliveryFlow = [
   }
 
   /* Ideal for cards */
+  .ideal-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.65rem 1.1rem;
+    border: 1px solid rgba(216, 183, 67, 0.35);
+    border-radius: 999px;
+    background: rgba(216, 183, 67, 0.05);
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 0.9rem;
+    line-height: 1.4;
+    transition: border-color 0.2s, background 0.2s;
+  }
+
+  .ideal-pill:hover {
+    border-color: rgba(216, 183, 67, 0.65);
+    background: rgba(216, 183, 67, 0.1);
+  }
+
   .ideal-card {
     display: flex;
     align-items: flex-start;
