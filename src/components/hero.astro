@@ -13,7 +13,6 @@ import trustedLogoZenith from "@/assets/trusted-logo-zen.png";
 import frictionGraphic from "@/assets/friction-graphic-bg.png";
 import cycleHireGraphic from "@/assets/cycle-hire-bg.png";
 import latencyGraphic from "@/assets/latency-bg.png";
-import heroCoreGraphic from "@/assets/hero-core-graphic.png";
 const trustedLogos = [
   { src: trustedLogoEcop, alt: "ECOP" },
   { src: trustedLogoAse, alt: "ASE" },
@@ -53,18 +52,25 @@ const trustedLogos = [
     </p>
 
     <div class="mt-4 mb-3 animate-fade-in-up delay-300">
-      <div class="hero-core-shell mx-auto max-w-4xl">
-        <div class="block md:hidden">
-          <Image
-            src={heroCoreGraphic}
-            alt="HumTech Core"
-            class="mx-auto w-full max-w-none h-auto"
-            widths={[400, 640, 768]}
-            sizes="(max-width: 768px) 100vw, 640px"
-          />
-        </div>
 
-        <div class="hidden md:block">
+      <!-- Mobile showcase -->
+      <div class="block md:hidden mobile-showcase">
+        <div class="mobile-showcase-header">
+          <img src="/public/bg-logo.png" alt="AI Revenue Engine" class="mobile-showcase-logo" />
+          <p class="mobile-showcase-title">AI Revenue Engine&trade;</p>
+        </div>
+        <div class="mobile-showcase-grid">
+          <div class="mobile-showcase-card">No Retainers /<br/>Upfront Costs</div>
+          <div class="mobile-showcase-card">Pay on Results Only</div>
+          <div class="mobile-showcase-card">On Demand<br/>Multidisciplinary Team</div>
+          <div class="mobile-showcase-card">Zero Friction,<br/>Done for You System</div>
+          <div class="mobile-showcase-card mobile-showcase-card-accent">Results in Weeks</div>
+        </div>
+      </div>
+
+      <!-- Desktop diagram (hidden on mobile) -->
+      <div class="hero-core-shell mx-auto max-w-4xl hidden md:block">
+        <div>
           <div class="hero-core-glow" aria-hidden="true"></div>
           <div class="hero-core-grid" aria-hidden="true"></div>
           <div class="hero-core-techlines" aria-hidden="true"></div>
@@ -84,18 +90,18 @@ const trustedLogos = [
             <circle cx="690" cy="344" r="5.8"></circle>
           </svg>
           <svg class="hero-core-links hero-core-lines hero-core-links-mobile" viewBox="0 0 1000 420" preserveAspectRatio="none" aria-hidden="true">
-            <line x1="472" y1="210" x2="347" y2="158" />
-            <line x1="472" y1="210" x2="347" y2="262" />
-            <line x1="528" y1="210" x2="680" y2="137" />
-            <line x1="528" y1="210" x2="680" y2="210" />
-            <line x1="528" y1="210" x2="680" y2="283" />
+            <line x1="472" y1="210" x2="270" y2="147" />
+            <line x1="472" y1="210" x2="270" y2="273" />
+            <line x1="528" y1="210" x2="730" y2="118" />
+            <line x1="528" y1="210" x2="730" y2="210" />
+            <line x1="528" y1="210" x2="730" y2="302" />
           </svg>
           <svg class="hero-core-links hero-core-dots hero-core-links-mobile" viewBox="0 0 1000 420" preserveAspectRatio="none" aria-hidden="true">
-            <circle cx="347" cy="158" r="5.8"></circle>
-            <circle cx="347" cy="262" r="5.8"></circle>
-            <circle cx="680" cy="137" r="5.8"></circle>
-            <circle cx="680" cy="210" r="5.8"></circle>
-            <circle cx="680" cy="283" r="5.8"></circle>
+            <circle cx="270" cy="147" r="5.8"></circle>
+            <circle cx="270" cy="273" r="5.8"></circle>
+            <circle cx="730" cy="118" r="5.8"></circle>
+            <circle cx="730" cy="210" r="5.8"></circle>
+            <circle cx="730" cy="302" r="5.8"></circle>
           </svg>
 
           <div class="hero-core-hex-wrap">
@@ -1752,10 +1758,6 @@ const trustedLogos = [
   }
 
   @media (max-width: 640px) {
-    main {
-      padding-top: 4.6rem;
-    }
-
     .kill-zone-section {
       padding-top: 1.75rem;
       padding-bottom: 3.25rem;
@@ -1773,84 +1775,98 @@ const trustedLogos = [
       padding-top: 0.75rem;
     }
 
-    .hero-core-shell {
-      padding: 0;
+    main {
+      padding-top: 3.5rem;
     }
 
-    .hero-core-grid {
-      display: none;
+    .hero-eyebrow {
+      margin-bottom: 0.5rem;
     }
 
-    .hero-core-techlines {
-      display: none;
+    .hero-subtitle {
+      margin-top: 0.5rem;
     }
 
-    .hero-core-diagram {
-      aspect-ratio: 1 / 1.2;
+    .mobile-showcase {
+      margin: 0.75rem 0 0.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.65rem;
     }
 
-    .hero-core-links-desktop {
-      display: none;
+    .mobile-showcase-header {
+      display: flex;
+      align-items: center;
+      gap: 0.55rem;
     }
 
-    .hero-core-links-mobile {
-      display: block;
+    .mobile-showcase-logo {
+      height: 2.25rem;
+      width: auto;
     }
 
-
-    .hero-core-hex-ring {
-      padding: 5px;
+    .mobile-showcase-title {
+      margin: 0;
+      font-size: 0.82rem;
+      font-weight: 800;
+      color: #d8b743;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
     }
 
-    .hero-core-hex {
-      width: 98px;
-      height: 90px;
-      font-size: 0.84rem;
-      line-height: 1.12;
-      padding-bottom: 0.72rem;
+    .mobile-showcase-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.5rem;
+      width: 100%;
+      padding: 0 0.25rem;
     }
 
-    .hero-core-node {
-      width: 98px;
-      font-size: 0.7rem;
-      padding: 0.3rem 0.36rem;
-      line-height: 1.16;
-      border-width: 1.5px;
+    .mobile-showcase-card {
+      position: relative;
+      border-radius: 12px;
+      background: rgba(6, 24, 47, 0.85);
+      padding: 0.75rem 0.6rem;
+      text-align: center;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: rgba(255, 255, 255, 0.88);
+      line-height: 1.35;
     }
 
-    .hero-core-logo {
-      width: 40%;
-      max-width: 90px;
-      top: 10%;
+    .mobile-showcase-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 12px;
+      padding: 1.5px;
+      background: linear-gradient(135deg, #d8b743 0%, rgba(80, 160, 255, 0.6) 50%, #d8b743 100%);
+      background-size: 200% 200%;
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      animation: showcase-border 4s ease infinite;
     }
 
-    .node-left-top {
-      left: 0;
-      top: 33%;
+    .mobile-showcase-card-accent {
+      grid-column: 1 / -1;
+      background: rgba(216, 183, 67, 0.1);
+      color: #d8b743;
+      font-size: 0.92rem;
+      font-weight: 800;
+      letter-spacing: 0.02em;
     }
 
-    .node-left-bottom {
-      left: 0;
-      top: 67%;
+    .mobile-showcase-card-accent::before {
+      background: linear-gradient(135deg, #d8b743 0%, rgba(216, 183, 67, 0.4) 50%, #d8b743 100%);
+      background-size: 200% 200%;
+      animation: showcase-border 3s ease infinite;
     }
 
-    .node-right-top {
-      left: auto;
-      right: 4.2%;
-      top: 32.6%;
-    }
-
-    .node-right-middle {
-      left: auto;
-      right: 4.2%;
-      top: 50%;
-      transform: translateY(-50%);
-    }
-
-    .node-right-bottom {
-      left: auto;
-      right: 4.2%;
-      top: 67.4%;
+    @keyframes showcase-border {
+      0%, 100% { background-position: 0% 50%; }
+      50%       { background-position: 100% 50%; }
     }
 
     .trusted-by-heading {
@@ -1924,16 +1940,16 @@ const trustedLogos = [
     }
 
     .hero-main-title {
-      font-size: clamp(1.7rem, 8.4vw, 2.45rem);
-      line-height: 1.16;
-      max-width: 16ch;
+      font-size: clamp(1rem, 5vw, 1.35rem);
+      line-height: 1.2;
+      max-width: 100%;
     }
 
     .hero-subtitle {
-      font-size: 1.08rem;
+      font-size: 0.9rem;
       line-height: 1.24;
       white-space: normal;
-      max-width: 30ch;
+      max-width: 100%;
     }
 
     .hero-support {
