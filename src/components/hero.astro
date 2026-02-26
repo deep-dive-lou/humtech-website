@@ -150,6 +150,7 @@ const trustedLogos = [
       <!-- Left: quote -->
       <div class="cred-col-left">
         <blockquote class="cred-section-quote">
+          <span class="cred-quote-mark">&ldquo;</span>
           <span class="cred-quote-line">It's no longer <span class="text-yellow">"the big that beats the small"</span></span>
           <span class="cred-quote-line">it's <span class="text-yellow">"the fast that runs over the slow"</span></span>
         </blockquote>
@@ -861,135 +862,168 @@ const trustedLogos = [
 
     </div>
 
-    <p class="trap-accent-line" id="trap-accent-line">That's why we exist.</p>
+  </div>
+</section>
 
-    <!-- Testimonial quote -->
-    <div class="trap-quote" id="trap-quote">
-      <p class="trap-quote-text">&ldquo;Revenue increase was rapid with HumTech, and required minimal input from our already very busy team.&rdquo;</p>
-      <p class="trap-quote-attr"><strong>Jessica,</strong> Founder, Rural Energy Saving Grants</p>
-      <a href="/case-studies" class="trap-quote-link">Read the story &rsaquo;</a>
+
+<!-- Testimonial bridge -->
+<section class="testi-section">
+  <div class="max-w-screen-2xl mx-auto px-8 lg:px-16">
+    <div class="testi-layout">
+
+      <!-- Photo carousel — scrolling squares -->
+      <div class="film-reel" aria-hidden="true">
+        <div class="film-frames">
+          <div class="film-frame"><div class="film-placeholder">01</div></div>
+          <div class="film-frame"><div class="film-placeholder">02</div></div>
+          <div class="film-frame"><div class="film-placeholder">03</div></div>
+          <div class="film-frame"><div class="film-placeholder">04</div></div>
+          <div class="film-frame"><div class="film-placeholder">05</div></div>
+          <div class="film-frame"><div class="film-placeholder">06</div></div>
+          <div class="film-frame"><div class="film-placeholder">01</div></div>
+          <div class="film-frame"><div class="film-placeholder">02</div></div>
+          <div class="film-frame"><div class="film-placeholder">03</div></div>
+          <div class="film-frame"><div class="film-placeholder">04</div></div>
+          <div class="film-frame"><div class="film-placeholder">05</div></div>
+          <div class="film-frame"><div class="film-placeholder">06</div></div>
+        </div>
+      </div>
+
+      <!-- Quote -->
+      <div class="testi-content">
+        <p class="testi-accent">That's why we exist.</p>
+        <p class="testi-quote">&ldquo;Revenue increase was rapid with HumTech, and required minimal input from our already very busy team.&rdquo;</p>
+        <p class="testi-attr"><strong>Jessica,</strong> Founder, Rural Energy Saving Grants</p>
+        <a href="/case-study" class="testi-link">Read the story &rsaquo;</a>
+      </div>
+
     </div>
-
   </div>
 </section>
 
 
 <!-- ══ SECTION B — THE BOTTLENECK ══ -->
-<section id="section-bottleneck" class="relative overflow-hidden" style="background: #EAEDF2;">
+<section id="section-bottleneck" class="relative overflow-hidden" style="background: linear-gradient(160deg, #0a1628 0%, #061528 50%, #091e35 100%);">
   <div class="max-w-screen-2xl mx-auto px-8 lg:px-16 pt-28 pb-28 md:pt-36 md:pb-36">
 
     <!-- Bottleneck headings -->
-    <div class="text-center mb-6 reveal">
-      <h3 class="text-2xl lg:text-3xl xl:text-4xl font-bold leading-tight" style="color:#D8B743;">
-        You know the bottleneck... 50% of inquiries vanish before your sales team gets to them
-      </h3>
+    <div class="mb-4 reveal">
+      <h3 class="bn-heading-gold">You know the bottleneck... 50% of inquiries vanish before your sales team gets to them</h3>
     </div>
-    <div class="text-center mb-16 reveal">
-      <h3 class="text-2xl lg:text-3xl xl:text-4xl font-bold leading-tight" style="color:#061528;">
-        We faced this exact problem
-      </h3>
+    <div class="mb-12 reveal">
+      <h3 class="bn-heading-main">We faced this exact problem</h3>
     </div>
 
-    <!-- Three-column: Problem → Solution → Results -->
+    <!-- Two-column: Problem → Solution & Results -->
     <div class="bn-grid" id="bn-grid">
 
-      <!-- LEFT: Pain text -->
+      <!-- LEFT: Text with watermark -->
       <div class="bn-text">
+        <img src="/public/bg-logo.png" alt="" class="bn-watermark" aria-hidden="true" />
         <p class="bn-line">On average, only 50% of new enquiries respond to manual outreach, and just half attend booked consultations.</p>
+        <hr class="bn-divider" />
         <p class="bn-line">Teams are constantly drawn into repetitive admin tasks and distractions which take them away from revenue-producing duties.</p>
+        <hr class="bn-divider" />
         <p class="bn-line">Countless &lsquo;out the box&rsquo; third-party AI tools (multiple different log-ins...), and conversions actually gets worse.</p>
+        <hr class="bn-divider" />
         <p class="bn-line bn-line--emphasis">One AI Revenue Engine&trade; later, and the results speak for themselves...</p>
       </div>
 
-      <!-- MIDDLE: Phone mockup -->
-      <div class="bn-phone">
-        <div class="bn-phone-frame">
-          <div class="bn-phone-notch"></div>
-          <div class="bn-phone-header">AI Revenue Engine</div>
-          <div class="bn-phone-chat" id="bn-chat">
-            <div class="bn-msg bn-msg--lead" data-chat-idx="0">
-              <p>Hi, I saw your service online and I&rsquo;m interested in finding out more</p>
-              <span class="bn-msg-time">10:42 AM</span>
+      <!-- RIGHT: Joined visuals (phone + dashboard) -->
+      <div class="bn-visuals">
+        <div class="bn-phone">
+          <div class="bn-phone-frame">
+            <div class="bn-phone-notch"></div>
+            <div class="bn-phone-header"><span class="bn-phone-contact">Sarah (CFO)</span></div>
+            <div class="bn-phone-chat" id="bn-chat">
+              <div class="bn-msg bn-msg--sent" data-chat-idx="0">
+                <p>Have you seen this month&rsquo;s numbers?</p>
+                <span class="bn-msg-time">09:14</span>
+              </div>
+              <div class="bn-msg bn-msg--received" data-chat-idx="1">
+                <p>Just pulled them. Response time is under a second now</p>
+                <span class="bn-msg-time">09:15</span>
+              </div>
+              <div class="bn-msg bn-msg--sent" data-chat-idx="2">
+                <p>Booking rate hit 98%. When did that happen?</p>
+                <span class="bn-msg-time">09:15</span>
+              </div>
+              <div class="bn-msg bn-msg--received" data-chat-idx="3">
+                <p>Since the AI engine went live. Revenue&rsquo;s up 40% this quarter</p>
+                <span class="bn-msg-time">09:16</span>
+              </div>
+              <div class="bn-msg bn-msg--sent" data-chat-idx="4">
+                <p>Set up a review for Monday. I want this across all locations</p>
+                <span class="bn-msg-time">09:16</span>
+              </div>
             </div>
-            <div class="bn-msg-badge" data-chat-idx="1">
-              <span>Responded in 1.2s</span>
+          </div>
+        </div>
+        <div class="bn-dash" id="bn-dash-wrap">
+          <div class="cred-dash" id="cred-dash">
+            <div class="cred-dash-grid" aria-hidden="true"></div>
+            <div class="cred-dash-stats">
+              <div class="cred-dash-stat">
+                <span class="cred-dash-stat-label">Response Time</span>
+                <span class="cred-dash-stat-val cred-dash-stat-val--static">&lt;1s</span>
+              </div>
+              <div class="cred-dash-stat">
+                <span class="cred-dash-stat-label">Booking Rate</span>
+                <span class="cred-dash-stat-val" data-target="98" data-suffix="%">0%</span>
+              </div>
+              <div class="cred-dash-stat">
+                <span class="cred-dash-stat-label">Revenue Lift</span>
+                <span class="cred-dash-stat-val" data-target="40" data-suffix="%">0%</span>
+                <span class="cred-dash-stat-delta cred-dash-stat-delta--good">+40%</span>
+              </div>
             </div>
-            <div class="bn-msg bn-msg--bot" data-chat-idx="2">
-              <p>Thanks for reaching out, Sarah! I&rsquo;d love to help you explore how we can grow your revenue. I have a consultation slot available tomorrow at 2pm &mdash; shall I book you in?</p>
-              <span class="bn-msg-time">10:42 AM</span>
+            <div class="cred-dash-chart">
+              <div class="cred-dash-chart-label">Monthly Revenue</div>
+              <div class="cred-dash-bars">
+                <div class="cred-dash-bar" style="--bar-h:35%;--bar-delay:0s;"></div>
+                <div class="cred-dash-bar" style="--bar-h:48%;--bar-delay:0.1s;"></div>
+                <div class="cred-dash-bar" style="--bar-h:42%;--bar-delay:0.2s;"></div>
+                <div class="cred-dash-bar" style="--bar-h:58%;--bar-delay:0.3s;"></div>
+                <div class="cred-dash-bar" style="--bar-h:52%;--bar-delay:0.4s;"></div>
+                <div class="cred-dash-bar" style="--bar-h:68%;--bar-delay:0.5s;"></div>
+                <div class="cred-dash-bar" style="--bar-h:75%;--bar-delay:0.6s;"></div>
+                <div class="cred-dash-bar cred-dash-bar--highlight" style="--bar-h:92%;--bar-delay:0.7s;"></div>
+              </div>
             </div>
-            <div class="bn-msg bn-msg--lead" data-chat-idx="3">
-              <p>Yes, that works perfectly</p>
-              <span class="bn-msg-time">10:43 AM</span>
+            <div class="cred-dash-sparkrow">
+              <div class="cred-dash-spark">
+                <span class="cred-dash-spark-label">Leads</span>
+                <svg class="cred-dash-sparkline" viewBox="0 0 80 24" fill="none" aria-hidden="true">
+                  <polyline points="0,20 10,18 20,14 30,16 40,10 50,12 60,6 70,4 80,2" stroke="#D8B743" stroke-width="2" fill="none"/>
+                  <polyline points="0,20 10,18 20,14 30,16 40,10 50,12 60,6 70,4 80,2" stroke="none" fill="url(#sparkGoldB)" opacity="0.15"/>
+                  <defs><linearGradient id="sparkGoldB" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#D8B743"/><stop offset="100%" stop-color="transparent"/></linearGradient></defs>
+                </svg>
+              </div>
+              <div class="cred-dash-spark">
+                <span class="cred-dash-spark-label">Bookings</span>
+                <svg class="cred-dash-sparkline" viewBox="0 0 80 24" fill="none" aria-hidden="true">
+                  <polyline points="0,22 10,20 20,17 30,15 40,12 50,10 60,7 70,5 80,3" stroke="#3DB2DD" stroke-width="2" fill="none"/>
+                  <polyline points="0,22 10,20 20,17 30,15 40,12 50,10 60,7 70,5 80,3" stroke="none" fill="url(#sparkBlueB)" opacity="0.15"/>
+                  <defs><linearGradient id="sparkBlueB" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#3DB2DD"/><stop offset="100%" stop-color="transparent"/></linearGradient></defs>
+                </svg>
+              </div>
             </div>
-            <div class="bn-msg bn-msg--bot" data-chat-idx="4">
-              <p>You&rsquo;re booked in for tomorrow at 2pm. You&rsquo;ll receive a confirmation shortly.</p>
-              <span class="bn-msg-time">10:43 AM</span>
-            </div>
-            <div class="bn-msg-badge bn-msg-badge--success" data-chat-idx="5">
-              <span>Consultation booked &#x2713;</span>
+            <div class="cred-dash-live" id="cred-dash-live">
+              <span class="cred-dash-live-dot"></span>
+              <span class="cred-dash-live-text">Live</span>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- RIGHT: Dashboard -->
-      <div class="bn-dash" id="bn-dash-wrap">
-        <div class="cred-dash" id="cred-dash">
-          <div class="cred-dash-grid" aria-hidden="true"></div>
-          <div class="cred-dash-stats">
-            <div class="cred-dash-stat">
-              <span class="cred-dash-stat-label">Response Time</span>
-              <span class="cred-dash-stat-val" data-target="1.2" data-suffix="s">0s</span>
-            </div>
-            <div class="cred-dash-stat">
-              <span class="cred-dash-stat-label">Booking Rate</span>
-              <span class="cred-dash-stat-val" data-target="98" data-suffix="%">0%</span>
-            </div>
-            <div class="cred-dash-stat">
-              <span class="cred-dash-stat-label">Revenue Lift</span>
-              <span class="cred-dash-stat-val" data-target="50" data-suffix="%">0%</span>
-              <span class="cred-dash-stat-delta cred-dash-stat-delta--good">+50%</span>
-            </div>
-          </div>
-          <div class="cred-dash-chart">
-            <div class="cred-dash-chart-label">Monthly Revenue</div>
-            <div class="cred-dash-bars">
-              <div class="cred-dash-bar" style="--bar-h:35%;--bar-delay:0s;"></div>
-              <div class="cred-dash-bar" style="--bar-h:48%;--bar-delay:0.1s;"></div>
-              <div class="cred-dash-bar" style="--bar-h:42%;--bar-delay:0.2s;"></div>
-              <div class="cred-dash-bar" style="--bar-h:58%;--bar-delay:0.3s;"></div>
-              <div class="cred-dash-bar" style="--bar-h:52%;--bar-delay:0.4s;"></div>
-              <div class="cred-dash-bar" style="--bar-h:68%;--bar-delay:0.5s;"></div>
-              <div class="cred-dash-bar" style="--bar-h:75%;--bar-delay:0.6s;"></div>
-              <div class="cred-dash-bar cred-dash-bar--highlight" style="--bar-h:92%;--bar-delay:0.7s;"></div>
-            </div>
-          </div>
-          <div class="cred-dash-sparkrow">
-            <div class="cred-dash-spark">
-              <span class="cred-dash-spark-label">Leads</span>
-              <svg class="cred-dash-sparkline" viewBox="0 0 80 24" fill="none" aria-hidden="true">
-                <polyline points="0,20 10,18 20,14 30,16 40,10 50,12 60,6 70,4 80,2" stroke="#D8B743" stroke-width="2" fill="none"/>
-                <polyline points="0,20 10,18 20,14 30,16 40,10 50,12 60,6 70,4 80,2" stroke="none" fill="url(#sparkGoldB)" opacity="0.15"/>
-                <defs><linearGradient id="sparkGoldB" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#D8B743"/><stop offset="100%" stop-color="transparent"/></linearGradient></defs>
-              </svg>
-            </div>
-            <div class="cred-dash-spark">
-              <span class="cred-dash-spark-label">Bookings</span>
-              <svg class="cred-dash-sparkline" viewBox="0 0 80 24" fill="none" aria-hidden="true">
-                <polyline points="0,22 10,20 20,17 30,15 40,12 50,10 60,7 70,5 80,3" stroke="#3DB2DD" stroke-width="2" fill="none"/>
-                <polyline points="0,22 10,20 20,17 30,15 40,12 50,10 60,7 70,5 80,3" stroke="none" fill="url(#sparkBlueB)" opacity="0.15"/>
-                <defs><linearGradient id="sparkBlueB" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#3DB2DD"/><stop offset="100%" stop-color="transparent"/></linearGradient></defs>
-              </svg>
-            </div>
-          </div>
-          <div class="cred-dash-live" id="cred-dash-live">
-            <span class="cred-dash-live-dot"></span>
-            <span class="cred-dash-live-text">Live</span>
-          </div>
-        </div>
-      </div>
+    </div>
 
+    <!-- CTA -->
+    <div class="bn-cta">
+      <button onclick="openAssessmentModal()" class="final-assessment-button">
+        Diagnose My Business!
+      </button>
+      <p class="bn-cta-support">Takes less than 3 minutes - Get immediate results - Completely free.</p>
     </div>
 
   </div>
@@ -997,117 +1031,85 @@ const trustedLogos = [
 
 
 <!-- ══ SECTION C — THE PROOF ══ -->
-<section id="section-proof" class="relative overflow-hidden" style="background: radial-gradient(ellipse 70% 50% at 50% 0%, rgba(216,183,67,0.07) 0%, transparent 60%), #061528;">
+<section id="section-proof" class="relative overflow-hidden" style="background: #EAEDF2;">
   <div class="max-w-screen-2xl mx-auto px-8 lg:px-16 pt-24 pb-28 md:pt-32 md:pb-36">
 
-    <div class="results-proof max-w-3xl mx-auto text-center mt-10">
+    <!-- Zone 1: Headline claim -->
+    <div class="proof-zone-headline proof-reveal" data-proof-reveal>
       <p class="results-proof-copy">
-        In 24 months, our AI Revenue Engine powered the #1 rated Green Energy Supplier and became the #1 rated Advertising Agency on Trustpilot with 4.9 out of 5.0 Stars and a team of only four people.
+        In <span class="proof-counter" data-target="24">24</span> months, our AI Revenue Engine powered the #1 rated Green Energy Supplier and became the #1 rated Advertising Agency on Trustpilot with <span class="proof-stars-inline" aria-label="4.9 out of 5.0 Stars" role="img">
+          <span class="proof-star" data-star="1" aria-hidden="true">&#9733;</span><span class="proof-star" data-star="2" aria-hidden="true">&#9733;</span><span class="proof-star" data-star="3" aria-hidden="true">&#9733;</span><span class="proof-star" data-star="4" aria-hidden="true">&#9733;</span><span class="proof-star proof-star-partial" data-star="5" aria-hidden="true">&#9733;</span>
+          <span class="proof-stars-label">4.9 out of 5.0 Stars</span>
+        </span> and a team of only <span class="proof-counter" data-target="4">4</span> people.
       </p>
+    </div>
 
-      <div class="mt-10">
-        <button onclick="openAssessmentModal()" class="proof-cta-button">
-          Get my free PDF AI Diagnostic
-        </button>
-      </div>
+    <!-- Zone 2: Research bento grid -->
+    <div class="section-eight-proof-grid proof-reveal" data-proof-reveal style="transition-delay: 0.15s;">
 
-      <div class="section-eight-finish">
-        <div class="section-eight-proof-grid">
-          <blockquote class="section-eight-proof-card">
-            <p class="section-eight-proof-text">
-              "AI-human combination results in higher engagement/conversion rates, reduced costs and optimized lead generation. <span class="section-eight-proof-highlight">3x more calls connected, 20% higher meeting hold rate.</span>"
-            </p>
+      <!-- Card 1 -->
+      <blockquote class="section-eight-proof-card" data-citation-card>
+        <div class="proof-card-body">
+          <p class="section-eight-proof-text">
+            "AI-human combination results in higher engagement/conversion rates, reduced costs and optimized lead generation. <span class="section-eight-proof-highlight">3x more calls connected, 20% higher meeting hold rate.</span>"
+          </p>
+        </div>
+        <div class="proof-card-footer">
+          <button class="proof-cite-toggle" aria-expanded="false" data-cite-toggle>
+            <span class="proof-cite-toggle-label">View citation</span>
+            <span class="proof-cite-toggle-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="proof-cite-drawer" aria-hidden="true">
             <cite class="section-eight-proof-cite not-italic">
               -Koch, S. (2024). A Case Study in AI-Augmented Cold Outreach. The Journal of Business and Artificial Intelligence, 1(1), 1-5
             </cite>
-          </blockquote>
+          </div>
+        </div>
+      </blockquote>
 
-          <blockquote class="section-eight-proof-card">
-            <p class="section-eight-proof-text">
-              "AI chat and scheduling bot reduces 'no show rates', reduces administrative burden, improves client satisfaction and <span class="section-eight-proof-highlight">increases overall efficiency.</span>"
-            </p>
+      <!-- Card 2 -->
+      <blockquote class="section-eight-proof-card" data-citation-card>
+        <div class="proof-card-body">
+          <p class="section-eight-proof-text">
+            "AI chat and scheduling bot reduces 'no show rates', reduces administrative burden, improves client satisfaction and <span class="section-eight-proof-highlight">increases overall efficiency.</span>"
+          </p>
+        </div>
+        <div class="proof-card-footer">
+          <button class="proof-cite-toggle" aria-expanded="false" data-cite-toggle>
+            <span class="proof-cite-toggle-label">View citation</span>
+            <span class="proof-cite-toggle-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="proof-cite-drawer" aria-hidden="true">
             <cite class="section-eight-proof-cite not-italic">
               - Nyako Alhaji Baba et al. (2024). Development of an intelligent chatbot for patient appointment booking system. International Journal of Engineering and Applied Information Systems, 8(10), 55-65
             </cite>
-          </blockquote>
+          </div>
         </div>
+      </blockquote>
 
-        <blockquote class="section-eight-testimonial">
-          <p class="section-eight-testimonial-text">
-            "I took the assessment and found we were <span class="testimonial-highlight">losing revenue in areas which we were blind to.</span> We were also taking significant market share risks by being behind in AI adoption across multiple domains of our business, notably, lead generation and sales conversions. We verified the diagnostic report outcomes by engaging a portion of old leads 6 months post enquiry, and found that <span class="testimonial-highlight">almost all initial non-responders had been served by our competitors</span> who beat us to the punch. <span class="testimonial-highlight">Revenue increase was rapid with Hum Tech,</span> and required minimal input from our already very busy team."
-          </p>
-          <cite class="section-eight-testimonial-cite not-italic">RESG UK</cite>
-        </blockquote>
-      </div>
     </div>
 
-  </div>
+    <!-- Zone 3: Testimonial callout -->
+    <blockquote class="section-eight-testimonial proof-reveal" data-proof-reveal style="transition-delay: 0.3s;">
+      <p class="section-eight-testimonial-text">
+        "I took the assessment and found we were <span class="testimonial-highlight">losing revenue in areas which we were blind to.</span> We were also taking significant market share risks by being behind in AI adoption across multiple domains of our business, notably, lead generation and sales conversions. We verified the diagnostic report outcomes by engaging a portion of old leads 6 months post enquiry, and found that <span class="testimonial-highlight">almost all initial non-responders had been served by our competitors</span> who beat us to the punch. <span class="testimonial-highlight">Revenue increase was rapid with Hum Tech,</span> and required minimal input from our already very busy team."
+      </p>
+      <cite class="section-eight-testimonial-cite not-italic">RESG UK</cite>
+    </blockquote>
 
-</section>
-
-
-<!-- Final Assessment Section -->
-<section class="py-16 md:py-24 border-t border-yellow/30 relative overflow-hidden" style="background: radial-gradient(ellipse at 50% 0%, rgba(216,183,67,0.13) 0%, transparent 60%), radial-gradient(ellipse at 80% 100%, rgba(61,178,221,0.07) 0%, transparent 50%), #061528;">
-  <div class="max-w-screen-2xl mx-auto px-8 lg:px-16 text-center reveal">
-    <h2 class="final-assessment-headline">
-      Find out how much revenue you're losing
-    </h2>
-
-    <div class="final-assessment-grid">
-      <div class="final-assessment-card">
-        <div class="final-assessment-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-            <path d="M12 3v8" />
-            <path d="M8.5 8.5A5 5 0 1 0 17 12.5" />
-            <path d="M19 17v4h-4" />
-            <path d="M15 21l4-4" />
-          </svg>
-        </div>
-        <p class="final-assessment-card-copy">
-          Your proportion of <span class="final-assessment-highlight">new business lost</span> to competitors due to engagement method and response time.
-        </p>
-      </div>
-
-      <div class="final-assessment-card">
-        <div class="final-assessment-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-            <path d="M3 17h18" />
-            <path d="M7 14l4-7 3 5 2-3 2 5" />
-            <circle cx="6" cy="7" r="2" />
-            <circle cx="18" cy="6" r="2" />
-          </svg>
-        </div>
-        <p class="final-assessment-card-copy">
-          Your <span class="final-assessment-highlight">"handling time"</span> vs <span class="final-assessment-highlight">"deflection savings"</span> - how much time and money could be saved through hands-free automation.
-        </p>
-      </div>
-
-      <div class="final-assessment-card">
-        <div class="final-assessment-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-            <path d="M4 19l6-6 4 3 6-8" />
-            <path d="M15 8h5v5" />
-            <circle cx="7" cy="7" r="3" />
-            <path d="M7 4v6M4 7h6" />
-          </svg>
-        </div>
-        <p class="final-assessment-card-copy">
-          Your overall <span class="final-assessment-highlight">opportunity cost</span> of current AI strategies and the impact on your team and operational efficiency.
-        </p>
-      </div>
-    </div>
-
-    <div class="mt-10">
-      <button onclick="openAssessmentModal()" class="final-assessment-button">
-        Diagnose My Business!
+    <!-- Zone 4: CTA — below all evidence -->
+    <div class="proof-cta-zone proof-reveal" data-proof-reveal style="transition-delay: 0.45s;">
+      <button onclick="openAssessmentModal()" class="proof-cta-button">
+        Get my free PDF AI Diagnostic
       </button>
     </div>
 
-    <p class="final-assessment-support mt-4">
-      Takes less than 3 minutes - Get immediate results - Completely free.
-    </p>
   </div>
+
 </section>
+
+
+
 
 <script is:inline>
   /* 3D wave field — particles ripple like a digital ocean, mouse creates ripples */
@@ -1392,7 +1394,7 @@ const trustedLogos = [
   /* Story sequential reveal — paragraphs illuminate one at a time on scroll */
     /* Story reveal now handled by bottleneck narrative IIFE */
 
-  /* ═══ Bottleneck 3-column: text + phone chat + dashboard ═══ */
+  /* ═══ Bottleneck 2-column: text + joined visuals ═══ */
   (function() {
     var grid = document.getElementById('bn-grid');
     if (!grid) return;
@@ -1419,32 +1421,33 @@ const trustedLogos = [
       if (fired) return;
       fired = true;
 
-      /* Activate grid — triggers text + phone + dash CSS transitions */
+      /* Activate grid — triggers text + visuals CSS transitions */
       grid.classList.add('bn-active');
 
       /* Chat messages appear sequentially */
       chatMsgs.forEach(function(msg, i) {
         setTimeout(function() {
           msg.classList.add('bn-chat-visible');
-        }, 600 + (i * 500));
+        }, 600 + (i * 450));
       });
 
-      /* Dashboard stats count up */
+      /* Dashboard stats count up (skip static values like <1s) */
       if (dash) {
         dash.querySelectorAll('.cred-dash-stat-val').forEach(function(el, i) {
+          if (el.classList.contains('cred-dash-stat-val--static')) return;
           var target = parseFloat(el.dataset.target);
           var suffix = el.dataset.suffix || '';
-          countUp(el, target, suffix, 1200 + (i * 300), 1000);
+          countUp(el, target, suffix, 1200 + (i * 200), 800);
         });
-        setTimeout(function() { dash.classList.add('animated'); }, 1600);
+        setTimeout(function() { dash.classList.add('animated'); }, 1200);
         var live = dash.querySelector('.cred-dash-live');
-        if (live) setTimeout(function() { live.style.opacity = '1'; }, 2400);
+        if (live) setTimeout(function() { live.style.opacity = '1'; }, 2200);
       }
     }
 
     var obs = new IntersectionObserver(function(entries) {
       if (entries[0].isIntersecting) { run(); obs.disconnect(); }
-    }, { threshold: 0.25 });
+    }, { threshold: 0.2 });
     obs.observe(grid);
   })();
 
@@ -2856,8 +2859,6 @@ const trustedLogos = [
   }
 
 
-  /* ─── Credentials: Split layout with dashboard ─── */
-
   /* Decorative ambient glow */
   #section-credentials {
     position: relative;
@@ -2899,7 +2900,7 @@ const trustedLogos = [
 
   /* Left: quote — pinned bottom-left */
   .cred-col-left {
-    flex: 0 0 220px;
+    flex: 0 0 auto;
     align-self: flex-end;
   }
   @media (max-width: 1023px) {
@@ -2908,14 +2909,24 @@ const trustedLogos = [
 
   /* Quote */
   .cred-section-quote {
-    font-size: clamp(1.1rem, 1.5vw, 1.35rem);
+    font-size: clamp(1.15rem, 1.6vw, 1.45rem);
     font-weight: 800;
     font-style: italic;
     line-height: 1.4;
     color: white;
   }
+  .cred-quote-mark {
+    display: block;
+    font-size: 5rem;
+    line-height: 0.6;
+    font-style: normal;
+    font-weight: 900;
+    color: #D8B743;
+    margin-bottom: 0.5rem;
+  }
   .cred-quote-line {
     display: block;
+    white-space: nowrap;
   }
 
   /* Center: keyboard landing */
@@ -3709,75 +3720,172 @@ const trustedLogos = [
     margin-bottom: 0.3rem;
     font-size: clamp(0.92rem, 1.2vw, 1.05rem);
   }
-  .trap-accent-line {
+  /* ── Testimonial bridge section ── */
+  .testi-section {
+    background: #EAEDF2;
+    padding: 4rem 0 5rem;
+    overflow: hidden;
+    position: relative;
+  }
+  .testi-layout {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+  }
+  @media (max-width: 900px) {
+    .testi-layout { flex-direction: column; }
+  }
+  .testi-content {
+    flex: 1;
     text-align: center;
-    color: #D8B743;
-    font-size: clamp(1.1rem, 1.5vw, 1.3rem);
+  }
+  .testi-accent {
+    color: #B89A2F;
+    font-size: clamp(1rem, 1.3vw, 1.2rem);
     font-weight: 700;
-    margin-top: 3rem;
-  }
-
-  /* ── Testimonial quote ── */
-  .trap-quote {
-    text-align: center;
-    max-width: 860px;
-    margin: 1.5rem auto 0;
-    padding: 2rem 2rem 0;
-  }
-  .trap-quote-text {
-    font-family: var(--font-heading);
-    font-size: clamp(1.25rem, 2vw, 1.65rem);
-    color: rgba(255,255,255,0.55);
-    font-weight: 400;
-    line-height: 1.6;
-    font-style: normal;
     margin: 0 0 2rem;
   }
-  .trap-quote-attr {
+  .testi-quote {
+    font-family: var(--font-heading);
+    font-size: clamp(1.6rem, 2.8vw, 2.4rem);
+    font-weight: 500;
+    color: #061528;
+    line-height: 1.3;
+    letter-spacing: -0.02em;
+    max-width: 860px;
+    margin: 0 auto 2rem;
+  }
+  .testi-attr {
     font-size: 0.92rem;
-    color: rgba(255,255,255,0.5);
+    color: rgba(6,21,40,0.5);
     margin: 0 0 1.2rem;
     letter-spacing: 0.01em;
   }
-  .trap-quote-attr strong { font-weight: 700; color: rgba(255,255,255,0.85); }
-  .trap-quote-link {
+  .testi-attr strong { font-weight: 700; color: rgba(6,21,40,0.85); }
+  .testi-link {
     font-size: 0.88rem;
     color: #D8B743;
     font-weight: 600;
     text-decoration: none;
     transition: opacity 0.2s ease;
   }
-  .trap-quote-link:hover { opacity: 0.75; }
+  .testi-link:hover { opacity: 0.75; }
+
+  /* ── Vertical photo carousel ── */
+  .film-reel {
+    position: absolute;
+    top: 0; bottom: 0; left: 2.5rem;
+    width: 140px;
+    overflow: hidden;
+    z-index: 1;
+  }
+  @media (max-width: 900px) {
+    .film-reel { display: none; }
+  }
+  .film-frames {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    animation: film-scroll-up 18s linear infinite;
+  }
+  @keyframes film-scroll-up {
+    0%   { transform: translateY(0); }
+    100% { transform: translateY(-50%); }
+  }
+  .film-frame {
+    width: 140px; height: 140px;
+    flex-shrink: 0;
+    border-radius: 6px;
+    overflow: hidden;
+    border: 2px solid rgba(6,21,40,0.15);
+  }
+  .film-placeholder {
+    width: 100%; height: 100%;
+    background: rgba(6,21,40,0.06);
+    display: flex; align-items: center; justify-content: center;
+    color: rgba(6,21,40,0.15);
+    font-size: 0.75rem; font-weight: 700;
+    font-family: 'Courier New', monospace;
+    letter-spacing: 0.1em;
+  }
 
 
 
-  /* ═══ Bottleneck: 3-column grid ═══ */
+  /* Bottleneck CTA */
+  .bn-cta {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.75rem;
+    margin-top: 3rem;
+  }
+  .bn-cta-support {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: rgba(255,255,255,0.5);
+    text-align: right;
+  }
+  @media (max-width: 1023px) {
+    .bn-cta { align-items: center; }
+    .bn-cta-support { text-align: center; }
+  }
+
+  /* ═══ Bottleneck: 2-column grid ═══ */
+  .bn-heading-gold {
+    font-family: var(--font-accent);
+    font-size: clamp(0.85rem, 1vw, 1rem);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #D8B743;
+  }
+  .bn-heading-main {
+    font-family: var(--font-heading);
+    font-size: clamp(1.8rem, 3vw, 2.8rem);
+    font-weight: 800;
+    color: white;
+    line-height: 1.15;
+  }
+
   .bn-grid {
     display: flex;
     flex-direction: column;
-    gap: 2.5rem;
+    gap: 3rem;
   }
   @media (min-width: 1024px) {
     .bn-grid {
       display: grid;
-      grid-template-columns: 1fr auto 1fr;
-      gap: 3rem;
-      align-items: start;
+      grid-template-columns: 1fr 1.8fr;
+      gap: 4rem;
+      align-items: center;
     }
   }
 
-  /* LEFT: Pain text */
-  .bn-text { max-width: 400px; }
-  @media (min-width: 1024px) {
-    .bn-text { padding-top: 1rem; }
+  /* LEFT: Text column (white card) */
+  .bn-text {
+    position: relative;
+    max-width: 420px;
+    padding: 2rem;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(6,21,40,0.08);
+  }
+  .bn-watermark {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: auto;
+    opacity: 0.06;
+    pointer-events: none;
   }
   .bn-line {
-    color: rgba(6, 21, 40, 0.78);
-    font-size: clamp(1rem, 1.1vw, 1.15rem);
-    line-height: 1.55;
+    color: rgba(6,21,40,0.75);
+    font-size: clamp(0.95rem, 1.05vw, 1.1rem);
+    line-height: 1.6;
     font-weight: 500;
-    margin-bottom: 1.25rem;
-    max-width: 42ch;
+    margin: 0;
     opacity: 0; transform: translateY(12px);
     transition: opacity 0.5s ease, transform 0.5s ease;
   }
@@ -3787,28 +3895,38 @@ const trustedLogos = [
   .bn-line--emphasis {
     color: #D8B743;
     font-weight: 700;
-    font-size: clamp(1.05rem, 1.2vw, 1.25rem);
-    margin-top: 0.5rem;
-    margin-bottom: 0;
+    font-size: clamp(1rem, 1.15vw, 1.2rem);
+  }
+  .bn-divider {
+    border: none;
+    border-top: 1px solid rgba(6,21,40,0.08);
+    margin: 1.25rem 0;
   }
 
-  /* MIDDLE: Phone mockup */
-  .bn-phone {
+  /* RIGHT: Joined visuals */
+  .bn-visuals {
     display: flex;
-    justify-content: center;
+    gap: 0;
+    align-items: stretch;
     opacity: 0; transform: translateY(20px);
     transition: opacity 0.6s cubic-bezier(0.16,1,0.3,1) 0.2s,
                 transform 0.6s cubic-bezier(0.16,1,0.3,1) 0.2s;
   }
-  .bn-grid.bn-active .bn-phone {
+  .bn-grid.bn-active .bn-visuals {
     opacity: 1; transform: translateY(0);
   }
+
+  /* Phone: left half of joined unit */
+  .bn-phone {
+    flex-shrink: 0;
+  }
   .bn-phone-frame {
-    width: 280px;
+    width: 260px;
     background: linear-gradient(160deg, #0c1a2e 0%, #091422 100%);
     border: 1px solid rgba(255,255,255,0.08);
-    border-radius: 36px;
-    box-shadow: 0 20px 60px rgba(6,21,40,0.3), 0 8px 24px rgba(6,21,40,0.2);
+    border-radius: 28px 0 0 28px;
+    border-right: none;
+    box-shadow: -8px 8px 40px rgba(0,0,0,0.3);
     overflow: hidden;
     padding-bottom: 1.5rem;
   }
@@ -3820,13 +3938,14 @@ const trustedLogos = [
   }
   .bn-phone-header {
     text-align: center;
-    color: rgba(255,255,255,0.6);
-    font-size: 0.7rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
     padding: 0.75rem 0 0.5rem;
     border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .bn-phone-contact {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: rgba(255,255,255,0.7);
+    letter-spacing: 0.02em;
   }
   .bn-phone-chat {
     padding: 1rem 0.85rem;
@@ -3854,56 +3973,80 @@ const trustedLogos = [
     opacity: 0.4;
   }
 
-  /* Lead messages: left-aligned, lighter */
-  .bn-msg--lead {
-    align-self: flex-start;
-    background: rgba(255,255,255,0.08);
-    color: rgba(255,255,255,0.85);
-  }
-
-  /* Bot messages: right-aligned, green accent */
-  .bn-msg--bot {
+  /* Sent messages (CEO): right-aligned, blue accent */
+  .bn-msg--sent {
     align-self: flex-end;
-    background: rgba(107,183,144,0.18);
-    border: 1px solid rgba(107,183,144,0.25);
+    background: rgba(61,178,221,0.2);
+    border: 1px solid rgba(61,178,221,0.15);
     color: rgba(255,255,255,0.9);
   }
 
-  /* Response time / booking badges */
-  .bn-msg-badge {
-    align-self: center;
-    font-size: 0.62rem;
-    font-weight: 600;
-    color: rgba(255,255,255,0.35);
-    letter-spacing: 0.03em;
-    padding: 0.15rem 0;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-  }
-  .bn-msg-badge.bn-chat-visible { opacity: 1; }
-  .bn-msg-badge--success span {
-    color: #6BB790;
+  /* Received messages (CFO): left-aligned, subtle */
+  .bn-msg--received {
+    align-self: flex-start;
+    background: rgba(255,255,255,0.07);
+    color: rgba(255,255,255,0.8);
   }
 
-  /* RIGHT: Dashboard */
+  /* Dashboard: right half of joined unit (white card) */
   .bn-dash {
-    opacity: 0; transform: translateY(20px);
-    transition: opacity 0.6s cubic-bezier(0.16,1,0.3,1) 0.4s,
-                transform 0.6s cubic-bezier(0.16,1,0.3,1) 0.4s;
+    flex: 1;
+    min-width: 0;
   }
-  .bn-grid.bn-active .bn-dash {
-    opacity: 1; transform: translateY(0);
+  .bn-dash .cred-dash {
+    height: 100%;
+    border-radius: 0 16px 16px 0;
+    border-left: 1px solid rgba(6,21,40,0.06);
+    background: white;
+    box-shadow: 0 8px 32px rgba(6,21,40,0.08);
+  }
+  .bn-dash .cred-dash-grid {
+    background-image: radial-gradient(circle, rgba(6,21,40,0.04) 1px, transparent 1px);
+  }
+  .bn-dash .cred-dash-stat {
+    background: rgba(6,21,40,0.03);
+    border-color: rgba(6,21,40,0.06);
+  }
+  .bn-dash .cred-dash-stat-label {
+    color: rgba(6,21,40,0.45);
+  }
+  .bn-dash .cred-dash-stat-val {
+    color: #061528;
+  }
+  .bn-dash .cred-dash-chart-label {
+    color: rgba(6,21,40,0.4);
+  }
+  .bn-dash .cred-dash-spark {
+    background: rgba(6,21,40,0.02);
+    border-color: rgba(6,21,40,0.05);
+  }
+  .bn-dash .cred-dash-spark-label {
+    color: rgba(6,21,40,0.4);
+  }
+  .bn-dash .cred-dash-live-text {
+    color: #4a9e6e;
   }
 
   /* Mobile responsive */
   @media (max-width: 1023px) {
     .bn-grid { align-items: center; }
     .bn-text { max-width: 100%; text-align: center; }
-    .bn-line { max-width: 100%; margin-left: auto; margin-right: auto; }
-    .bn-phone-frame { width: 260px; }
+    .bn-line { margin-left: auto; margin-right: auto; }
+    .bn-visuals { flex-direction: column; align-items: center; }
+    .bn-phone-frame {
+      width: 280px;
+      border-radius: 28px 28px 0 0;
+      border-right: 1px solid rgba(255,255,255,0.08);
+      border-bottom: none;
+    }
+    .bn-dash .cred-dash {
+      border-radius: 0 0 16px 16px;
+      border-left: none;
+      border-top: 1px solid rgba(6,21,40,0.06);
+    }
   }
   @media (prefers-reduced-motion: reduce) {
-    .bn-line, .bn-phone, .bn-dash, .bn-msg, .bn-msg-badge {
+    .bn-line, .bn-visuals, .bn-msg {
       opacity: 1; transform: none; transition: none;
     }
   }
