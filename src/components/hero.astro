@@ -25,7 +25,7 @@ const trustedLogos = [
 ---
 
 <!-- Hero background wrapper — covers carousel + hero -->
-<div class="hero-bg-wrapper" style="position:relative; overflow:hidden; background:#061528;">
+<div class="hero-bg-wrapper" style="position:relative; overflow-x:clip; overflow-y:visible; background:#061528;">
   <!-- Canvas background (covers carousel + hero) -->
   <div class="absolute inset-0 pointer-events-none" aria-hidden="true" style="z-index:0;">
     <div class="hero-aurora hero-aurora-1"></div>
@@ -143,19 +143,23 @@ const trustedLogos = [
 </div><!-- /hero-bg-wrapper -->
 
 <!-- Credentials Section -->
-<section id="section-credentials" style="background:#080e18; padding: 5rem 0 4.5rem;">
+<section id="section-credentials" style="background:#050a12; padding: 6rem 0 5rem;">
   <div class="max-w-screen-2xl mx-auto px-8 lg:px-16">
-    <div class="cred-split reveal">
+    <div class="cred-layout reveal">
 
-      <!-- Left: quote + credential cards -->
-      <div class="cred-left-col">
-
+      <!-- Left: quote -->
+      <div class="cred-col-left">
         <blockquote class="cred-section-quote">
-          It's no longer <span class="text-yellow">"the big that beats the small"</span>
-          <br/>it's <span class="text-yellow">"the fast that runs over the slow"</span>
+          <span class="cred-quote-line">It's no longer <span class="text-yellow">"the big that beats the small"</span></span>
+          <span class="cred-quote-line">it's <span class="text-yellow">"the fast that runs over the slow"</span></span>
         </blockquote>
+      </div>
 
-        <div class="cred-cards-row">
+      <!-- Center: keyboard landing zone -->
+      <div class="cred-kb-landing" id="cred-kb-landing"></div>
+
+      <!-- Right: cards stacked -->
+      <div class="cred-col-right">
           <!-- Graduation cap — qualifications -->
           <div class="cred-card cred-card--yellow">
             <span class="cred-card-bar"></span>
@@ -186,77 +190,7 @@ const trustedLogos = [
               <p>Over 15 years experience in building and optimizing client acquisition systems</p>
             </div>
           </div>
-        </div>
-
-      </div>
-
-      <!-- Right: live metrics dashboard -->
-      <div class="cred-right-col">
-        <div class="cred-dash" id="cred-dash">
-          <!-- Dot grid background -->
-          <div class="cred-dash-grid" aria-hidden="true"></div>
-
-          <!-- Top row: mini stat cards -->
-          <div class="cred-dash-stats">
-            <div class="cred-dash-stat">
-              <span class="cred-dash-stat-label">Response Time</span>
-              <span class="cred-dash-stat-val" data-target="1.2" data-suffix="s">0s</span>
-              <span class="cred-dash-stat-delta cred-dash-stat-delta--good">-94%</span>
-            </div>
-            <div class="cred-dash-stat">
-              <span class="cred-dash-stat-label">Booking Rate</span>
-              <span class="cred-dash-stat-val" data-target="98" data-suffix="%">0%</span>
-              <span class="cred-dash-stat-delta cred-dash-stat-delta--good">+42%</span>
-            </div>
-            <div class="cred-dash-stat">
-              <span class="cred-dash-stat-label">Revenue Lift</span>
-              <span class="cred-dash-stat-val" data-target="50" data-suffix="%">0%</span>
-              <span class="cred-dash-stat-delta cred-dash-stat-delta--good">+50%</span>
-            </div>
-          </div>
-
-          <!-- Animated bar chart -->
-          <div class="cred-dash-chart">
-            <div class="cred-dash-chart-label">Monthly Revenue</div>
-            <div class="cred-dash-bars">
-              <div class="cred-dash-bar" style="--bar-h:35%;--bar-delay:0s;"></div>
-              <div class="cred-dash-bar" style="--bar-h:48%;--bar-delay:0.1s;"></div>
-              <div class="cred-dash-bar" style="--bar-h:42%;--bar-delay:0.2s;"></div>
-              <div class="cred-dash-bar" style="--bar-h:58%;--bar-delay:0.3s;"></div>
-              <div class="cred-dash-bar" style="--bar-h:52%;--bar-delay:0.4s;"></div>
-              <div class="cred-dash-bar" style="--bar-h:68%;--bar-delay:0.5s;"></div>
-              <div class="cred-dash-bar" style="--bar-h:75%;--bar-delay:0.6s;"></div>
-              <div class="cred-dash-bar cred-dash-bar--highlight" style="--bar-h:92%;--bar-delay:0.7s;"></div>
-            </div>
-          </div>
-
-          <!-- Sparkline row -->
-          <div class="cred-dash-sparkrow">
-            <div class="cred-dash-spark">
-              <span class="cred-dash-spark-label">Leads</span>
-              <svg class="cred-dash-sparkline" viewBox="0 0 80 24" fill="none" aria-hidden="true">
-                <polyline points="0,20 10,18 20,14 30,16 40,10 50,12 60,6 70,4 80,2" stroke="#D8B743" stroke-width="2" fill="none"/>
-                <polyline points="0,20 10,18 20,14 30,16 40,10 50,12 60,6 70,4 80,2" stroke="none" fill="url(#sparkGold)" opacity="0.15"/>
-                <defs><linearGradient id="sparkGold" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#D8B743"/><stop offset="100%" stop-color="transparent"/></linearGradient></defs>
-              </svg>
-            </div>
-            <div class="cred-dash-spark">
-              <span class="cred-dash-spark-label">Bookings</span>
-              <svg class="cred-dash-sparkline" viewBox="0 0 80 24" fill="none" aria-hidden="true">
-                <polyline points="0,22 10,20 20,17 30,15 40,12 50,10 60,7 70,5 80,3" stroke="#3DB2DD" stroke-width="2" fill="none"/>
-                <polyline points="0,22 10,20 20,17 30,15 40,12 50,10 60,7 70,5 80,3" stroke="none" fill="url(#sparkBlue)" opacity="0.15"/>
-                <defs><linearGradient id="sparkBlue" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#3DB2DD"/><stop offset="100%" stop-color="transparent"/></linearGradient></defs>
-              </svg>
-            </div>
-          </div>
-
-          <!-- Live pulse dot -->
-          <div class="cred-dash-live">
-            <span class="cred-dash-live-dot"></span>
-            <span class="cred-dash-live-text">Live</span>
-          </div>
-        </div>
-      </div>
+      </div><!-- /cred-col-right -->
 
     </div>
   </div>
@@ -466,14 +400,13 @@ const trustedLogos = [
 <section id="section-why-works" class="py-24 md:py-36 relative overflow-hidden" style="background:#EAEDF2;">
   <div class="max-w-screen-2xl mx-auto px-8 lg:px-16">
 
-    <!-- Two-tone heading -->
-    <div class="text-center mb-20 reveal">
-      <h2 class="text-3xl lg:text-4xl xl:text-5xl font-bold leading-tight" style="color:#061528;">
-        Why This Works
-      </h2>
-      <p class="text-xl lg:text-2xl font-semibold mt-3" style="color:rgba(6,21,40,0.32);">
-        Six reasons clients see results from day one.
-      </p>
+    <!-- Section heading with bg-logo -->
+    <div class="wtw-header reveal">
+      <div class="wtw-header-text">
+        <h2 class="wtw-header-title">Why This Works</h2>
+        <p class="wtw-header-sub">Six reasons clients see results from day one.</p>
+      </div>
+      <img src="/public/bg-logo.png" alt="" class="wtw-header-logo" aria-hidden="true" />
     </div>
 
     <!-- 3-column visual cards -->
@@ -753,6 +686,7 @@ const trustedLogos = [
           <span class="wtw-ind-label">typical cost underestimation<br/>when companies go it alone</span>
         </div>
       </div>
+      <div class="wtw-divider-line" style="margin-top:3.5rem;"></div>
       <p class="wtw-ind-source">
         Data from <a href="https://mlq.ai/media/quarterly_decks/v0.1_State_of_AI_in_Business_2025_Report.pdf" target="_blank" rel="noopener" class="wtw-source-link">MIT &amp; MLQ State of AI in Business 2025</a>, RAND Corporation, S&amp;P Global, McKinsey
       </p>
@@ -805,28 +739,49 @@ const trustedLogos = [
           </div>
           <!-- Main content -->
           <div class="trap-dash-main">
-            <div class="trap-dash-header">Open Positions <span class="trap-dash-count">3 active</span></div>
+            <div class="trap-dash-header">Open Roles <span class="trap-dash-count">6 active &middot; 14 weeks avg. time-to-fill</span></div>
             <div class="trap-dash-row">
-              <div class="trap-dash-cell">AI Specialist</div>
-              <div class="trap-dash-cell trap-dash-cell--status">Interviewing</div>
-              <div class="trap-dash-cell trap-dash-cell--date">Posted 4w ago</div>
+              <div class="trap-dash-cell">AI Automation Lead</div>
+              <div class="trap-dash-cell trap-dash-cell--status trap-dash-cell--warn">2 candidates — neither know your stack</div>
+              <div class="trap-dash-cell trap-dash-cell--date">Posted 9w ago</div>
             </div>
             <div class="trap-dash-row">
-              <div class="trap-dash-cell">ML Engineer</div>
-              <div class="trap-dash-cell trap-dash-cell--status trap-dash-cell--warn">No applicants</div>
+              <div class="trap-dash-cell">Prompt Engineer</div>
+              <div class="trap-dash-cell trap-dash-cell--status trap-dash-cell--warn">Role didn't exist 12 months ago</div>
               <div class="trap-dash-cell trap-dash-cell--date">Posted 6w ago</div>
             </div>
             <div class="trap-dash-row">
-              <div class="trap-dash-cell">Data Analyst</div>
-              <div class="trap-dash-cell trap-dash-cell--status">Offer sent</div>
-              <div class="trap-dash-cell trap-dash-cell--date">Posted 8w ago</div>
+              <div class="trap-dash-cell">AI Agent Developer</div>
+              <div class="trap-dash-cell trap-dash-cell--status trap-dash-cell--warn">0 qualified applicants</div>
+              <div class="trap-dash-cell trap-dash-cell--date">Posted 4w ago</div>
+            </div>
+            <div class="trap-dash-row">
+              <div class="trap-dash-cell">ML Ops Engineer</div>
+              <div class="trap-dash-cell trap-dash-cell--status trap-dash-cell--warn">Salary expectations exceed budget</div>
+              <div class="trap-dash-cell trap-dash-cell--date">Posted 11w ago</div>
+            </div>
+            <div class="trap-dash-row">
+              <div class="trap-dash-cell">AI Integration Specialist</div>
+              <div class="trap-dash-cell trap-dash-cell--status trap-dash-cell--warn">Candidate ghosted after offer</div>
+              <div class="trap-dash-cell trap-dash-cell--date">Posted 7w ago</div>
+            </div>
+            <div class="trap-dash-row">
+              <div class="trap-dash-cell">Conversational AI / Agent Designer</div>
+              <div class="trap-dash-cell trap-dash-cell--status trap-dash-cell--warn">No internal benchmark for this role</div>
+              <div class="trap-dash-cell trap-dash-cell--date">Posted 3w ago</div>
             </div>
             <div class="trap-dash-header" style="margin-top:1rem;">Recent Activity</div>
             <div class="trap-dash-row trap-dash-row--dim">
-              <div class="trap-dash-cell">Interview cancelled — candidate withdrew</div>
+              <div class="trap-dash-cell">Top candidate accepted a competitor offer — back to screening</div>
             </div>
             <div class="trap-dash-row trap-dash-row--dim">
-              <div class="trap-dash-cell">Training module outdated — requires update</div>
+              <div class="trap-dash-cell">Agent framework changed (LangChain &rarr; CrewAI) — retraining required</div>
+            </div>
+            <div class="trap-dash-row trap-dash-row--dim">
+              <div class="trap-dash-cell">Internal team still using ChatGPT free tier — no governance in place</div>
+            </div>
+            <div class="trap-dash-row trap-dash-row--dim">
+              <div class="trap-dash-cell">New hire built agents on deprecated API — 3 months work scrapped</div>
             </div>
           </div>
         </div>
@@ -880,20 +835,39 @@ const trustedLogos = [
 
     </div><!-- /trap-scene -->
 
-    <!-- Copy beneath -->
-    <div class="trap-copy-block" id="trap-copy-block">
-      <p class="trap-copy-line">
-        Internal employees are focused on keeping up with the directives of the company's existing "Eco-Chamber".
-      </p>
-      <p class="trap-copy-line">
-        They don't consistently have the time to stay plugged into constantly changing applications, methods, and updates.
-      </p>
-      <p class="trap-copy-line">
-        The investment is not yet worth a full-time hire.
-      </p>
-      <p class="trap-copy-line trap-copy-line--accent">
-        That's why we exist.
-      </p>
+    <!-- Copy as 3-column cards -->
+    <div class="trap-cols" id="trap-copy-block">
+
+      <div class="trap-col trap-copy-line">
+        <div class="trap-col-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 12h8M12 8v8"/></svg>
+        </div>
+        <p><strong>Tunnel vision.</strong> Internal employees are focused on keeping up with the directives of the company's existing processes. They don't have the headspace to rethink how AI fits in.</p>
+      </div>
+
+      <div class="trap-col trap-copy-line">
+        <div class="trap-col-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        </div>
+        <p><strong>Constant change.</strong> They don't consistently have the time to stay plugged into constantly changing applications, methods, and updates.</p>
+      </div>
+
+      <div class="trap-col trap-copy-line">
+        <div class="trap-col-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        </div>
+        <p><strong>Not worth the hire.</strong> The investment is not yet worth a full-time hire.</p>
+      </div>
+
+    </div>
+
+    <p class="trap-accent-line" id="trap-accent-line">That's why we exist.</p>
+
+    <!-- Testimonial quote -->
+    <div class="trap-quote" id="trap-quote">
+      <p class="trap-quote-text">&ldquo;Revenue increase was rapid with HumTech, and required minimal input from our already very busy team.&rdquo;</p>
+      <p class="trap-quote-attr"><strong>Jessica,</strong> Founder, Rural Energy Saving Grants</p>
+      <a href="/case-studies" class="trap-quote-link">Read the story &rsaquo;</a>
     </div>
 
   </div>
@@ -901,105 +875,121 @@ const trustedLogos = [
 
 
 <!-- ══ SECTION B — THE BOTTLENECK ══ -->
-<section id="section-bottleneck" class="relative overflow-hidden" style="background: radial-gradient(ellipse 60% 40% at 50% 100%, rgba(61,178,221,0.06) 0%, transparent 70%), #0b1525;">
-  <div class="max-w-screen-2xl mx-auto px-8 lg:px-16 pt-24 pb-24 md:pt-32 md:pb-32">
+<section id="section-bottleneck" class="relative overflow-hidden" style="background: #EAEDF2;">
+  <div class="max-w-screen-2xl mx-auto px-8 lg:px-16 pt-28 pb-28 md:pt-36 md:pb-36">
 
-    <!-- Bottleneck heading -->
-    <div class="text-center mb-16 reveal">
+    <!-- Bottleneck headings -->
+    <div class="text-center mb-6 reveal">
       <h3 class="text-2xl lg:text-3xl xl:text-4xl font-bold leading-tight" style="color:#D8B743;">
         You know the bottleneck... 50% of inquiries vanish before your sales team gets to them
       </h3>
     </div>
-
-    <!-- We faced this exact problem -->
-    <div class="text-center mb-10 reveal">
-      <h3 class="text-2xl lg:text-3xl xl:text-4xl font-bold text-white leading-tight">
+    <div class="text-center mb-16 reveal">
+      <h3 class="text-2xl lg:text-3xl xl:text-4xl font-bold leading-tight" style="color:#061528;">
         We faced this exact problem
       </h3>
     </div>
 
-    <!-- Circular Latency Diagram -->
-    <div class="circ-latency-wrap circ-latency-wrap--large" id="latency-diagram">
+    <!-- Three-column: Problem → Solution → Results -->
+    <div class="bn-grid" id="bn-grid">
 
-      <div class="circ-diagram-row reveal">
-        <!-- Donut SVG -->
-        <div class="circ-svg-container circ-svg-container--lg">
-          <svg class="circ-svg" viewBox="0 0 320 320" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <pattern id="circ-grid" width="24" height="24" patternUnits="userSpaceOnUse">
-                <path d="M 24 0 L 0 0 0 24" fill="none" stroke="rgba(61,178,221,0.06)" stroke-width="0.5"/>
-              </pattern>
-              <filter id="glow-green">
-                <feGaussianBlur stdDeviation="3" result="blur"/>
-                <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-              </filter>
-            </defs>
-            <rect width="320" height="320" fill="url(#circ-grid)" rx="16"/>
-            <circle cx="160" cy="160" r="142" fill="none" stroke="rgba(61,178,221,0.08)" stroke-width="1" stroke-dasharray="4 6"/>
-            <circle cx="160" cy="160" r="110" fill="none" stroke="rgba(216,183,67,0.18)" stroke-width="34"/>
-            <circle cx="160" cy="160" r="110" fill="none"
-              stroke="rgba(216,183,67,0.45)" stroke-width="34"
-              stroke-dasharray="691.15"
-              stroke-dashoffset="0"
-              transform="rotate(-90 160 160)"/>
-            <circle id="circ-responded-arc" cx="160" cy="160" r="110"
-              fill="none"
-              stroke="#6BB790"
-              stroke-width="34"
-              stroke-linecap="butt"
-              stroke-dasharray="691.15"
-              stroke-dashoffset="691.15"
-              transform="rotate(-90 160 160)"
-              filter="url(#glow-green)"
-              style="transition:stroke-dashoffset 0.9s cubic-bezier(0.4,0,0.2,1);"/>
-            <circle cx="160" cy="160" r="90" fill="#0b1525"/>
-            <text id="circ-center-pct" x="160" y="152"
-              text-anchor="middle"
-              fill="white" font-size="54" font-weight="800"
-              style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">50%</text>
-            <text x="160" y="179" text-anchor="middle"
-              fill="rgba(255,255,255,0.45)" font-size="12" letter-spacing="0.06em"
-              style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;text-transform:uppercase;">Responded</text>
-            <text x="160" y="22" text-anchor="middle"
-              fill="rgba(255,255,255,0.3)" font-size="11" letter-spacing="0.05em"
-              style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;text-transform:uppercase;">Total Inquiries (100%)</text>
-          </svg>
-        </div>
+      <!-- LEFT: Pain text -->
+      <div class="bn-text">
+        <p class="bn-line">On average, only 50% of new enquiries respond to manual outreach, and just half attend booked consultations.</p>
+        <p class="bn-line">Teams are constantly drawn into repetitive admin tasks and distractions which take them away from revenue-producing duties.</p>
+        <p class="bn-line">Countless &lsquo;out the box&rsquo; third-party AI tools (multiple different log-ins...), and conversions actually gets worse.</p>
+        <p class="bn-line bn-line--emphasis">One AI Revenue Engine&trade; later, and the results speak for themselves...</p>
+      </div>
 
-        <!-- Right: legend -->
-        <div class="circ-legend">
-          <div class="circ-legend-item">
-            <div class="circ-legend-dot" style="background:#6BB790;box-shadow:0 0 8px rgba(107,183,144,0.6);"></div>
-            <div>
-              <div class="circ-legend-label">Responded</div>
-              <div class="circ-legend-val" id="circ-responded-val" style="color:#6BB790;">50%</div>
+      <!-- MIDDLE: Phone mockup -->
+      <div class="bn-phone">
+        <div class="bn-phone-frame">
+          <div class="bn-phone-notch"></div>
+          <div class="bn-phone-header">AI Revenue Engine</div>
+          <div class="bn-phone-chat" id="bn-chat">
+            <div class="bn-msg bn-msg--lead" data-chat-idx="0">
+              <p>Hi, I saw your service online and I&rsquo;m interested in finding out more</p>
+              <span class="bn-msg-time">10:42 AM</span>
             </div>
-          </div>
-          <div class="circ-legend-item" style="margin-top:1.5rem;">
-            <div class="circ-legend-dot" style="background:rgba(216,183,67,0.7);box-shadow:0 0 8px rgba(216,183,67,0.4);"></div>
-            <div>
-              <div class="circ-legend-label">Lost to Latency</div>
-              <div class="circ-legend-val" id="circ-lost-val" style="color:#D8B743;">50%</div>
+            <div class="bn-msg-badge" data-chat-idx="1">
+              <span>Responded in 1.2s</span>
             </div>
-          </div>
-          <div class="circ-legend-item" style="margin-top:1.5rem; opacity:0.6;">
-            <div class="circ-legend-dot" style="background:rgba(255,255,255,0.15);"></div>
-            <div>
-              <div class="circ-legend-label">Total Inquiries</div>
-              <div class="circ-legend-val" style="color:rgba(255,255,255,0.5);">100%</div>
+            <div class="bn-msg bn-msg--bot" data-chat-idx="2">
+              <p>Thanks for reaching out, Sarah! I&rsquo;d love to help you explore how we can grow your revenue. I have a consultation slot available tomorrow at 2pm &mdash; shall I book you in?</p>
+              <span class="bn-msg-time">10:42 AM</span>
+            </div>
+            <div class="bn-msg bn-msg--lead" data-chat-idx="3">
+              <p>Yes, that works perfectly</p>
+              <span class="bn-msg-time">10:43 AM</span>
+            </div>
+            <div class="bn-msg bn-msg--bot" data-chat-idx="4">
+              <p>You&rsquo;re booked in for tomorrow at 2pm. You&rsquo;ll receive a confirmation shortly.</p>
+              <span class="bn-msg-time">10:43 AM</span>
+            </div>
+            <div class="bn-msg-badge bn-msg-badge--success" data-chat-idx="5">
+              <span>Consultation booked &#x2713;</span>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- Toggle -->
-      <div class="latency-toggle-row" style="margin-top:2.5rem;">
-        <span class="latency-toggle-label">Without AI Revenue Engine</span>
-        <button class="latency-toggle" id="latency-toggle" aria-pressed="false">
-          <span class="latency-toggle-knob"></span>
-        </button>
-        <span class="latency-toggle-label">With AI Revenue Engine</span>
+      <!-- RIGHT: Dashboard -->
+      <div class="bn-dash" id="bn-dash-wrap">
+        <div class="cred-dash" id="cred-dash">
+          <div class="cred-dash-grid" aria-hidden="true"></div>
+          <div class="cred-dash-stats">
+            <div class="cred-dash-stat">
+              <span class="cred-dash-stat-label">Response Time</span>
+              <span class="cred-dash-stat-val" data-target="1.2" data-suffix="s">0s</span>
+            </div>
+            <div class="cred-dash-stat">
+              <span class="cred-dash-stat-label">Booking Rate</span>
+              <span class="cred-dash-stat-val" data-target="98" data-suffix="%">0%</span>
+            </div>
+            <div class="cred-dash-stat">
+              <span class="cred-dash-stat-label">Revenue Lift</span>
+              <span class="cred-dash-stat-val" data-target="50" data-suffix="%">0%</span>
+              <span class="cred-dash-stat-delta cred-dash-stat-delta--good">+50%</span>
+            </div>
+          </div>
+          <div class="cred-dash-chart">
+            <div class="cred-dash-chart-label">Monthly Revenue</div>
+            <div class="cred-dash-bars">
+              <div class="cred-dash-bar" style="--bar-h:35%;--bar-delay:0s;"></div>
+              <div class="cred-dash-bar" style="--bar-h:48%;--bar-delay:0.1s;"></div>
+              <div class="cred-dash-bar" style="--bar-h:42%;--bar-delay:0.2s;"></div>
+              <div class="cred-dash-bar" style="--bar-h:58%;--bar-delay:0.3s;"></div>
+              <div class="cred-dash-bar" style="--bar-h:52%;--bar-delay:0.4s;"></div>
+              <div class="cred-dash-bar" style="--bar-h:68%;--bar-delay:0.5s;"></div>
+              <div class="cred-dash-bar" style="--bar-h:75%;--bar-delay:0.6s;"></div>
+              <div class="cred-dash-bar cred-dash-bar--highlight" style="--bar-h:92%;--bar-delay:0.7s;"></div>
+            </div>
+          </div>
+          <div class="cred-dash-sparkrow">
+            <div class="cred-dash-spark">
+              <span class="cred-dash-spark-label">Leads</span>
+              <svg class="cred-dash-sparkline" viewBox="0 0 80 24" fill="none" aria-hidden="true">
+                <polyline points="0,20 10,18 20,14 30,16 40,10 50,12 60,6 70,4 80,2" stroke="#D8B743" stroke-width="2" fill="none"/>
+                <polyline points="0,20 10,18 20,14 30,16 40,10 50,12 60,6 70,4 80,2" stroke="none" fill="url(#sparkGoldB)" opacity="0.15"/>
+                <defs><linearGradient id="sparkGoldB" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#D8B743"/><stop offset="100%" stop-color="transparent"/></linearGradient></defs>
+              </svg>
+            </div>
+            <div class="cred-dash-spark">
+              <span class="cred-dash-spark-label">Bookings</span>
+              <svg class="cred-dash-sparkline" viewBox="0 0 80 24" fill="none" aria-hidden="true">
+                <polyline points="0,22 10,20 20,17 30,15 40,12 50,10 60,7 70,5 80,3" stroke="#3DB2DD" stroke-width="2" fill="none"/>
+                <polyline points="0,22 10,20 20,17 30,15 40,12 50,10 60,7 70,5 80,3" stroke="none" fill="url(#sparkBlueB)" opacity="0.15"/>
+                <defs><linearGradient id="sparkBlueB" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#3DB2DD"/><stop offset="100%" stop-color="transparent"/></linearGradient></defs>
+              </svg>
+            </div>
+          </div>
+          <div class="cred-dash-live" id="cred-dash-live">
+            <span class="cred-dash-live-dot"></span>
+            <span class="cred-dash-live-text">Live</span>
+          </div>
+        </div>
       </div>
+
     </div>
 
   </div>
@@ -1009,43 +999,6 @@ const trustedLogos = [
 <!-- ══ SECTION C — THE PROOF ══ -->
 <section id="section-proof" class="relative overflow-hidden" style="background: radial-gradient(ellipse 70% 50% at 50% 0%, rgba(216,183,67,0.07) 0%, transparent 60%), #061528;">
   <div class="max-w-screen-2xl mx-auto px-8 lg:px-16 pt-24 pb-28 md:pt-32 md:pb-36">
-
-    <!-- Story Block — sequential scroll reveal -->
-    <div class="section-eight-story max-w-3xl mx-auto" id="story-reveal-block">
-      <p class="section-eight-copy story-line" data-story-index="0">
-        On average, only 50% of new enquiries respond to manual outreach, and just half attend booked consultations.
-      </p>
-      <p class="section-eight-copy story-line" data-story-index="1">
-        Teams are constantly drawn into repetitive admin tasks and distractions which take them away from revenue-producing duties.
-      </p>
-      <p class="section-eight-copy story-line" data-story-index="2">
-        Countless 'out the box' third-party AI tools (multiple different log-ins...), and conversions actually gets worse.
-      </p>
-      <p class="section-eight-copy section-eight-emphasis story-line" data-story-index="3">
-        One AI Revenue Engine&trade; later, and the results speak for themselves...
-      </p>
-    </div>
-
-    <div class="results-panel max-w-3xl mx-auto">
-      <div class="results-panel-grid">
-        <div class="results-panel-cell">
-          <div class="results-panel-value text-yellow">98%</div>
-          <div class="results-panel-label">client appointment booking rate</div>
-        </div>
-        <div class="results-panel-cell">
-          <div class="results-panel-value text-yellow">90%+</div>
-          <div class="results-panel-label">appointment attendance</div>
-        </div>
-        <div class="results-panel-cell">
-          <div class="results-panel-value text-yellow">50%</div>
-          <div class="results-panel-label">increase in revenue</div>
-        </div>
-        <div class="results-panel-cell">
-          <div class="results-panel-value text-white">Zero</div>
-          <div class="results-panel-label">additional team members hired</div>
-        </div>
-      </div>
-    </div>
 
     <div class="results-proof max-w-3xl mx-auto text-center mt-10">
       <p class="results-proof-copy">
@@ -1335,6 +1288,74 @@ const trustedLogos = [
     });
   })();
 
+  /* ─── Keyboard scroll migration: hero ↕ credentials ─── */
+  (function() {
+    var kb = document.getElementById('kb-container');
+    var landing = document.getElementById('cred-kb-landing');
+    if (!kb || !landing) return;
+    if (window.innerWidth < 1024) return;
+
+    var ticking = false;
+
+    // Measure the vertical distance between keyboard origin and landing zone
+    // Uses document-relative positions (offsetTop walk) so scroll doesn't affect it
+    function getDocTop(el) {
+      var top = 0;
+      while (el) { top += el.offsetTop; el = el.offsetParent; }
+      return top;
+    }
+
+    // Cache the vertical gap on load (doesn't change unless window resizes)
+    var kbDocTop = getDocTop(kb);
+    var landingDocTop = getDocTop(landing);
+    var dy = landingDocTop + landing.offsetHeight / 2 - (kbDocTop + kb.offsetHeight / 2);
+
+    window.addEventListener('resize', function() {
+      if (window.innerWidth < 1024) {
+        kb.style.transform = '';
+        kb.style.animation = '';
+        return;
+      }
+      kbDocTop = getDocTop(kb);
+      landingDocTop = getDocTop(landing);
+      dy = landingDocTop + landing.offsetHeight / 2 - (kbDocTop + kb.offsetHeight / 2);
+    });
+
+    function easeInOutCubic(t) {
+      return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+    }
+
+    function tick() {
+      ticking = false;
+      var scrollY = window.scrollY;
+      var vh = window.innerHeight;
+
+      // Start: when keyboard's natural position is about to leave viewport top
+      var triggerStart = kbDocTop - vh * 0.65;
+      // End: when landing zone center is at viewport center
+      var triggerEnd = landingDocTop + landing.offsetHeight / 2 - vh * 0.5;
+
+      if (triggerEnd <= triggerStart) return;
+
+      var progress = (scrollY - triggerStart) / (triggerEnd - triggerStart);
+      progress = Math.max(0, Math.min(1, progress));
+
+      if (progress <= 0) {
+        kb.style.transform = '';
+        kb.style.animation = '';
+        return;
+      }
+
+      var eased = easeInOutCubic(progress);
+      kb.style.animation = 'none';
+      kb.style.transform = 'translateY(' + (dy * eased) + 'px)';
+    }
+
+    window.addEventListener('scroll', function() {
+      if (!ticking) { ticking = true; requestAnimationFrame(tick); }
+    }, { passive: true });
+  })();
+
   /* ══ SECTION A — Floating notification cascade ══ */
   (function() {
     var scene = document.getElementById('trap-scene');
@@ -1357,16 +1378,7 @@ const trustedLogos = [
         }, delay);
       });
 
-      /* After all notifications, reveal copy lines */
-      var totalDelay = delay + 600;
-      if (copyBlock) {
-        var lines = Array.from(copyBlock.querySelectorAll('.trap-copy-line'));
-        lines.forEach(function(line, i) {
-          setTimeout(function() {
-            line.classList.add('trap-copy-line--show');
-          }, totalDelay + (i * 600));
-        });
-      }
+      /* Cards, accent line, and quote are static — no animation */
     }
 
     var obs = new IntersectionObserver(function(entries) {
@@ -1378,117 +1390,62 @@ const trustedLogos = [
   })();
 
   /* Story sequential reveal — paragraphs illuminate one at a time on scroll */
+    /* Story reveal now handled by bottleneck narrative IIFE */
+
+  /* ═══ Bottleneck 3-column: text + phone chat + dashboard ═══ */
   (function() {
-    var block = document.getElementById('story-reveal-block');
-    if (!block) return;
-    var lines = Array.from(block.querySelectorAll('.story-line'));
-    if (!lines.length) return;
-
-    // Start all dimmed
-    lines.forEach(function(l){ l.classList.add('story-line--dim'); });
-
+    var grid = document.getElementById('bn-grid');
+    if (!grid) return;
+    var dash = grid.querySelector('.cred-dash');
+    var chatMsgs = grid.querySelectorAll('[data-chat-idx]');
     var fired = false;
 
-    function activateLine(idx) {
-      lines.forEach(function(l, i){
-        l.classList.toggle('story-line--dim', i > idx);
-        l.classList.toggle('story-line--active', i === idx);
-        l.classList.toggle('story-line--past', i < idx);
-      });
+    function countUp(el, target, suffix, duration, delay) {
+      setTimeout(function() {
+        var isDecimal = String(target).includes('.');
+        var start = performance.now();
+        function tick(now) {
+          var t = Math.min((now - start) / duration, 1);
+          var ease = 1 - Math.pow(1 - t, 3);
+          var val = target * ease;
+          el.textContent = (isDecimal ? val.toFixed(1) : Math.round(val)) + suffix;
+          if (t < 1) requestAnimationFrame(tick);
+        }
+        requestAnimationFrame(tick);
+      }, delay);
     }
 
-    // Fire sequence on first intersection
+    function run() {
+      if (fired) return;
+      fired = true;
+
+      /* Activate grid — triggers text + phone + dash CSS transitions */
+      grid.classList.add('bn-active');
+
+      /* Chat messages appear sequentially */
+      chatMsgs.forEach(function(msg, i) {
+        setTimeout(function() {
+          msg.classList.add('bn-chat-visible');
+        }, 600 + (i * 500));
+      });
+
+      /* Dashboard stats count up */
+      if (dash) {
+        dash.querySelectorAll('.cred-dash-stat-val').forEach(function(el, i) {
+          var target = parseFloat(el.dataset.target);
+          var suffix = el.dataset.suffix || '';
+          countUp(el, target, suffix, 1200 + (i * 300), 1000);
+        });
+        setTimeout(function() { dash.classList.add('animated'); }, 1600);
+        var live = dash.querySelector('.cred-dash-live');
+        if (live) setTimeout(function() { live.style.opacity = '1'; }, 2400);
+      }
+    }
+
     var obs = new IntersectionObserver(function(entries) {
-      entries.forEach(function(entry) {
-        if (entry.isIntersecting && !fired) {
-          fired = true;
-          var idx = 0;
-          activateLine(idx);
-          var interval = setInterval(function() {
-            idx++;
-            if (idx >= lines.length) {
-              // All lines fully visible — clear dim state, keep all lit
-              lines.forEach(function(l){
-                l.classList.remove('story-line--dim', 'story-line--active', 'story-line--past');
-              });
-              clearInterval(interval);
-              return;
-            }
-            activateLine(idx);
-          }, 900);
-          obs.disconnect();
-        }
-      });
+      if (entries[0].isIntersecting) { run(); obs.disconnect(); }
     }, { threshold: 0.25 });
-
-    obs.observe(block);
-  })();
-
-  /* Circular latency diagram — scroll-in draw + before/after toggle */
-  (function() {
-    var arc     = document.getElementById('circ-responded-arc');
-    var centerPct = document.getElementById('circ-center-pct');
-    var respondedVal = document.getElementById('circ-responded-val');
-    var lostVal      = document.getElementById('circ-lost-val');
-    var btn     = document.getElementById('latency-toggle');
-    var wrap    = document.getElementById('latency-diagram');
-    if (!arc || !btn || !wrap) return;
-
-    var C = 691.15; // circumference: 2 * Math.PI * 110
-    var drawn = false;
-    var on = false;
-
-    function animateCounter(el, from, to, suffix, duration) {
-      var start = null;
-      function step(ts) {
-        if (!start) start = ts;
-        var prog = Math.min((ts - start) / duration, 1);
-        var ease = prog < 0.5 ? 2*prog*prog : -1+(4-2*prog)*prog;
-        var val = Math.round(from + (to - from) * ease);
-        el.textContent = val + suffix;
-        if (prog < 1) requestAnimationFrame(step);
-      }
-      requestAnimationFrame(step);
-    }
-
-    function setArc(pct, animate) {
-      var offset = C * (1 - pct / 100);
-      if (animate) {
-        arc.style.transition = 'stroke-dashoffset 0.9s cubic-bezier(0.4,0,0.2,1)';
-      } else {
-        arc.style.transition = 'none';
-      }
-      arc.style.strokeDashoffset = offset;
-      animateCounter(centerPct, on ? 50 : 98, pct, '%', 700);
-      if (respondedVal) {
-        respondedVal.textContent = pct + '%';
-        respondedVal.style.color = pct >= 90 ? '#6BB790' : 'rgba(255,255,255,0.6)';
-      }
-      if (lostVal) {
-        lostVal.textContent = (100 - pct) + '%';
-        lostVal.style.color = pct >= 90 ? 'rgba(216,183,67,0.5)' : '#D8B743';
-      }
-    }
-
-    // Scroll-in: draw arc when diagram enters viewport
-    var observer = new IntersectionObserver(function(entries) {
-      entries.forEach(function(entry) {
-        if (entry.isIntersecting && !drawn) {
-          drawn = true;
-          // Brief delay then draw in
-          setTimeout(function() { setArc(50, true); }, 200);
-          observer.disconnect();
-        }
-      });
-    }, { threshold: 0.3 });
-    observer.observe(wrap);
-
-    // Toggle: Before ↔ After
-    btn.addEventListener('click', function() {
-      on = !on;
-      btn.setAttribute('aria-pressed', on ? 'true' : 'false');
-      setArc(on ? 98 : 50, true);
-    });
+    obs.observe(grid);
   })();
 
   const financialRows = Array.from(document.querySelectorAll(".financial-row"));
@@ -1566,7 +1523,9 @@ const trustedLogos = [
     var gapEl = document.getElementById('kz-race-gap');
     var gapLabel = document.getElementById('kz-gap-label');
     var copyBlocks = section.querySelectorAll('.kz-copy-reveal');
-    var fired = false;
+    var isVisible = false;
+    var animating = false;
+    var pendingTimeouts = [];
 
     var CIRCUMFERENCE = 2 * Math.PI * 96; // ~603.19
 
@@ -1580,6 +1539,21 @@ const trustedLogos = [
       var h = Math.floor(seconds / 3600);
       var m = Math.floor((seconds % 3600) / 60);
       return h + 'h ' + m + 'm';
+    }
+
+    /* Tracked setTimeout — cleared on pause */
+    function trackedTimeout(fn, delay) {
+      var id = setTimeout(function() {
+        pendingTimeouts = pendingTimeouts.filter(function(t) { return t !== id; });
+        fn();
+      }, delay);
+      pendingTimeouts.push(id);
+      return id;
+    }
+
+    function clearAllTimeouts() {
+      pendingTimeouts.forEach(function(id) { clearTimeout(id); });
+      pendingTimeouts = [];
     }
 
     var stages = [
@@ -1602,15 +1576,27 @@ const trustedLogos = [
       if (ringProgress) { ringProgress.style.strokeDashoffset = CIRCUMFERENCE; ringProgress.style.stroke = '#6BB790'; }
       if (ringTime) { ringTime.textContent = '0s'; ringTime.style.color = '#6BB790'; ringTime.style.opacity = '0'; }
       if (ringLabel) { ringLabel.style.opacity = '0'; }
-      if (ringIncoming) { ringIncoming.className = 'kz-ring-incoming'; }
+      if (ringIncoming) { ringIncoming.className = 'kz-ring-incoming'; ringIncoming.style.opacity = ''; }
       if (raceCard) raceCard.classList.remove('kz-shaking-light', 'kz-shaking', 'kz-shaking-heavy');
       if (milestone) { milestone.className = 'kz-milestone'; milestone.textContent = ''; }
       if (gapEl) gapEl.classList.remove('kz-gap-visible');
       if (gapLabel) gapLabel.textContent = '';
+      copyBlocks.forEach(function(b) { b.classList.remove('kz-visible'); });
+    }
+
+    function stopRace() {
+      clearAllTimeouts();
+      animating = false;
+      resetRace();
     }
 
     function animateRace() {
+      if (!isVisible) return;
+      animating = true;
       resetRace();
+
+      // Show first paragraph immediately
+      if (copyBlocks.length > 0) copyBlocks[0].classList.add('kz-visible');
 
       // Step 1: Pop in "New lead!" icon + text
       if (ringIncoming) {
@@ -1618,7 +1604,8 @@ const trustedLogos = [
       }
 
       // Step 2: After hold, fade in timer below it (incoming stays)
-      setTimeout(function() {
+      trackedTimeout(function() {
+        if (!isVisible) return;
         if (ringTime) ringTime.style.opacity = '1';
         if (ringLabel) ringLabel.style.opacity = '1';
         startStages();
@@ -1631,6 +1618,8 @@ const trustedLogos = [
       var copyIndex = 1; // first paragraph already visible
 
       function runStage() {
+        if (!isVisible) return;
+
         if (stageIndex >= stages.length) {
           if (raceCard) raceCard.classList.remove('kz-shaking-light', 'kz-shaking', 'kz-shaking-heavy');
           if (raceCard) raceCard.classList.add('kz-shaking-heavy');
@@ -1642,10 +1631,10 @@ const trustedLogos = [
           if (gapEl) gapEl.classList.add('kz-gap-visible');
           if (gapLabel) gapLabel.textContent = 'LEAD LOST TO YOUR COMPETITORS';
 
-          setTimeout(function() {
+          trackedTimeout(function() {
             if (raceCard) raceCard.classList.remove('kz-shaking-heavy');
             if (ringIncoming) ringIncoming.style.opacity = '';
-            setTimeout(animateRace, 3500);
+            trackedTimeout(animateRace, 3500);
           }, 1800);
           return;
         }
@@ -1663,6 +1652,7 @@ const trustedLogos = [
         }
 
         function tick(now) {
+          if (!isVisible) return;
           var t = Math.min((now - stageStart) / stage.duration, 1);
 
           var ringPct = prevRing + (stage.ringEnd - prevRing) * t;
@@ -1689,7 +1679,7 @@ const trustedLogos = [
                 copyIndex++;
               }
             }
-            setTimeout(runStage, stage.milestone ? 2000 : 0);
+            trackedTimeout(runStage, stage.milestone ? 2000 : 0);
           }
         }
         requestAnimationFrame(tick);
@@ -1700,15 +1690,12 @@ const trustedLogos = [
 
     var kzObserver = new IntersectionObserver(function(entries) {
       entries.forEach(function(entry) {
-        if (entry.isIntersecting && !fired) {
-          fired = true;
-
-          // Show first paragraph immediately
-          if (copyBlocks.length > 0) copyBlocks[0].classList.add('kz-visible');
-
+        if (entry.isIntersecting && !isVisible) {
+          isVisible = true;
           animateRace();
-
-          kzObserver.unobserve(entry.target);
+        } else if (!entry.isIntersecting && isVisible) {
+          isVisible = false;
+          stopRace();
         }
       });
     }, { threshold: 0.15 });
@@ -1716,44 +1703,7 @@ const trustedLogos = [
     kzObserver.observe(section);
   })();
 
-  /* ─── Credentials dashboard animation ─── */
-  (function() {
-    var dash = document.getElementById('cred-dash');
-    if (!dash) return;
 
-    var animated = false;
-
-    function animateCounters() {
-      dash.querySelectorAll('.cred-dash-stat-val').forEach(function(el) {
-        var target = parseFloat(el.dataset.target);
-        var suffix = el.dataset.suffix || '';
-        var isDecimal = String(target).includes('.');
-        var duration = 1500;
-        var start = performance.now();
-
-        function tick(now) {
-          var t = Math.min((now - start) / duration, 1);
-          var ease = 1 - Math.pow(1 - t, 3);
-          var val = target * ease;
-          el.textContent = (isDecimal ? val.toFixed(1) : Math.round(val)) + suffix;
-          if (t < 1) requestAnimationFrame(tick);
-        }
-        requestAnimationFrame(tick);
-      });
-    }
-
-    var obs = new IntersectionObserver(function(entries) {
-      entries.forEach(function(entry) {
-        if (entry.isIntersecting && !animated) {
-          animated = true;
-          dash.classList.add('animated');
-          animateCounters();
-          obs.disconnect();
-        }
-      });
-    }, { threshold: 0.3 });
-    obs.observe(dash);
-  })();
 </script>
 
 <style>
@@ -1878,17 +1828,6 @@ const trustedLogos = [
   section.light-section .financial-row:hover,
   section.light-section .financial-row.is-active {
     background: rgba(6,21,40,0.04) !important;
-  }
-
-  /* Results panel */
-  section.light-section .results-panel {
-    background: #ffffff !important;
-    border-color: rgba(6,21,40,0.1) !important;
-  }
-
-  section.light-section .results-panel-value,
-  section.light-section .results-panel-label {
-    color: #061528 !important;
   }
 
   /* Keep brand accents legible on white */
@@ -2132,6 +2071,8 @@ const trustedLogos = [
   .kb-wrapper { padding: 1.5rem 0; }
 
   .kb-container {
+    position: relative;
+    z-index: 50;
     display: flex;
     flex-direction: column;
     gap: 0.8rem;
@@ -2563,7 +2504,33 @@ const trustedLogos = [
     animation-play-state: paused;
   }
 
-  /* --- Why This Works --- visual cards + stats --- */
+  /* --- Why This Works --- header + visual cards + stats --- */
+
+  .wtw-header {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-bottom: 4rem; position: relative;
+  }
+  .wtw-header-text { flex: 1; }
+  .wtw-header-title {
+    font-size: 2.5rem; font-weight: 500; color: #061528;
+    letter-spacing: -0.03em; line-height: 1.15; margin: 0;
+  }
+  @media (min-width: 768px) { .wtw-header-title { font-size: 3.2rem; } }
+  @media (min-width: 1024px) { .wtw-header-title { font-size: 4rem; } }
+  .wtw-header-sub {
+    font-size: 1.2rem; font-weight: 400; color: rgba(6,21,40,0.4);
+    margin: 0.75rem 0 0; line-height: 1.4;
+  }
+  @media (min-width: 1024px) { .wtw-header-sub { font-size: 1.5rem; } }
+  .wtw-header-logo {
+    width: 140px; height: auto;
+    flex-shrink: 0; margin-left: 3rem;
+  }
+  @media (min-width: 1024px) { .wtw-header-logo { width: 180px; } }
+  @media (max-width: 767px) {
+    .wtw-header { flex-direction: column; text-align: center; }
+    .wtw-header-logo { width: 100px; margin: 1.5rem 0 0; }
+  }
 
   .wtw-visual-grid {
     display: grid;
@@ -2672,7 +2639,7 @@ const trustedLogos = [
   @media (min-width: 1024px) { .wtw-industry-quote { font-size: 3.8rem; } }
 
   .wtw-industry-sub {
-    font-size: 1.15rem; font-weight: 600; color: rgba(6,21,40,0.35);
+    font-size: 1.15rem; font-weight: 400; color: rgba(6,21,40,0.35);
     text-align: center; margin: 0 0 3rem;
   }
   @media (min-width: 1024px) { .wtw-industry-sub { font-size: 1.35rem; } }
@@ -2894,7 +2861,8 @@ const trustedLogos = [
   /* Decorative ambient glow */
   #section-credentials {
     position: relative;
-    overflow: hidden;
+    overflow-x: clip;
+    overflow-y: visible;
   }
   #section-credentials::before {
     content: '';
@@ -2908,59 +2876,70 @@ const trustedLogos = [
     z-index: 0;
   }
   #section-credentials::after {
-    content: '';
-    position: absolute;
-    bottom: -30%;
-    right: -5%;
-    width: 45%;
-    height: 120%;
-    background: radial-gradient(ellipse at center, rgba(107,183,144,0.06) 0%, rgba(61,178,221,0.03) 45%, transparent 70%);
-    pointer-events: none;
-    z-index: 0;
+    display: none;
   }
   #section-credentials > * {
     position: relative;
     z-index: 1;
   }
 
-  /* Two-column split */
-  .cred-split {
-    display: flex;
-    flex-direction: column;
-    gap: 3rem;
-  }
-  @media (min-width: 1024px) {
-    .cred-split {
-      flex-direction: row;
-      align-items: stretch;
-      gap: 3.5rem;
-    }
-  }
-
-  /* Left column */
-  .cred-left-col {
-    flex: 1;
+  /* 3-column: quote | keyboard | cards */
+  .cred-layout {
     display: flex;
     flex-direction: column;
     gap: 2rem;
   }
+  @media (min-width: 1024px) {
+    .cred-layout {
+      flex-direction: row;
+      align-items: center;
+      gap: 1.5rem;
+    }
+  }
+
+  /* Left: quote — pinned bottom-left */
+  .cred-col-left {
+    flex: 0 0 220px;
+    align-self: flex-end;
+  }
+  @media (max-width: 1023px) {
+    .cred-col-left { text-align: center; align-self: auto; }
+  }
 
   /* Quote */
   .cred-section-quote {
-    font-size: clamp(1.4rem, 2.4vw, 2.1rem);
+    font-size: clamp(1.1rem, 1.5vw, 1.35rem);
     font-weight: 800;
     font-style: italic;
-    line-height: 1.35;
+    line-height: 1.4;
     color: white;
   }
-
-  /* Card row — horizontal portrait cards */
-  .cred-cards-row {
-    display: flex;
-    gap: 1rem;
+  .cred-quote-line {
+    display: block;
   }
 
-  /* Individual card — portrait orientation */
+  /* Center: keyboard landing */
+  .cred-kb-landing {
+    flex: 1;
+    min-width: 0;
+    height: 360px;
+  }
+
+  /* Right: cards stacked */
+  .cred-col-right {
+    flex: 0 0 220px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  @media (max-width: 1023px) {
+    .cred-col-right {
+      flex-direction: row;
+      gap: 1rem;
+    }
+  }
+
+  /* Individual card */
   .cred-card {
     position: relative;
     flex: 1;
@@ -3015,13 +2994,6 @@ const trustedLogos = [
   .cred-card--yellow .cred-card-icon { color: #D8B743; }
   .cred-card--blue .cred-card-icon { color: #3DB2DD; }
   .cred-card--green .cred-card-icon { color: #6BB790; }
-
-  /* Right column */
-  .cred-right-col {
-    flex: 1;
-    display: flex;
-    align-items: stretch;
-  }
 
   /* Dashboard panel */
   .cred-dash {
@@ -3527,6 +3499,10 @@ const trustedLogos = [
 
   /* ══ SECTION A — Trap: dashboard + floating notifications ══ */
 
+  #section-trap {
+    font-family: var(--font-heading);
+  }
+
   /* Animated background glow — slow pulse that builds tension */
   .trap-bg-glow {
     position: absolute; inset: 0;
@@ -3665,7 +3641,7 @@ const trustedLogos = [
   .trap-notif--7 { bottom: 6%;  right: -18%;  --notif-tx: 50px;  --notif-ty: 10px;  z-index: 17; }
   .trap-notif--9 { bottom: -8%; right: 0%;    --notif-tx: 30px;  --notif-ty: 25px;  z-index: 19; }
   /* Left side — well clear of dashboard */
-  .trap-notif--2 { top: 10%;    left: -20%;   --notif-tx: -50px; --notif-ty: 0px;   z-index: 12; }
+  .trap-notif--2 { top: 22%;    left: -24%;   --notif-tx: -50px; --notif-ty: 0px;   z-index: 12; }
   .trap-notif--4 { top: 38%;    left: -22%;   --notif-tx: -50px; --notif-ty: 10px;  z-index: 14; }
   .trap-notif--6 { bottom: 16%; left: -20%;   --notif-tx: -60px; --notif-ty: 0px;   z-index: 16; }
   .trap-notif--8 { bottom: -4%; left: 0%;     --notif-tx: -30px; --notif-ty: 25px;  z-index: 18; }
@@ -3700,56 +3676,237 @@ const trustedLogos = [
   .tc-amber { background: rgba(216,183,67,0.15);  color: #D8B743; border: 1px solid rgba(216,183,67,0.3); }
   .tc-red   { background: rgba(255,80,80,0.15);   color: #ff6b6b; border: 1px solid rgba(255,80,80,0.3); }
 
-  /* ── Copy block below scene ── */
-  .trap-copy-block {
-    max-width: 640px; margin: 2.5rem auto 0; text-align: center;
+  /* ── 3-column copy cards below scene ── */
+  .trap-cols {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+    width: 100%;
+    margin: 3rem 0 0;
   }
-  .trap-copy-line {
-    font-size: clamp(1rem, 1.3vw, 1.15rem);
-    color: rgba(255,255,255,0.7);
-    font-weight: 500; line-height: 1.65;
-    margin-bottom: 0.85rem;
-    opacity: 0; transform: translateY(10px);
+  @media (max-width: 768px) {
+    .trap-cols { grid-template-columns: 1fr; gap: 1.5rem; margin-top: 3.5rem; }
+  }
+  .trap-col {}
+  .trap-col-icon {
+    width: 44px; height: 44px;
+    display: flex; align-items: center; justify-content: center;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 10px;
+    margin-bottom: 1rem;
+  }
+  .trap-col p {
+    font-size: clamp(0.88rem, 1.1vw, 0.98rem);
+    color: rgba(255,255,255,0.55);
+    line-height: 1.65;
+    margin: 0;
+  }
+  .trap-col p strong {
+    color: rgba(255,255,255,0.9);
+    font-weight: 600;
+    display: block;
+    margin-bottom: 0.3rem;
+    font-size: clamp(0.92rem, 1.2vw, 1.05rem);
+  }
+  .trap-accent-line {
+    text-align: center;
+    color: #D8B743;
+    font-size: clamp(1.1rem, 1.5vw, 1.3rem);
+    font-weight: 700;
+    margin-top: 3rem;
+  }
+
+  /* ── Testimonial quote ── */
+  .trap-quote {
+    text-align: center;
+    max-width: 860px;
+    margin: 1.5rem auto 0;
+    padding: 2rem 2rem 0;
+  }
+  .trap-quote-text {
+    font-family: var(--font-heading);
+    font-size: clamp(1.25rem, 2vw, 1.65rem);
+    color: rgba(255,255,255,0.55);
+    font-weight: 400;
+    line-height: 1.6;
+    font-style: normal;
+    margin: 0 0 2rem;
+  }
+  .trap-quote-attr {
+    font-size: 0.92rem;
+    color: rgba(255,255,255,0.5);
+    margin: 0 0 1.2rem;
+    letter-spacing: 0.01em;
+  }
+  .trap-quote-attr strong { font-weight: 700; color: rgba(255,255,255,0.85); }
+  .trap-quote-link {
+    font-size: 0.88rem;
+    color: #D8B743;
+    font-weight: 600;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+  }
+  .trap-quote-link:hover { opacity: 0.75; }
+
+
+
+  /* ═══ Bottleneck: 3-column grid ═══ */
+  .bn-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+  @media (min-width: 1024px) {
+    .bn-grid {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+  }
+
+  /* LEFT: Pain text */
+  .bn-text { max-width: 400px; }
+  @media (min-width: 1024px) {
+    .bn-text { padding-top: 1rem; }
+  }
+  .bn-line {
+    color: rgba(6, 21, 40, 0.78);
+    font-size: clamp(1rem, 1.1vw, 1.15rem);
+    line-height: 1.55;
+    font-weight: 500;
+    margin-bottom: 1.25rem;
+    max-width: 42ch;
+    opacity: 0; transform: translateY(12px);
     transition: opacity 0.5s ease, transform 0.5s ease;
   }
-  .trap-copy-line--show { opacity: 1; transform: translateY(0); }
-  .trap-copy-line--accent { color: #D8B743; font-weight: 700; margin-bottom: 0; }
-
-  /* Circular latency diagram */
-  .circ-latency-wrap { display: flex; flex-direction: column; align-items: center; gap: 0; }
-  .circ-latency-wrap--large { padding: 1rem; }
-  .circ-diagram-row { display: flex; align-items: center; gap: 3.5rem; flex-wrap: wrap; justify-content: center; }
-  .circ-svg-container { width: 300px; height: 300px; flex-shrink: 0; }
-  .circ-svg-container--lg { width: 340px; height: 340px; }
-  @media (min-width: 640px) { .circ-svg-container--lg { width: 420px; height: 420px; } }
-  .circ-svg { width: 100%; height: 100%; overflow: visible; }
-
-  /* Story sequential reveal */
-  .story-line { transition: opacity 0.5s ease; }
-  .story-line--dim { opacity: 0.22; }
-  .story-line--active { opacity: 1; }
-  .story-line--past { opacity: 0.38; }
-
-  .circ-legend { display: flex; flex-direction: column; min-width: 160px; }
-  .circ-legend-item { display: flex; align-items: flex-start; gap: 0.75rem; }
-  .circ-legend-dot { width: 12px; height: 12px; border-radius: 50%; flex-shrink: 0; margin-top: 3px; }
-  .circ-legend-label { font-size: 0.75rem; color: rgba(255,255,255,0.4); text-transform: uppercase; letter-spacing: 0.06em; font-weight: 600; }
-  .circ-legend-val { font-size: 2rem; font-weight: 800; line-height: 1.1; margin-top: 0.1rem; transition: color 0.6s ease; }
-
-  /* Toggle (keep same styling) */
-  .latency-toggle-row { display: flex; align-items: center; gap: 0.75rem; justify-content: center; }
-  .latency-toggle-label { font-size: 0.65rem; color: rgba(255,255,255,0.45); font-weight: 600; letter-spacing: 0.02em; }
-  .latency-toggle {
-    position: relative; width: 44px; height: 24px;
-    background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12);
-    border-radius: 12px; cursor: pointer; transition: background 0.25s, border-color 0.25s;
+  .bn-grid.bn-active .bn-line {
+    opacity: 1; transform: translateY(0);
   }
-  .latency-toggle[aria-pressed="true"] { background: rgba(107,183,144,0.22); border-color: rgba(107,183,144,0.5); }
-  .latency-toggle-knob {
-    position: absolute; top: 3px; left: 3px; width: 16px; height: 16px;
-    background: rgba(255,255,255,0.4); border-radius: 50%; transition: transform 0.25s, background 0.25s;
+  .bn-line--emphasis {
+    color: #D8B743;
+    font-weight: 700;
+    font-size: clamp(1.05rem, 1.2vw, 1.25rem);
+    margin-top: 0.5rem;
+    margin-bottom: 0;
   }
-  .latency-toggle[aria-pressed="true"] .latency-toggle-knob { transform: translateX(20px); background: #6BB790; }
+
+  /* MIDDLE: Phone mockup */
+  .bn-phone {
+    display: flex;
+    justify-content: center;
+    opacity: 0; transform: translateY(20px);
+    transition: opacity 0.6s cubic-bezier(0.16,1,0.3,1) 0.2s,
+                transform 0.6s cubic-bezier(0.16,1,0.3,1) 0.2s;
+  }
+  .bn-grid.bn-active .bn-phone {
+    opacity: 1; transform: translateY(0);
+  }
+  .bn-phone-frame {
+    width: 280px;
+    background: linear-gradient(160deg, #0c1a2e 0%, #091422 100%);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 36px;
+    box-shadow: 0 20px 60px rgba(6,21,40,0.3), 0 8px 24px rgba(6,21,40,0.2);
+    overflow: hidden;
+    padding-bottom: 1.5rem;
+  }
+  .bn-phone-notch {
+    width: 100px; height: 5px;
+    background: rgba(255,255,255,0.12);
+    border-radius: 3px;
+    margin: 12px auto 0;
+  }
+  .bn-phone-header {
+    text-align: center;
+    color: rgba(255,255,255,0.6);
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 0.75rem 0 0.5rem;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .bn-phone-chat {
+    padding: 1rem 0.85rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  /* Chat messages */
+  .bn-msg {
+    max-width: 85%;
+    padding: 0.6rem 0.75rem;
+    border-radius: 14px;
+    font-size: 0.78rem;
+    line-height: 1.4;
+    opacity: 0; transform: translateY(8px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+  }
+  .bn-msg.bn-chat-visible { opacity: 1; transform: translateY(0); }
+  .bn-msg p { margin: 0; }
+  .bn-msg-time {
+    display: block;
+    font-size: 0.58rem;
+    margin-top: 0.25rem;
+    opacity: 0.4;
+  }
+
+  /* Lead messages: left-aligned, lighter */
+  .bn-msg--lead {
+    align-self: flex-start;
+    background: rgba(255,255,255,0.08);
+    color: rgba(255,255,255,0.85);
+  }
+
+  /* Bot messages: right-aligned, green accent */
+  .bn-msg--bot {
+    align-self: flex-end;
+    background: rgba(107,183,144,0.18);
+    border: 1px solid rgba(107,183,144,0.25);
+    color: rgba(255,255,255,0.9);
+  }
+
+  /* Response time / booking badges */
+  .bn-msg-badge {
+    align-self: center;
+    font-size: 0.62rem;
+    font-weight: 600;
+    color: rgba(255,255,255,0.35);
+    letter-spacing: 0.03em;
+    padding: 0.15rem 0;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  .bn-msg-badge.bn-chat-visible { opacity: 1; }
+  .bn-msg-badge--success span {
+    color: #6BB790;
+  }
+
+  /* RIGHT: Dashboard */
+  .bn-dash {
+    opacity: 0; transform: translateY(20px);
+    transition: opacity 0.6s cubic-bezier(0.16,1,0.3,1) 0.4s,
+                transform 0.6s cubic-bezier(0.16,1,0.3,1) 0.4s;
+  }
+  .bn-grid.bn-active .bn-dash {
+    opacity: 1; transform: translateY(0);
+  }
+
+  /* Mobile responsive */
+  @media (max-width: 1023px) {
+    .bn-grid { align-items: center; }
+    .bn-text { max-width: 100%; text-align: center; }
+    .bn-line { max-width: 100%; margin-left: auto; margin-right: auto; }
+    .bn-phone-frame { width: 260px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .bn-line, .bn-phone, .bn-dash, .bn-msg, .bn-msg-badge {
+      opacity: 1; transform: none; transition: none;
+    }
+  }
 
   .latency-graphic {
     display: block;
@@ -3777,81 +3934,6 @@ const trustedLogos = [
     margin-bottom: 0;
   }
 
-  .results-panel {
-    position: relative;
-    border: 1px solid rgba(216, 183, 67, 0.35);
-    background:
-      radial-gradient(120% 100% at 85% 10%, rgba(216, 183, 67, 0.12) 0%, rgba(216, 183, 67, 0) 38%),
-      linear-gradient(140deg, #0b2241 0%, #0b1f39 45%, #091a33 100%);
-    border-radius: 10px;
-    box-shadow:
-      inset 0 0 35px rgba(0, 0, 0, 0.2),
-      0 0 26px rgba(216, 183, 67, 0.12);
-    overflow: hidden;
-  }
-
-  .results-panel::before,
-  .results-panel::after {
-    content: "";
-    position: absolute;
-    width: 110px;
-    height: 110px;
-    pointer-events: none;
-    border: 1px solid rgba(216, 183, 67, 0.35);
-    filter: drop-shadow(0 0 10px rgba(216, 183, 67, 0.35));
-  }
-
-  .results-panel::before {
-    top: 8px;
-    right: 8px;
-    border-left: 0;
-    border-bottom: 0;
-  }
-
-  .results-panel::after {
-    bottom: 8px;
-    left: 8px;
-    border-right: 0;
-    border-top: 0;
-  }
-
-  .results-panel-grid {
-    position: relative;
-    z-index: 1;
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .results-panel-cell {
-    padding: 1rem 1.1rem 0.95rem;
-    min-height: 112px;
-  }
-
-  .results-panel-cell:nth-child(1),
-  .results-panel-cell:nth-child(2) {
-    border-bottom: 1px solid rgba(216, 183, 67, 0.5);
-  }
-
-  .results-panel-cell:nth-child(1),
-  .results-panel-cell:nth-child(3) {
-    border-right: 1px solid rgba(216, 183, 67, 0.5);
-  }
-
-  .results-panel-value {
-    font-size: clamp(2.55rem, 4.6vw, 4rem);
-    line-height: 1;
-    font-weight: 800;
-    letter-spacing: -0.015em;
-    margin-bottom: 0.4rem;
-  }
-
-  .results-panel-label {
-    color: rgba(255, 255, 255, 0.86);
-    font-size: 1rem;
-    line-height: 1.25;
-    font-weight: 500;
-    max-width: 90%;
-  }
 
   .results-proof-copy {
     color: rgba(255, 255, 255, 0.95);
@@ -4407,16 +4489,6 @@ const trustedLogos = [
       margin-bottom: 1.05rem;
     }
 
-    .results-panel-cell {
-      min-height: 92px;
-      padding: 0.85rem 0.75rem 0.8rem;
-    }
-
-    .results-panel-label {
-      font-size: 0.8rem;
-      max-width: 100%;
-    }
-
     .results-proof-copy {
       font-size: 1.08rem;
       line-height: 1.45;
@@ -4545,10 +4617,7 @@ const trustedLogos = [
 
 
   @media (max-width: 640px) {
-    .circ-svg-container { width: 240px; height: 240px; }
-    .circ-legend { min-width: 0; flex-direction: row; gap: 1.5rem; flex-wrap: wrap; justify-content: center; }
-    .circ-legend-item { margin-top: 0 !important; }
-    .circ-legend-val { font-size: 1.5rem; }
+
   }
 
   /* ─── Metrics section background atmosphere ─── */
