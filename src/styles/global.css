@@ -43,18 +43,18 @@
 }
 
 @theme {
-  /* HumTech Brand Typography */
+  /* HumTech Brand Typography — Inter Variable */
   --font-ui:
-    "Arial MT Pro", "Roboto", Arial, ui-sans-serif, system-ui, sans-serif,
+    "Inter Variable", "Inter", ui-sans-serif, system-ui, sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --font-heading:
-    "Barlow", "Clear Sans", "Arial MT Pro", "Roboto", Arial, ui-sans-serif, system-ui, sans-serif;
+    "Inter Variable", "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-accent:
-    "Open Sauce", "Clear Sans", "Barlow", "Arial MT Pro", "Roboto", Arial, ui-sans-serif, system-ui, sans-serif;
+    "Inter Variable", "Inter", ui-sans-serif, system-ui, sans-serif;
 
-  /* Tailwind default sans mapped to requested families */
+  /* Tailwind default sans mapped to Inter */
   --font-sans:
-    "Arial MT Pro", "Roboto", Arial, ui-sans-serif, system-ui, sans-serif,
+    "Inter Variable", "Inter", ui-sans-serif, system-ui, sans-serif,
     'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 
   /* HumTech Brand Colors */

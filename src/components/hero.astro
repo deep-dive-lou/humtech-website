@@ -1481,7 +1481,24 @@ const trustedLogos = [
       });
     }
 
-    function runMobileCycle() {      if (fired) return;      fired = true;      var pairs = [];      for (var i = 0; i < notifs.length; i += 2) {        var pair = [notifs[i]];        if (notifs[i + 1]) pair.push(notifs[i + 1]);        pairs.push(pair);      }      var pairIdx = 0;      function showPair() {        notifs.forEach(function(el) { el.classList.remove('mobile-active'); });        pairs[pairIdx].forEach(function(el) { el.classList.add('mobile-active'); });        pairIdx = (pairIdx + 1) % pairs.length;        setTimeout(showPair, 4000);      }      showPair();    }
+    function runMobileCycle() {
+      if (fired) return;
+      fired = true;
+      var pairs = [];
+      for (var i = 0; i < notifs.length; i += 2) {
+        var pair = [notifs[i]];
+        if (notifs[i + 1]) pair.push(notifs[i + 1]);
+        pairs.push(pair);
+      }
+      var pairIdx = 0;
+      function showPair() {
+        notifs.forEach(function(el) { el.classList.remove("mobile-active"); });
+        pairs[pairIdx].forEach(function(el) { el.classList.add("mobile-active"); });
+        pairIdx = (pairIdx + 1) % pairs.length;
+        setTimeout(showPair, 4000);
+      }
+      showPair();
+    }
 
     var obs = new IntersectionObserver(function(entries) {
       entries.forEach(function(entry) {
@@ -5095,25 +5112,36 @@ const trustedLogos = [
 
     /* Fix 3: Hire section — slow phase in/out, two at a time on mobile */
     .trap-notif {
-      position: absolute;
-      min-width: 220px;
-      max-width: 72%;
-      font-size: 0.8em;
+      position: absolute !important;
+      width: auto !important;
+      min-width: 0 !important;
+      max-width: 55% !important;
+      font-size: 0.75em !important;
+      padding: 0.45rem 0.6rem !important;
       opacity: 0;
       pointer-events: none;
       transition: opacity 1.2s ease-in-out, transform 1.2s ease-in-out;
       z-index: 20;
     }
-    /* Scatter positions: odds top-right area, evens bottom-left area */
-    .trap-notif--1 { top: 4% !important;   right: 3% !important;  left: auto !important; }
-    .trap-notif--2 { bottom: 8% !important; left: 3% !important;   top: auto !important; right: auto !important; }
-    .trap-notif--3 { top: 12% !important;  right: 5% !important;  left: auto !important; }
-    .trap-notif--4 { bottom: 16% !important; left: 5% !important;  top: auto !important; right: auto !important; }
-    .trap-notif--5 { top: 20% !important;  right: 2% !important;  left: auto !important; }
-    .trap-notif--6 { bottom: 4% !important; left: 2% !important;   top: auto !important; right: auto !important; }
-    .trap-notif--7 { top: 6% !important;   right: 6% !important;  left: auto !important; }
-    .trap-notif--8 { bottom: 12% !important; left: 4% !important;  top: auto !important; right: auto !important; }
-    .trap-notif--9 { top: 16% !important;  right: 4% !important;  left: auto !important; }
+    .trap-notif .tc-row { flex-wrap: wrap !important; gap: 0.3rem !important; }
+    .trap-notif .tc-label { font-size: 0.68rem !important; }
+    .trap-notif .tc-meta { font-size: 0.55rem !important; }
+    .trap-notif .tc-detail { display: none !important; }
+    .trap-notif .tc-tag { font-size: 0.48rem !important; padding: 0.1rem 0.28rem !important; }
+    /* Scatter positions: odds top-right, evens bottom-left */
+    .trap-notif--1 { top: 4% !important;    right: 3% !important;  left: auto !important; bottom: auto !important; }
+    .trap-notif--2 { bottom: 8% !important;  left: 3% !important;   top: auto !important;  right: auto !important; }
+    .trap-notif--3 { top: 12% !important;   right: 5% !important;  left: auto !important; bottom: auto !important; }
+    .trap-notif--4 { bottom: 16% !important; left: 5% !important;   top: auto !important;  right: auto !important; }
+    .trap-notif--5 { top: 20% !important;   right: 2% !important;  left: auto !important; bottom: auto !important; }
+    .trap-notif--6 { bottom: 4% !important;  left: 2% !important;   top: auto !important;  right: auto !important; }
+    .trap-notif--7 { top: 6% !important;    right: 6% !important;  left: auto !important; bottom: auto !important; }
+    .trap-notif--8 { bottom: 12% !important; left: 4% !important;   top: auto !important;  right: auto !important; }
+    .trap-notif--9 { top: 16% !important;   right: 4% !important;  left: auto !important; bottom: auto !important; }
+    /* Hide meta on the 3 long cards — just show label + tag */
+    .trap-notif--5 .tc-row--bot,
+    .trap-notif--7 .tc-row--bot,
+    .trap-notif--9 .tc-row--bot { display: none !important; }
     .trap-notif.mobile-active {
       opacity: 1;
       transform: translate(0, 0) scale(1);
