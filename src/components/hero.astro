@@ -284,16 +284,14 @@ const trustedLogos = [
               <circle class="kz-ring-progress" id="kz-ring-progress" cx="120" cy="120" r="96" fill="none" stroke-width="20" stroke-linecap="round" transform="rotate(-90 120 120)"/>
             </svg>
             <div class="kz-ring-center">
-              <!-- Incoming lead animation (shows first, then hides) -->
+              <!-- New lead indicator (pops in, stays visible) -->
               <div class="kz-ring-incoming" id="kz-ring-incoming">
                 <svg class="kz-incoming-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
                 <span class="kz-incoming-text">New lead!</span>
               </div>
-              <!-- Timer (hidden initially, shown after intro) -->
-              <div class="kz-ring-timer" id="kz-ring-timer" style="display:none;">
-                <div class="kz-ring-time" id="kz-ring-time">0s</div>
-                <div class="kz-ring-label" id="kz-ring-label">Your Response Time</div>
-              </div>
+              <!-- Timer (fades in after intro, lives alongside incoming) -->
+              <div class="kz-ring-time" id="kz-ring-time" style="opacity:0;">0s</div>
+              <div class="kz-ring-label" id="kz-ring-label" style="opacity:0;">Your Response Time</div>
             </div>
           </div>
 
@@ -1243,7 +1241,6 @@ const trustedLogos = [
     var ringTime = document.getElementById('kz-ring-time');
     var ringLabel = document.getElementById('kz-ring-label');
     var ringIncoming = document.getElementById('kz-ring-incoming');
-    var ringTimer = document.getElementById('kz-ring-timer');
     var raceCard = document.getElementById('kz-race');
     var milestone = document.getElementById('kz-milestone');
     var gapEl = document.getElementById('kz-race-gap');
@@ -1283,56 +1280,53 @@ const trustedLogos = [
 
     function resetRace() {
       if (ringProgress) { ringProgress.style.strokeDashoffset = CIRCUMFERENCE; ringProgress.style.stroke = '#6BB790'; }
-      if (ringTime) { ringTime.textContent = '0s'; ringTime.style.color = '#6BB790'; }
-      if (ringLabel) ringLabel.style.display = '';
+      if (ringTime) { ringTime.textContent = '0s'; ringTime.style.color = '#6BB790'; ringTime.style.opacity = '0'; }
+      if (ringLabel) { ringLabel.style.opacity = '0'; }
+      if (ringIncoming) { ringIncoming.className = 'kz-ring-incoming'; }
       if (raceCard) raceCard.classList.remove('kz-shaking-light', 'kz-shaking', 'kz-shaking-heavy');
       if (milestone) { milestone.className = 'kz-milestone'; milestone.textContent = ''; }
       if (gapEl) gapEl.classList.remove('kz-gap-visible');
       if (gapLabel) gapLabel.textContent = '';
-      // Reset incoming/timer visibility
-      if (ringIncoming) { ringIncoming.style.display = ''; ringIncoming.className = 'kz-ring-incoming'; }
-      if (ringTimer) ringTimer.style.display = 'none';
+      // Reset copy blocks
+      copyBlocks.forEach(function(block) { block.classList.remove('kz-visible'); });
     }
 
     function animateRace() {
       resetRace();
 
-      // Step 1: Show incoming lead animation
+      // Step 1: Pop in "New lead!" icon + text
       if (ringIncoming) {
-        ringIncoming.style.display = '';
         ringIncoming.classList.add('kz-incoming-pop');
       }
 
-      // Step 2: After hold, fade out incoming and start timer
+      // Step 2: After hold, fade in timer below it (incoming stays)
       setTimeout(function() {
-        if (ringIncoming) {
-          ringIncoming.classList.remove('kz-incoming-pop');
-          ringIncoming.classList.add('kz-incoming-fade');
-        }
-        setTimeout(function() {
-          if (ringIncoming) ringIncoming.style.display = 'none';
-          if (ringTimer) ringTimer.style.display = '';
-          startStages();
-        }, 400);
+        if (ringTime) ringTime.style.opacity = '1';
+        if (ringLabel) ringLabel.style.opacity = '1';
+        startStages();
       }, 1200);
     }
 
     function startStages() {
       var stageIndex = 0;
       var prevRing = 0;
+      var copyIndex = 0;
 
       function runStage() {
         if (stageIndex >= stages.length) {
           if (raceCard) raceCard.classList.remove('kz-shaking-light', 'kz-shaking', 'kz-shaking-heavy');
           if (raceCard) raceCard.classList.add('kz-shaking-heavy');
           if (milestone) { milestone.className = 'kz-milestone'; milestone.textContent = ''; }
+          // Hide incoming + label, show just LOST
+          if (ringIncoming) ringIncoming.style.opacity = '0';
+          if (ringLabel) ringLabel.style.opacity = '0';
           if (ringTime) { ringTime.textContent = 'LOST'; ringTime.style.color = '#dc2626'; }
-          if (ringLabel) ringLabel.style.display = 'none';
           if (gapEl) gapEl.classList.add('kz-gap-visible');
           if (gapLabel) gapLabel.textContent = 'LEAD LOST TO YOUR COMPETITORS';
 
           setTimeout(function() {
             if (raceCard) raceCard.classList.remove('kz-shaking-heavy');
+            if (ringIncoming) ringIncoming.style.opacity = '';
             setTimeout(animateRace, 3500);
           }, 1800);
           return;
@@ -1371,6 +1365,11 @@ const trustedLogos = [
             if (stage.milestone && milestone) {
               milestone.textContent = stage.milestone;
               milestone.className = 'kz-milestone kz-milestone-pop' + (stage.color === 'green' ? ' kz-milestone-green' : '');
+              // Reveal next copy block
+              if (copyIndex < copyBlocks.length) {
+                copyBlocks[copyIndex].classList.add('kz-visible');
+                copyIndex++;
+              }
             }
             setTimeout(runStage, stage.milestone ? 2000 : 0);
           }
@@ -1387,13 +1386,6 @@ const trustedLogos = [
           fired = true;
 
           animateRace();
-
-          copyBlocks.forEach(function(block) {
-            var delay = parseInt(getComputedStyle(block).getPropertyValue('--kz-delay')) || 0;
-            setTimeout(function() {
-              block.classList.add('kz-visible');
-            }, delay);
-          });
 
           kzObserver.unobserve(entry.target);
         }
@@ -2791,52 +2783,38 @@ const trustedLogos = [
     margin-bottom: 2.5rem;
   }
 
-  /* Incoming lead animation */
+  /* Incoming lead indicator */
   .kz-ring-incoming {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    gap: 0.4rem;
+    gap: 0.35rem;
     opacity: 0;
-    transform: scale(0.5) translateY(8px);
+    transform: scale(0.5);
+    margin-bottom: 0.15rem;
+    transition: opacity 300ms ease;
   }
 
   .kz-ring-incoming.kz-incoming-pop {
     animation: kzIncomingPop 600ms cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
   }
 
-  .kz-ring-incoming.kz-incoming-fade {
-    animation: kzIncomingFade 400ms ease-out forwards;
-  }
-
   @keyframes kzIncomingPop {
-    0% { opacity: 0; transform: scale(0.3) translateY(12px); }
+    0% { opacity: 0; transform: scale(0.3) translateY(8px); }
     50% { opacity: 1; transform: scale(1.1) translateY(-2px); }
     100% { opacity: 1; transform: scale(1) translateY(0); }
   }
 
-  @keyframes kzIncomingFade {
-    0% { opacity: 1; transform: scale(1); }
-    100% { opacity: 0; transform: scale(0.85); }
-  }
-
   .kz-incoming-icon {
-    width: 36px;
-    height: 36px;
-    color: #6BB790;
+    width: 18px;
+    height: 18px;
+    color: #061528;
   }
 
   .kz-incoming-text {
-    font-size: 0.85rem;
+    font-size: 0.78rem;
     font-weight: 700;
-    color: #6BB790;
+    color: #061528;
     letter-spacing: 0.01em;
-  }
-
-  .kz-ring-timer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
   }
 
   /* Donut ring */
@@ -2881,6 +2859,7 @@ const trustedLogos = [
     font-variant-numeric: tabular-nums;
     line-height: 1;
     letter-spacing: -0.02em;
+    transition: opacity 300ms ease;
   }
 
   .kz-ring-label {
@@ -2889,7 +2868,8 @@ const trustedLogos = [
     text-transform: uppercase;
     letter-spacing: 0.06em;
     font-weight: 600;
-    margin-top: 0.35rem;
+    margin-top: 0.2rem;
+    transition: opacity 300ms ease;
   }
 
   /* Milestone status — always red */
