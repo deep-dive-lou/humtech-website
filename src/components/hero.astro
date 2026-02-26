@@ -25,7 +25,7 @@ const trustedLogos = [
 ---
 
 <!-- Hero background wrapper — covers carousel + hero -->
-<div class="hero-bg-wrapper" style="position:relative; overflow-x:clip; overflow-y:visible; background:#061528;">
+<div class="hero-bg-wrapper" style="position:relative; overflow-x:clip; overflow-y:visible; background:#050a12;">
   <!-- Canvas background (covers carousel + hero) -->
   <div class="absolute inset-0 pointer-events-none" aria-hidden="true" style="z-index:0;">
     <div class="hero-aurora hero-aurora-1"></div>
@@ -75,8 +75,8 @@ const trustedLogos = [
       <div class="mt-8 animate-fade-in-up delay-300 flex flex-col sm:flex-row gap-4 justify-center">
         <a
           href="/free-ai-diagnostic"
-          class="inline-flex items-center justify-center gap-2 bg-yellow hover:bg-yellow-light text-navy font-bold px-8 py-4 rounded-full transition-all duration-300 hover:shadow-lg hover:shadow-yellow/30 text-lg">
-          Get Your Free Diagnostic
+          class="hero-cta-link inline-flex items-center justify-center gap-2 bg-yellow hover:bg-yellow-light text-navy font-bold px-8 py-4 rounded-full transition-all duration-300 hover:shadow-lg hover:shadow-yellow/30 text-lg">
+          Take Your Free AI Diagnostic
           <svg class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
             <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
           </svg>
@@ -143,14 +143,16 @@ const trustedLogos = [
 </div><!-- /hero-bg-wrapper -->
 
 <!-- Credentials Section -->
-<section id="section-credentials" style="background:#050a12; padding: 6rem 0 5rem;">
+<section id="section-credentials" style="background:#061528; padding: 6rem 0 5rem;">
+  <!-- Background photo -->
+  <div class="cred-bg-wrap" aria-hidden="true">
+    <img class="cred-bg-photo" src="/public/cred-bg.jpg" alt="" loading="lazy"/>
+    <div class="cred-bg-overlay"></div>
+  </div>
   <div class="max-w-screen-2xl mx-auto px-8 lg:px-16">
     <div class="cred-layout reveal">
 
-      <!-- Center: keyboard landing zone -->
-      <div class="cred-kb-landing" id="cred-kb-landing"></div>
-
-      <!-- Right: cards stacked -->
+      <!-- Left: cards stacked -->
       <div class="cred-col-right">
           <!-- Graduation cap — qualifications -->
           <div class="cred-card cred-card--yellow">
@@ -183,6 +185,9 @@ const trustedLogos = [
             </div>
           </div>
       </div><!-- /cred-col-right -->
+
+      <!-- Center: keyboard landing zone -->
+      <div class="cred-kb-landing" id="cred-kb-landing"></div>
 
     </div>
   </div>
@@ -864,6 +869,24 @@ const trustedLogos = [
 
 <!-- Testimonial bridge -->
 <section class="testi-section">
+
+  <!-- Horizontal film reel — TOP (mobile only, scrolls left) -->
+  <div class="film-reel-hz film-reel-hz--top" aria-hidden="true">
+    <div class="film-frames-hz film-frames-hz--left">
+      <div class="film-frame-hz"><img src="/public/carousel/geometric.jpg" alt="" loading="lazy"/></div>
+      <div class="film-frame-hz"><img src="/public/carousel/desk-setup.jpg" alt="" loading="lazy"/></div>
+      <div class="film-frame-hz"><img src="/public/carousel/code-screen.jpg" alt="" loading="lazy"/></div>
+      <div class="film-frame-hz"><img src="/public/carousel/ai-chip.jpg" alt="" loading="lazy"/></div>
+      <div class="film-frame-hz"><img src="/public/carousel/business-team.jpg" alt="" loading="lazy"/></div>
+      <!-- Duplicate for seamless loop -->
+      <div class="film-frame-hz"><img src="/public/carousel/geometric.jpg" alt="" loading="lazy"/></div>
+      <div class="film-frame-hz"><img src="/public/carousel/desk-setup.jpg" alt="" loading="lazy"/></div>
+      <div class="film-frame-hz"><img src="/public/carousel/code-screen.jpg" alt="" loading="lazy"/></div>
+      <div class="film-frame-hz"><img src="/public/carousel/ai-chip.jpg" alt="" loading="lazy"/></div>
+      <div class="film-frame-hz"><img src="/public/carousel/business-team.jpg" alt="" loading="lazy"/></div>
+    </div>
+  </div>
+
   <div class="max-w-screen-2xl mx-auto px-8 lg:px-16">
     <div class="testi-layout">
 
@@ -911,12 +934,14 @@ const trustedLogos = [
 
     </div>
   </div>
+
 </section>
 
 
 <!-- ══ SECTION B — THE BOTTLENECK ══ -->
-<section id="section-bottleneck" class="relative overflow-hidden" style="background: linear-gradient(160deg, #0a1628 0%, #061528 50%, #091e35 100%);">
-  <div class="max-w-screen-2xl mx-auto px-8 lg:px-16 pt-28 pb-28 md:pt-36 md:pb-36">
+<section id="section-bottleneck" class="relative overflow-hidden" style="background: linear-gradient(160deg, #0f2240 0%, #132d54 50%, #0f2240 100%);">
+  <div class="bn-pattern" aria-hidden="true"></div>
+  <div class="max-w-screen-2xl mx-auto px-8 lg:px-16 pt-28 pb-28 md:pt-36 md:pb-36 relative" style="z-index:1;">
 
     <!-- Bottleneck headings -->
     <div class="mb-4 reveal">
@@ -1441,14 +1466,12 @@ const trustedLogos = [
     if (!scene) return;
 
     var notifs = Array.from(scene.querySelectorAll('.trap-notif'));
-    var copyBlock = document.getElementById('trap-copy-block');
     var fired = false;
+    var isMobile = window.innerWidth <= 640;
 
     function runCascade() {
       if (fired) return;
       fired = true;
-
-      /* Stagger: first 5 at 600ms, then accelerate to 350ms */
       var delay = 0;
       notifs.forEach(function(el, i) {
         delay += (i < 5 ? 600 : 350);
@@ -1456,13 +1479,16 @@ const trustedLogos = [
           el.classList.add('trap-notif--visible');
         }, delay);
       });
-
-      /* Cards, accent line, and quote are static — no animation */
     }
+
+    function runMobileCycle() {      if (fired) return;      fired = true;      var pairs = [];      for (var i = 0; i < notifs.length; i += 2) {        var pair = [notifs[i]];        if (notifs[i + 1]) pair.push(notifs[i + 1]);        pairs.push(pair);      }      var pairIdx = 0;      function showPair() {        notifs.forEach(function(el) { el.classList.remove('mobile-active'); });        pairs[pairIdx].forEach(function(el) { el.classList.add('mobile-active'); });        pairIdx = (pairIdx + 1) % pairs.length;        setTimeout(showPair, 4000);      }      showPair();    }
 
     var obs = new IntersectionObserver(function(entries) {
       entries.forEach(function(entry) {
-        if (entry.isIntersecting) { runCascade(); obs.disconnect(); }
+        if (entry.isIntersecting) {
+          if (isMobile) { runMobileCycle(); } else { runCascade(); }
+          obs.disconnect();
+        }
       });
     }, { threshold: 0.1 });
     obs.observe(scene);
@@ -1922,6 +1948,8 @@ const trustedLogos = [
 
   .hero-main-title {
     font-size: clamp(2rem, 3.6vw, 3.5rem);
+    font-weight: 700;
+    letter-spacing: -0.025em;
     line-height: 1.14;
     text-wrap: balance;
     max-width: 42ch;
@@ -2942,6 +2970,25 @@ const trustedLogos = [
     overflow-x: clip;
     overflow-y: visible;
   }
+  .cred-bg-wrap {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    overflow: hidden;
+    z-index: 0;
+    pointer-events: none;
+  }
+  .cred-bg-photo {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    opacity: 0.55;
+  }
+  .cred-bg-overlay {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: linear-gradient(180deg, #061528 0%, rgba(6,21,40,0.4) 50%, #061528 100%);
+  }
   #section-credentials::before {
     content: '';
     position: absolute;
@@ -2956,7 +3003,7 @@ const trustedLogos = [
   #section-credentials::after {
     display: none;
   }
-  #section-credentials > * {
+  #section-credentials > *:not(.cred-bg-wrap) {
     position: relative;
     z-index: 1;
   }
@@ -3582,7 +3629,7 @@ const trustedLogos = [
     left: 0;
     width: 0;
     height: 2px;
-    background: #9e7e20;
+    background: #D8B743;
     transition: width 600ms ease-out;
     transition-delay: 860ms;
   }
@@ -3592,7 +3639,7 @@ const trustedLogos = [
   }
 
   .kill-zone-copy {
-    color: rgba(6, 21, 40, 0.88);
+    color: #061528;
     font-size: clamp(1.12rem, 1.3vw, 1.45rem);
     line-height: 1.5;
     font-weight: 600;
@@ -3600,7 +3647,7 @@ const trustedLogos = [
   }
 
   .kz-text-accent {
-    color: #9e7e20;
+    color: #D8B743;
     font-weight: 700;
   }
 
@@ -3794,7 +3841,8 @@ const trustedLogos = [
     grid-template-columns: repeat(3, 1fr);
     gap: 2.5rem;
     width: 100%;
-    margin: 3rem 0 0;
+    max-width: 1200px;
+    margin: 8rem auto 0;
   }
   @media (max-width: 768px) {
     .trap-cols { grid-template-columns: 1fr; gap: 1.5rem; margin-top: 3.5rem; }
@@ -3848,12 +3896,12 @@ const trustedLogos = [
   }
   .testi-quote {
     font-family: var(--font-heading);
-    font-size: clamp(1.6rem, 2.8vw, 2.4rem);
+    font-size: clamp(1.2rem, 2vw, 1.8rem);
     font-weight: 500;
     color: #061528;
     line-height: 1.3;
     letter-spacing: -0.02em;
-    max-width: 860px;
+    max-width: 640px;
     margin: 0 auto 2rem;
   }
   .testi-attr {
@@ -3926,7 +3974,73 @@ const trustedLogos = [
     letter-spacing: 0.1em;
   }
 
-
+  /* ── Horizontal film reels (mobile only) ── */
+  .film-reel-hz {
+    display: none; /* hidden on desktop */
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+  }
+  /* Edge fade masks */
+  .film-reel-hz::before,
+  .film-reel-hz::after {
+    content: '';
+    position: absolute;
+    top: 0; bottom: 0;
+    width: 60px;
+    z-index: 2;
+    pointer-events: none;
+  }
+  .film-reel-hz::before {
+    left: 0;
+    background: linear-gradient(to right, #EAEDF2, transparent);
+  }
+  .film-reel-hz::after {
+    right: 0;
+    background: linear-gradient(to left, #EAEDF2, transparent);
+  }
+  .film-reel-hz--top {
+    margin-bottom: 2rem;
+  }
+  .film-frames-hz {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    width: max-content;
+  }
+  .film-frames-hz--left {
+    animation: film-scroll-hz-left 18s linear infinite;
+  }
+  .film-frames-hz--right {
+    animation: film-scroll-hz-right 18s linear infinite;
+  }
+  @keyframes film-scroll-hz-left {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  @keyframes film-scroll-hz-right {
+    0%   { transform: translateX(-50%); }
+    100% { transform: translateX(0); }
+  }
+  .film-frame-hz {
+    height: 80px;
+    width: 120px;
+    flex-shrink: 0;
+    border-radius: 6px;
+    overflow: hidden;
+    border: 2px solid rgba(6,21,40,0.15);
+  }
+  .film-frame-hz img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  @media (max-width: 900px) {
+    .film-reel-hz { display: block; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .film-frames-hz { animation-play-state: paused; }
+  }
 
   /* Bottleneck CTA */
   .bn-cta {
@@ -3945,6 +4059,47 @@ const trustedLogos = [
   @media (max-width: 1023px) {
     .bn-cta { align-items: center; }
     .bn-cta-support { text-align: center; }
+  }
+
+  /* ═══ Bottleneck: background pattern + glow ═══ */
+  .bn-pattern {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    opacity: 0.35;
+    background-image:
+      radial-gradient(circle, rgba(61,178,221,0.7) 1.5px, transparent 1.5px);
+    background-size: 28px 28px;
+    animation: bn-pattern-drift 20s linear infinite;
+  }
+  @keyframes bn-pattern-drift {
+    0%   { background-position: 0 0; }
+    100% { background-position: 32px 64px; }
+  }
+  .bn-glow-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.15;
+    z-index: 0;
+    pointer-events: none;
+  }
+  .bn-glow-orb--1 {
+    width: 500px; height: 500px;
+    background: #3DB2DD;
+    top: -10%; left: -5%;
+    animation: bn-orb-float 12s ease-in-out infinite alternate;
+  }
+  .bn-glow-orb--2 {
+    width: 400px; height: 400px;
+    background: #D8B743;
+    bottom: -10%; right: -5%;
+    animation: bn-orb-float 15s ease-in-out infinite alternate-reverse;
+  }
+  @keyframes bn-orb-float {
+    0%   { transform: translate(0, 0) scale(1); }
+    50%  { transform: translate(30px, -20px) scale(1.1); }
+    100% { transform: translate(-20px, 30px) scale(0.95); }
   }
 
   /* ═══ Bottleneck: 2-column grid ═══ */
@@ -4657,16 +4812,22 @@ const trustedLogos = [
     }
 
     .hero-main-title {
-      font-size: clamp(1rem, 5vw, 1.35rem);
-      line-height: 1.2;
+      font-size: clamp(1.5rem, 7vw, 2rem);
+      line-height: 1.18;
+      letter-spacing: -0.02em;
       max-width: 100%;
     }
 
     .hero-subtitle {
-      font-size: 0.9rem;
-      line-height: 1.24;
+      font-size: clamp(0.95rem, 3.5vw, 1.1rem);
+      line-height: 1.3;
       white-space: normal;
       max-width: 100%;
+    }
+
+    .hero-cta-link {
+      font-size: 1rem;
+      padding: 0.75rem 1.75rem;
     }
 
     .hero-support {
@@ -4732,6 +4893,19 @@ const trustedLogos = [
     .cred-card-inner p {
       font-size: 0.96rem;
       line-height: 1.48;
+    }
+
+    .cred-card-content {
+      padding: 1rem 0.6rem 1.25rem;
+      gap: 0.6rem;
+    }
+    .cred-card-content p {
+      font-size: 0.7rem;
+      line-height: 1.4;
+    }
+    .cred-card-icon {
+      width: 26px;
+      height: 26px;
     }
 
     .kz-race {
@@ -4873,11 +5047,16 @@ const trustedLogos = [
 
   /* Mobile keyboard — scales to fit screen */
   @media (max-width: 1023px) {
-    .kb-wrapper { padding: 1.5rem 0; justify-content: center !important; }
+    .hero-bg-wrapper { overflow-y: clip !important; }
+    /* Fix 1: kill the fade-up entrance animation — keyboard appears static on mobile */
+    .kb-wrapper { padding: 1.5rem 0; justify-content: center !important; animation: none !important; opacity: 1 !important; transform: none !important; position: relative; z-index: 1; }
     .kb-container {
       width: 100%;
       max-width: 420px;
-      animation: none; /* no float on mobile */
+      animation: none !important;
+      transform: none !important;
+      z-index: 1;
+      position: relative;
     }
     .kb-key { font-size: 0.55rem; padding: 0.4rem 0.25rem; }
     .kb-key-sm { min-width: 22px; }
@@ -4907,7 +5086,63 @@ const trustedLogos = [
 
 
   @media (max-width: 640px) {
+    /* Fix 2: Kill Zone copy — bypass timer-tied reveal on mobile, show all blocks immediately */
+    .kz-copy-reveal {
+      opacity: 1 !important;
+      transform: none !important;
+      transition: none !important;
+    }
 
+    /* Fix 3: Hire section — slow phase in/out, two at a time on mobile */
+    .trap-notif {
+      position: absolute;
+      min-width: 220px;
+      max-width: 72%;
+      font-size: 0.8em;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 1.2s ease-in-out, transform 1.2s ease-in-out;
+      z-index: 20;
+    }
+    /* Scatter positions: odds top-right area, evens bottom-left area */
+    .trap-notif--1 { top: 4% !important;   right: 3% !important;  left: auto !important; }
+    .trap-notif--2 { bottom: 8% !important; left: 3% !important;   top: auto !important; right: auto !important; }
+    .trap-notif--3 { top: 12% !important;  right: 5% !important;  left: auto !important; }
+    .trap-notif--4 { bottom: 16% !important; left: 5% !important;  top: auto !important; right: auto !important; }
+    .trap-notif--5 { top: 20% !important;  right: 2% !important;  left: auto !important; }
+    .trap-notif--6 { bottom: 4% !important; left: 2% !important;   top: auto !important; right: auto !important; }
+    .trap-notif--7 { top: 6% !important;   right: 6% !important;  left: auto !important; }
+    .trap-notif--8 { bottom: 12% !important; left: 4% !important;  top: auto !important; right: auto !important; }
+    .trap-notif--9 { top: 16% !important;  right: 4% !important;  left: auto !important; }
+    .trap-notif.mobile-active {
+      opacity: 1;
+      transform: translate(0, 0) scale(1);
+      pointer-events: auto;
+    }
+
+    /* Fix 4a+b: Bottleneck visuals — make the dashboard match the phone frame width */
+    .bn-dash {
+      width: 280px;
+      flex-shrink: 0;
+    }
+
+    /* Fix 4c: Bottleneck bar chart — keep stats row at 3 columns so chart stays visible */
+    .cred-dash-stats {
+      grid-template-columns: repeat(3, 1fr) !important;
+    }
+    .cred-dash-stat-val {
+      font-size: 1.1rem;
+    }
+    .cred-dash-stat-label {
+      font-size: 0.55rem;
+    }
+    .cred-dash-chart {
+      min-height: 70px;
+    }
+    .cred-dash-bars {
+      height: 50px;
+      flex: none;
+    }
   }
 
   /* ─── Metrics section background atmosphere ─── */
