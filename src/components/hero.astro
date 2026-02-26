@@ -463,96 +463,292 @@ const trustedLogos = [
 
 
 <!-- Why This Works Section -->
-<section id="section-why-works" class="py-24 md:py-32 relative overflow-hidden" style="background:#EAEDF2;">
+<section id="section-why-works" class="py-24 md:py-36 relative overflow-hidden" style="background:#EAEDF2;">
   <div class="max-w-screen-2xl mx-auto px-8 lg:px-16">
 
     <!-- Two-tone heading -->
-    <div class="text-center mb-16 reveal">
+    <div class="text-center mb-20 reveal">
       <h2 class="text-3xl lg:text-4xl xl:text-5xl font-bold leading-tight" style="color:#061528;">
         Why This Works
       </h2>
-      <p class="text-xl lg:text-2xl font-semibold mt-3" style="color:rgba(6,21,40,0.35);">
+      <p class="text-xl lg:text-2xl font-semibold mt-3" style="color:rgba(6,21,40,0.32);">
         Six reasons clients see results from day one.
       </p>
     </div>
 
-    <!-- 2-column bento grid -->
-    <div class="wtw-grid">
+    <!-- 3-column visual cards -->
+    <div class="wtw-visual-grid">
 
-      <!-- Row 1: Performance SLA + Strategist Access -->
-      <div class="wtw-card wtw-card-featured reveal" style="--delay:0ms;">
-        <div class="wtw-card-top">
-          <span class="wtw-card-label" style="color:#6BB790;">RESULTS GUARANTEED</span>
-          <h3 class="wtw-card-title">Performance-Based SLA</h3>
-          <p class="wtw-card-body">We work to hit your revenue targets, and stay with you to set new goals</p>
+      <!-- Card 1: Meet your team -->
+      <a href="/team" class="wtw-vcard reveal" style="--delay:0ms;">
+        <div class="wtw-vcard-visual">
+          <svg viewBox="0 0 320 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <line x1="100" y1="88" x2="160" y2="52" stroke="rgba(216,183,67,0.35)" stroke-width="1.5"/>
+            <line x1="220" y1="88" x2="160" y2="52" stroke="rgba(216,183,67,0.35)" stroke-width="1.5"/>
+            <line x1="100" y1="88" x2="220" y2="88" stroke="rgba(216,183,67,0.18)" stroke-width="1"/>
+            <line x1="100" y1="88" x2="160" y2="128" stroke="rgba(216,183,67,0.18)" stroke-width="1"/>
+            <line x1="220" y1="88" x2="160" y2="128" stroke="rgba(216,183,67,0.18)" stroke-width="1"/>
+            <circle r="3" fill="#D8B743" opacity="0.8"><animateMotion dur="3s" repeatCount="indefinite" path="M100,88 L160,52"/></circle>
+            <circle r="3" fill="#D8B743" opacity="0.8"><animateMotion dur="3.5s" repeatCount="indefinite" path="M220,88 L160,52"/></circle>
+            <circle cx="160" cy="52" r="24" fill="rgba(216,183,67,0.12)" stroke="rgba(216,183,67,0.55)" stroke-width="1.5"/>
+            <text x="160" y="58" text-anchor="middle" fill="#D8B743" font-size="16" font-weight="700" font-family="system-ui">L</text>
+            <circle cx="100" cy="88" r="20" fill="rgba(107,183,144,0.12)" stroke="rgba(107,183,144,0.55)" stroke-width="1.5"/>
+            <text x="100" y="94" text-anchor="middle" fill="#6BB790" font-size="13" font-weight="700" font-family="system-ui">CS</text>
+            <circle cx="220" cy="88" r="20" fill="rgba(61,178,221,0.12)" stroke="rgba(61,178,221,0.55)" stroke-width="1.5"/>
+            <text x="220" y="94" text-anchor="middle" fill="#3DB2DD" font-size="13" font-weight="700" font-family="system-ui">CR</text>
+            <circle cx="160" cy="128" r="17" fill="rgba(255,255,255,0.06)" stroke="rgba(6,21,40,0.15)" stroke-width="1"/>
+            <text x="160" y="133" text-anchor="middle" fill="rgba(6,21,40,0.4)" font-size="11" font-weight="600" font-family="system-ui">YOU</text>
+          </svg>
         </div>
-        <div class="wtw-stat-block">
-          <span class="wtw-stat-num wtw-counter" data-target="98" style="color:#6BB790;">0%</span>
-          <span class="wtw-stat-label">client appointment booking rate</span>
+        <div class="wtw-vcard-content">
+          <span class="wtw-vcard-label" style="color:#D8B743;">YOUR TEAM</span>
+          <h3 class="wtw-vcard-title">Direct Strategist Access</h3>
+          <p class="wtw-vcard-body">Direct access to senior strategists with extensive experience &ndash; no junior teams or service desks</p>
+          <span class="wtw-vcard-link" style="color:#D8B743;">Meet your team <span class="wtw-arrow">&rarr;</span></span>
+        </div>
+      </a>
+
+      <!-- Card 2: Get started -->
+      <a href="/free-ai-diagnostic" class="wtw-vcard reveal" style="--delay:80ms;">
+        <div class="wtw-vcard-visual">
+          <svg viewBox="0 0 320 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="55" cy="50" r="6" fill="rgba(61,178,221,0.25)" stroke="rgba(61,178,221,0.6)" stroke-width="1"/>
+            <circle cx="55" cy="90" r="6" fill="rgba(61,178,221,0.25)" stroke="rgba(61,178,221,0.6)" stroke-width="1"/>
+            <circle cx="55" cy="130" r="6" fill="rgba(61,178,221,0.25)" stroke="rgba(61,178,221,0.6)" stroke-width="1"/>
+            <circle cx="160" cy="40" r="9" fill="rgba(107,183,144,0.2)" stroke="rgba(107,183,144,0.55)" stroke-width="1.5"/>
+            <circle cx="160" cy="90" r="9" fill="rgba(107,183,144,0.2)" stroke="rgba(107,183,144,0.55)" stroke-width="1.5"/>
+            <circle cx="160" cy="140" r="9" fill="rgba(107,183,144,0.2)" stroke="rgba(107,183,144,0.55)" stroke-width="1.5"/>
+            <circle cx="265" cy="65" r="12" fill="rgba(216,183,67,0.2)" stroke="rgba(216,183,67,0.55)" stroke-width="1.5"/>
+            <circle cx="265" cy="118" r="12" fill="rgba(216,183,67,0.2)" stroke="rgba(216,183,67,0.55)" stroke-width="1.5"/>
+            <line x1="61" y1="50" x2="151" y2="40" stroke="rgba(61,178,221,0.15)" stroke-width="0.7"/>
+            <line x1="61" y1="50" x2="151" y2="90" stroke="rgba(61,178,221,0.09)" stroke-width="0.5"/>
+            <line x1="61" y1="90" x2="151" y2="40" stroke="rgba(61,178,221,0.09)" stroke-width="0.5"/>
+            <line x1="61" y1="90" x2="151" y2="90" stroke="rgba(61,178,221,0.15)" stroke-width="0.7"/>
+            <line x1="61" y1="90" x2="151" y2="140" stroke="rgba(61,178,221,0.09)" stroke-width="0.5"/>
+            <line x1="61" y1="130" x2="151" y2="90" stroke="rgba(61,178,221,0.09)" stroke-width="0.5"/>
+            <line x1="61" y1="130" x2="151" y2="140" stroke="rgba(61,178,221,0.15)" stroke-width="0.7"/>
+            <line x1="169" y1="40" x2="253" y2="65" stroke="rgba(107,183,144,0.15)" stroke-width="0.7"/>
+            <line x1="169" y1="90" x2="253" y2="65" stroke="rgba(107,183,144,0.15)" stroke-width="0.7"/>
+            <line x1="169" y1="90" x2="253" y2="118" stroke="rgba(107,183,144,0.15)" stroke-width="0.7"/>
+            <line x1="169" y1="140" x2="253" y2="118" stroke="rgba(107,183,144,0.15)" stroke-width="0.7"/>
+            <circle r="3.5" fill="#3DB2DD" opacity="0.85"><animateMotion dur="2s" repeatCount="indefinite" path="M55,50 L160,40 L265,65"/></circle>
+            <circle r="3.5" fill="#6BB790" opacity="0.85"><animateMotion dur="2.6s" repeatCount="indefinite" path="M55,90 L160,90 L265,118"/></circle>
+            <circle r="3.5" fill="#D8B743" opacity="0.85"><animateMotion dur="3.2s" repeatCount="indefinite" path="M55,130 L160,140 L265,118"/></circle>
+          </svg>
+        </div>
+        <div class="wtw-vcard-content">
+          <span class="wtw-vcard-label" style="color:#6BB790;">ENTERPRISE GRADE</span>
+          <h3 class="wtw-vcard-title">Enterprise Grade AI for SMEs</h3>
+          <p class="wtw-vcard-body">Get top-tier AI planning, technical execution, and support without upfront costs and monthly retainers</p>
+          <span class="wtw-vcard-link" style="color:#6BB790;">Get started <span class="wtw-arrow">&rarr;</span></span>
+        </div>
+      </a>
+
+      <!-- Card 3: Done for you -->
+      <a href="/services" class="wtw-vcard reveal" style="--delay:160ms;">
+        <div class="wtw-vcard-visual">
+          <svg viewBox="0 0 320 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="35" y="20" width="250" height="140" rx="10" fill="rgba(255,255,255,0.06)" stroke="rgba(6,21,40,0.08)" stroke-width="1"/>
+            <rect x="35" y="20" width="250" height="28" rx="10" fill="rgba(6,21,40,0.04)"/>
+            <circle cx="53" cy="34" r="4.5" fill="rgba(107,183,144,0.55)"/>
+            <circle cx="67" cy="34" r="4.5" fill="rgba(216,183,67,0.55)"/>
+            <circle cx="81" cy="34" r="4.5" fill="rgba(61,178,221,0.55)"/>
+            <rect x="55" y="65" width="190" height="7" rx="3.5" fill="rgba(6,21,40,0.06)"/>
+            <rect class="wtw-pbar" x="55" y="65" width="160" height="7" rx="3.5" fill="#6BB790" style="--bar-delay:0.3s;"/>
+            <rect x="55" y="88" width="190" height="7" rx="3.5" fill="rgba(6,21,40,0.06)"/>
+            <rect class="wtw-pbar" x="55" y="88" width="130" height="7" rx="3.5" fill="#3DB2DD" style="--bar-delay:0.6s;"/>
+            <rect x="55" y="111" width="190" height="7" rx="3.5" fill="rgba(6,21,40,0.06)"/>
+            <rect class="wtw-pbar" x="55" y="111" width="180" height="7" rx="3.5" fill="#D8B743" style="--bar-delay:0.9s;"/>
+            <g class="wtw-chk" style="--chk-delay:0.9s;">
+              <circle cx="260" cy="68" r="9" fill="rgba(107,183,144,0.12)" stroke="#6BB790" stroke-width="1"/>
+              <path d="M255 68 L258.5 71.5 L265 64.5" stroke="#6BB790" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+            </g>
+            <g class="wtw-chk" style="--chk-delay:1.3s;">
+              <circle cx="260" cy="91" r="9" fill="rgba(61,178,221,0.12)" stroke="#3DB2DD" stroke-width="1"/>
+              <path d="M255 91 L258.5 94.5 L265 87.5" stroke="#3DB2DD" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+            </g>
+            <g class="wtw-chk" style="--chk-delay:1.7s;">
+              <circle cx="260" cy="114" r="9" fill="rgba(216,183,67,0.12)" stroke="#D8B743" stroke-width="1"/>
+              <path d="M255 114 L258.5 117.5 L265 110.5" stroke="#D8B743" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+            </g>
+          </svg>
+        </div>
+        <div class="wtw-vcard-content">
+          <span class="wtw-vcard-label" style="color:#3DB2DD;">DONE FOR YOU</span>
+          <h3 class="wtw-vcard-title">Hands-Off Implementation</h3>
+          <p class="wtw-vcard-body">Zero technical knowledge needed &ndash; our team builds, deploys, trains and maintains custom branded systems</p>
+          <span class="wtw-vcard-link" style="color:#3DB2DD;">Our services <span class="wtw-arrow">&rarr;</span></span>
+        </div>
+      </a>
+
+    </div>
+
+    <!-- Supporting feature cards -->
+    <div class="wtw-feature-row">
+
+      <!-- Card 1: Immediate Results — revenue spike chart -->
+      <a href="/case-study" class="wtw-fcard wtw-fcard--visual reveal" style="--delay:200ms;">
+        <div class="wtw-fcard-visual">
+          <svg viewBox="0 0 320 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Grid lines -->
+            <line x1="44" y1="30"  x2="44"  y2="148" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+            <line x1="44" y1="148" x2="295" y2="148" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+            <line x1="44" y1="120" x2="295" y2="120" stroke="rgba(255,255,255,0.04)" stroke-width="1" stroke-dasharray="4 4"/>
+            <line x1="44" y1="90"  x2="295" y2="90"  stroke="rgba(255,255,255,0.04)" stroke-width="1" stroke-dasharray="4 4"/>
+            <line x1="44" y1="60"  x2="295" y2="60"  stroke="rgba(255,255,255,0.04)" stroke-width="1" stroke-dasharray="4 4"/>
+            <!-- Y-axis labels -->
+            <text x="38" y="152" text-anchor="end" fill="rgba(255,255,255,0.2)" font-size="8" font-family="system-ui">0</text>
+            <text x="38" y="93"  text-anchor="end" fill="rgba(255,255,255,0.2)" font-size="8" font-family="system-ui">50</text>
+            <text x="38" y="63"  text-anchor="end" fill="rgba(255,255,255,0.2)" font-size="8" font-family="system-ui">100</text>
+            <!-- "Before" flat line: x=44 to x=148, y=140 -->
+            <polyline points="44,140 148,140" stroke="rgba(107,183,144,0.25)" stroke-width="1.5" stroke-linecap="round"/>
+            <!-- "Day 1" vertical marker -->
+            <line x1="148" y1="30" x2="148" y2="148" stroke="rgba(107,183,144,0.3)" stroke-width="1" stroke-dasharray="3 3"/>
+            <text x="150" y="42" fill="rgba(107,183,144,0.6)" font-size="8" font-weight="700" font-family="system-ui">DAY 1</text>
+            <!-- Spike path drawn on card visible -->
+            <polyline class="ir-spike-line" points="44,140 148,140 175,110 200,82 220,62 250,48 280,44" stroke="#6BB790" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <!-- Glow duplicate -->
+            <polyline class="ir-spike-glow" points="44,140 148,140 175,110 200,82 220,62 250,48 280,44" stroke="#6BB790" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" opacity="0.18"/>
+            <!-- Dot at peak — fades in after line draws -->
+            <circle class="ir-peak-dot" cx="280" cy="44" r="5" fill="#6BB790"/>
+            <!-- Pulse ring at peak -->
+            <circle cx="280" cy="44" r="5" fill="none" stroke="#6BB790" stroke-width="1.5">
+              <animate attributeName="r"       values="5;14;5"     dur="2.4s" repeatCount="indefinite"/>
+              <animate attributeName="opacity" values="0.8;0;0.8"  dur="2.4s" repeatCount="indefinite"/>
+            </circle>
+            <!-- Lift badge -->
+            <g class="ir-badge">
+              <rect x="244" y="18" width="56" height="18" rx="4" fill="rgba(107,183,144,0.15)" stroke="rgba(107,183,144,0.4)" stroke-width="1"/>
+              <text x="272" y="30" text-anchor="middle" fill="#6BB790" font-size="9" font-weight="700" font-family="system-ui">+68% rev</text>
+            </g>
+          </svg>
+        </div>
+        <div class="wtw-fcard-content">
+          <h3 class="wtw-fcard-title">Immediate Results</h3>
+          <p class="wtw-fcard-body">Evidence-based systems which have an impact on revenue from day one</p>
+          <span class="wtw-fcard-link" style="color:#6BB790;">Case studies <span class="wtw-arrow">&rarr;</span></span>
+        </div>
+      </a>
+
+      <!-- Card 2: Futureproofing — scrolling timeline with NOW cursor always ahead -->
+      <a href="/services" class="wtw-fcard wtw-fcard--visual reveal" style="--delay:280ms;">
+        <div class="wtw-fcard-visual">
+          <svg viewBox="0 0 320 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Horizon track line -->
+            <line x1="20" y1="96" x2="300" y2="96" stroke="rgba(61,178,221,0.2)" stroke-width="1.5"/>
+            <!-- Milestone dots + labels (static) -->
+            <circle cx="55"  cy="96" r="4" fill="rgba(61,178,221,0.4)" stroke="rgba(61,178,221,0.7)" stroke-width="1"/>
+            <text x="55"  y="85" text-anchor="middle" fill="rgba(61,178,221,0.55)" font-size="7.5" font-family="system-ui">GPT-4</text>
+            <circle cx="110" cy="96" r="4" fill="rgba(61,178,221,0.4)" stroke="rgba(61,178,221,0.7)" stroke-width="1"/>
+            <text x="110" y="85" text-anchor="middle" fill="rgba(61,178,221,0.55)" font-size="7.5" font-family="system-ui">Agents</text>
+            <circle cx="170" cy="96" r="4" fill="rgba(61,178,221,0.4)" stroke="rgba(61,178,221,0.7)" stroke-width="1"/>
+            <text x="170" y="85" text-anchor="middle" fill="rgba(61,178,221,0.55)" font-size="7.5" font-family="system-ui">RAG</text>
+            <circle cx="228" cy="96" r="4" fill="rgba(61,178,221,0.4)" stroke="rgba(61,178,221,0.7)" stroke-width="1"/>
+            <text x="228" y="85" text-anchor="middle" fill="rgba(61,178,221,0.55)" font-size="7.5" font-family="system-ui">Voice AI</text>
+            <!-- "NEXT" ghost dot — pulses to show the future is coming -->
+            <circle cx="280" cy="96" r="4" fill="none" stroke="rgba(61,178,221,0.4)" stroke-width="1" stroke-dasharray="2 2">
+              <animate attributeName="opacity" values="0.3;1;0.3" dur="2s" repeatCount="indefinite"/>
+            </circle>
+            <text x="280" y="85" text-anchor="middle" fill="rgba(61,178,221,0.3)" font-size="7.5" font-family="system-ui">Next</text>
+            <!-- Completed segment highlight -->
+            <line x1="20" y1="96" x2="255" y2="96" stroke="rgba(61,178,221,0.45)" stroke-width="2"/>
+            <!-- NOW cursor animates between 250–270, selling perpetual ahead-of-curve -->
+            <g>
+              <line x1="255" y1="78" x2="255" y2="114" stroke="#3DB2DD" stroke-width="2" stroke-linecap="round">
+                <animateMotion dur="4s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1" keyTimes="0;0.5;1" path="M0,0 L18,0 L0,0"/>
+              </line>
+              <rect x="239" y="108" width="32" height="14" rx="4" fill="#3DB2DD">
+                <animateMotion dur="4s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1" keyTimes="0;0.5;1" path="M0,0 L18,0 L0,0"/>
+              </rect>
+              <text x="255" y="118" text-anchor="middle" fill="#0a1929" font-size="8" font-weight="800" font-family="system-ui">
+                NOW
+                <animateMotion dur="4s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1" keyTimes="0;0.5;1" path="M0,0 L18,0 L0,0"/>
+              </text>
+              <!-- Pulse ring at cursor position -->
+              <circle cx="255" cy="96" r="7" fill="none" stroke="#3DB2DD" stroke-width="1.5">
+                <animate attributeName="r"       values="7;16;7"   dur="2s" repeatCount="indefinite"/>
+                <animate attributeName="opacity" values="0.8;0;0.8" dur="2s" repeatCount="indefinite"/>
+                <animateMotion dur="4s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1" keyTimes="0;0.5;1" path="M0,0 L18,0 L0,0"/>
+              </circle>
+              <circle cx="255" cy="96" r="5" fill="#3DB2DD">
+                <animateMotion dur="4s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1" keyTimes="0;0.5;1" path="M0,0 L18,0 L0,0"/>
+              </circle>
+            </g>
+            <!-- Subtext -->
+            <text x="160" y="138" text-anchor="middle" fill="rgba(255,255,255,0.12)" font-size="8" font-family="system-ui">Latest AI implementations</text>
+          </svg>
+        </div>
+        <div class="wtw-fcard-content">
+          <h3 class="wtw-fcard-title">Futureproofing</h3>
+          <p class="wtw-fcard-body">Stay ahead with the latest AI implementations and strategic enhancements from proven industry leaders</p>
+          <span class="wtw-fcard-link" style="color:#3DB2DD;">Explore services <span class="wtw-arrow">&rarr;</span></span>
+        </div>
+      </a>
+
+      <!-- Card 3: Performance-Based SLA — bullseye with inbound projectile -->
+      <a href="/free-ai-diagnostic" class="wtw-fcard wtw-fcard--visual reveal" style="--delay:360ms;">
+        <div class="wtw-fcard-visual">
+          <svg viewBox="0 0 320 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Bullseye rings — outer to inner -->
+            <circle cx="160" cy="90" r="72" stroke="rgba(216,183,67,0.12)" stroke-width="1.5" fill="rgba(216,183,67,0.03)"/>
+            <circle cx="160" cy="90" r="54" stroke="rgba(216,183,67,0.18)" stroke-width="1.5" fill="rgba(216,183,67,0.04)"/>
+            <circle cx="160" cy="90" r="36" stroke="rgba(216,183,67,0.28)" stroke-width="1.5" fill="rgba(216,183,67,0.06)"/>
+            <circle cx="160" cy="90" r="18" stroke="rgba(216,183,67,0.45)" stroke-width="1.5" fill="rgba(216,183,67,0.10)"/>
+            <!-- Crosshair lines -->
+            <line x1="160" y1="10" x2="160" y2="170" stroke="rgba(216,183,67,0.12)" stroke-width="1"/>
+            <line x1="80"  y1="90" x2="240" y2="90"  stroke="rgba(216,183,67,0.12)" stroke-width="1"/>
+            <!-- Trail path from top-right to centre -->
+            <path class="sla-trail" d="M296,14 Q230,30 160,90" stroke="#D8B743" stroke-width="1.5" stroke-linecap="round" opacity="0.35"/>
+            <!-- Moving projectile -->
+            <circle r="5" fill="#D8B743">
+              <animateMotion dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1" keyTimes="0;1" path="M296,14 Q230,30 160,90"/>
+              <animate attributeName="opacity" values="0;1;1;0.2" keyTimes="0;0.05;0.88;1" dur="2.2s" repeatCount="indefinite"/>
+              <animate attributeName="r"       values="5;5;5;2"   keyTimes="0;0;0.88;1" dur="2.2s" repeatCount="indefinite"/>
+            </circle>
+            <!-- Bullseye centre dot -->
+            <circle cx="160" cy="90" r="5" fill="#D8B743"/>
+            <!-- Impact ring — expands outward timed to projectile arrival -->
+            <circle cx="160" cy="90" r="5" fill="none" stroke="#D8B743" stroke-width="2">
+              <animate attributeName="r"       values="5;32;5"    keyTimes="0;0.45;1" dur="2.2s" begin="1.9s" repeatCount="indefinite"/>
+              <animate attributeName="opacity" values="0.9;0;0.9" keyTimes="0;0.45;1" dur="2.2s" begin="1.9s" repeatCount="indefinite"/>
+            </circle>
+            <!-- Revenue target label -->
+            <rect x="104" y="150" width="112" height="18" rx="5" fill="rgba(216,183,67,0.1)" stroke="rgba(216,183,67,0.3)" stroke-width="1"/>
+            <text x="160" y="162" text-anchor="middle" fill="#D8B743" font-size="8.5" font-weight="700" font-family="system-ui">REVENUE TARGET HIT</text>
+          </svg>
+        </div>
+        <div class="wtw-fcard-content">
+          <h3 class="wtw-fcard-title">Performance-Based SLA</h3>
+          <p class="wtw-fcard-body">We work to hit your revenue targets, and stay with you to set new goals</p>
+          <span class="wtw-fcard-link" style="color:#D8B743;">Get started <span class="wtw-arrow">&rarr;</span></span>
+        </div>
+      </a>
+
+    </div>
+
+    <!-- Stats section with wave -->
+    <div class="wtw-scale reveal" style="--delay:200ms;">
+      <div class="wtw-wave-wrap">
+        <svg class="wtw-wave-svg" viewBox="0 0 1200 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+          <path class="wtw-wl wtw-wl-1" d="M0,50 C150,20 300,80 450,50 C600,20 750,80 900,50 C1050,20 1200,80 1350,50" stroke="rgba(61,178,221,0.25)" stroke-width="1.5" fill="none"/>
+          <path class="wtw-wl wtw-wl-2" d="M-150,50 C0,80 150,20 300,50 C450,80 600,20 750,50 C900,80 1050,20 1200,50" stroke="rgba(107,183,144,0.18)" stroke-width="1" fill="none"/>
+          <path class="wtw-wl wtw-wl-3" d="M0,65 C150,35 300,75 450,45 C600,25 750,70 900,55 C1050,35 1200,65 1350,45" stroke="rgba(216,183,67,0.15)" stroke-width="1" fill="none"/>
+        </svg>
+      </div>
+      <div class="wtw-big-stats">
+        <div class="wtw-big-stat reveal" style="--delay:280ms;">
+          <span class="wtw-big-num wtw-counter" data-target="98" style="color:#6BB790;">0%</span>
+          <span class="wtw-big-label">client appointment<br/>booking rate</span>
+        </div>
+        <div class="wtw-big-stat reveal" style="--delay:380ms;">
+          <span class="wtw-big-num wtw-counter" data-target="50" style="color:#3DB2DD;">0%</span>
+          <span class="wtw-big-label">increase in<br/>revenue</span>
+        </div>
+        <div class="wtw-big-stat reveal" style="--delay:480ms;">
+          <span class="wtw-big-num wtw-counter" data-target="90" data-suffix="%+" style="color:#D8B743;">0%+</span>
+          <span class="wtw-big-label">appointment<br/>attendance</span>
         </div>
       </div>
-
-      <div class="wtw-card reveal" style="--delay:60ms;">
-        <div class="wtw-card-top">
-          <span class="wtw-card-label" style="color:#D8B743;">YOUR TEAM</span>
-          <h3 class="wtw-card-title">Direct Strategist Access</h3>
-          <p class="wtw-card-body">Direct access to senior strategists with extensive experience - no junior teams or service desks</p>
-        </div>
-        <div class="wtw-badge-list">
-          <span class="wtw-badge" style="--badge:#D8B743;">BSc &amp; MSc qualified</span>
-          <span class="wtw-badge" style="--badge:#D8B743;">Top 10 universities</span>
-          <span class="wtw-badge" style="--badge:#D8B743;">15+ years experience</span>
-        </div>
-      </div>
-
-      <!-- Row 2: Enterprise AI + Hands-Off -->
-      <div class="wtw-card reveal" style="--delay:100ms;">
-        <div class="wtw-card-top">
-          <span class="wtw-card-label" style="color:#6BB790;">ENTERPRISE GRADE</span>
-          <h3 class="wtw-card-title">Enterprise Grade AI for SMEs</h3>
-          <p class="wtw-card-body">Get top-tier AI planning, technical execution, and support without upfront costs and monthly retainers</p>
-        </div>
-      </div>
-
-      <div class="wtw-card reveal" style="--delay:140ms;">
-        <div class="wtw-card-top">
-          <span class="wtw-card-label" style="color:#3DB2DD;">DONE FOR YOU</span>
-          <h3 class="wtw-card-title">Hands-Off Implementation</h3>
-          <p class="wtw-card-body">Zero technical knowledge needed - our team builds, deploys, trains and maintains custom branded systems</p>
-        </div>
-      </div>
-
-      <!-- Row 3: Futureproofing + Immediate Results -->
-      <div class="wtw-card reveal" style="--delay:180ms;">
-        <div class="wtw-card-top">
-          <span class="wtw-card-label" style="color:#3DB2DD;">ALWAYS AHEAD</span>
-          <h3 class="wtw-card-title">Futureproofing</h3>
-          <p class="wtw-card-body">Stay ahead with the latest AI implementations and strategic enhancements from proven industry leaders</p>
-        </div>
-        <div class="wtw-stat-block">
-          <span class="wtw-stat-num wtw-counter" data-target="50" style="color:#3DB2DD;">0%</span>
-          <span class="wtw-stat-label">increase in revenue</span>
-        </div>
-      </div>
-
-      <div class="wtw-card wtw-card-results reveal" style="--delay:220ms;">
-        <div class="wtw-card-top">
-          <span class="wtw-card-label" style="color:#D8B743;">FROM DAY ONE</span>
-          <h3 class="wtw-card-title">Immediate Results</h3>
-          <p class="wtw-card-body">Evidence-based systems which have an impact on revenue from day 1</p>
-        </div>
-        <div class="wtw-stats-row">
-          <div class="wtw-stat-block">
-            <span class="wtw-stat-num" style="color:#D8B743;">Zero</span>
-            <span class="wtw-stat-label">additional hires</span>
-          </div>
-          <div class="wtw-stat-block">
-            <span class="wtw-stat-num wtw-counter" data-target="90" data-suffix="%+" style="color:#D8B743;">0%+</span>
-            <span class="wtw-stat-label">appointment attendance</span>
-          </div>
-        </div>
-      </div>
-
     </div>
 
     <!-- CTA -->
@@ -564,17 +760,253 @@ const trustedLogos = [
   </div>
 </section>
 
-<!-- The Trap of In-House Hiring Section -->
-<section class="py-16 md:py-24 bg-navy border-t border-blue/20 relative overflow-hidden" style="background: radial-gradient(ellipse at 20% 50%, rgba(61,178,221,0.08) 0%, transparent 55%), #061528;">
-  <div class="max-w-screen-2xl mx-auto px-8 lg:px-16 reveal">
-    <h2 class="section-title text-3xl lg:text-4xl xl:text-5xl font-bold text-white text-center mb-12 leading-tight">
-      The Trap of In-House Hiring and Costly "Employee Obsolescence"
-    </h2>
 
-    <div class="flex flex-col md:flex-row items-center gap-10 md:gap-12">
-      <!-- Cycle Diagram — interactive CSS/SVG -->
-      <div class="flex-1 flex justify-center" id="cycle-diagram">
-        <div class="cycle-wrap">
+
+<!-- ══ SECTION A — THE TRAP (cascade animation) ══ -->
+<section id="section-trap" class="relative overflow-hidden" style="background: radial-gradient(ellipse 80% 50% at 50% -5%, rgba(216,183,67,0.14) 0%, transparent 65%), #080e18;">
+
+  <!-- ── SECTION A interior ── -->
+  <div class="max-w-screen-2xl mx-auto px-8 lg:px-16 pt-24 pb-20 md:pt-32 md:pb-28">
+
+    <div class="text-center mb-14 reveal">
+      <p class="trap-section-label">SECTION 01 — THE HIRING TRAP</p>
+      <h2 class="trap-display-heading">
+        The Trap of In-House Hiring and Costly "Employee Obsolescence"
+      </h2>
+    </div>
+
+    <div class="trap-window-outer reveal" style="--delay:100ms;">
+      <div class="trap-window" id="trap-window">
+        <div class="trap-window-bar">
+          <span class="trap-dot trap-dot--red" aria-hidden="true"></span>
+          <span class="trap-dot trap-dot--amber" aria-hidden="true"></span>
+          <span class="trap-dot trap-dot--green" aria-hidden="true"></span>
+          <span class="trap-window-title">AI Hiring Manager — Dashboard</span>
+        </div>
+        <div class="trap-stage" id="trap-stage" aria-live="polite"></div>
+      </div>
+    </div>
+
+    <div class="trap-copy-block max-w-2xl mx-auto mt-16 text-center" id="trap-copy-block">
+      <p class="trap-copy-line" data-trap-copy="0">Internal employees are focused on keeping up with the directives of the company's existing "Eco-Chamber".</p>
+      <p class="trap-copy-line" data-trap-copy="1">They don't consistently have the time to stay plugged into constantly changing applications, methods, and updates.</p>
+      <p class="trap-copy-line" data-trap-copy="2">The investment is not yet worth a full-time hire.</p>
+      <p class="trap-copy-line trap-copy-line--accent" data-trap-copy="3">That's why we exist.</p>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ══ SECTION B — THE BOTTLENECK ══ -->
+<section id="section-bottleneck" class="relative overflow-hidden" style="background: radial-gradient(ellipse 60% 40% at 50% 100%, rgba(61,178,221,0.06) 0%, transparent 70%), #0b1525;">
+  <div class="max-w-screen-2xl mx-auto px-8 lg:px-16 pt-24 pb-24 md:pt-32 md:pb-32">
+
+    <!-- Bottleneck heading -->
+    <div class="text-center mb-16 reveal">
+      <h3 class="text-2xl lg:text-3xl xl:text-4xl font-bold leading-tight" style="color:#D8B743;">
+        You know the bottleneck... 50% of inquiries vanish before your sales team gets to them
+      </h3>
+    </div>
+
+    <!-- We faced this exact problem -->
+    <div class="text-center mb-10 reveal">
+      <h3 class="text-2xl lg:text-3xl xl:text-4xl font-bold text-white leading-tight">
+        We faced this exact problem
+      </h3>
+    </div>
+
+    <!-- Circular Latency Diagram -->
+    <div class="circ-latency-wrap circ-latency-wrap--large" id="latency-diagram">
+
+      <div class="circ-diagram-row reveal">
+        <!-- Donut SVG -->
+        <div class="circ-svg-container circ-svg-container--lg">
+          <svg class="circ-svg" viewBox="0 0 320 320" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <pattern id="circ-grid" width="24" height="24" patternUnits="userSpaceOnUse">
+                <path d="M 24 0 L 0 0 0 24" fill="none" stroke="rgba(61,178,221,0.06)" stroke-width="0.5"/>
+              </pattern>
+              <filter id="glow-green">
+                <feGaussianBlur stdDeviation="3" result="blur"/>
+                <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+              </filter>
+            </defs>
+            <rect width="320" height="320" fill="url(#circ-grid)" rx="16"/>
+            <circle cx="160" cy="160" r="142" fill="none" stroke="rgba(61,178,221,0.08)" stroke-width="1" stroke-dasharray="4 6"/>
+            <circle cx="160" cy="160" r="110" fill="none" stroke="rgba(216,183,67,0.18)" stroke-width="34"/>
+            <circle cx="160" cy="160" r="110" fill="none"
+              stroke="rgba(216,183,67,0.45)" stroke-width="34"
+              stroke-dasharray="691.15"
+              stroke-dashoffset="0"
+              transform="rotate(-90 160 160)"/>
+            <circle id="circ-responded-arc" cx="160" cy="160" r="110"
+              fill="none"
+              stroke="#6BB790"
+              stroke-width="34"
+              stroke-linecap="butt"
+              stroke-dasharray="691.15"
+              stroke-dashoffset="691.15"
+              transform="rotate(-90 160 160)"
+              filter="url(#glow-green)"
+              style="transition:stroke-dashoffset 0.9s cubic-bezier(0.4,0,0.2,1);"/>
+            <circle cx="160" cy="160" r="90" fill="#0b1525"/>
+            <text id="circ-center-pct" x="160" y="152"
+              text-anchor="middle"
+              fill="white" font-size="54" font-weight="800"
+              style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">50%</text>
+            <text x="160" y="179" text-anchor="middle"
+              fill="rgba(255,255,255,0.45)" font-size="12" letter-spacing="0.06em"
+              style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;text-transform:uppercase;">Responded</text>
+            <text x="160" y="22" text-anchor="middle"
+              fill="rgba(255,255,255,0.3)" font-size="11" letter-spacing="0.05em"
+              style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;text-transform:uppercase;">Total Inquiries (100%)</text>
+          </svg>
+        </div>
+
+        <!-- Right: legend -->
+        <div class="circ-legend">
+          <div class="circ-legend-item">
+            <div class="circ-legend-dot" style="background:#6BB790;box-shadow:0 0 8px rgba(107,183,144,0.6);"></div>
+            <div>
+              <div class="circ-legend-label">Responded</div>
+              <div class="circ-legend-val" id="circ-responded-val" style="color:#6BB790;">50%</div>
+            </div>
+          </div>
+          <div class="circ-legend-item" style="margin-top:1.5rem;">
+            <div class="circ-legend-dot" style="background:rgba(216,183,67,0.7);box-shadow:0 0 8px rgba(216,183,67,0.4);"></div>
+            <div>
+              <div class="circ-legend-label">Lost to Latency</div>
+              <div class="circ-legend-val" id="circ-lost-val" style="color:#D8B743;">50%</div>
+            </div>
+          </div>
+          <div class="circ-legend-item" style="margin-top:1.5rem; opacity:0.6;">
+            <div class="circ-legend-dot" style="background:rgba(255,255,255,0.15);"></div>
+            <div>
+              <div class="circ-legend-label">Total Inquiries</div>
+              <div class="circ-legend-val" style="color:rgba(255,255,255,0.5);">100%</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Toggle -->
+      <div class="latency-toggle-row" style="margin-top:2.5rem;">
+        <span class="latency-toggle-label">Without AI Revenue Engine</span>
+        <button class="latency-toggle" id="latency-toggle" aria-pressed="false">
+          <span class="latency-toggle-knob"></span>
+        </button>
+        <span class="latency-toggle-label">With AI Revenue Engine</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══ SECTION C — THE PROOF ══ -->
+<section id="section-proof" class="relative overflow-hidden" style="background: radial-gradient(ellipse 70% 50% at 50% 0%, rgba(216,183,67,0.07) 0%, transparent 60%), #061528;">
+  <div class="max-w-screen-2xl mx-auto px-8 lg:px-16 pt-24 pb-28 md:pt-32 md:pb-36">
+
+    <!-- Story Block — sequential scroll reveal -->
+    <div class="section-eight-story max-w-3xl mx-auto" id="story-reveal-block">
+      <p class="section-eight-copy story-line" data-story-index="0">
+        On average, only 50% of new enquiries respond to manual outreach, and just half attend booked consultations.
+      </p>
+      <p class="section-eight-copy story-line" data-story-index="1">
+        Teams are constantly drawn into repetitive admin tasks and distractions which take them away from revenue-producing duties.
+      </p>
+      <p class="section-eight-copy story-line" data-story-index="2">
+        Countless 'out the box' third-party AI tools (multiple different log-ins...), and conversions actually gets worse.
+      </p>
+      <p class="section-eight-copy section-eight-emphasis story-line" data-story-index="3">
+        One AI Revenue Engine&trade; later, and the results speak for themselves...
+      </p>
+    </div>
+
+    <div class="results-panel max-w-3xl mx-auto">
+      <div class="results-panel-grid">
+        <div class="results-panel-cell">
+          <div class="results-panel-value text-yellow">98%</div>
+          <div class="results-panel-label">client appointment booking rate</div>
+        </div>
+        <div class="results-panel-cell">
+          <div class="results-panel-value text-yellow">90%+</div>
+          <div class="results-panel-label">appointment attendance</div>
+        </div>
+        <div class="results-panel-cell">
+          <div class="results-panel-value text-yellow">50%</div>
+          <div class="results-panel-label">increase in revenue</div>
+        </div>
+        <div class="results-panel-cell">
+          <div class="results-panel-value text-white">Zero</div>
+          <div class="results-panel-label">additional team members hired</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="results-proof max-w-3xl mx-auto text-center mt-10">
+      <p class="results-proof-copy">
+        In 24 months, our AI Revenue Engine powered the #1 rated Green Energy Supplier and became the #1 rated Advertising Agency on Trustpilot with 4.9 out of 5.0 Stars and a team of only four people.
+      </p>
+
+      <div class="mt-10">
+        <button onclick="openAssessmentModal()" class="proof-cta-button">
+          Get my free PDF AI Diagnostic
+        </button>
+      </div>
+
+      <div class="section-eight-finish">
+        <div class="section-eight-proof-grid">
+          <blockquote class="section-eight-proof-card">
+            <p class="section-eight-proof-text">
+              "AI-human combination results in higher engagement/conversion rates, reduced costs and optimized lead generation. <span class="section-eight-proof-highlight">3x more calls connected, 20% higher meeting hold rate.</span>"
+            </p>
+            <cite class="section-eight-proof-cite not-italic">
+              -Koch, S. (2024). A Case Study in AI-Augmented Cold Outreach. The Journal of Business and Artificial Intelligence, 1(1), 1-5
+            </cite>
+          </blockquote>
+
+          <blockquote class="section-eight-proof-card">
+            <p class="section-eight-proof-text">
+              "AI chat and scheduling bot reduces 'no show rates', reduces administrative burden, improves client satisfaction and <span class="section-eight-proof-highlight">increases overall efficiency.</span>"
+            </p>
+            <cite class="section-eight-proof-cite not-italic">
+              - Nyako Alhaji Baba et al. (2024). Development of an intelligent chatbot for patient appointment booking system. International Journal of Engineering and Applied Information Systems, 8(10), 55-65
+            </cite>
+          </blockquote>
+        </div>
+
+        <blockquote class="section-eight-testimonial">
+          <p class="section-eight-testimonial-text">
+            "I took the assessment and found we were <span class="testimonial-highlight">losing revenue in areas which we were blind to.</span> We were also taking significant market share risks by being behind in AI adoption across multiple domains of our business, notably, lead generation and sales conversions. We verified the diagnostic report outcomes by engaging a portion of old leads 6 months post enquiry, and found that <span class="testimonial-highlight">almost all initial non-responders had been served by our competitors</span> who beat us to the punch. <span class="testimonial-highlight">Revenue increase was rapid with Hum Tech,</span> and required minimal input from our already very busy team."
+          </p>
+          <cite class="section-eight-testimonial-cite not-italic">RESG UK</cite>
+        </blockquote>
+      </div>
+    </div>
+
+  </div>
+
+<!-- closing section-proof -->
+<!-- NOTE: old Beat 2 + Beat 3 content removed — latency donut moved to section-bottleneck above, proof moved to section-proof -->
+      <div class="trap-diagram-col reveal" style="--delay:60ms;">
+        <div class="cycle-wrap-lg" id="cycle-diagram">
+          <!-- Tooltip popovers — positioned absolute inside cycle-wrap-lg -->
+          <div class="cycle-tooltip" id="ct-0">
+            <strong>Avg. hire cost</strong><br/>£8,000–£25,000
+          </div>
+          <div class="cycle-tooltip" id="ct-1">
+            <strong>Training lag</strong><br/>3–6 months to competency
+          </div>
+          <div class="cycle-tooltip" id="ct-2">
+            <strong>AI half-life</strong><br/>Skills outdated in 12–18 months
+          </div>
+          <div class="cycle-tooltip" id="ct-3">
+            <strong>Rehire cycle</strong><br/>Repeated every 1–2 years
+          </div>
+
           <svg class="cycle-svg" viewBox="0 0 320 320" fill="none" xmlns="http://www.w3.org/2000/svg">
             <!-- Track circle -->
             <circle cx="160" cy="160" r="115" stroke="rgba(61,178,221,0.12)" stroke-width="1.5" stroke-dasharray="4 6"/>
@@ -599,232 +1031,243 @@ const trustedLogos = [
               </marker>
             </defs>
 
-            <!-- Node circles -->
-            <circle class="cycle-node-dot" id="cn-0" cx="160" cy="45"  r="9" stroke="rgba(61,178,221,0.4)" stroke-width="1.5" fill="rgba(6,21,40,0.9)"/>
-            <circle class="cycle-node-dot" id="cn-1" cx="275" cy="160" r="9" stroke="rgba(61,178,221,0.4)" stroke-width="1.5" fill="rgba(6,21,40,0.9)"/>
-            <circle class="cycle-node-dot" id="cn-2" cx="160" cy="275" r="9" stroke="rgba(61,178,221,0.4)" stroke-width="1.5" fill="rgba(6,21,40,0.9)"/>
-            <circle class="cycle-node-dot" id="cn-3" cx="45"  cy="160" r="9" stroke="rgba(61,178,221,0.4)" stroke-width="1.5" fill="rgba(6,21,40,0.9)"/>
+            <!-- Node circles — r="14" (enlarged from 9) -->
+            <circle class="cycle-node-dot" id="cn-0" cx="160" cy="45"  r="14" stroke="rgba(61,178,221,0.4)" stroke-width="1.5" fill="rgba(8,14,24,0.95)"/>
+            <circle class="cycle-node-dot" id="cn-1" cx="275" cy="160" r="14" stroke="rgba(61,178,221,0.4)" stroke-width="1.5" fill="rgba(8,14,24,0.95)"/>
+            <circle class="cycle-node-dot" id="cn-2" cx="160" cy="275" r="14" stroke="rgba(61,178,221,0.4)" stroke-width="1.5" fill="rgba(8,14,24,0.95)"/>
+            <circle class="cycle-node-dot" id="cn-3" cx="45"  cy="160" r="14" stroke="rgba(61,178,221,0.4)" stroke-width="1.5" fill="rgba(8,14,24,0.95)"/>
           </svg>
 
-          <!-- Floating labels -->
-          <div class="cycle-label" style="top:10px;left:50%;transform:translateX(-50%)" data-node="0">Hire Specialist</div>
-          <div class="cycle-label" style="top:50%;right:0;transform:translateY(-50%)" data-node="1">Train on<br/>Current Tech</div>
-          <div class="cycle-label" style="bottom:10px;left:50%;transform:translateX(-50%)" data-node="2">Skills Become<br/>Obsolete</div>
-          <div class="cycle-label" style="top:50%;left:0;transform:translateY(-50%)" data-node="3">AI Landscape<br/>Shifts</div>
+          <!-- Floating labels — font-size bumped to 0.8rem -->
+          <div class="cycle-label" style="top:4px;left:50%;transform:translateX(-50%)" data-node="0">Hire Specialist</div>
+          <div class="cycle-label" style="top:50%;right:-4px;transform:translateY(-50%)" data-node="1">Train on<br/>Current Tech</div>
+          <div class="cycle-label" style="bottom:4px;left:50%;transform:translateX(-50%)" data-node="2">Skills Become<br/>Obsolete</div>
+          <div class="cycle-label" style="top:50%;left:-4px;transform:translateY(-50%)" data-node="3">AI Landscape<br/>Shifts</div>
           <!-- Center label -->
           <div class="cycle-center">Retrain/<br/>Rehire</div>
         </div>
       </div>
 
       <!-- Copy -->
-      <div class="readable-prose flex-1 space-y-6">
-        <p class="text-lg md:text-xl text-white font-bold leading-relaxed">
-          Internal employees are focused on keeping up with the directives of the company's existing "Eco-Chamber".
-        </p>
-        <p class="text-lg md:text-xl text-white font-bold leading-relaxed">
-          They don't consistently have the time to stay plugged into constantly changing applications, methods, and updates.
-        </p>
-        <p class="text-lg md:text-xl text-white font-bold leading-relaxed">
-          The investment is not yet worth a full-time hire.
-        </p>
-        <p class="text-lg md:text-xl text-yellow font-bold leading-relaxed">
-          That's why we exist.
-        </p>
+      <div class="trap-copy-col reveal" style="--delay:120ms;">
+        <div class="readable-prose space-y-6">
+          <p class="text-lg md:text-xl text-white font-bold leading-relaxed">
+            Internal employees are focused on keeping up with the directives of the company's existing "Eco-Chamber".
+          </p>
+          <p class="text-lg md:text-xl text-white font-bold leading-relaxed">
+            They don't consistently have the time to stay plugged into constantly changing applications, methods, and updates.
+          </p>
+          <p class="text-lg md:text-xl text-white font-bold leading-relaxed">
+            The investment is not yet worth a full-time hire.
+          </p>
+          <p class="text-lg md:text-xl font-bold leading-relaxed" style="color:#D8B743;">
+            That's why we exist.
+          </p>
+        </div>
       </div>
     </div>
+  </div>
+
+  <!-- ── BEAT 2: The Consequence ── -->
+  <div class="trap-beat-2 max-w-screen-2xl mx-auto px-8 lg:px-16 pb-24 md:pb-32">
 
     <!-- Bottleneck callout -->
-    <div class="mt-14 text-center">
-      <h3 class="text-2xl lg:text-3xl xl:text-4xl font-bold text-yellow leading-tight">
+    <div class="text-center mb-16 reveal">
+      <h3 class="text-2xl lg:text-3xl xl:text-4xl font-bold leading-tight" style="color:#D8B743;">
         You know the bottleneck... 50% of inquiries vanish before your sales team gets to them
       </h3>
     </div>
 
     <!-- We faced this exact problem -->
-    <div class="mt-14">
-      <h3 class="text-2xl lg:text-3xl xl:text-4xl font-bold text-white text-center mb-8">
+    <div class="text-center mb-10 reveal">
+      <h3 class="text-2xl lg:text-3xl xl:text-4xl font-bold text-white leading-tight">
         We faced this exact problem
       </h3>
+    </div>
 
-      <!-- Circular Latency Diagram — animated donut SVG -->
-      <div class="circ-latency-wrap" id="latency-diagram">
+    <!-- Circular Latency Diagram — enlarged to 420px, full centred moment -->
+    <div class="circ-latency-wrap circ-latency-wrap--large" id="latency-diagram">
 
-        <div class="circ-diagram-row">
-          <!-- Donut SVG -->
-          <div class="circ-svg-container">
-            <svg class="circ-svg" viewBox="0 0 320 320" xmlns="http://www.w3.org/2000/svg">
-              <!-- Blueprint grid bg -->
-              <defs>
-                <pattern id="circ-grid" width="24" height="24" patternUnits="userSpaceOnUse">
-                  <path d="M 24 0 L 0 0 0 24" fill="none" stroke="rgba(61,178,221,0.06)" stroke-width="0.5"/>
-                </pattern>
-                <filter id="glow-green">
-                  <feGaussianBlur stdDeviation="3" result="blur"/>
-                  <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-                </filter>
-              </defs>
-              <rect width="320" height="320" fill="url(#circ-grid)" rx="16"/>
+      <div class="circ-diagram-row reveal">
+        <!-- Donut SVG — 420px container -->
+        <div class="circ-svg-container circ-svg-container--lg">
+          <svg class="circ-svg" viewBox="0 0 320 320" xmlns="http://www.w3.org/2000/svg">
+            <!-- Blueprint grid bg -->
+            <defs>
+              <pattern id="circ-grid" width="24" height="24" patternUnits="userSpaceOnUse">
+                <path d="M 24 0 L 0 0 0 24" fill="none" stroke="rgba(61,178,221,0.06)" stroke-width="0.5"/>
+              </pattern>
+              <filter id="glow-green">
+                <feGaussianBlur stdDeviation="3" result="blur"/>
+                <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+              </filter>
+            </defs>
+            <rect width="320" height="320" fill="url(#circ-grid)" rx="16"/>
 
-              <!-- Outer guide circle (label ring) -->
-              <circle cx="160" cy="160" r="142" fill="none" stroke="rgba(61,178,221,0.08)" stroke-width="1" stroke-dasharray="4 6"/>
+            <!-- Outer guide circle (label ring) -->
+            <circle cx="160" cy="160" r="142" fill="none" stroke="rgba(61,178,221,0.08)" stroke-width="1" stroke-dasharray="4 6"/>
 
-              <!-- Background ring (total inquiries = 100%) -->
-              <circle cx="160" cy="160" r="110" fill="none"
-                stroke="rgba(216,183,67,0.18)" stroke-width="34"/>
+            <!-- Background ring (total inquiries = 100%) -->
+            <circle cx="160" cy="160" r="110" fill="none"
+              stroke="rgba(216,183,67,0.18)" stroke-width="34"/>
 
-              <!-- Lost to Latency ring (amber, sits under green) -->
-              <circle cx="160" cy="160" r="110" fill="none"
-                stroke="rgba(216,183,67,0.45)" stroke-width="34"
-                stroke-dasharray="691.15"
-                stroke-dashoffset="0"
-                transform="rotate(-90 160 160)"/>
+            <!-- Lost to Latency ring (amber, sits under green) -->
+            <circle cx="160" cy="160" r="110" fill="none"
+              stroke="rgba(216,183,67,0.45)" stroke-width="34"
+              stroke-dasharray="691.15"
+              stroke-dashoffset="0"
+              transform="rotate(-90 160 160)"/>
 
-              <!-- Responded arc — draws in from 0 on scroll, transitions on toggle -->
-              <circle id="circ-responded-arc" cx="160" cy="160" r="110"
-                fill="none"
-                stroke="#6BB790"
-                stroke-width="34"
-                stroke-linecap="butt"
-                stroke-dasharray="691.15"
-                stroke-dashoffset="691.15"
-                transform="rotate(-90 160 160)"
-                filter="url(#glow-green)"
-                style="transition:stroke-dashoffset 0.9s cubic-bezier(0.4,0,0.2,1);"/>
+            <!-- Responded arc — draws in from 0 on scroll, transitions on toggle -->
+            <circle id="circ-responded-arc" cx="160" cy="160" r="110"
+              fill="none"
+              stroke="#6BB790"
+              stroke-width="34"
+              stroke-linecap="butt"
+              stroke-dasharray="691.15"
+              stroke-dashoffset="691.15"
+              transform="rotate(-90 160 160)"
+              filter="url(#glow-green)"
+              style="transition:stroke-dashoffset 0.9s cubic-bezier(0.4,0,0.2,1);"/>
 
-              <!-- Inner fill circle (bg for text readability) -->
-              <circle cx="160" cy="160" r="90" fill="#061528"/>
+            <!-- Inner fill circle (bg for text readability) -->
+            <circle cx="160" cy="160" r="90" fill="#080e18"/>
 
-              <!-- Center: percentage -->
-              <text id="circ-center-pct" x="160" y="152"
-                text-anchor="middle"
-                fill="white" font-size="54" font-weight="800"
-                style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">50%</text>
-              <text x="160" y="179" text-anchor="middle"
-                fill="rgba(255,255,255,0.45)" font-size="12" letter-spacing="0.06em"
-                style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;text-transform:uppercase;">Responded</text>
+            <!-- Center: percentage -->
+            <text id="circ-center-pct" x="160" y="152"
+              text-anchor="middle"
+              fill="white" font-size="54" font-weight="800"
+              style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">50%</text>
+            <text x="160" y="179" text-anchor="middle"
+              fill="rgba(255,255,255,0.45)" font-size="12" letter-spacing="0.06em"
+              style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;text-transform:uppercase;">Responded</text>
 
-              <!-- Total Inquiries label — top of outer ring -->
-              <text x="160" y="22" text-anchor="middle"
-                fill="rgba(255,255,255,0.3)" font-size="11" letter-spacing="0.05em"
-                style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;text-transform:uppercase;">Total Inquiries (100%)</text>
-            </svg>
-          </div>
-
-          <!-- Right: legend -->
-          <div class="circ-legend">
-            <div class="circ-legend-item">
-              <div class="circ-legend-dot" style="background:#6BB790;box-shadow:0 0 8px rgba(107,183,144,0.6);"></div>
-              <div>
-                <div class="circ-legend-label">Responded</div>
-                <div class="circ-legend-val" id="circ-responded-val" style="color:#6BB790;">50%</div>
-              </div>
-            </div>
-            <div class="circ-legend-item" style="margin-top:1.5rem;">
-              <div class="circ-legend-dot" style="background:rgba(216,183,67,0.7);box-shadow:0 0 8px rgba(216,183,67,0.4);"></div>
-              <div>
-                <div class="circ-legend-label">Lost to Latency</div>
-                <div class="circ-legend-val" id="circ-lost-val" style="color:#D8B743;">50%</div>
-              </div>
-            </div>
-            <div class="circ-legend-item" style="margin-top:1.5rem; opacity:0.6;">
-              <div class="circ-legend-dot" style="background:rgba(255,255,255,0.15);"></div>
-              <div>
-                <div class="circ-legend-label">Total Inquiries</div>
-                <div class="circ-legend-val" style="color:rgba(255,255,255,0.5);">100%</div>
-              </div>
-            </div>
-          </div>
+            <!-- Total Inquiries label — top of outer ring -->
+            <text x="160" y="22" text-anchor="middle"
+              fill="rgba(255,255,255,0.3)" font-size="11" letter-spacing="0.05em"
+              style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;text-transform:uppercase;">Total Inquiries (100%)</text>
+          </svg>
         </div>
 
-        <!-- Toggle -->
-        <div class="latency-toggle-row" style="margin-top:1.5rem;">
-          <span class="latency-toggle-label">Without AI Revenue Engine</span>
-          <button class="latency-toggle" id="latency-toggle" aria-pressed="false">
-            <span class="latency-toggle-knob"></span>
-          </button>
-          <span class="latency-toggle-label">With AI Revenue Engine</span>
-        </div>
-      </div>
-
-      <!-- Story Block -->
-      <div class="section-eight-story max-w-3xl mx-auto">
-        <p class="section-eight-copy">
-          On average, only 50% of new enquiries respond to manual outreach, and just half attend booked consultations.
-        </p>
-        <p class="section-eight-copy">
-          Teams are constantly drawn into repetitive admin tasks and distractions which take them away from revenue-producing duties.
-        </p>
-        <p class="section-eight-copy">
-          Countless 'out the box' third-party AI tools (multiple different log-ins...), and conversions actually gets worse.
-        </p>
-        <p class="section-eight-copy section-eight-emphasis">
-          One AI Revenue Engine&trade; later, and the results speak for themselves...
-        </p>
-      </div>
-
-      <div class="results-panel max-w-3xl mx-auto">
-        <div class="results-panel-grid">
-          <div class="results-panel-cell">
-            <div class="results-panel-value text-yellow">98%</div>
-            <div class="results-panel-label">client appointment booking rate</div>
+        <!-- Right: legend -->
+        <div class="circ-legend">
+          <div class="circ-legend-item">
+            <div class="circ-legend-dot" style="background:#6BB790;box-shadow:0 0 8px rgba(107,183,144,0.6);"></div>
+            <div>
+              <div class="circ-legend-label">Responded</div>
+              <div class="circ-legend-val" id="circ-responded-val" style="color:#6BB790;">50%</div>
+            </div>
           </div>
-          <div class="results-panel-cell">
-            <div class="results-panel-value text-yellow">90%+</div>
-            <div class="results-panel-label">appointment attendance</div>
+          <div class="circ-legend-item" style="margin-top:1.5rem;">
+            <div class="circ-legend-dot" style="background:rgba(216,183,67,0.7);box-shadow:0 0 8px rgba(216,183,67,0.4);"></div>
+            <div>
+              <div class="circ-legend-label">Lost to Latency</div>
+              <div class="circ-legend-val" id="circ-lost-val" style="color:#D8B743;">50%</div>
+            </div>
           </div>
-          <div class="results-panel-cell">
-            <div class="results-panel-value text-yellow">50%</div>
-            <div class="results-panel-label">increase in revenue</div>
-          </div>
-          <div class="results-panel-cell">
-            <div class="results-panel-value text-white">Zero</div>
-            <div class="results-panel-label">additional team members hired</div>
+          <div class="circ-legend-item" style="margin-top:1.5rem; opacity:0.6;">
+            <div class="circ-legend-dot" style="background:rgba(255,255,255,0.15);"></div>
+            <div>
+              <div class="circ-legend-label">Total Inquiries</div>
+              <div class="circ-legend-val" style="color:rgba(255,255,255,0.5);">100%</div>
+            </div>
           </div>
         </div>
       </div>
 
-      <div class="results-proof max-w-3xl mx-auto text-center mt-10">
-        <p class="results-proof-copy">
-          In 24 months, our AI Revenue Engine powered the #1 rated Green Energy Supplier and became the #1 rated Advertising Agency on Trustpilot with 4.9 out of 5.0 Stars and a team of only four people.
-        </p>
-
-        <div class="mt-10">
-          <button onclick="openAssessmentModal()" class="proof-cta-button">
-            Get my free PDF AI Diagnostic
-          </button>
-        </div>
-
-        <div class="section-eight-finish">
-          <div class="section-eight-proof-grid">
-            <blockquote class="section-eight-proof-card">
-              <p class="section-eight-proof-text">
-                "AI-human combination results in higher engagement/conversion rates, reduced costs and optimized lead generation. <span class="section-eight-proof-highlight">3x more calls connected, 20% higher meeting hold rate.</span>"
-              </p>
-              <cite class="section-eight-proof-cite not-italic">
-                -Koch, S. (2024). A Case Study in AI-Augmented Cold Outreach. The Journal of Business and Artificial Intelligence, 1(1), 1-5
-              </cite>
-            </blockquote>
-
-            <blockquote class="section-eight-proof-card">
-              <p class="section-eight-proof-text">
-                "AI chat and scheduling bot reduces 'no show rates', reduces administrative burden, improves client satisfaction and <span class="section-eight-proof-highlight">increases overall efficiency.</span>"
-              </p>
-              <cite class="section-eight-proof-cite not-italic">
-                - Nyako Alhaji Baba et al. (2024). Development of an intelligent chatbot for patient appointment booking system. International Journal of Engineering and Applied Information Systems, 8(10), 55-65
-              </cite>
-            </blockquote>
-          </div>
-
-          <blockquote class="section-eight-testimonial">
-            <p class="section-eight-testimonial-text">
-              "I took the assessment and found we were <span class="testimonial-highlight">losing revenue in areas which we were blind to.</span> We were also taking significant market share risks by being behind in AI adoption across multiple domains of our business, notably, lead generation and sales conversions. We verified the diagnostic report outcomes by engaging a portion of old leads 6 months post enquiry, and found that <span class="testimonial-highlight">almost all initial non-responders had been served by our competitors</span> who beat us to the punch. <span class="testimonial-highlight">Revenue increase was rapid with Hum Tech,</span> and required minimal input from our already very busy team."
-            </p>
-            <cite class="section-eight-testimonial-cite not-italic">RESG UK</cite>
-          </blockquote>
-        </div>
+      <!-- Toggle -->
+      <div class="latency-toggle-row" style="margin-top:2.5rem;">
+        <span class="latency-toggle-label">Without AI Revenue Engine</span>
+        <button class="latency-toggle" id="latency-toggle" aria-pressed="false">
+          <span class="latency-toggle-knob"></span>
+        </button>
+        <span class="latency-toggle-label">With AI Revenue Engine</span>
       </div>
     </div>
   </div>
+
+  <!-- ── BEAT 3: The Proof ── -->
+  <div class="trap-beat-3 max-w-screen-2xl mx-auto px-8 lg:px-16 pb-28 md:pb-36">
+
+    <!-- Story Block — sequential scroll reveal -->
+    <div class="section-eight-story max-w-3xl mx-auto" id="story-reveal-block">
+      <p class="section-eight-copy story-line" data-story-index="0">
+        On average, only 50% of new enquiries respond to manual outreach, and just half attend booked consultations.
+      </p>
+      <p class="section-eight-copy story-line" data-story-index="1">
+        Teams are constantly drawn into repetitive admin tasks and distractions which take them away from revenue-producing duties.
+      </p>
+      <p class="section-eight-copy story-line" data-story-index="2">
+        Countless 'out the box' third-party AI tools (multiple different log-ins...), and conversions actually gets worse.
+      </p>
+      <p class="section-eight-copy section-eight-emphasis story-line" data-story-index="3">
+        One AI Revenue Engine&trade; later, and the results speak for themselves...
+      </p>
+    </div>
+
+    <div class="results-panel max-w-3xl mx-auto">
+      <div class="results-panel-grid">
+        <div class="results-panel-cell">
+          <div class="results-panel-value text-yellow">98%</div>
+          <div class="results-panel-label">client appointment booking rate</div>
+        </div>
+        <div class="results-panel-cell">
+          <div class="results-panel-value text-yellow">90%+</div>
+          <div class="results-panel-label">appointment attendance</div>
+        </div>
+        <div class="results-panel-cell">
+          <div class="results-panel-value text-yellow">50%</div>
+          <div class="results-panel-label">increase in revenue</div>
+        </div>
+        <div class="results-panel-cell">
+          <div class="results-panel-value text-white">Zero</div>
+          <div class="results-panel-label">additional team members hired</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="results-proof max-w-3xl mx-auto text-center mt-10">
+      <p class="results-proof-copy">
+        In 24 months, our AI Revenue Engine powered the #1 rated Green Energy Supplier and became the #1 rated Advertising Agency on Trustpilot with 4.9 out of 5.0 Stars and a team of only four people.
+      </p>
+
+      <div class="mt-10">
+        <button onclick="openAssessmentModal()" class="proof-cta-button">
+          Get my free PDF AI Diagnostic
+        </button>
+      </div>
+
+      <div class="section-eight-finish">
+        <div class="section-eight-proof-grid">
+          <blockquote class="section-eight-proof-card">
+            <p class="section-eight-proof-text">
+              "AI-human combination results in higher engagement/conversion rates, reduced costs and optimized lead generation. <span class="section-eight-proof-highlight">3x more calls connected, 20% higher meeting hold rate.</span>"
+            </p>
+            <cite class="section-eight-proof-cite not-italic">
+              -Koch, S. (2024). A Case Study in AI-Augmented Cold Outreach. The Journal of Business and Artificial Intelligence, 1(1), 1-5
+            </cite>
+          </blockquote>
+
+          <blockquote class="section-eight-proof-card">
+            <p class="section-eight-proof-text">
+              "AI chat and scheduling bot reduces 'no show rates', reduces administrative burden, improves client satisfaction and <span class="section-eight-proof-highlight">increases overall efficiency.</span>"
+            </p>
+            <cite class="section-eight-proof-cite not-italic">
+              - Nyako Alhaji Baba et al. (2024). Development of an intelligent chatbot for patient appointment booking system. International Journal of Engineering and Applied Information Systems, 8(10), 55-65
+            </cite>
+          </blockquote>
+        </div>
+
+        <blockquote class="section-eight-testimonial">
+          <p class="section-eight-testimonial-text">
+            "I took the assessment and found we were <span class="testimonial-highlight">losing revenue in areas which we were blind to.</span> We were also taking significant market share risks by being behind in AI adoption across multiple domains of our business, notably, lead generation and sales conversions. We verified the diagnostic report outcomes by engaging a portion of old leads 6 months post enquiry, and found that <span class="testimonial-highlight">almost all initial non-responders had been served by our competitors</span> who beat us to the punch. <span class="testimonial-highlight">Revenue increase was rapid with Hum Tech,</span> and required minimal input from our already very busy team."
+          </p>
+          <cite class="section-eight-testimonial-cite not-italic">RESG UK</cite>
+        </blockquote>
+      </div>
+    </div>
+  </div>
+
 </section>
 
 <!-- Final Assessment Section -->
@@ -1069,19 +1512,33 @@ const trustedLogos = [
     });
   })();
 
-  /* Cycle diagram — auto-cycle + hover pause */
+  /* Cycle diagram — continuous loop (1400ms) + hover pause + node tooltips */
   (function() {
-    const nodes  = [0,1,2,3].map(function(i){ return document.getElementById('cn-'+i); });
-    const arcs   = ['arc-01','arc-12','arc-23','arc-30'].map(function(id){ return document.getElementById(id); });
-    const labels = document.querySelectorAll('.cycle-label');
+    var nodes  = [0,1,2,3].map(function(i){ return document.getElementById('cn-'+i); });
+    var arcs   = ['arc-01','arc-12','arc-23','arc-30'].map(function(id){ return document.getElementById(id); });
+    var labels = document.querySelectorAll('.cycle-label');
+    var tooltips = [0,1,2,3].map(function(i){ return document.getElementById('ct-'+i); });
     if (!nodes[0]) return;
 
-    // Draw all arcs
+    // Draw all arcs immediately
     arcs.forEach(function(a){ if(a) a.classList.add('drawn'); });
 
     var step = 0;
     var paused = false;
-    var timer;
+    var activeTooltip = null;
+
+    function hideAllTooltips() {
+      tooltips.forEach(function(t){ if(t) t.classList.remove('cycle-tooltip--visible'); });
+      activeTooltip = null;
+    }
+
+    function showTooltip(i) {
+      hideAllTooltips();
+      if (tooltips[i]) {
+        tooltips[i].classList.add('cycle-tooltip--visible');
+        activeTooltip = i;
+      }
+    }
 
     function setStep(s) {
       step = s;
@@ -1091,17 +1548,85 @@ const trustedLogos = [
     }
 
     function advance() {
-      if (!paused) setStep((step+1) % 4);
+      if (!paused) setStep((step + 1) % 4);
     }
 
-    timer = setInterval(advance, 1800);
+    // 1400ms interval — tighter loop feels more like a trap
+    setInterval(advance, 1400);
     setStep(0);
 
-    nodes.forEach(function(n,i){
-      if(!n) return;
-      n.addEventListener('mouseenter', function(){ paused=true; setStep(i); });
-      n.addEventListener('mouseleave', function(){ paused=false; });
+    // Node hover: pause loop, show tooltip
+    nodes.forEach(function(n, i){
+      if (!n) return;
+      n.style.cursor = 'pointer';
+      n.addEventListener('mouseenter', function(){
+        paused = true;
+        setStep(i);
+        showTooltip(i);
+      });
+      n.addEventListener('mouseleave', function(){
+        paused = false;
+        hideAllTooltips();
+      });
+      // Touch / click support
+      n.addEventListener('click', function(){
+        if (activeTooltip === i) {
+          paused = false;
+          hideAllTooltips();
+        } else {
+          paused = true;
+          setStep(i);
+          showTooltip(i);
+        }
+      });
     });
+  })();
+
+  /* Story sequential reveal — paragraphs illuminate one at a time on scroll */
+  (function() {
+    var block = document.getElementById('story-reveal-block');
+    if (!block) return;
+    var lines = Array.from(block.querySelectorAll('.story-line'));
+    if (!lines.length) return;
+
+    // Start all dimmed
+    lines.forEach(function(l){ l.classList.add('story-line--dim'); });
+
+    var fired = false;
+
+    function activateLine(idx) {
+      lines.forEach(function(l, i){
+        l.classList.toggle('story-line--dim', i > idx);
+        l.classList.toggle('story-line--active', i === idx);
+        l.classList.toggle('story-line--past', i < idx);
+      });
+    }
+
+    // Fire sequence on first intersection
+    var obs = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting && !fired) {
+          fired = true;
+          var idx = 0;
+          activateLine(idx);
+          var interval = setInterval(function() {
+            idx++;
+            if (idx >= lines.length) {
+              // All lines fully visible — clear dim state, keep all lit
+              lines.forEach(function(l){
+                l.classList.remove('story-line--dim', 'story-line--active', 'story-line--past');
+              });
+              clearInterval(interval);
+              return;
+            }
+            activateLine(idx);
+          }, 900);
+          obs.disconnect();
+        }
+      });
+    }, { threshold: 0.25 });
+
+    obs.observe(block);
   })();
 
   /* Circular latency diagram — scroll-in draw + before/after toggle */
@@ -1287,8 +1812,6 @@ const trustedLogos = [
       if (milestone) { milestone.className = 'kz-milestone'; milestone.textContent = ''; }
       if (gapEl) gapEl.classList.remove('kz-gap-visible');
       if (gapLabel) gapLabel.textContent = '';
-      // Reset copy blocks
-      copyBlocks.forEach(function(block) { block.classList.remove('kz-visible'); });
     }
 
     function animateRace() {
@@ -1310,7 +1833,7 @@ const trustedLogos = [
     function startStages() {
       var stageIndex = 0;
       var prevRing = 0;
-      var copyIndex = 0;
+      var copyIndex = 1; // first paragraph already visible
 
       function runStage() {
         if (stageIndex >= stages.length) {
@@ -1384,6 +1907,9 @@ const trustedLogos = [
       entries.forEach(function(entry) {
         if (entry.isIntersecting && !fired) {
           fired = true;
+
+          // Show first paragraph immediately
+          if (copyBlocks.length > 0) copyBlocks[0].classList.add('kz-visible');
 
           animateRace();
 
@@ -2242,159 +2768,282 @@ const trustedLogos = [
     animation-play-state: paused;
   }
 
-  /* ─── Why This Works — 2-col bento ─── */
-  .wtw-grid {
+  /* --- Why This Works --- visual cards + stats --- */
+
+  .wtw-visual-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 1rem;
+    gap: 1.25rem;
+    margin-bottom: 4rem;
   }
   @media (min-width: 768px) {
-    .wtw-grid {
-      grid-template-columns: 1fr 1fr;
-      gap: 1.25rem;
+    .wtw-visual-grid {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
     }
   }
 
-  .wtw-card {
+  .wtw-vcard {
     background: #fff;
-    border: 1px solid rgba(6,21,40,0.08);
-    border-radius: 20px;
-    padding: 2.25rem 2rem;
+    border: 1px solid rgba(6,21,40,0.07);
+    border-radius: 16px;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
-    gap: 0;
-    box-shadow: 0 1px 3px rgba(6,21,40,0.04), 0 8px 24px rgba(6,21,40,0.06);
+    text-decoration: none;
+    color: inherit;
     opacity: 0;
-    transform: translateY(18px);
-    transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+    transform: translateY(24px);
+    transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+    transition-delay: var(--delay, 0ms);
+    box-shadow: 0 1px 3px rgba(6,21,40,0.04), 0 8px 24px rgba(6,21,40,0.06);
+  }
+  .wtw-vcard.visible { opacity: 1; transform: translateY(0); }
+  .wtw-vcard:hover {
+    border-color: rgba(6,21,40,0.14);
+    box-shadow: 0 2px 6px rgba(6,21,40,0.06), 0 16px 40px rgba(6,21,40,0.12);
+    transform: translateY(-4px);
+  }
+  .wtw-vcard.visible:hover { transform: translateY(-4px); }
+
+  .wtw-vcard-visual {
+    background: #0a1929;
+    padding: 1.75rem 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 190px;
+  }
+  .wtw-vcard-visual svg { width: 100%; max-width: 280px; height: auto; }
+
+  .wtw-vcard-content {
+    padding: 1.75rem 1.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+  .wtw-vcard-label {
+    font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em;
+    text-transform: uppercase; display: block; margin-bottom: 0.5rem;
+  }
+  .wtw-vcard-title {
+    font-size: 1.35rem; font-weight: 700; color: #061528;
+    line-height: 1.3; margin: 0 0 0.6rem; letter-spacing: -0.01em;
+  }
+  @media (min-width: 1024px) { .wtw-vcard-title { font-size: 1.5rem; } }
+  .wtw-vcard-body {
+    font-size: 1.05rem; color: rgba(6,21,40,0.7);
+    line-height: 1.65; margin: 0; flex: 1;
+  }
+  .wtw-vcard-link {
+    display: inline-flex; align-items: center; gap: 0.35rem;
+    font-size: 0.9rem; font-weight: 600; margin-top: 1.25rem;
+    transition: gap 0.2s ease;
+  }
+  .wtw-vcard:hover .wtw-vcard-link { gap: 0.6rem; }
+  .wtw-arrow { transition: transform 0.2s ease; }
+  .wtw-vcard:hover .wtw-arrow { transform: translateX(3px); }
+
+  .wtw-pbar {
+    transform: scaleX(0); transform-origin: left center;
+    transition: transform 1s cubic-bezier(0.22, 1, 0.36, 1);
+    transition-delay: var(--bar-delay, 0s);
+  }
+  .wtw-vcard.visible .wtw-pbar { transform: scaleX(1); }
+
+  .wtw-chk {
+    opacity: 0; transform: scale(0.4);
+    transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+    transition-delay: var(--chk-delay, 0s);
+    transform-origin: center; transform-box: fill-box;
+  }
+  .wtw-vcard.visible .wtw-chk { opacity: 1; transform: scale(1); }
+
+  .wtw-scale {
+    position: relative; padding: 3rem 0 1rem;
+    opacity: 0; transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
     transition-delay: var(--delay, 0ms);
   }
-  .wtw-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 2px 6px rgba(6,21,40,0.06), 0 16px 40px rgba(6,21,40,0.10);
-    border-color: rgba(6,21,40,0.12);
+  .wtw-scale.visible { opacity: 1; transform: translateY(0); }
+
+  .wtw-wave-wrap {
+    position: relative; height: 55px; margin-bottom: 2.5rem; overflow: hidden;
   }
-  .wtw-card.visible {
-    opacity: 1;
-    transform: translateY(0);
+  .wtw-wave-svg {
+    position: absolute; inset: 0; width: 120%; height: 100%; left: -10%;
   }
-  .wtw-card.visible:hover {
-    transform: translateY(-3px);
+  .wtw-wl { stroke-dasharray: 3000; stroke-dashoffset: 3000; }
+  .wtw-scale.visible .wtw-wl {
+    animation: wtwWaveDraw 2.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
+  .wtw-scale.visible .wtw-wl-1 { animation-delay: 0.1s; }
+  .wtw-scale.visible .wtw-wl-2 { animation-delay: 0.35s; }
+  .wtw-scale.visible .wtw-wl-3 { animation-delay: 0.6s; }
+  @keyframes wtwWaveDraw { to { stroke-dashoffset: 0; } }
+
+  .wtw-big-stats {
+    display: flex; flex-direction: column; gap: 2rem; align-items: center;
+  }
+  @media (min-width: 768px) {
+    .wtw-big-stats { flex-direction: row; justify-content: center; gap: 5rem; }
+  }
+  .wtw-big-stat {
+    text-align: center; opacity: 0; transform: translateY(16px);
+    transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+    transition-delay: var(--delay, 0ms);
+  }
+  .wtw-big-stat.visible { opacity: 1; transform: translateY(0); }
+  .wtw-big-num {
+    font-size: 4rem; font-weight: 800; line-height: 1;
+    letter-spacing: -0.04em; display: block;
+  }
+  @media (min-width: 768px) { .wtw-big-num { font-size: 5rem; } }
+  @media (min-width: 1024px) { .wtw-big-num { font-size: 5.5rem; } }
+  .wtw-big-label {
+    font-size: 0.82rem; color: rgba(6,21,40,0.4); text-transform: uppercase;
+    letter-spacing: 0.06em; line-height: 1.5; margin-top: 0.5rem; display: block;
   }
 
-  /* Featured card accent */
-  .wtw-card-featured {
-    border-color: rgba(107,183,144,0.25);
-  }
-  .wtw-card-featured:hover {
-    border-color: rgba(107,183,144,0.45);
-  }
-
-  /* Card text */
-  .wtw-card-top {
-    margin-bottom: 1.5rem;
-  }
-  .wtw-card-label {
-    font-size: 0.72rem;
-    font-weight: 700;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    display: block;
-    margin-bottom: 0.5rem;
-  }
-  .wtw-card-title {
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: #061528;
-    line-height: 1.3;
-    margin: 0 0 0.5rem;
-    letter-spacing: -0.01em;
-  }
-  @media (min-width: 1024px) {
-    .wtw-card-title { font-size: 1.4rem; }
-  }
-  .wtw-card-body {
-    font-size: 1rem;
-    color: rgba(6,21,40,0.58);
-    line-height: 1.6;
-    margin: 0;
-  }
-
-  /* Stat blocks */
-  .wtw-stat-block {
-    margin-top: auto;
-  }
-  .wtw-stat-num {
-    font-size: 3rem;
-    font-weight: 800;
-    line-height: 1;
-    letter-spacing: -0.03em;
-    display: block;
-  }
-  .wtw-stat-label {
-    font-size: 0.78rem;
-    color: rgba(6,21,40,0.45);
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
-    margin-top: 0.35rem;
-    display: block;
-  }
-  .wtw-stats-row {
-    display: flex;
-    gap: 2.5rem;
-    margin-top: auto;
-  }
-
-  /* Badges */
-  .wtw-badge-list {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    margin-top: auto;
-  }
-  .wtw-badge {
-    display: inline-flex;
-    align-items: center;
-    font-size: 0.75rem;
-    font-weight: 600;
-    padding: 0.4rem 0.75rem;
-    border-radius: 99px;
-    border: 1px solid color-mix(in srgb, var(--badge) 30%, transparent);
-    background: color-mix(in srgb, var(--badge) 10%, transparent);
-    color: color-mix(in srgb, var(--badge) 80%, #061528);
-    letter-spacing: 0.02em;
-    width: fit-content;
-  }
-
-  /* CTA button */
   .wtw-cta {
-    background: #D8B743;
-    color: #061528;
-    font-weight: 700;
-    font-size: 1.1rem;
-    padding: 1rem 2.5rem;
-    border-radius: 99px;
-    border: none;
+    background: #D8B743; color: #061528; font-weight: 700; font-size: 1.1rem;
+    padding: 1rem 2.5rem; border-radius: 99px; border: none;
     transition: background 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
     box-shadow: 0 2px 8px rgba(216,183,67,0.25);
   }
   .wtw-cta:hover {
-    background: #c9ab3a;
-    transform: translateY(-2px);
+    background: #c9ab3a; transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(216,183,67,0.35);
   }
 
-  @media (max-width: 767px) {
-    .wtw-card {
-      padding: 1.75rem 1.5rem;
-    }
-    .wtw-stat-num {
-      font-size: 2.4rem;
-    }
-    .wtw-stats-row {
-      gap: 1.5rem;
+  /* Feature row — second tier cards */
+  .wtw-feature-row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-bottom: 4rem;
+  }
+  @media (min-width: 768px) {
+    .wtw-feature-row {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
     }
   }
+  .wtw-fcard {
+    background: #fff;
+    border: 1px solid rgba(6,21,40,0.07);
+    border-radius: 14px;
+    padding: 2rem 1.75rem;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.3s ease;
+    transition-delay: var(--delay, 0ms);
+    box-shadow: 0 1px 3px rgba(6,21,40,0.04), 0 6px 18px rgba(6,21,40,0.05);
+  }
+  .wtw-fcard.visible { opacity: 1; transform: translateY(0); }
+  .wtw-fcard:hover {
+    box-shadow: 0 2px 6px rgba(6,21,40,0.06), 0 12px 32px rgba(6,21,40,0.1);
+  }
+  .wtw-fcard-icon {
+    width: 48px; height: 48px; border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    border: 1px solid; margin-bottom: 1.25rem;
+  }
+  .wtw-fcard-title {
+    font-size: 1.35rem; font-weight: 700; color: #061528;
+    margin: 0 0 0.6rem; letter-spacing: -0.01em; line-height: 1.3;
+  }
+  @media (min-width: 1024px) { .wtw-fcard-title { font-size: 1.5rem; } }
+  .wtw-fcard-body {
+    font-size: 1.05rem; color: rgba(6,21,40,0.7);
+    line-height: 1.65; margin: 0; flex: 1;
+  }
+
+  /* Visual variant of feature card — removes default padding, adds dark SVG area */
+  .wtw-fcard--visual {
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  .wtw-fcard-visual {
+    background: #0a1929;
+    padding: 1.5rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 180px;
+  }
+  .wtw-fcard-visual svg { width: 100%; max-width: 280px; height: auto; }
+  .wtw-fcard--visual .wtw-fcard-content {
+    padding: 1.5rem 1.5rem 1.75rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+  .wtw-fcard-link {
+    display: inline-flex; align-items: center; gap: 0.35rem;
+    font-size: 0.9rem; font-weight: 600; margin-top: 1rem;
+    transition: gap 0.2s ease;
+  }
+  .wtw-fcard:hover .wtw-fcard-link { gap: 0.6rem; }
+  .wtw-fcard:hover .wtw-arrow { transform: translateX(3px); }
+  a.wtw-fcard { text-decoration: none; color: inherit; cursor: pointer; }
+  a.wtw-fcard:hover {
+    border-color: rgba(6,21,40,0.14);
+    box-shadow: 0 2px 6px rgba(6,21,40,0.06), 0 16px 40px rgba(6,21,40,0.12);
+    transform: translateY(-4px);
+  }
+  a.wtw-fcard.visible:hover { transform: translateY(-4px); }
+
+  /* Immediate Results: spike line draw-on animation */
+  /* polyline approximate length: ~280px */
+  .ir-spike-line {
+    stroke-dasharray: 280;
+    stroke-dashoffset: 280;
+    transition: stroke-dashoffset 1.1s cubic-bezier(0.22, 1, 0.36, 1) 0.25s;
+  }
+  .ir-spike-glow {
+    stroke-dasharray: 280;
+    stroke-dashoffset: 280;
+    transition: stroke-dashoffset 1.1s cubic-bezier(0.22, 1, 0.36, 1) 0.25s;
+  }
+  .wtw-fcard--visual.visible .ir-spike-line,
+  .wtw-fcard--visual.visible .ir-spike-glow {
+    stroke-dashoffset: 0;
+  }
+  .ir-peak-dot {
+    opacity: 0;
+    transition: opacity 0.35s ease 1.3s;
+  }
+  .wtw-fcard--visual.visible .ir-peak-dot { opacity: 1; }
+  .ir-badge {
+    opacity: 0;
+    transition: opacity 0.4s ease 1.4s;
+  }
+  .wtw-fcard--visual.visible .ir-badge { opacity: 1; }
+
+  /* SLA: trail path draw-on */
+  /* path M296,14 Q230,30 160,90 approx length: ~190px */
+  .sla-trail {
+    stroke-dasharray: 190;
+    stroke-dashoffset: 190;
+    transition: stroke-dashoffset 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.2s;
+  }
+  .wtw-fcard--visual.visible .sla-trail { stroke-dashoffset: 0; }
+
+  @media (max-width: 767px) {
+    .wtw-vcard-visual { min-height: 150px; padding: 1.25rem 0.75rem; }
+    .wtw-vcard-content { padding: 1.5rem 1.25rem 1.75rem; }
+    .wtw-big-num { font-size: 3.5rem; }
+    .wtw-big-stats { gap: 1.5rem; }
+    .wtw-wave-wrap { height: 40px; margin-bottom: 1.5rem; }
+    .wtw-fcard { padding: 1.5rem 1.25rem; }
+    .wtw-fcard--visual { padding: 0; }
+    .wtw-fcard-visual { min-height: 150px; padding: 1.25rem 0.75rem; }
+    .wtw-fcard--visual .wtw-fcard-content { padding: 1.25rem; }
+  }
+
 
   /* Credentials stats grid cells */
   .cred-stat-cell {
@@ -3057,6 +3706,17 @@ const trustedLogos = [
     border-radius: 4px;
   }
 
+  /* ── Beat layout: Trap section ── */
+  .trap-split-row { display: flex; flex-direction: column; align-items: center; gap: 3rem; }
+  @media (min-width: 900px) { .trap-split-row { flex-direction: row; align-items: center; gap: 5rem; } }
+  .trap-diagram-col { flex-shrink: 0; display: flex; justify-content: center; }
+  .trap-copy-col { flex: 1; }
+
+  /* Enlarged wrapper for cycle diagram */
+  .cycle-wrap-lg { position: relative; width: 340px; height: 340px; flex-shrink: 0; }
+  @media (min-width: 640px) { .cycle-wrap-lg { width: 420px; height: 420px; } }
+  .cycle-wrap-lg .cycle-svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+
   /* Cycle diagram */
   .cycle-wrap {
     position: relative; width: 320px; height: 320px; flex-shrink: 0;
@@ -3065,29 +3725,70 @@ const trustedLogos = [
   .cycle-node-dot { transition: stroke 0.3s ease, filter 0.3s ease; }
   .cycle-node-dot.active {
     stroke: rgba(216,183,67,0.9) !important;
-    filter: drop-shadow(0 0 6px rgba(216,183,67,0.6));
+    filter: drop-shadow(0 0 8px rgba(216,183,67,0.7));
   }
   .cycle-arc { stroke-dasharray: 200; stroke-dashoffset: 200; transition: stroke-dashoffset 0.6s ease, stroke 0.3s ease; }
   .cycle-arc.drawn { stroke-dashoffset: 0; }
   .cycle-arc.active { stroke: rgba(216,183,67,0.7) !important; }
   .cycle-arc-return.active { stroke: rgba(216,183,67,0.9) !important; }
+  /* Labels — bumped to 0.8rem, pointer-events none */
   .cycle-label {
-    position: absolute; font-size: 0.65rem; color: rgba(255,255,255,0.45);
+    position: absolute; font-size: 0.8rem; color: rgba(255,255,255,0.45);
     font-weight: 600; text-align: center; line-height: 1.3;
-    transition: color 0.3s ease;
+    transition: color 0.3s ease; pointer-events: none;
   }
   .cycle-label.active { color: rgba(255,255,255,0.95); }
   .cycle-center {
     position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
-    font-size: 0.58rem; font-weight: 700; color: rgba(216,183,67,0.65);
+    font-size: 0.68rem; font-weight: 700; color: rgba(216,183,67,0.65);
     text-align: center; line-height: 1.3; letter-spacing: 0.04em; text-transform: uppercase;
+    pointer-events: none;
   }
+
+  /* Node hover tooltips */
+  .cycle-tooltip {
+    position: absolute;
+    background: rgba(8,14,24,0.96);
+    border: 1px solid rgba(216,183,67,0.4);
+    border-radius: 8px;
+    padding: 0.55rem 0.85rem;
+    font-size: 0.72rem;
+    line-height: 1.5;
+    color: rgba(255,255,255,0.85);
+    white-space: nowrap;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.18s ease, transform 0.18s ease;
+    z-index: 10;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.55);
+  }
+  .cycle-tooltip strong {
+    color: #D8B743; display: block; margin-bottom: 0.15rem;
+    font-size: 0.7rem; letter-spacing: 0.04em; text-transform: uppercase;
+  }
+  #ct-0 { bottom: calc(100% + 0.5rem); left: 50%; transform: translateX(-50%) translateY(6px); }
+  #ct-0.cycle-tooltip--visible { opacity: 1; transform: translateX(-50%) translateY(0); }
+  #ct-1 { top: 50%; left: calc(100% + 0.5rem); transform: translateY(calc(-50% + 6px)); }
+  #ct-1.cycle-tooltip--visible { opacity: 1; transform: translateY(-50%); }
+  #ct-2 { top: calc(100% + 0.5rem); left: 50%; transform: translateX(-50%) translateY(-6px); }
+  #ct-2.cycle-tooltip--visible { opacity: 1; transform: translateX(-50%) translateY(0); }
+  #ct-3 { top: 50%; right: calc(100% + 0.5rem); transform: translateY(calc(-50% + 6px)); }
+  #ct-3.cycle-tooltip--visible { opacity: 1; transform: translateY(-50%); }
 
   /* Circular latency diagram */
   .circ-latency-wrap { display: flex; flex-direction: column; align-items: center; gap: 0; }
-  .circ-diagram-row { display: flex; align-items: center; gap: 3rem; flex-wrap: wrap; justify-content: center; }
+  .circ-latency-wrap--large { padding: 1rem; }
+  .circ-diagram-row { display: flex; align-items: center; gap: 3.5rem; flex-wrap: wrap; justify-content: center; }
   .circ-svg-container { width: 300px; height: 300px; flex-shrink: 0; }
+  .circ-svg-container--lg { width: 340px; height: 340px; }
+  @media (min-width: 640px) { .circ-svg-container--lg { width: 420px; height: 420px; } }
   .circ-svg { width: 100%; height: 100%; overflow: visible; }
+
+  /* Story sequential reveal */
+  .story-line { transition: opacity 0.5s ease; }
+  .story-line--dim { opacity: 0.22; }
+  .story-line--active { opacity: 1; }
+  .story-line--past { opacity: 0.38; }
 
   .circ-legend { display: flex; flex-direction: column; min-width: 160px; }
   .circ-legend-item { display: flex; align-items: flex-start; gap: 0.75rem; }
