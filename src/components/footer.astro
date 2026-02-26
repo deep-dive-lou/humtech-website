@@ -1,19 +1,82 @@
-<footer class="bg-navy py-10">
-  <div class="max-w-4xl mx-auto px-4">
-    <!-- Logo -->
-    <div class="flex justify-center mb-8">
-      <img src="/public/bg-logo.png" alt="HumTech.ai" class="h-12 w-auto" />
+<footer style="background:#080e18;" class="border-t border-white/[0.05] relative overflow-hidden">
+
+  <!-- Subtle dot grid background (matches inspo) -->
+  <div class="absolute inset-0 pointer-events-none" aria-hidden="true" style="background-image: radial-gradient(rgba(255,255,255,0.06) 1px, transparent 1px); background-size: 28px 28px;"></div>
+
+  <!-- Main footer body -->
+  <div class="relative max-w-6xl mx-auto px-6 pt-16 pb-10">
+
+    <!-- Top: statement left + links right -->
+    <div class="flex flex-col lg:flex-row gap-12 lg:gap-20 mb-14">
+
+      <!-- Left: logo + CTA -->
+      <div class="lg:max-w-xs xl:max-w-sm shrink-0">
+        <img src="/public/bg-logo.png" alt="HumTech.ai" class="h-10 w-auto mb-6 opacity-90" />
+        <a
+          href="/free-ai-diagnostic"
+          class="inline-flex items-center gap-2 bg-yellow hover:bg-yellow-light text-navy font-semibold text-sm px-5 py-3 rounded-lg transition-colors duration-200">
+          Get Your Free Diagnostic
+          <svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+          </svg>
+        </a>
+      </div>
+
+      <!-- Right: link columns -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-sm flex-1">
+
+        <!-- Company -->
+        <div>
+          <p class="text-white/30 uppercase tracking-[0.14em] text-[11px] font-semibold mb-4">Company</p>
+          <ul class="space-y-3">
+            <li><a href="/" class="text-white/60 hover:text-white transition-colors">Home</a></li>
+            <li><a href="/team" class="text-white/60 hover:text-white transition-colors">Meet the Team</a></li>
+            <li><a href="/faq" class="text-white/60 hover:text-white transition-colors">FAQ</a></li>
+          </ul>
+        </div>
+
+        <!-- Services -->
+        <div>
+          <p class="text-white/30 uppercase tracking-[0.14em] text-[11px] font-semibold mb-4">Services</p>
+          <ul class="space-y-3">
+            <li><a href="/services" class="text-white/60 hover:text-white transition-colors">Our Services</a></li>
+            <li><a href="/case-study" class="text-white/60 hover:text-white transition-colors">Case Studies</a></li>
+          </ul>
+        </div>
+
+        <!-- Get Started -->
+        <div>
+          <p class="text-white/30 uppercase tracking-[0.14em] text-[11px] font-semibold mb-4">Get Started</p>
+          <ul class="space-y-3">
+            <li><a href="/free-ai-diagnostic" class="text-white/60 hover:text-white transition-colors">Free AI Diagnostic</a></li>
+            <li><a href="/contact" class="text-white/60 hover:text-white transition-colors">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <!-- Legal -->
+        <div>
+          <p class="text-white/30 uppercase tracking-[0.14em] text-[11px] font-semibold mb-4">Legal</p>
+          <ul class="space-y-3">
+            <li><a href="/privacy" class="text-white/60 hover:text-white transition-colors">Privacy Policy</a></li>
+            <li><a href="mailto:hello@humtech.ai" class="text-white/60 hover:text-white transition-colors">hello@humtech.ai</a></li>
+          </ul>
+        </div>
+
+      </div>
     </div>
 
-    <!-- Links and Contact inline -->
-    <div class="flex flex-col sm:flex-row justify-center items-center gap-6 sm:gap-8 mb-6 text-sm">
-      <a href="/privacy" class="text-white/70 hover:text-white transition-colors">Privacy Policy</a>
-      <a href="mailto:hello@humtech.ai" class="text-white/70 hover:text-white transition-colors">hello@humtech.ai</a>
+    <!-- Divider -->
+    <div class="h-px bg-gradient-to-r from-transparent via-white/10 to-transparent mb-8"></div>
+
+    <!-- Giant wordmark (Retool-style) -->
+    <div aria-hidden="true" style="font-size:clamp(4rem,14vw,14rem); font-weight:900; color:rgba(255,255,255,0.035); line-height:0.85; letter-spacing:-0.04em; overflow:hidden; user-select:none; pointer-events:none; margin-bottom:1.5rem; white-space:nowrap;">HumTech.</div>
+
+    <!-- Bottom bar: copyright + legal -->
+    <div class="text-xs text-white/35 space-y-1">
+      <p>© 2026 HumTech.ai Ltd. All rights reserved.</p>
+      <p>Company No. 17016552 | Registered in England & Wales</p>
+      <p>Registered Office: 10-12 Barnes High Street, London, United Kingdom, SW13 9LW</p>
     </div>
 
-    <!-- Copyright -->
-    <p class="text-center text-sm text-white/50">
-      © 2026 HumTech.ai. All rights reserved.
-    </p>
   </div>
 </footer>

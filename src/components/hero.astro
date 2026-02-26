@@ -10,9 +10,6 @@ import trustedLogoHnr from "@/assets/trusted-logo-hnr.png";
 import trustedLogoOptama from "@/assets/trusted-logo-optama.png";
 import trustedLogoSr from "@/assets/trusted-logo-sr.png";
 import trustedLogoZenith from "@/assets/trusted-logo-zen.png";
-import frictionGraphic from "@/assets/friction-graphic-bg.png";
-import cycleHireGraphic from "@/assets/cycle-hire-bg.png";
-import latencyGraphic from "@/assets/latency-bg.png";
 const trustedLogos = [
   { src: trustedLogoEcop, alt: "ECOP" },
   { src: trustedLogoAse, alt: "ASE" },
@@ -27,489 +24,542 @@ const trustedLogos = [
 ];
 ---
 
+<!-- Hero background wrapper — covers carousel + hero -->
+<div class="hero-bg-wrapper" style="position:relative; overflow:hidden; background:#061528;">
+  <!-- Canvas background (covers carousel + hero) -->
+  <div class="absolute inset-0 pointer-events-none" aria-hidden="true" style="z-index:0;">
+    <div class="hero-aurora hero-aurora-1"></div>
+    <div class="hero-aurora hero-aurora-2"></div>
+    <canvas id="hero-canvas" class="absolute inset-0 w-full h-full"></canvas>
+    <div class="absolute inset-0" style="background-image: linear-gradient(rgba(255,255,255,0.018) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.018) 1px, transparent 1px); background-size: 52px 52px; mask-image: radial-gradient(ellipse at 50% 40%, rgba(0,0,0,0.5) 0%, transparent 75%);"></div>
+    <div class="absolute inset-0 bg-gradient-to-b from-navy/40 via-transparent to-navy pointer-events-none"></div>
+  </div>
+
+<!-- Trusted By Strip — infinite CSS marquee on transparent bg -->
+<section class="trusted-top-strip" style="position:relative; z-index:20; overflow:hidden; padding:1.4rem 0;">
+  <!-- Edge fade masks -->
+  <div style="position:absolute;top:0;left:0;bottom:0;width:120px;background:linear-gradient(to right,rgba(6,21,40,0.95),transparent);z-index:2;pointer-events:none;"></div>
+  <div style="position:absolute;top:0;right:0;bottom:0;width:120px;background:linear-gradient(to left,rgba(6,21,40,0.95),transparent);z-index:2;pointer-events:none;"></div>
+  <!-- Marquee track — tripled for seamless loop -->
+  <div class="marquee-track" style="display:flex;gap:3rem;width:max-content;animation:marquee-scroll 28s linear infinite;">
+    {[...trustedLogos, ...trustedLogos, ...trustedLogos].map((logo) => (
+      <div style="display:flex;align-items:center;flex-shrink:0;">
+        <Image
+          src={logo.src}
+          alt={logo.alt}
+          class="h-9 max-w-[110px] w-auto object-contain opacity-70 hover:opacity-90 transition-opacity duration-300"
+          height={48}
+        />
+      </div>
+    ))}
+  </div>
+</section>
+
 <!-- Hero Section -->
-<main class="pt-14 md:pt-20 pb-0 bg-navy relative overflow-hidden">
-  <!-- Animated background elements -->
-  <div class="absolute inset-0 pointer-events-none">
-    <div class="absolute top-10 left-1/4 w-96 h-96 bg-blue/10 rounded-full blur-3xl animate-float"></div>
-    <div class="absolute bottom-10 right-1/4 w-80 h-80 bg-yellow/10 rounded-full blur-3xl animate-float delay-200"></div>
-    <div class="absolute top-1/2 left-10 w-64 h-64 bg-green/10 rounded-full blur-3xl animate-float delay-400"></div>
-  </div>
+<main class="pt-10 md:pt-14 pb-0 relative" style="z-index:10;">
 
-  <!-- Gradient overlay -->
-  <div class="absolute inset-0 bg-gradient-to-b from-navy via-transparent to-navy pointer-events-none"></div>
+  <div class="max-w-screen-2xl mx-auto px-6 lg:px-16 relative z-10">
 
-  <div class="text-center max-w-5xl mx-auto px-4 relative z-10">
-    <p class="hero-eyebrow text-sm md:text-base font-bold text-yellow tracking-widest uppercase mb-4 animate-fade-in-up max-w-4xl mx-auto">
-      IF YOU'RE NOT DOING THIS IN 2026 THEN YOU'RE FALLING BEHIND...
-    </p>
-    <h1
-      class="hero-main-title text-4xl lg:text-5xl xl:text-6xl font-extrabold lg:tracking-tight xl:tracking-tighter text-white animate-fade-in-up delay-100 mx-auto">
-      Every Business NOT Using AI to Enhance Performance is Losing Profitability by the Minute
-    </h1>
-    <p class="hero-subtitle text-xl md:text-2xl mt-4 text-yellow font-bold animate-fade-in-up delay-200 mx-auto">
-      Eliminate Friction and Accelerate Growth Using Our Custom AI Revenue Engine
-    </p>
+    <!-- Centered hero text -->
+    <div class="max-w-3xl mx-auto text-center animate-fade-in-up pb-10 md:pb-14">
 
-    <div class="mt-4 mb-3 animate-fade-in-up delay-300">
+      <h1
+        class="hero-main-title text-4xl lg:text-5xl xl:text-6xl font-extrabold tracking-tight text-white">
+        Every Business NOT Using AI in 2026 is Losing Revenue by the Minute
+      </h1>
+      <p class="hero-subtitle text-xl md:text-2xl mt-4 text-yellow font-bold text-center mx-auto">
+        Eliminate Friction and Accelerate Growth<br/>Using Our Custom AI Revenue Engine
+      </p>
 
-      <!-- Mobile showcase -->
-      <div class="block md:hidden mobile-showcase">
-        <div class="mobile-showcase-header">
-          <img src="/public/bg-logo.png" alt="AI Revenue Engine" class="mobile-showcase-logo" />
-          <p class="mobile-showcase-title">AI Revenue Engine&trade;</p>
-        </div>
-        <div class="mobile-showcase-grid">
-          <div class="mobile-showcase-card">No Retainers /<br/>Upfront Costs</div>
-          <div class="mobile-showcase-card">Pay on Results Only</div>
-          <div class="mobile-showcase-card">On Demand<br/>Multidisciplinary Team</div>
-          <div class="mobile-showcase-card">Zero Friction,<br/>Done for You System</div>
-          <div class="mobile-showcase-card mobile-showcase-card-accent">Results in Weeks</div>
-        </div>
-      </div>
-
-      <!-- Desktop diagram (hidden on mobile) -->
-      <div class="hero-core-shell mx-auto max-w-4xl hidden md:block">
-        <div>
-          <div class="hero-core-glow" aria-hidden="true"></div>
-          <div class="hero-core-grid" aria-hidden="true"></div>
-          <div class="hero-core-techlines" aria-hidden="true"></div>
-          <div class="hero-core-diagram" role="img" aria-label="AI Revenue Engine - No Retainers, Pay on Results, On Demand Multidisciplinary Team, Done for You System, Results in Weeks">
-          <svg class="hero-core-links hero-core-lines hero-core-links-desktop" viewBox="0 0 1000 420" preserveAspectRatio="none" aria-hidden="true">
-            <line x1="472" y1="210" x2="315" y2="105" />
-            <line x1="472" y1="210" x2="315" y2="315" />
-            <line x1="528" y1="210" x2="690" y2="76" />
-            <line x1="528" y1="210" x2="690" y2="210" />
-            <line x1="528" y1="210" x2="690" y2="344" />
+      <!-- CTA button -->
+      <div class="mt-8 animate-fade-in-up delay-300 flex flex-col sm:flex-row gap-4 justify-center">
+        <a
+          href="/free-ai-diagnostic"
+          class="inline-flex items-center justify-center gap-2 bg-yellow hover:bg-yellow-light text-navy font-bold px-8 py-4 rounded-full transition-all duration-300 hover:shadow-lg hover:shadow-yellow/30 text-lg">
+          Get Your Free Diagnostic
+          <svg class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
           </svg>
-          <svg class="hero-core-links hero-core-dots hero-core-links-desktop" viewBox="0 0 1000 420" preserveAspectRatio="none" aria-hidden="true">
-            <circle cx="315" cy="105" r="5.8"></circle>
-            <circle cx="315" cy="315" r="5.8"></circle>
-            <circle cx="690" cy="76" r="5.8"></circle>
-            <circle cx="690" cy="210" r="5.8"></circle>
-            <circle cx="690" cy="344" r="5.8"></circle>
-          </svg>
-          <svg class="hero-core-links hero-core-lines hero-core-links-mobile" viewBox="0 0 1000 420" preserveAspectRatio="none" aria-hidden="true">
-            <line x1="472" y1="210" x2="270" y2="147" />
-            <line x1="472" y1="210" x2="270" y2="273" />
-            <line x1="528" y1="210" x2="730" y2="118" />
-            <line x1="528" y1="210" x2="730" y2="210" />
-            <line x1="528" y1="210" x2="730" y2="302" />
-          </svg>
-          <svg class="hero-core-links hero-core-dots hero-core-links-mobile" viewBox="0 0 1000 420" preserveAspectRatio="none" aria-hidden="true">
-            <circle cx="270" cy="147" r="5.8"></circle>
-            <circle cx="270" cy="273" r="5.8"></circle>
-            <circle cx="730" cy="118" r="5.8"></circle>
-            <circle cx="730" cy="210" r="5.8"></circle>
-            <circle cx="730" cy="302" r="5.8"></circle>
-          </svg>
-
-          <div class="hero-core-hex-wrap">
-            <div class="hero-core-hex-ring">
-              <div class="hero-core-hex">
-                <img src="/public/bg-logo.png" alt="" class="hero-core-logo" aria-hidden="true" />
-                <span>AI REVENUE<br/>ENGINE&trade;</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="hero-core-node node-left-top">No Retainers /<br/>Upfront Costs</div>
-          <div class="hero-core-node node-left-bottom">Pay on Results Only</div>
-          <div class="hero-core-node node-right-top">On Demand<br/>Multidisciplinary Team</div>
-          <div class="hero-core-node node-right-middle">Zero Friction,<br/>Done for You System</div>
-          <div class="hero-core-node node-right-bottom">Results in Weeks</div>
-        </div>
-        </div>
+        </a>
       </div>
     </div>
 
+    <!-- Keyboard — hero product visual, full width below CTA -->
+    <div class="w-full flex items-center justify-center animate-fade-in-up delay-200 kb-wrapper pb-10 md:pb-16" id="hero-kb-wrapper">
+      <div class="kb-container" id="kb-container">
+
+        <!-- LED Screen -->
+        <div class="kb-screen" id="kb-screen">
+          <div class="kb-screen-content">
+            <span class="kb-screen-prompt">&gt;</span>
+            <span class="kb-screen-text" id="kb-screen-text">AI REVENUE ENGINE&trade;</span>
+            <span class="kb-screen-cursor">&#x2588;</span>
+          </div>
+        </div>
+
+        <!-- Keyboard Body -->
+        <div class="kb-body">
+
+          <!-- Row 1 -->
+          <div class="kb-row">
+            <div class="kb-key kb-key-sm">ESC</div>
+            <div class="kb-key kb-key-sm">Q</div>
+            <div class="kb-key kb-key-sm">W</div>
+            <div class="kb-key kb-key-value kb-key-yellow" data-val="No Retainers / Upfront Costs">No Retainers /<br/>Upfront Costs</div>
+            <div class="kb-key kb-key-sm">R</div>
+            <div class="kb-key kb-key-sm">T</div>
+          </div>
+
+          <!-- Row 2 -->
+          <div class="kb-row">
+            <div class="kb-key kb-key-sm">A</div>
+            <div class="kb-key kb-key-sm">S</div>
+            <div class="kb-key kb-key-value kb-key-blue" data-val="Pay on Results Only">Pay on Results Only</div>
+            <div class="kb-key kb-key-sm">D</div>
+            <div class="kb-key kb-key-value kb-key-yellow" data-val="On Demand Multidisciplinary Team">On Demand<br/>Multidisciplinary Team</div>
+            <div class="kb-key kb-key-sm">F</div>
+          </div>
+
+          <!-- Row 3 -->
+          <div class="kb-row">
+            <div class="kb-key kb-key-sm">Z</div>
+            <div class="kb-key kb-key-sm">X</div>
+            <div class="kb-key kb-key-value kb-key-blue" data-val="Zero Friction, Done for You System">Zero Friction,<br/>Done for You System</div>
+            <div class="kb-key kb-key-sm">V</div>
+            <div class="kb-key kb-key-value kb-key-green" data-val="Results in Weeks">Results in Weeks</div>
+          </div>
+
+          <!-- Spacebar -->
+          <div class="kb-row">
+            <div class="kb-key kb-key-space kb-key-yellow" data-val="AI REVENUE ENGINE™">AI REVENUE ENGINE&trade;</div>
+          </div>
+
+        </div><!-- /kb-body -->
+      </div><!-- /kb-container -->
+    </div><!-- /hero kb wrapper -->
+
   </div>
-  <!-- Trusted By & Credentials Section -->
-  <section class="pt-8 md:pt-10 pb-14 md:pb-16">
-  <div class="max-w-5xl mx-auto px-4">
-    <!-- Trusted By -->
-    <div class="text-center mb-10">
-      <div class="trusted-by-head-wrap">
-        <h3 class="trusted-by-heading">Trusted by:</h3>
-      </div>
-      <div class="trusted-carousel-wrapper">
-        <div class="trusted-carousel">
-          {[...trustedLogos, ...trustedLogos].map((logo) => (
-            <div class="trusted-logo-item">
-              <Image
-                src={logo.src}
-                alt={logo.alt}
-                class="h-12 md:h-16 w-auto object-contain brightness-0 invert opacity-70 hover:opacity-100 transition-opacity duration-300"
-                height={64}
-              />
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
-
-    <!-- Credential Cards -->
-    <div class="grid md:grid-cols-3 gap-6 mt-10">
-      <!-- Card 1: Qualifications -->
-      <div class="cred-card group">
-        <div class="cred-card-inner">
-          <div class="mb-4">
-            <svg class="w-12 h-12 text-yellow" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
-              <circle cx="24" cy="24" r="6" />
-              <circle cx="12" cy="12" r="4" />
-              <circle cx="36" cy="12" r="4" />
-              <circle cx="12" cy="36" r="4" />
-              <circle cx="36" cy="36" r="4" />
-              <line x1="18" y1="18" x2="20" y2="20" />
-              <line x1="30" y1="18" x2="28" y2="20" />
-              <line x1="18" y1="30" x2="20" y2="28" />
-              <line x1="30" y1="30" x2="28" y2="28" />
-              <circle cx="8" cy="24" r="3" />
-              <circle cx="40" cy="24" r="3" />
-              <line x1="11" y1="24" x2="18" y2="24" />
-              <line x1="30" y1="24" x2="37" y2="24" />
-            </svg>
-          </div>
-          <p class="text-white/80 text-sm md:text-base leading-relaxed">
-            Specialists with BSc (Hons) and MSc qualifications in computer science and psychology
-          </p>
-        </div>
-      </div>
-
-      <!-- Card 2: Universities -->
-      <div class="cred-card group">
-        <div class="cred-card-inner">
-          <div class="mb-4">
-            <svg class="w-12 h-12 text-yellow" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M24 4L4 16h40L24 4z" />
-              <line x1="10" y1="16" x2="10" y2="36" />
-              <line x1="18" y1="16" x2="18" y2="36" />
-              <line x1="30" y1="16" x2="30" y2="36" />
-              <line x1="38" y1="16" x2="38" y2="36" />
-              <rect x="4" y="36" width="40" height="4" />
-              <rect x="2" y="40" width="44" height="4" />
-            </svg>
-          </div>
-          <p class="text-white/80 text-sm md:text-base leading-relaxed">
-            Graduate experts from top 10 universities.
-          </p>
-        </div>
-      </div>
-
-      <!-- Card 3: Experience -->
-      <div class="cred-card group">
-        <div class="cred-card-inner">
-          <div class="mb-4">
-            <svg class="w-12 h-12 text-yellow" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
-              <circle cx="24" cy="24" r="18" />
-              <circle cx="24" cy="24" r="14" />
-              <path d="M24 12v12l8 6" />
-              <circle cx="24" cy="24" r="2" fill="currentColor" />
-              <line x1="24" y1="6" x2="24" y2="10" />
-              <line x1="24" y1="38" x2="24" y2="42" />
-              <line x1="6" y1="24" x2="10" y2="24" />
-              <line x1="38" y1="24" x2="42" y2="24" />
-            </svg>
-          </div>
-          <p class="text-white/80 text-sm md:text-base leading-relaxed">
-            Over 15 years experience in building and optimizing client acquisition systems.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-  </section>
 </main>
+</div><!-- /hero-bg-wrapper -->
 
-<!-- Kill Zone / Engagement Latency Section -->
-<section class="kill-zone-section pt-12 pb-16 md:pt-16 md:pb-24 bg-navy">
-  <div class="max-w-4xl mx-auto px-4">
-    <!-- Headline -->
-    <h2 class="kill-zone-headline font-bold text-yellow text-center mb-12 italic">
-      It's no longer "the big that beats the small"
-      <br class="md:hidden" />
-      it's "the fast that runs over the slow"
-    </h2>
+<!-- Credentials Section -->
+<section id="section-credentials" style="background:#080e18; padding: 5rem 0 4.5rem;">
+  <div class="max-w-screen-2xl mx-auto px-8 lg:px-16">
+    <div class="cred-split reveal">
 
-    <!-- Kill Zone Graphic (CSS/SVG) -->
-    <div class="kill-zone-graphic mx-auto max-w-4xl mb-6">
-      <div class="kill-zone-wrapper">
-        <!-- Labels -->
-        <div class="kill-zone-labels">
-          <div class="kill-zone-label-left">
-            <span class="kill-zone-end-label">Customer<br/>Interest</span>
+      <!-- Left: quote + credential cards -->
+      <div class="cred-left-col">
+
+        <blockquote class="cred-section-quote">
+          It's no longer <span class="text-yellow">"the big that beats the small"</span>
+          <br/>it's <span class="text-yellow">"the fast that runs over the slow"</span>
+        </blockquote>
+
+        <div class="cred-cards-row">
+          <!-- Graduation cap — qualifications -->
+          <div class="cred-card cred-card--yellow">
+            <span class="cred-card-bar"></span>
+            <div class="cred-card-content">
+              <svg class="cred-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 1.1 2.7 3 6 3s6-1.9 6-3v-5"/>
+              </svg>
+              <p>Specialists with BSc (Hons) and MSc qualifications in computer science and psychology</p>
+            </div>
           </div>
-          <div class="kill-zone-label-right">
-            <span class="kill-zone-end-label">Business<br/>Response</span>
+          <!-- University building �� top 10 -->
+          <div class="cred-card cred-card--blue">
+            <span class="cred-card-bar"></span>
+            <div class="cred-card-content">
+              <svg class="cred-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M2 20h20M4 20V10l8-6 8 6v10"/><path d="M9 20v-4a3 3 0 016 0v4"/><line x1="12" y1="7" x2="12" y2="7.01"/>
+              </svg>
+              <p>Graduate experts from top 10 universities</p>
+            </div>
+          </div>
+          <!-- Clock — 15 years experience -->
+          <div class="cred-card cred-card--green">
+            <span class="cred-card-bar"></span>
+            <div class="cred-card-content">
+              <svg class="cred-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+              </svg>
+              <p>Over 15 years experience in building and optimizing client acquisition systems</p>
+            </div>
           </div>
         </div>
 
-        <!-- The hazard bar -->
-        <div class="kill-zone-bar">
-          <!-- Left icon circle -->
-          <div class="kill-zone-icon kill-zone-icon-left">
-            <svg class="w-8 h-8 text-navy" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M3 13h1v7c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2v-7h1a1 1 0 0 0 .7-1.7l-9-9a1 1 0 0 0-1.4 0l-9 9A1 1 0 0 0 3 13z"/>
-            </svg>
+      </div>
+
+      <!-- Right: live metrics dashboard -->
+      <div class="cred-right-col">
+        <div class="cred-dash" id="cred-dash">
+          <!-- Dot grid background -->
+          <div class="cred-dash-grid" aria-hidden="true"></div>
+
+          <!-- Top row: mini stat cards -->
+          <div class="cred-dash-stats">
+            <div class="cred-dash-stat">
+              <span class="cred-dash-stat-label">Response Time</span>
+              <span class="cred-dash-stat-val" data-target="1.2" data-suffix="s">0s</span>
+              <span class="cred-dash-stat-delta cred-dash-stat-delta--good">-94%</span>
+            </div>
+            <div class="cred-dash-stat">
+              <span class="cred-dash-stat-label">Booking Rate</span>
+              <span class="cred-dash-stat-val" data-target="98" data-suffix="%">0%</span>
+              <span class="cred-dash-stat-delta cred-dash-stat-delta--good">+42%</span>
+            </div>
+            <div class="cred-dash-stat">
+              <span class="cred-dash-stat-label">Revenue Lift</span>
+              <span class="cred-dash-stat-val" data-target="50" data-suffix="%">0%</span>
+              <span class="cred-dash-stat-delta cred-dash-stat-delta--good">+50%</span>
+            </div>
           </div>
-          <!-- Center text -->
-          <div class="kill-zone-center-text">
-            <span class="kill-zone-bar-title">The Kill Zone (Engagement Latency)</span>
+
+          <!-- Animated bar chart -->
+          <div class="cred-dash-chart">
+            <div class="cred-dash-chart-label">Monthly Revenue</div>
+            <div class="cred-dash-bars">
+              <div class="cred-dash-bar" style="--bar-h:35%;--bar-delay:0s;"></div>
+              <div class="cred-dash-bar" style="--bar-h:48%;--bar-delay:0.1s;"></div>
+              <div class="cred-dash-bar" style="--bar-h:42%;--bar-delay:0.2s;"></div>
+              <div class="cred-dash-bar" style="--bar-h:58%;--bar-delay:0.3s;"></div>
+              <div class="cred-dash-bar" style="--bar-h:52%;--bar-delay:0.4s;"></div>
+              <div class="cred-dash-bar" style="--bar-h:68%;--bar-delay:0.5s;"></div>
+              <div class="cred-dash-bar" style="--bar-h:75%;--bar-delay:0.6s;"></div>
+              <div class="cred-dash-bar cred-dash-bar--highlight" style="--bar-h:92%;--bar-delay:0.7s;"></div>
+            </div>
           </div>
-          <!-- Right icon circle -->
-          <div class="kill-zone-icon kill-zone-icon-right">
-            <svg class="w-8 h-8 text-navy" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M20 3H4c-1.1 0-2 .9-2 2v11c0 1.1.9 2 2 2h7v2H8v2h8v-2h-3v-2h7c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 13H4V5h16v11z"/>
-            </svg>
+
+          <!-- Sparkline row -->
+          <div class="cred-dash-sparkrow">
+            <div class="cred-dash-spark">
+              <span class="cred-dash-spark-label">Leads</span>
+              <svg class="cred-dash-sparkline" viewBox="0 0 80 24" fill="none" aria-hidden="true">
+                <polyline points="0,20 10,18 20,14 30,16 40,10 50,12 60,6 70,4 80,2" stroke="#D8B743" stroke-width="2" fill="none"/>
+                <polyline points="0,20 10,18 20,14 30,16 40,10 50,12 60,6 70,4 80,2" stroke="none" fill="url(#sparkGold)" opacity="0.15"/>
+                <defs><linearGradient id="sparkGold" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#D8B743"/><stop offset="100%" stop-color="transparent"/></linearGradient></defs>
+              </svg>
+            </div>
+            <div class="cred-dash-spark">
+              <span class="cred-dash-spark-label">Bookings</span>
+              <svg class="cred-dash-sparkline" viewBox="0 0 80 24" fill="none" aria-hidden="true">
+                <polyline points="0,22 10,20 20,17 30,15 40,12 50,10 60,7 70,5 80,3" stroke="#3DB2DD" stroke-width="2" fill="none"/>
+                <polyline points="0,22 10,20 20,17 30,15 40,12 50,10 60,7 70,5 80,3" stroke="none" fill="url(#sparkBlue)" opacity="0.15"/>
+                <defs><linearGradient id="sparkBlue" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#3DB2DD"/><stop offset="100%" stop-color="transparent"/></linearGradient></defs>
+              </svg>
+            </div>
           </div>
-          <!-- Caption below bar -->
-          <div class="kill-zone-sublabel">
-            <span class="kill-zone-caption">Engagement Latency: The time gap between customer interest and your business's meaningful response.</span>
+
+          <!-- Live pulse dot -->
+          <div class="cred-dash-live">
+            <span class="cred-dash-live-dot"></span>
+            <span class="cred-dash-live-text">Live</span>
           </div>
         </div>
       </div>
-    </div>
 
-    <!-- Copy blocks -->
-    <div class="kill-zone-copy-wrap max-w-3xl mx-auto space-y-6">
-      <div>
-        <p class="kill-zone-copy">
-          Your competition is already <span class="text-yellow">closing this gap with AI.</span><br/>
-          If you don't program <span class="text-yellow">instantaneous response, you're invisible.</span>
-        </p>
-      </div>
-
-      <p class="kill-zone-copy">
-        Speed is now the ultimate currency and 'lead response latency' is the difference between closing a deal and losing it to a competitor who instantly responds.
-      </p>
-
-      <p class="kill-zone-copy">
-        Most companies believe buying updated software fixes this, but they lack the adaptive ecosystem to make it work.
-      </p>
-
-      <p class="kill-zone-copy">
-        You have the tools... but not the strategy.
-      </p>
-    </div>
-
-    <!-- Friction Graphic -->
-    <div class="mt-12">
-      <Image
-        src={frictionGraphic}
-        alt="Friction - workflow showing Login, Data Entry, Form Submission, Platform Switch, Approval Workflow, Report Generation, Client Portal, Syncing, Task Manager, Server"
-        class="mx-auto max-w-4xl w-full friction-graphic"
-        widths={[400, 768, 1024]}
-        sizes="(max-width: 768px) 100vw, 768px"
-      />
     </div>
   </div>
 </section>
 
-<!-- 3 Metrics Section -->
-<section class="pt-2 pb-16 md:pt-4 md:pb-24 bg-navy">
-  <div class="max-w-5xl mx-auto px-4">
-    <!-- Headline -->
-    <h2 class="section-title text-3xl lg:text-4xl xl:text-5xl font-bold text-yellow text-center mb-12 leading-tight">
-      You Need a Fractional AI Growth Team That Measures and Optimizes These 3 Metrics
+<!-- Kill Zone / Engagement Latency Section -->
+<section id="section-killzone" class="kill-zone-section relative overflow-hidden" style="background: #f0f2f5;">
+  <div class="max-w-screen-2xl mx-auto px-8 lg:px-16">
+
+    <!-- Two-column layout: race visual left, copy right -->
+    <div class="kill-zone-grid">
+
+      <!-- LEFT COLUMN: Donut clock -->
+      <div class="kill-zone-graphic-col reveal">
+        <div class="kz-race" id="kz-race">
+          <!-- Title -->
+          <div class="kz-race-title">THE KILL ZONE</div>
+          <div class="kz-race-tagline">Engagement Latency</div>
+          <div class="kz-race-subtitle">The time gap between customer interest and your business's meaningful response.</div>
+
+          <!-- Donut ring -->
+          <div class="kz-ring-wrap">
+            <svg class="kz-ring-svg" viewBox="0 0 240 240" id="kz-ring-svg">
+              <circle class="kz-ring-track" cx="120" cy="120" r="96" fill="none" stroke-width="20"/>
+              <circle class="kz-ring-progress" id="kz-ring-progress" cx="120" cy="120" r="96" fill="none" stroke-width="20" stroke-linecap="round" transform="rotate(-90 120 120)"/>
+            </svg>
+            <div class="kz-ring-center">
+              <!-- Incoming lead animation (shows first, then hides) -->
+              <div class="kz-ring-incoming" id="kz-ring-incoming">
+                <svg class="kz-incoming-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                <span class="kz-incoming-text">New lead!</span>
+              </div>
+              <!-- Timer (hidden initially, shown after intro) -->
+              <div class="kz-ring-timer" id="kz-ring-timer" style="display:none;">
+                <div class="kz-ring-time" id="kz-ring-time">0s</div>
+                <div class="kz-ring-label" id="kz-ring-label">Your Response Time</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Milestone status -->
+          <div class="kz-milestone" id="kz-milestone"></div>
+
+          <!-- Final death blow -->
+          <div class="kz-race-gap" id="kz-race-gap">
+            <div class="kz-race-gap-label" id="kz-gap-label"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT COLUMN: Copy blocks -->
+      <div class="kill-zone-copy-col">
+        <div class="kill-zone-copy-block kz-copy-reveal" style="--kz-delay: 0ms">
+          <p class="kill-zone-copy">
+            Your competition is already <span class="kz-text-accent">closing this gap with AI.</span><br/>
+            If you don't program <span class="kz-text-accent">instantaneous response, you're invisible.</span>
+          </p>
+        </div>
+
+        <div class="kill-zone-copy-divider"></div>
+
+        <div class="kill-zone-copy-block kz-copy-reveal" style="--kz-delay: 120ms">
+          <p class="kill-zone-copy">
+            Speed is now the ultimate currency and 'lead response latency' is the difference between closing a deal and losing it to a competitor who instantly responds.
+          </p>
+        </div>
+
+        <div class="kill-zone-copy-divider"></div>
+
+        <div class="kill-zone-copy-block kz-copy-reveal" style="--kz-delay: 240ms">
+          <p class="kill-zone-copy">
+            Most companies believe buying updated software fixes this, but they lack the adaptive ecosystem to make it work.
+          </p>
+        </div>
+
+        <div class="kill-zone-copy-divider"></div>
+
+        <div class="kill-zone-copy-block kz-copy-reveal kz-copy-final" style="--kz-delay: 360ms">
+          <p class="kill-zone-copy">
+            You have the tools... but not the strategy.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- 3 Metrics Section — Stripe-inspired bento -->
+<section id="section-metrics" class="py-20 md:py-32 relative overflow-hidden" style="background:#0f2138;">
+  <!-- Background atmosphere -->
+  <div class="metrics-bg-grid"></div>
+  <div class="metrics-bg-glow metrics-bg-glow-1"></div>
+  <div class="metrics-bg-glow metrics-bg-glow-2"></div>
+
+  <div class="max-w-screen-2xl mx-auto px-8 lg:px-16 relative" style="z-index:1;">
+
+    <!-- Title -->
+    <h2 class="text-3xl lg:text-4xl xl:text-5xl font-bold leading-tight mb-16 max-w-3xl reveal" style="color:#fff;">
+      You Need a Fractional AI Growth Team That Measures and Optimizes These <span style="color:#D8B743;">3</span> Metrics
     </h2>
 
-    <!-- Metrics Grid -->
-    <div class="grid md:grid-cols-3 gap-x-8 md:gap-x-12 gap-y-0 metrics-grid">
-      <!-- Row 1: Titles -->
-      <div class="text-center flex items-start justify-center pb-6">
-        <h3 class="metrics-title font-bold text-lg md:text-xl"><span class="text-yellow">Metric 1:</span><br/><span class="text-white">Engagement Latency</span></h3>
-      </div>
-      <div class="text-center flex items-start justify-center pb-6">
-        <h3 class="metrics-title font-bold text-lg md:text-xl"><span class="text-yellow">Metric 2:</span><br/><span class="text-white">Handling Time<br/>vs. Deflection Savings</span></h3>
-      </div>
-      <div class="text-center flex items-start justify-center pb-6">
-        <h3 class="metrics-title font-bold text-lg md:text-xl"><span class="text-yellow">Metric 3:</span><br/><span class="text-white">Opportunity Cost</span></h3>
+    <!-- Asymmetric bento grid — EFFICIENCY featured, SPEED side -->
+    <div class="metrics-bento">
+
+      <!-- EFFICIENCY — featured large card (left) -->
+      <div class="m-card m-card-efficiency reveal" style="--delay:0ms;">
+        <div class="m-card-text">
+          <span class="m-card-label" style="color:#D8B743;">EFFICIENCY</span>
+          <h3 class="m-card-heading">Handling Time vs. Deflection Savings</h3>
+          <p class="m-card-desc">The specific calculation of time and money that could be reclaimed through hands-free automation.</p>
+        </div>
+        <!-- Horizontal bars visualization -->
+        <div class="m-viz m-viz-bars">
+          <div class="bar-row">
+            <div class="bar-row-label">Manual</div>
+            <div class="bar-track">
+              <div class="bar-fill bar-fill-manual" style="--bar-width:85%; --bar-color:rgba(216,183,67,0.2);">
+                <span class="bar-val">6.2 hrs/day</span>
+              </div>
+            </div>
+          </div>
+          <div class="bar-row">
+            <div class="bar-row-label">Automated</div>
+            <div class="bar-track">
+              <div class="bar-fill bar-fill-auto" style="--bar-width:12%; --bar-color:#D8B743;">
+                <span class="bar-val">0.4 hrs</span>
+              </div>
+            </div>
+          </div>
+          <div class="bar-row">
+            <div class="bar-row-label">Savings</div>
+            <div class="bar-track">
+              <div class="bar-fill bar-fill-savings" style="--bar-width:68%; --bar-color:rgba(216,183,67,0.5);">
+                <span class="bar-val">93% reclaimed</span>
+              </div>
+            </div>
+          </div>
+          <div class="bar-caption">Time reclaimed through AI deflection</div>
+        </div>
       </div>
 
-      <!-- Row 2: Icons -->
-      <div class="flex justify-center pb-6">
-        <!-- Stopwatch icon -->
-        <svg class="w-28 h-28 md:w-36 md:h-36 text-white/80" viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="2">
-          <rect x="55" y="8" width="10" height="12" rx="2" stroke="currentColor" fill="none" />
-          <line x1="90" y1="30" x2="98" y2="22" stroke-width="3" stroke-linecap="round" />
-          <circle cx="60" cy="68" r="40" />
-          <circle cx="60" cy="68" r="36" />
-          <line x1="60" y1="32" x2="60" y2="38" />
-          <line x1="60" y1="98" x2="60" y2="104" />
-          <line x1="24" y1="68" x2="30" y2="68" />
-          <line x1="90" y1="68" x2="96" y2="68" />
-          <line x1="60" y1="68" x2="42" y2="50" stroke-width="2.5" stroke-linecap="round" />
-          <circle cx="60" cy="68" r="3" fill="currentColor" />
-        </svg>
-      </div>
-      <div class="flex justify-center pb-6">
-        <!-- Scales icon -->
-        <svg class="w-28 h-28 md:w-36 md:h-36 text-white/80" viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="2">
-          <polygon points="60,12 54,24 66,24" fill="currentColor" stroke="none" />
-          <line x1="20" y1="24" x2="100" y2="24" stroke-width="2.5" />
-          <line x1="60" y1="24" x2="60" y2="100" stroke-width="2" />
-          <line x1="40" y1="100" x2="80" y2="100" stroke-width="2.5" stroke-linecap="round" />
-          <line x1="20" y1="24" x2="14" y2="60" />
-          <line x1="20" y1="24" x2="46" y2="60" />
-          <path d="M10,60 Q30,72 50,60" stroke-width="2" />
-          <line x1="100" y1="24" x2="74" y2="60" />
-          <line x1="100" y1="24" x2="106" y2="60" />
-          <path d="M70,60 Q90,72 110,60" stroke-width="2" />
-        </svg>
-      </div>
-      <div class="flex justify-center pb-6">
-        <!-- Bar chart icon -->
-        <svg class="w-28 h-28 md:w-36 md:h-36 text-white/80" viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="2">
-          <line x1="20" y1="100" x2="110" y2="100" stroke-width="2" />
-          <line x1="20" y1="16" x2="20" y2="100" stroke-width="2" />
-          <rect x="28" y="60" width="14" height="40" fill="currentColor" opacity="0.3" stroke="currentColor" />
-          <rect x="48" y="40" width="14" height="60" fill="currentColor" opacity="0.3" stroke="currentColor" />
-          <rect x="68" y="28" width="14" height="72" fill="currentColor" opacity="0.3" stroke="currentColor" />
-          <rect x="88" y="50" width="14" height="50" fill="currentColor" opacity="0.3" stroke="currentColor" />
-          <polyline points="35,55 55,35 75,22 95,45" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none" />
-          <polygon points="95,45 100,38 92,40" fill="currentColor" stroke="none" />
-        </svg>
+      <!-- SPEED — compact side card (right) -->
+      <div class="m-card m-card-speed reveal" style="--delay:80ms;">
+        <div class="m-card-text">
+          <span class="m-card-label" style="color:#3DB2DD;">SPEED</span>
+          <h3 class="m-card-heading">Engagement Latency</h3>
+          <p class="m-card-desc">The portion of new business lost to competitors due to engagement method and response time.</p>
+        </div>
+        <!-- Compact gauge -->
+        <div class="m-viz m-viz-gauge">
+          <svg class="gauge-svg" viewBox="0 0 220 135">
+            <path class="gauge-track" d="M25,120 A85,85 0 0,1 195,120" fill="none" stroke="rgba(61,178,221,0.1)" stroke-width="14" stroke-linecap="round"/>
+            <path class="gauge-fill" d="M25,120 A85,85 0 0,1 195,120" fill="none" stroke="#3DB2DD" stroke-width="14" stroke-linecap="round"/>
+            <text x="110" y="95" text-anchor="middle" fill="#fff" font-size="32" font-weight="700" class="gauge-value-text">&lt;1</text>
+            <text x="110" y="116" text-anchor="middle" fill="rgba(255,255,255,0.4)" font-size="10" font-weight="500" letter-spacing="0.08em">MIN RESPONSE</text>
+          </svg>
+          <div class="gauge-legend">
+            <div class="gauge-legend-item">
+              <span class="gauge-legend-dot" style="background:rgba(61,178,221,0.2);"></span>
+              <span class="gauge-legend-text">Industry avg: 47 hrs</span>
+            </div>
+            <div class="gauge-legend-item">
+              <span class="gauge-legend-dot" style="background:#3DB2DD;"></span>
+              <span class="gauge-legend-text">With AI: &lt;1 min</span>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <!-- Row 3: Descriptions -->
-      <div class="text-center">
-        <p class="text-white text-sm md:text-base leading-relaxed">
-          The portion of new business lost to competitors due to engagement method and response time.
-        </p>
+      <!-- REVENUE — full-width bottom card -->
+      <div class="m-card m-card-revenue reveal" style="--delay:160ms;">
+        <div class="m-card-revenue-inner">
+          <div class="m-card-text">
+            <span class="m-card-label" style="color:#6BB790;">REVENUE</span>
+            <h3 class="m-card-heading">Opportunity Cost</h3>
+            <p class="m-card-desc">The impact of current, inefficient strategies on team morale and revenue generation.</p>
+          </div>
+          <!-- Line chart -->
+          <div class="m-viz m-viz-chart">
+            <svg class="chart-svg" viewBox="0 0 480 140" preserveAspectRatio="none">
+              <line x1="0" y1="35" x2="480" y2="35" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
+              <line x1="0" y1="70" x2="480" y2="70" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
+              <line x1="0" y1="105" x2="480" y2="105" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
+              <path class="chart-area" d="M0,125 L60,118 L120,112 L180,98 L240,75 L300,48 L360,30 L420,18 L480,8 L480,140 L0,140 Z" fill="url(#chartGradM)"/>
+              <polyline class="chart-line" points="0,125 60,118 120,112 180,98 240,75 300,48 360,30 420,18 480,8" fill="none" stroke="#6BB790" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle class="chart-dot" cx="480" cy="8" r="4" fill="#6BB790"/>
+              <circle class="chart-dot-pulse" cx="480" cy="8" r="4" fill="#6BB790" opacity="0.4"/>
+              <defs>
+                <linearGradient id="chartGradM" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#6BB790" stop-opacity="0.2"/>
+                  <stop offset="100%" stop-color="#6BB790" stop-opacity="0"/>
+                </linearGradient>
+              </defs>
+            </svg>
+            <div class="chart-x-labels">
+              <span>Q1</span><span>Q2</span><span>Q3</span><span>Q4</span>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="text-center">
-        <p class="text-white text-sm md:text-base leading-relaxed">
-          The specific calculation of time and money that could be reclaimed through hands-free automation.
-        </p>
-      </div>
-      <div class="text-center">
-        <p class="text-white text-sm md:text-base leading-relaxed">
-          The impact of current, inefficient strategies on team morale and revenue generation.
-        </p>
-      </div>
+
     </div>
   </div>
 </section>
 
 
 <!-- Why This Works Section -->
-<section class="py-16 md:py-24 bg-navy border-t border-white/10">
-  <div class="max-w-5xl mx-auto px-4">
-    <h2 class="section-title text-3xl lg:text-4xl xl:text-5xl font-bold text-white text-center mb-12 leading-tight">
-      Why This Works
-    </h2>
+<section id="section-why-works" class="py-24 md:py-32 relative overflow-hidden" style="background:#EAEDF2;">
+  <div class="max-w-screen-2xl mx-auto px-8 lg:px-16">
 
-    <div class="grid md:grid-cols-3 gap-6">
-      <!-- Card 1: Performance-Based SLA's -->
-      <div class="cred-card group">
-        <div class="cred-card-inner">
-          <div class="mb-4">
-            <div class="w-10 h-10 rounded-lg bg-green/20 flex items-center justify-center">
-              <svg class="w-5 h-5 text-green" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
-                <polyline points="22 4 12 14.01 9 11.01"/>
-              </svg>
-            </div>
-          </div>
-          <h3 class="text-white font-bold text-base md:text-lg mb-3">Performance-Based SLA</h3>
-          <p class="text-white/70 text-sm md:text-base leading-relaxed">
-            We work to hit your revenue targets, and stay with you to set new goals
-          </p>
-        </div>
-      </div>
-
-      <!-- Card 2: Direct Strategist Access -->
-      <div class="cred-card group">
-        <div class="cred-card-inner">
-          <div class="mb-4">
-            <div class="w-10 h-10 rounded-lg bg-yellow/20 flex items-center justify-center">
-              <svg class="w-5 h-5 text-yellow" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
-              </svg>
-            </div>
-          </div>
-          <h3 class="text-white font-bold text-base md:text-lg mb-3">Direct Strategist Access</h3>
-          <p class="text-white/70 text-sm md:text-base leading-relaxed">
-            Direct access to senior strategists with extensive experience - no junior teams or service desks
-          </p>
-        </div>
-      </div>
-
-      <!-- Card 3: Futureproofing -->
-      <div class="cred-card group">
-        <div class="cred-card-inner">
-          <div class="mb-4">
-            <div class="w-10 h-10 rounded-lg bg-blue/20 flex items-center justify-center">
-              <svg class="w-5 h-5 text-blue" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
-              </svg>
-            </div>
-          </div>
-          <h3 class="text-white font-bold text-base md:text-lg mb-3">Futureproofing</h3>
-          <p class="text-white/70 text-sm md:text-base leading-relaxed">
-            Stay ahead with the latest AI implementations and strategic enhancements from proven industry leaders
-          </p>
-        </div>
-      </div>
-
-      <!-- Card 4: Enterprise Strategy, SME Price -->
-      <div class="cred-card group">
-        <div class="cred-card-inner">
-          <div class="mb-4">
-            <div class="w-10 h-10 rounded-lg bg-green/20 flex items-center justify-center">
-              <svg class="w-5 h-5 text-green" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                <line x1="12" y1="1" x2="12" y2="23"/>
-                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
-              </svg>
-            </div>
-          </div>
-          <h3 class="text-white font-bold text-base md:text-lg mb-3">Enterprise Grade AI for SMEs</h3>
-          <p class="text-white/70 text-sm md:text-base leading-relaxed">
-            Get top-tier AI planning, technical execution, and support without upfront costs and monthly retainers
-          </p>
-        </div>
-      </div>
-
-      <!-- Card 5: Hands-Off Implementation -->
-      <div class="cred-card group">
-        <div class="cred-card-inner">
-          <div class="mb-4">
-            <div class="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center">
-              <svg class="w-5 h-5 text-white/70" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="3"/>
-                <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
-              </svg>
-            </div>
-          </div>
-          <h3 class="text-white font-bold text-base md:text-lg mb-3">Hands-Off Implementation</h3>
-          <p class="text-white/70 text-sm md:text-base leading-relaxed">
-            Zero technical knowledge needed - our team builds, deploys, trains and maintains custom branded systems
-          </p>
-        </div>
-      </div>
-
-      <!-- Card 6: Tailored Solutions -->
-      <div class="cred-card group">
-        <div class="cred-card-inner">
-          <div class="mb-4">
-            <div class="w-10 h-10 rounded-lg bg-blue/20 flex items-center justify-center">
-              <svg class="w-5 h-5 text-blue" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
-                <polyline points="22 4 12 14.01 9 11.01"/>
-              </svg>
-            </div>
-          </div>
-          <h3 class="text-white font-bold text-base md:text-lg mb-3">Immediate Results</h3>
-          <p class="text-white/70 text-sm md:text-base leading-relaxed">
-            Evidence-based systems which have an impact on revenue from day 1
-          </p>
-        </div>
-      </div>
+    <!-- Two-tone heading -->
+    <div class="text-center mb-16 reveal">
+      <h2 class="text-3xl lg:text-4xl xl:text-5xl font-bold leading-tight" style="color:#061528;">
+        Why This Works
+      </h2>
+      <p class="text-xl lg:text-2xl font-semibold mt-3" style="color:rgba(6,21,40,0.35);">
+        Six reasons clients see results from day one.
+      </p>
     </div>
 
-    <!-- CTA Button -->
-    <div class="text-center mt-12">
-      <button onclick="openAssessmentModal()" class="bg-yellow hover:bg-yellow-light text-navy font-bold text-lg px-10 py-4 rounded-full transition-all duration-300 hover:shadow-lg hover:shadow-yellow/30 cursor-pointer">
+    <!-- 2-column bento grid -->
+    <div class="wtw-grid">
+
+      <!-- Row 1: Performance SLA + Strategist Access -->
+      <div class="wtw-card wtw-card-featured reveal" style="--delay:0ms;">
+        <div class="wtw-card-top">
+          <span class="wtw-card-label" style="color:#6BB790;">RESULTS GUARANTEED</span>
+          <h3 class="wtw-card-title">Performance-Based SLA</h3>
+          <p class="wtw-card-body">We work to hit your revenue targets, and stay with you to set new goals</p>
+        </div>
+        <div class="wtw-stat-block">
+          <span class="wtw-stat-num wtw-counter" data-target="98" style="color:#6BB790;">0%</span>
+          <span class="wtw-stat-label">client appointment booking rate</span>
+        </div>
+      </div>
+
+      <div class="wtw-card reveal" style="--delay:60ms;">
+        <div class="wtw-card-top">
+          <span class="wtw-card-label" style="color:#D8B743;">YOUR TEAM</span>
+          <h3 class="wtw-card-title">Direct Strategist Access</h3>
+          <p class="wtw-card-body">Direct access to senior strategists with extensive experience - no junior teams or service desks</p>
+        </div>
+        <div class="wtw-badge-list">
+          <span class="wtw-badge" style="--badge:#D8B743;">BSc &amp; MSc qualified</span>
+          <span class="wtw-badge" style="--badge:#D8B743;">Top 10 universities</span>
+          <span class="wtw-badge" style="--badge:#D8B743;">15+ years experience</span>
+        </div>
+      </div>
+
+      <!-- Row 2: Enterprise AI + Hands-Off -->
+      <div class="wtw-card reveal" style="--delay:100ms;">
+        <div class="wtw-card-top">
+          <span class="wtw-card-label" style="color:#6BB790;">ENTERPRISE GRADE</span>
+          <h3 class="wtw-card-title">Enterprise Grade AI for SMEs</h3>
+          <p class="wtw-card-body">Get top-tier AI planning, technical execution, and support without upfront costs and monthly retainers</p>
+        </div>
+      </div>
+
+      <div class="wtw-card reveal" style="--delay:140ms;">
+        <div class="wtw-card-top">
+          <span class="wtw-card-label" style="color:#3DB2DD;">DONE FOR YOU</span>
+          <h3 class="wtw-card-title">Hands-Off Implementation</h3>
+          <p class="wtw-card-body">Zero technical knowledge needed - our team builds, deploys, trains and maintains custom branded systems</p>
+        </div>
+      </div>
+
+      <!-- Row 3: Futureproofing + Immediate Results -->
+      <div class="wtw-card reveal" style="--delay:180ms;">
+        <div class="wtw-card-top">
+          <span class="wtw-card-label" style="color:#3DB2DD;">ALWAYS AHEAD</span>
+          <h3 class="wtw-card-title">Futureproofing</h3>
+          <p class="wtw-card-body">Stay ahead with the latest AI implementations and strategic enhancements from proven industry leaders</p>
+        </div>
+        <div class="wtw-stat-block">
+          <span class="wtw-stat-num wtw-counter" data-target="50" style="color:#3DB2DD;">0%</span>
+          <span class="wtw-stat-label">increase in revenue</span>
+        </div>
+      </div>
+
+      <div class="wtw-card wtw-card-results reveal" style="--delay:220ms;">
+        <div class="wtw-card-top">
+          <span class="wtw-card-label" style="color:#D8B743;">FROM DAY ONE</span>
+          <h3 class="wtw-card-title">Immediate Results</h3>
+          <p class="wtw-card-body">Evidence-based systems which have an impact on revenue from day 1</p>
+        </div>
+        <div class="wtw-stats-row">
+          <div class="wtw-stat-block">
+            <span class="wtw-stat-num" style="color:#D8B743;">Zero</span>
+            <span class="wtw-stat-label">additional hires</span>
+          </div>
+          <div class="wtw-stat-block">
+            <span class="wtw-stat-num wtw-counter" data-target="90" data-suffix="%+" style="color:#D8B743;">0%+</span>
+            <span class="wtw-stat-label">appointment attendance</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- CTA -->
+    <div class="text-center mt-16">
+      <button onclick="openAssessmentModal()" class="wtw-cta cursor-pointer">
         Would it work for my business?
       </button>
     </div>
@@ -517,22 +567,55 @@ const trustedLogos = [
 </section>
 
 <!-- The Trap of In-House Hiring Section -->
-<section class="py-16 md:py-24 bg-navy border-t border-white/10">
-  <div class="max-w-5xl mx-auto px-4">
+<section class="py-16 md:py-24 bg-navy border-t border-blue/20 relative overflow-hidden" style="background: radial-gradient(ellipse at 20% 50%, rgba(61,178,221,0.08) 0%, transparent 55%), #061528;">
+  <div class="max-w-screen-2xl mx-auto px-8 lg:px-16 reveal">
     <h2 class="section-title text-3xl lg:text-4xl xl:text-5xl font-bold text-white text-center mb-12 leading-tight">
       The Trap of In-House Hiring and Costly "Employee Obsolescence"
     </h2>
 
     <div class="flex flex-col md:flex-row items-center gap-10 md:gap-12">
-      <!-- Cycle Diagram Image -->
-      <div class="flex-1">
-        <Image
-          src={cycleHireGraphic}
-          alt="The cycle of hiring - Hire, Train, AI changes, skills become obsolete, re-train or replace, repeat"
-          class="w-full max-w-md mx-auto cycle-hire-graphic"
-          widths={[400, 768]}
-          sizes="(max-width: 768px) 100vw, 400px"
-        />
+      <!-- Cycle Diagram — interactive CSS/SVG -->
+      <div class="flex-1 flex justify-center" id="cycle-diagram">
+        <div class="cycle-wrap">
+          <svg class="cycle-svg" viewBox="0 0 320 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Track circle -->
+            <circle cx="160" cy="160" r="115" stroke="rgba(61,178,221,0.12)" stroke-width="1.5" stroke-dasharray="4 6"/>
+
+            <!-- Arc arrows between nodes (drawn as paths) -->
+            <!-- Top→Right -->
+            <path class="cycle-arc" id="arc-01" d="M185,55 A115,115 0 0,1 265,185" stroke="rgba(61,178,221,0.35)" stroke-width="1.5" fill="none" marker-end="url(#arr-blue)"/>
+            <!-- Right→Bottom -->
+            <path class="cycle-arc" id="arc-12" d="M265,185 A115,115 0 0,1 185,265" stroke="rgba(61,178,221,0.35)" stroke-width="1.5" fill="none" marker-end="url(#arr-blue)"/>
+            <!-- Bottom→Left -->
+            <path class="cycle-arc" id="arc-23" d="M135,265 A115,115 0 0,1 55,135" stroke="rgba(61,178,221,0.35)" stroke-width="1.5" fill="none" marker-end="url(#arr-blue)"/>
+            <!-- Left→Top (dashed — the rehire loop) -->
+            <path class="cycle-arc cycle-arc-return" id="arc-30" d="M55,135 A115,115 0 0,1 135,55" stroke="rgba(216,183,67,0.55)" stroke-width="1.5" fill="none" stroke-dasharray="5 4" marker-end="url(#arr-yellow)"/>
+
+            <!-- Arrow markers -->
+            <defs>
+              <marker id="arr-blue" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
+                <path d="M0,0 L6,3 L0,6 Z" fill="rgba(61,178,221,0.6)"/>
+              </marker>
+              <marker id="arr-yellow" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
+                <path d="M0,0 L6,3 L0,6 Z" fill="rgba(216,183,67,0.8)"/>
+              </marker>
+            </defs>
+
+            <!-- Node circles -->
+            <circle class="cycle-node-dot" id="cn-0" cx="160" cy="45"  r="9" stroke="rgba(61,178,221,0.4)" stroke-width="1.5" fill="rgba(6,21,40,0.9)"/>
+            <circle class="cycle-node-dot" id="cn-1" cx="275" cy="160" r="9" stroke="rgba(61,178,221,0.4)" stroke-width="1.5" fill="rgba(6,21,40,0.9)"/>
+            <circle class="cycle-node-dot" id="cn-2" cx="160" cy="275" r="9" stroke="rgba(61,178,221,0.4)" stroke-width="1.5" fill="rgba(6,21,40,0.9)"/>
+            <circle class="cycle-node-dot" id="cn-3" cx="45"  cy="160" r="9" stroke="rgba(61,178,221,0.4)" stroke-width="1.5" fill="rgba(6,21,40,0.9)"/>
+          </svg>
+
+          <!-- Floating labels -->
+          <div class="cycle-label" style="top:10px;left:50%;transform:translateX(-50%)" data-node="0">Hire Specialist</div>
+          <div class="cycle-label" style="top:50%;right:0;transform:translateY(-50%)" data-node="1">Train on<br/>Current Tech</div>
+          <div class="cycle-label" style="bottom:10px;left:50%;transform:translateX(-50%)" data-node="2">Skills Become<br/>Obsolete</div>
+          <div class="cycle-label" style="top:50%;left:0;transform:translateY(-50%)" data-node="3">AI Landscape<br/>Shifts</div>
+          <!-- Center label -->
+          <div class="cycle-center">Retrain/<br/>Rehire</div>
+        </div>
       </div>
 
       <!-- Copy -->
@@ -565,15 +648,104 @@ const trustedLogos = [
         We faced this exact problem
       </h3>
 
-      <!-- Latency Flow Diagram -->
-      <div class="max-w-3xl mx-auto">
-        <Image
-          src={latencyGraphic}
-          alt="First Response, Total Inquiries (100%), Responded, Lost to Latency"
-          class="mx-auto w-full latency-graphic"
-          widths={[400, 768, 1024]}
-          sizes="(max-width: 768px) 100vw, 768px"
-        />
+      <!-- Circular Latency Diagram — animated donut SVG -->
+      <div class="circ-latency-wrap" id="latency-diagram">
+
+        <div class="circ-diagram-row">
+          <!-- Donut SVG -->
+          <div class="circ-svg-container">
+            <svg class="circ-svg" viewBox="0 0 320 320" xmlns="http://www.w3.org/2000/svg">
+              <!-- Blueprint grid bg -->
+              <defs>
+                <pattern id="circ-grid" width="24" height="24" patternUnits="userSpaceOnUse">
+                  <path d="M 24 0 L 0 0 0 24" fill="none" stroke="rgba(61,178,221,0.06)" stroke-width="0.5"/>
+                </pattern>
+                <filter id="glow-green">
+                  <feGaussianBlur stdDeviation="3" result="blur"/>
+                  <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+                </filter>
+              </defs>
+              <rect width="320" height="320" fill="url(#circ-grid)" rx="16"/>
+
+              <!-- Outer guide circle (label ring) -->
+              <circle cx="160" cy="160" r="142" fill="none" stroke="rgba(61,178,221,0.08)" stroke-width="1" stroke-dasharray="4 6"/>
+
+              <!-- Background ring (total inquiries = 100%) -->
+              <circle cx="160" cy="160" r="110" fill="none"
+                stroke="rgba(216,183,67,0.18)" stroke-width="34"/>
+
+              <!-- Lost to Latency ring (amber, sits under green) -->
+              <circle cx="160" cy="160" r="110" fill="none"
+                stroke="rgba(216,183,67,0.45)" stroke-width="34"
+                stroke-dasharray="691.15"
+                stroke-dashoffset="0"
+                transform="rotate(-90 160 160)"/>
+
+              <!-- Responded arc — draws in from 0 on scroll, transitions on toggle -->
+              <circle id="circ-responded-arc" cx="160" cy="160" r="110"
+                fill="none"
+                stroke="#6BB790"
+                stroke-width="34"
+                stroke-linecap="butt"
+                stroke-dasharray="691.15"
+                stroke-dashoffset="691.15"
+                transform="rotate(-90 160 160)"
+                filter="url(#glow-green)"
+                style="transition:stroke-dashoffset 0.9s cubic-bezier(0.4,0,0.2,1);"/>
+
+              <!-- Inner fill circle (bg for text readability) -->
+              <circle cx="160" cy="160" r="90" fill="#061528"/>
+
+              <!-- Center: percentage -->
+              <text id="circ-center-pct" x="160" y="152"
+                text-anchor="middle"
+                fill="white" font-size="54" font-weight="800"
+                style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">50%</text>
+              <text x="160" y="179" text-anchor="middle"
+                fill="rgba(255,255,255,0.45)" font-size="12" letter-spacing="0.06em"
+                style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;text-transform:uppercase;">Responded</text>
+
+              <!-- Total Inquiries label — top of outer ring -->
+              <text x="160" y="22" text-anchor="middle"
+                fill="rgba(255,255,255,0.3)" font-size="11" letter-spacing="0.05em"
+                style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;text-transform:uppercase;">Total Inquiries (100%)</text>
+            </svg>
+          </div>
+
+          <!-- Right: legend -->
+          <div class="circ-legend">
+            <div class="circ-legend-item">
+              <div class="circ-legend-dot" style="background:#6BB790;box-shadow:0 0 8px rgba(107,183,144,0.6);"></div>
+              <div>
+                <div class="circ-legend-label">Responded</div>
+                <div class="circ-legend-val" id="circ-responded-val" style="color:#6BB790;">50%</div>
+              </div>
+            </div>
+            <div class="circ-legend-item" style="margin-top:1.5rem;">
+              <div class="circ-legend-dot" style="background:rgba(216,183,67,0.7);box-shadow:0 0 8px rgba(216,183,67,0.4);"></div>
+              <div>
+                <div class="circ-legend-label">Lost to Latency</div>
+                <div class="circ-legend-val" id="circ-lost-val" style="color:#D8B743;">50%</div>
+              </div>
+            </div>
+            <div class="circ-legend-item" style="margin-top:1.5rem; opacity:0.6;">
+              <div class="circ-legend-dot" style="background:rgba(255,255,255,0.15);"></div>
+              <div>
+                <div class="circ-legend-label">Total Inquiries</div>
+                <div class="circ-legend-val" style="color:rgba(255,255,255,0.5);">100%</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Toggle -->
+        <div class="latency-toggle-row" style="margin-top:1.5rem;">
+          <span class="latency-toggle-label">Without AI Revenue Engine</span>
+          <button class="latency-toggle" id="latency-toggle" aria-pressed="false">
+            <span class="latency-toggle-knob"></span>
+          </button>
+          <span class="latency-toggle-label">With AI Revenue Engine</span>
+        </div>
       </div>
 
       <!-- Story Block -->
@@ -658,8 +830,8 @@ const trustedLogos = [
 </section>
 
 <!-- Final Assessment Section -->
-<section class="py-16 md:py-24 bg-navy border-t border-white/10">
-  <div class="max-w-5xl mx-auto px-4 text-center">
+<section class="py-16 md:py-24 border-t border-yellow/30 relative overflow-hidden" style="background: radial-gradient(ellipse at 50% 0%, rgba(216,183,67,0.13) 0%, transparent 60%), radial-gradient(ellipse at 80% 100%, rgba(61,178,221,0.07) 0%, transparent 50%), #061528;">
+  <div class="max-w-screen-2xl mx-auto px-8 lg:px-16 text-center reveal">
     <h2 class="final-assessment-headline">
       Find out how much revenue you're losing
     </h2>
@@ -721,6 +893,286 @@ const trustedLogos = [
 </section>
 
 <script is:inline>
+  /* 3D wave field — particles ripple like a digital ocean, mouse creates ripples */
+  (function () {
+    var canvas = document.getElementById('hero-canvas');
+    if (!canvas) return;
+    var ctx = canvas.getContext('2d');
+    var wrapper = canvas.closest('.hero-bg-wrapper');
+
+    var COLS, ROWS, SPACING = 32;
+    var points = [];
+    var mouse = { x: -9999, y: -9999 };
+    var time = 0;
+
+    var PERSPECTIVE = 600;
+    var TILT = 0.55;
+    var WAVE_AMP = 18;
+    var WAVE_SPEED = 0.015;
+    var MOUSE_RADIUS = 150;
+    var MOUSE_FORCE = 35;
+
+    function resize() {
+      canvas.width  = wrapper ? wrapper.offsetWidth  : window.innerWidth;
+      canvas.height = wrapper ? wrapper.offsetHeight : window.innerHeight;
+      buildGrid();
+    }
+
+    function buildGrid() {
+      points = [];
+      var padX = SPACING * 6, padY = SPACING * 6;
+      COLS = Math.ceil((canvas.width + padX * 2) / SPACING);
+      ROWS = Math.ceil((canvas.height + padY * 2) / SPACING);
+      for (var row = 0; row < ROWS; row++) {
+        for (var col = 0; col < COLS; col++) {
+          var gx = col * SPACING - padX + SPACING / 2;
+          var gy = row * SPACING - padY + SPACING / 2;
+          var isAccent = (col * 7 + row * 13) % 37 === 0;
+          points.push({ gx: gx, gy: gy, z: 0, isAccent: isAccent, row: row, col: col });
+        }
+      }
+    }
+
+    resize();
+    window.addEventListener('resize', resize);
+
+    wrapper.addEventListener('mousemove', function(e) {
+      var rect = canvas.getBoundingClientRect();
+      mouse.x = e.clientX - rect.left;
+      mouse.y = e.clientY - rect.top;
+    });
+    wrapper.addEventListener('mouseleave', function() {
+      mouse.x = -9999; mouse.y = -9999;
+    });
+
+    function project(gx, gy, z) {
+      var cx = canvas.width / 2, cy = canvas.height / 2;
+      var x = gx - cx, y = gy - cy;
+      var cosT = Math.cos(TILT), sinT = Math.sin(TILT);
+      var y2 = y * cosT - z * sinT;
+      var z2 = y * sinT + z * cosT;
+      var scale = PERSPECTIVE / (PERSPECTIVE + z2);
+      if (scale < 0.05) scale = 0.05;
+      return { x: cx + x * scale, y: cy + y2 * scale, scale: scale };
+    }
+
+    function tick() {
+      time++;
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      var t = time * WAVE_SPEED;
+
+      // Update Z (wave + mouse ripple)
+      for (var i = 0; i < points.length; i++) {
+        var p = points[i];
+        p.z = Math.sin(p.gx * 0.012 + t) * WAVE_AMP
+            + Math.sin(p.gy * 0.018 + t * 1.3) * WAVE_AMP * 0.6
+            + Math.sin((p.gx + p.gy) * 0.008 + t * 0.7) * WAVE_AMP * 0.4;
+        var mdx = mouse.x - p.gx, mdy = mouse.y - p.gy;
+        var mDist = Math.sqrt(mdx * mdx + mdy * mdy);
+        if (mDist < MOUSE_RADIUS) {
+          var force = (1 - mDist / MOUSE_RADIUS);
+          p.z += force * force * MOUSE_FORCE;
+        }
+      }
+
+      // Draw horizontal grid lines
+      for (var row = 0; row < ROWS; row++) {
+        ctx.beginPath();
+        for (var col = 0; col < COLS; col++) {
+          var p = points[row * COLS + col];
+          var proj = project(p.gx, p.gy, p.z);
+          if (col === 0) ctx.moveTo(proj.x, proj.y);
+          else ctx.lineTo(proj.x, proj.y);
+        }
+        var rowFade = Math.min(row / ROWS * 4, (1 - row / ROWS) * 4, 1);
+        ctx.strokeStyle = 'rgba(61,178,221,' + (0.06 * rowFade) + ')';
+        ctx.lineWidth = 0.5;
+        ctx.stroke();
+      }
+
+      // Draw vertical grid lines
+      for (var col = 0; col < COLS; col++) {
+        ctx.beginPath();
+        for (var row2 = 0; row2 < ROWS; row2++) {
+          var p = points[row2 * COLS + col];
+          var proj = project(p.gx, p.gy, p.z);
+          if (row2 === 0) ctx.moveTo(proj.x, proj.y);
+          else ctx.lineTo(proj.x, proj.y);
+        }
+        var colFade = Math.min(col / COLS * 4, (1 - col / COLS) * 4, 1);
+        ctx.strokeStyle = 'rgba(61,178,221,' + (0.06 * colFade) + ')';
+        ctx.lineWidth = 0.5;
+        ctx.stroke();
+      }
+
+      // Draw particles at intersections
+      for (var i = 0; i < points.length; i++) {
+        var p = points[i];
+        var proj = project(p.gx, p.gy, p.z);
+        if (proj.x < -20 || proj.x > canvas.width + 20 || proj.y < -20 || proj.y > canvas.height + 20) continue;
+
+        var heightGlow = Math.max(0, p.z / (WAVE_AMP * 2));
+        var nDx = mouse.x - p.gx, nDy = mouse.y - p.gy;
+        var nDist = Math.sqrt(nDx * nDx + nDy * nDy);
+        var mouseGlow = nDist < MOUSE_RADIUS ? (1 - nDist / MOUSE_RADIUS) : 0;
+        var fade = Math.min(p.row / ROWS * 3, (1 - p.row / ROWS) * 3, p.col / COLS * 3, (1 - p.col / COLS) * 3, 1);
+        var baseR = 1.2 * proj.scale;
+
+        ctx.save();
+        if (p.isAccent) {
+          ctx.globalAlpha = Math.min((0.5 + heightGlow * 0.4 + mouseGlow * 0.4) * fade, 1);
+          ctx.fillStyle = 'rgba(216,183,67,1)';
+          ctx.shadowBlur = 8 + mouseGlow * 14 + heightGlow * 8;
+          ctx.shadowColor = 'rgba(216,183,67,0.7)';
+          baseR *= 2.2;
+        } else {
+          ctx.globalAlpha = Math.min((0.15 + heightGlow * 0.3 + mouseGlow * 0.4) * fade, 1);
+          ctx.fillStyle = 'rgba(61,178,221,1)';
+          ctx.shadowBlur = mouseGlow * 8 + heightGlow * 4;
+          ctx.shadowColor = 'rgba(61,178,221,0.5)';
+        }
+        ctx.beginPath();
+        ctx.arc(proj.x, proj.y, baseR + mouseGlow * 2, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.restore();
+      }
+
+      requestAnimationFrame(tick);
+    }
+    tick();
+  })();
+
+  /* Keyboard screen typewriter */
+  (function() {
+    const screenText = document.getElementById('kb-screen-text');
+    if (!screenText) return;
+    const DEFAULT = 'AI REVENUE ENGINE™';
+    const keys = document.querySelectorAll('[data-val]');
+    let typeTimer = null;
+
+    function typewrite(text) {
+      clearTimeout(typeTimer);
+      screenText.textContent = '';
+      let i = 0;
+      function next() {
+        if (i < text.length) {
+          screenText.textContent += text[i++];
+          typeTimer = setTimeout(next, 38);
+        }
+      }
+      next();
+    }
+
+    keys.forEach(function(key) {
+      const val = key.dataset.val || DEFAULT;
+      key.addEventListener('mouseenter', function() { typewrite(val); });
+      key.addEventListener('mouseleave', function() { typewrite(DEFAULT); });
+      key.addEventListener('click', function() { if (val !== DEFAULT) typewrite(val); });
+    });
+  })();
+
+  /* Cycle diagram — auto-cycle + hover pause */
+  (function() {
+    const nodes  = [0,1,2,3].map(function(i){ return document.getElementById('cn-'+i); });
+    const arcs   = ['arc-01','arc-12','arc-23','arc-30'].map(function(id){ return document.getElementById(id); });
+    const labels = document.querySelectorAll('.cycle-label');
+    if (!nodes[0]) return;
+
+    // Draw all arcs
+    arcs.forEach(function(a){ if(a) a.classList.add('drawn'); });
+
+    var step = 0;
+    var paused = false;
+    var timer;
+
+    function setStep(s) {
+      step = s;
+      nodes.forEach(function(n,i){ if(n) n.classList.toggle('active', i===s); });
+      arcs.forEach(function(a,i){ if(a) a.classList.toggle('active', i===s); });
+      labels.forEach(function(l){ l.classList.toggle('active', parseInt(l.dataset.node)===s); });
+    }
+
+    function advance() {
+      if (!paused) setStep((step+1) % 4);
+    }
+
+    timer = setInterval(advance, 1800);
+    setStep(0);
+
+    nodes.forEach(function(n,i){
+      if(!n) return;
+      n.addEventListener('mouseenter', function(){ paused=true; setStep(i); });
+      n.addEventListener('mouseleave', function(){ paused=false; });
+    });
+  })();
+
+  /* Circular latency diagram — scroll-in draw + before/after toggle */
+  (function() {
+    var arc     = document.getElementById('circ-responded-arc');
+    var centerPct = document.getElementById('circ-center-pct');
+    var respondedVal = document.getElementById('circ-responded-val');
+    var lostVal      = document.getElementById('circ-lost-val');
+    var btn     = document.getElementById('latency-toggle');
+    var wrap    = document.getElementById('latency-diagram');
+    if (!arc || !btn || !wrap) return;
+
+    var C = 691.15; // circumference: 2 * Math.PI * 110
+    var drawn = false;
+    var on = false;
+
+    function animateCounter(el, from, to, suffix, duration) {
+      var start = null;
+      function step(ts) {
+        if (!start) start = ts;
+        var prog = Math.min((ts - start) / duration, 1);
+        var ease = prog < 0.5 ? 2*prog*prog : -1+(4-2*prog)*prog;
+        var val = Math.round(from + (to - from) * ease);
+        el.textContent = val + suffix;
+        if (prog < 1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    }
+
+    function setArc(pct, animate) {
+      var offset = C * (1 - pct / 100);
+      if (animate) {
+        arc.style.transition = 'stroke-dashoffset 0.9s cubic-bezier(0.4,0,0.2,1)';
+      } else {
+        arc.style.transition = 'none';
+      }
+      arc.style.strokeDashoffset = offset;
+      animateCounter(centerPct, on ? 50 : 98, pct, '%', 700);
+      if (respondedVal) {
+        respondedVal.textContent = pct + '%';
+        respondedVal.style.color = pct >= 90 ? '#6BB790' : 'rgba(255,255,255,0.6)';
+      }
+      if (lostVal) {
+        lostVal.textContent = (100 - pct) + '%';
+        lostVal.style.color = pct >= 90 ? 'rgba(216,183,67,0.5)' : '#D8B743';
+      }
+    }
+
+    // Scroll-in: draw arc when diagram enters viewport
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting && !drawn) {
+          drawn = true;
+          // Brief delay then draw in
+          setTimeout(function() { setArc(50, true); }, 200);
+          observer.disconnect();
+        }
+      });
+    }, { threshold: 0.3 });
+    observer.observe(wrap);
+
+    // Toggle: Before ↔ After
+    btn.addEventListener('click', function() {
+      on = !on;
+      btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+      setArc(on ? 98 : 50, true);
+    });
+  })();
+
   const financialRows = Array.from(document.querySelectorAll(".financial-row"));
 
   function setActiveFinancialRow(targetRow) {
@@ -739,9 +1191,397 @@ const trustedLogos = [
       }
     });
   });
+
+  // Scroll-reveal: fade up sections as they enter the viewport
+  const revealObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.08 }
+  );
+  document.querySelectorAll(".reveal").forEach((el) => revealObserver.observe(el));
+
+  /* ─── Why This Works: animated counters ─── */
+  (function() {
+    var counters = document.querySelectorAll('.wtw-counter');
+    if (!counters.length) return;
+    var counterObs = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (!entry.isIntersecting) return;
+        var el = entry.target;
+        var target = parseInt(el.dataset.target, 10);
+        var suffix = el.dataset.suffix || '%';
+        var start = 0;
+        var duration = 1200;
+        var startTime = null;
+        function step(ts) {
+          if (!startTime) startTime = ts;
+          var progress = Math.min((ts - startTime) / duration, 1);
+          var eased = 1 - Math.pow(1 - progress, 3);
+          var current = Math.round(eased * target);
+          el.textContent = current + suffix;
+          if (progress < 1) requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+        counterObs.unobserve(el);
+      });
+    }, { threshold: 0.3 });
+    counters.forEach(function(c) { counterObs.observe(c); });
+  })();
+
+  /* ─── Kill Zone: speed race animation ─── */
+  (function() {
+    var section = document.getElementById('section-killzone');
+    if (!section) return;
+
+    var ringProgress = document.getElementById('kz-ring-progress');
+    var ringTime = document.getElementById('kz-ring-time');
+    var ringLabel = document.getElementById('kz-ring-label');
+    var ringIncoming = document.getElementById('kz-ring-incoming');
+    var ringTimer = document.getElementById('kz-ring-timer');
+    var raceCard = document.getElementById('kz-race');
+    var milestone = document.getElementById('kz-milestone');
+    var gapEl = document.getElementById('kz-race-gap');
+    var gapLabel = document.getElementById('kz-gap-label');
+    var copyBlocks = section.querySelectorAll('.kz-copy-reveal');
+    var fired = false;
+
+    var CIRCUMFERENCE = 2 * Math.PI * 96; // ~603.19
+
+    function formatTime(seconds) {
+      if (seconds < 60) return seconds + 's';
+      if (seconds < 3600) {
+        var m = Math.floor(seconds / 60);
+        var s = seconds % 60;
+        return m + ':' + (s < 10 ? '0' : '') + s;
+      }
+      var h = Math.floor(seconds / 3600);
+      var m = Math.floor((seconds % 3600) / 60);
+      return h + 'h ' + m + 'm';
+    }
+
+    var stages = [
+      { duration: 1400, startSec: 0,    endSec: 30,    ringEnd: 8,   milestone: 'Competitors using AI have engaged lead', shake: 0, color: 'green' },
+      { duration: 1300, startSec: 30,   endSec: 60,    ringEnd: 15,  milestone: 'Lead has looked up 3 other companies',   shake: 0, color: 'red' },
+      { duration: 1100, startSec: 60,   endSec: 300,   ringEnd: 30,  milestone: 'Booked with competitor',                 shake: 0, color: 'red' },
+      { duration: 900,  startSec: 300,  endSec: 3600,  ringEnd: 55,  milestone: 'Lead has moved on',                      shake: 1, color: 'red' },
+      { duration: 700,  startSec: 3600, endSec: 14400, ringEnd: 82,  milestone: 'Revenue is lost',                        shake: 1, color: 'red' },
+      { duration: 500,  startSec: 14400,endSec: 14400, ringEnd: 100, milestone: null,                                     shake: 2, color: 'red' },
+    ];
+
+    function setRingProgress(pct, color) {
+      if (!ringProgress) return;
+      var offset = CIRCUMFERENCE * (1 - pct / 100);
+      ringProgress.style.strokeDashoffset = offset;
+      ringProgress.style.stroke = color === 'green' ? '#6BB790' : '#dc2626';
+    }
+
+    function resetRace() {
+      if (ringProgress) { ringProgress.style.strokeDashoffset = CIRCUMFERENCE; ringProgress.style.stroke = '#6BB790'; }
+      if (ringTime) { ringTime.textContent = '0s'; ringTime.style.color = '#6BB790'; }
+      if (ringLabel) ringLabel.style.display = '';
+      if (raceCard) raceCard.classList.remove('kz-shaking-light', 'kz-shaking', 'kz-shaking-heavy');
+      if (milestone) { milestone.className = 'kz-milestone'; milestone.textContent = ''; }
+      if (gapEl) gapEl.classList.remove('kz-gap-visible');
+      if (gapLabel) gapLabel.textContent = '';
+      // Reset incoming/timer visibility
+      if (ringIncoming) { ringIncoming.style.display = ''; ringIncoming.className = 'kz-ring-incoming'; }
+      if (ringTimer) ringTimer.style.display = 'none';
+    }
+
+    function animateRace() {
+      resetRace();
+
+      // Step 1: Show incoming lead animation
+      if (ringIncoming) {
+        ringIncoming.style.display = '';
+        ringIncoming.classList.add('kz-incoming-pop');
+      }
+
+      // Step 2: After hold, fade out incoming and start timer
+      setTimeout(function() {
+        if (ringIncoming) {
+          ringIncoming.classList.remove('kz-incoming-pop');
+          ringIncoming.classList.add('kz-incoming-fade');
+        }
+        setTimeout(function() {
+          if (ringIncoming) ringIncoming.style.display = 'none';
+          if (ringTimer) ringTimer.style.display = '';
+          startStages();
+        }, 400);
+      }, 1200);
+    }
+
+    function startStages() {
+      var stageIndex = 0;
+      var prevRing = 0;
+
+      function runStage() {
+        if (stageIndex >= stages.length) {
+          if (raceCard) raceCard.classList.remove('kz-shaking-light', 'kz-shaking', 'kz-shaking-heavy');
+          if (raceCard) raceCard.classList.add('kz-shaking-heavy');
+          if (milestone) { milestone.className = 'kz-milestone'; milestone.textContent = ''; }
+          if (ringTime) { ringTime.textContent = 'LOST'; ringTime.style.color = '#dc2626'; }
+          if (ringLabel) ringLabel.style.display = 'none';
+          if (gapEl) gapEl.classList.add('kz-gap-visible');
+          if (gapLabel) gapLabel.textContent = 'LEAD LOST TO YOUR COMPETITORS';
+
+          setTimeout(function() {
+            if (raceCard) raceCard.classList.remove('kz-shaking-heavy');
+            setTimeout(animateRace, 3500);
+          }, 1800);
+          return;
+        }
+
+        var stage = stages[stageIndex];
+        var stageStart = performance.now();
+
+        if (milestone) { milestone.className = 'kz-milestone'; milestone.textContent = ''; }
+
+        if (raceCard) {
+          raceCard.classList.remove('kz-shaking-light', 'kz-shaking', 'kz-shaking-heavy');
+          if (stage.shake === 1) raceCard.classList.add('kz-shaking-light');
+          if (stage.shake === 2) raceCard.classList.add('kz-shaking');
+          if (stage.shake === 3) raceCard.classList.add('kz-shaking-heavy');
+        }
+
+        function tick(now) {
+          var t = Math.min((now - stageStart) / stage.duration, 1);
+
+          var ringPct = prevRing + (stage.ringEnd - prevRing) * t;
+          setRingProgress(ringPct, stage.color);
+
+          var sec = Math.floor(stage.startSec + (stage.endSec - stage.startSec) * t);
+          if (ringTime) {
+            ringTime.textContent = formatTime(sec);
+            ringTime.style.color = stage.color === 'green' ? '#6BB790' : '#dc2626';
+          }
+
+          if (t < 1) {
+            requestAnimationFrame(tick);
+          } else {
+            prevRing = stage.ringEnd;
+            stageIndex++;
+
+            if (stage.milestone && milestone) {
+              milestone.textContent = stage.milestone;
+              milestone.className = 'kz-milestone kz-milestone-pop' + (stage.color === 'green' ? ' kz-milestone-green' : '');
+            }
+            setTimeout(runStage, stage.milestone ? 2000 : 0);
+          }
+        }
+        requestAnimationFrame(tick);
+      }
+
+      runStage();
+    }
+
+    var kzObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting && !fired) {
+          fired = true;
+
+          animateRace();
+
+          copyBlocks.forEach(function(block) {
+            var delay = parseInt(getComputedStyle(block).getPropertyValue('--kz-delay')) || 0;
+            setTimeout(function() {
+              block.classList.add('kz-visible');
+            }, delay);
+          });
+
+          kzObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+
+    kzObserver.observe(section);
+  })();
+
+  /* ─── Credentials dashboard animation ─── */
+  (function() {
+    var dash = document.getElementById('cred-dash');
+    if (!dash) return;
+
+    var animated = false;
+
+    function animateCounters() {
+      dash.querySelectorAll('.cred-dash-stat-val').forEach(function(el) {
+        var target = parseFloat(el.dataset.target);
+        var suffix = el.dataset.suffix || '';
+        var isDecimal = String(target).includes('.');
+        var duration = 1500;
+        var start = performance.now();
+
+        function tick(now) {
+          var t = Math.min((now - start) / duration, 1);
+          var ease = 1 - Math.pow(1 - t, 3);
+          var val = target * ease;
+          el.textContent = (isDecimal ? val.toFixed(1) : Math.round(val)) + suffix;
+          if (t < 1) requestAnimationFrame(tick);
+        }
+        requestAnimationFrame(tick);
+      });
+    }
+
+    var obs = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting && !animated) {
+          animated = true;
+          dash.classList.add('animated');
+          animateCounters();
+          obs.disconnect();
+        }
+      });
+    }, { threshold: 0.3 });
+    obs.observe(dash);
+  })();
 </script>
 
 <style>
+  /* ─── Aurora background ─────────────────────── */
+  .hero-aurora {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    will-change: transform, opacity;
+    pointer-events: none;
+  }
+  .hero-aurora-1 {
+    width: 55vw; height: 55vw; max-width: 680px; max-height: 680px;
+    background: radial-gradient(circle, rgba(61,178,221,0.22) 0%, transparent 65%);
+    top: -10%; left: -5%;
+    animation: auroraMove1 14s ease-in-out infinite alternate;
+  }
+  .hero-aurora-2 {
+    width: 50vw; height: 50vw; max-width: 600px; max-height: 600px;
+    background: radial-gradient(circle, rgba(216,183,67,0.16) 0%, transparent 65%);
+    top: 5%; right: -8%;
+    animation: auroraMove2 18s ease-in-out infinite alternate;
+  }
+  .hero-aurora-3 {
+    width: 40vw; height: 40vw; max-width: 480px; max-height: 480px;
+    background: radial-gradient(circle, rgba(107,183,144,0.14) 0%, transparent 65%);
+    bottom: -15%; left: 30%;
+    animation: auroraMove3 22s ease-in-out infinite alternate;
+  }
+  @keyframes auroraMove1 {
+    0%   { transform: translate(0, 0) scale(1); }
+    50%  { transform: translate(5vw, 4vh) scale(1.08); }
+    100% { transform: translate(2vw, -3vh) scale(0.95); }
+  }
+  @keyframes auroraMove2 {
+    0%   { transform: translate(0, 0) scale(1.05); }
+    50%  { transform: translate(-4vw, 5vh) scale(0.92); }
+    100% { transform: translate(3vw, 2vh) scale(1.1); }
+  }
+  @keyframes auroraMove3 {
+    0%   { transform: translate(0, 0) scale(0.95); }
+    50%  { transform: translate(3vw, -4vh) scale(1.08); }
+    100% { transform: translate(-5vw, 2vh) scale(1.02); }
+  }
+  .hero-scanline {
+    position: absolute; left: 0; right: 0; height: 1px;
+    background: linear-gradient(90deg, transparent 0%, rgba(61,178,221,0.28) 30%, rgba(61,178,221,0.38) 50%, rgba(61,178,221,0.28) 70%, transparent 100%);
+    animation: scanlineMove 8s linear infinite;
+    pointer-events: none;
+  }
+  @keyframes scanlineMove {
+    0%   { top: -2px; opacity: 0; }
+    5%   { opacity: 1; }
+    95%  { opacity: 1; }
+    100% { top: 100%; opacity: 0; }
+  }
+  .hero-rc-badge { white-space: nowrap; }
+  /* ─── Light section overrides ───────────────────────────── */
+  section.light-section {
+    background: #f4f7fb !important;
+    border-color: rgba(6, 21, 40, 0.08) !important;
+  }
+
+  /* Force dark text on light backgrounds */
+  section.light-section [class*="text-white"] {
+    color: #0d2040 !important;
+  }
+
+  section.light-section h2,
+  section.light-section h3,
+  section.light-section .section-title,
+  section.light-section .kill-zone-headline {
+    color: #061528 !important;
+  }
+
+  /* Cards on light background */
+  section.light-section .cred-card {
+    background: linear-gradient(135deg, rgba(216,183,67,0.55), rgba(216,183,67,0.18)) !important;
+  }
+
+  section.light-section .cred-card-inner {
+    background: #ffffff !important;
+    border-color: rgba(216,183,67,0.2) !important;
+  }
+
+  section.light-section .cred-card:hover .cred-card-inner {
+    background: #fafafa !important;
+  }
+
+  section.light-section .cred-card::before {
+    border-color: rgba(216,183,67,0.2) !important;
+  }
+
+  /* Prose and copy */
+  section.light-section .readable-prose p,
+  section.light-section .section-eight-copy {
+    color: rgba(6, 21, 40, 0.82) !important;
+  }
+
+  section.light-section .section-eight-emphasis {
+    color: #061528 !important;
+  }
+
+  /* Financial / table components */
+  section.light-section .financial-logic-shell {
+    border-color: rgba(6,21,40,0.12) !important;
+    background: linear-gradient(145deg, rgba(255,255,255,0.9), rgba(244,247,251,0.95)) !important;
+    box-shadow: inset 0 0 24px rgba(6,21,40,0.04) !important;
+  }
+
+  section.light-section .financial-logic-table thead th {
+    background: rgba(244, 247, 251, 0.98) !important;
+    color: #061528 !important;
+  }
+
+  section.light-section table th,
+  section.light-section table td {
+    color: #0d2040 !important;
+    border-color: rgba(6,21,40,0.07) !important;
+  }
+
+  section.light-section .financial-row:hover,
+  section.light-section .financial-row.is-active {
+    background: rgba(6,21,40,0.04) !important;
+  }
+
+  /* Results panel */
+  section.light-section .results-panel {
+    background: #ffffff !important;
+    border-color: rgba(6,21,40,0.1) !important;
+  }
+
+  section.light-section .results-panel-value,
+  section.light-section .results-panel-label {
+    color: #061528 !important;
+  }
+
+  /* Keep brand accents legible on white */
+  section.light-section .text-yellow { color: #9e7e20 !important; }
+  section.light-section [class*="text-yellow"] { color: #9e7e20 !important; }
+
   .hero-eyebrow {
     font-size: clamp(0.88rem, 0.8rem + 0.25vw, 1.05rem);
     letter-spacing: 0.06em;
@@ -958,6 +1798,146 @@ const trustedLogos = [
   .financial-row.is-active td:nth-child(3) {
     background: linear-gradient(120deg, rgba(216, 183, 67, 0.22), rgba(216, 183, 67, 0.08));
   }
+
+  /* Floating hero card styles */
+  .hero-diagram-float {
+    background: linear-gradient(145deg, rgba(18, 40, 72, 0.7) 0%, rgba(8, 24, 48, 0.5) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 20px;
+    box-shadow:
+      0 0 0 1px rgba(216, 183, 67, 0.08),
+      0 30px 80px rgba(0, 0, 0, 0.5),
+      inset 0 1px 0 rgba(255, 255, 255, 0.07);
+    backdrop-filter: blur(10px);
+    padding: 2rem;
+    overflow: hidden;
+  }
+
+
+  /* Futuristic Keyboard Hero Graphic */
+  .kb-wrapper { padding: 1.5rem 0; }
+
+  .kb-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    width: 520px;
+    user-select: none;
+    animation: kb-float 5.5s ease-in-out infinite;
+  }
+
+  @keyframes kb-float {
+    0%, 100% { transform: translateY(0px); }
+    50%       { transform: translateY(-8px); }
+  }
+
+  /* LED Screen */
+  .kb-screen {
+    position: relative;
+    background: #060d16;
+    border: 1px solid rgba(107,183,144,0.28);
+    border-radius: 8px 8px 4px 4px;
+    padding: 0.75rem 1rem;
+    overflow: hidden;
+    box-shadow: 0 0 24px rgba(107,183,144,0.08), inset 0 0 30px rgba(0,0,0,0.5);
+    min-height: 52px;
+  }
+  .kb-screen::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      to bottom,
+      transparent 0px, transparent 2px,
+      rgba(0,0,0,0.07) 2px, rgba(0,0,0,0.07) 4px
+    );
+    pointer-events: none;
+  }
+  .kb-screen-content {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.1rem;
+    letter-spacing: 0.08em;
+    position: relative;
+    z-index: 1;
+  }
+  .kb-screen-prompt { color: rgba(107,183,144,0.6); }
+  .kb-screen-text   { color: #6BB790; font-weight: 600; }
+  .kb-screen-cursor { color: #6BB790; animation: kb-blink 1s step-end infinite; }
+  @keyframes kb-blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+
+  /* Keyboard body */
+  .kb-body {
+    background: linear-gradient(160deg, #19222f 0%, #111720 60%, #0c1219 100%);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 12px;
+    padding: 0.9rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+    box-shadow: 0 24px 64px rgba(0,0,0,0.55), inset 0 1px 0 rgba(255,255,255,0.05);
+  }
+  .kb-row { display: flex; gap: 0.38rem; align-items: stretch; }
+
+  /* Base key */
+  .kb-key {
+    border-radius: 6px;
+    background: linear-gradient(160deg, #1e2a3a 0%, #141d28 100%);
+    border: 1px solid rgba(255,255,255,0.06);
+    box-shadow: 0 3px 0 rgba(0,0,0,0.45), inset 0 1px 0 rgba(255,255,255,0.05);
+    cursor: pointer;
+    transition: transform 0.08s ease, box-shadow 0.08s ease, color 0.12s ease, border-color 0.12s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 0.72rem;
+    color: rgba(255,255,255,0.28);
+    font-family: 'Courier New', monospace;
+    font-weight: 500;
+    letter-spacing: 0.03em;
+    padding: 0.45rem 0.3rem;
+    line-height: 1.3;
+  }
+  .kb-key-sm { flex: 1; min-width: 30px; }
+
+  /* Value prop keys */
+  .kb-key-value {
+    flex: 3;
+    font-size: 1rem;
+    font-weight: 700;
+    color: rgba(255,255,255,0.7);
+    padding: 0.65rem 0.55rem;
+    letter-spacing: 0.02em;
+    line-height: 1.4;
+  }
+
+  /* Colour variants */
+  .kb-key-yellow { border-color: rgba(216,183,67,0.30); box-shadow: 0 3px 0 rgba(0,0,0,0.45), 0 0 10px rgba(216,183,67,0.07), inset 0 1px 0 rgba(255,255,255,0.05); }
+  .kb-key-yellow:hover { border-color: rgba(216,183,67,0.65); box-shadow: 0 1px 0 rgba(0,0,0,0.4), 0 0 18px rgba(216,183,67,0.22), inset 0 1px 0 rgba(255,255,255,0.05); transform: translateY(2px); color: #D8B743; }
+  .kb-key-yellow:active { transform: translateY(3px); box-shadow: 0 0 0 rgba(0,0,0,0.4), 0 0 8px rgba(216,183,67,0.12), inset 0 2px 4px rgba(0,0,0,0.3); }
+
+  .kb-key-blue { border-color: rgba(61,178,221,0.30); box-shadow: 0 3px 0 rgba(0,0,0,0.45), 0 0 10px rgba(61,178,221,0.07), inset 0 1px 0 rgba(255,255,255,0.05); }
+  .kb-key-blue:hover { border-color: rgba(61,178,221,0.65); box-shadow: 0 1px 0 rgba(0,0,0,0.4), 0 0 18px rgba(61,178,221,0.22), inset 0 1px 0 rgba(255,255,255,0.05); transform: translateY(2px); color: #3DB2DD; }
+  .kb-key-blue:active { transform: translateY(3px); box-shadow: 0 0 0 rgba(0,0,0,0.4), 0 0 8px rgba(61,178,221,0.12), inset 0 2px 4px rgba(0,0,0,0.3); }
+
+  .kb-key-green { border-color: rgba(107,183,144,0.30); box-shadow: 0 3px 0 rgba(0,0,0,0.45), 0 0 10px rgba(107,183,144,0.07), inset 0 1px 0 rgba(255,255,255,0.05); }
+  .kb-key-green:hover { border-color: rgba(107,183,144,0.65); box-shadow: 0 1px 0 rgba(0,0,0,0.4), 0 0 18px rgba(107,183,144,0.22), inset 0 1px 0 rgba(255,255,255,0.05); transform: translateY(2px); color: #6BB790; }
+  .kb-key-green:active { transform: translateY(3px); box-shadow: 0 0 0 rgba(0,0,0,0.4), 0 0 8px rgba(107,183,144,0.12), inset 0 2px 4px rgba(0,0,0,0.3); }
+
+  /* Spacebar */
+  .kb-key-space {
+    flex: 1;
+    font-size: 1rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    padding: 0.72rem 1rem;
+  }
+
+
 
   .hero-core-shell {
     position: relative;
@@ -1252,7 +2232,9 @@ const trustedLogos = [
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0 1rem;
+    width: 110px;
+    height: 40px;
+    padding: 0 0.5rem;
   }
 
   @keyframes scrollLogos {
@@ -1268,148 +2250,885 @@ const trustedLogos = [
     animation-play-state: paused;
   }
 
-  /* Credential cards - double-border gold style */
-  .cred-card {
-    position: relative;
-    padding: 3px;
-    border-radius: 12px;
-    background: linear-gradient(135deg, rgba(216, 183, 67, 0.6), rgba(216, 183, 67, 0.2));
+  /* ─── Why This Works — 2-col bento ─── */
+  .wtw-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  @media (min-width: 768px) {
+    .wtw-grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+    }
   }
 
-  .cred-card-inner {
-    background: #0a1e35;
+  .wtw-card {
+    background: #fff;
+    border: 1px solid rgba(6,21,40,0.08);
+    border-radius: 20px;
+    padding: 2.25rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    box-shadow: 0 1px 3px rgba(6,21,40,0.04), 0 8px 24px rgba(6,21,40,0.06);
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+    transition-delay: var(--delay, 0ms);
+  }
+  .wtw-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 2px 6px rgba(6,21,40,0.06), 0 16px 40px rgba(6,21,40,0.10);
+    border-color: rgba(6,21,40,0.12);
+  }
+  .wtw-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .wtw-card.visible:hover {
+    transform: translateY(-3px);
+  }
+
+  /* Featured card accent */
+  .wtw-card-featured {
+    border-color: rgba(107,183,144,0.25);
+  }
+  .wtw-card-featured:hover {
+    border-color: rgba(107,183,144,0.45);
+  }
+
+  /* Card text */
+  .wtw-card-top {
+    margin-bottom: 1.5rem;
+  }
+  .wtw-card-label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  .wtw-card-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #061528;
+    line-height: 1.3;
+    margin: 0 0 0.5rem;
+    letter-spacing: -0.01em;
+  }
+  @media (min-width: 1024px) {
+    .wtw-card-title { font-size: 1.4rem; }
+  }
+  .wtw-card-body {
+    font-size: 1rem;
+    color: rgba(6,21,40,0.58);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* Stat blocks */
+  .wtw-stat-block {
+    margin-top: auto;
+  }
+  .wtw-stat-num {
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -0.03em;
+    display: block;
+  }
+  .wtw-stat-label {
+    font-size: 0.78rem;
+    color: rgba(6,21,40,0.45);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-top: 0.35rem;
+    display: block;
+  }
+  .wtw-stats-row {
+    display: flex;
+    gap: 2.5rem;
+    margin-top: auto;
+  }
+
+  /* Badges */
+  .wtw-badge-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: auto;
+  }
+  .wtw-badge {
+    display: inline-flex;
+    align-items: center;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.4rem 0.75rem;
+    border-radius: 99px;
+    border: 1px solid color-mix(in srgb, var(--badge) 30%, transparent);
+    background: color-mix(in srgb, var(--badge) 10%, transparent);
+    color: color-mix(in srgb, var(--badge) 80%, #061528);
+    letter-spacing: 0.02em;
+    width: fit-content;
+  }
+
+  /* CTA button */
+  .wtw-cta {
+    background: #D8B743;
+    color: #061528;
+    font-weight: 700;
+    font-size: 1.1rem;
+    padding: 1rem 2.5rem;
+    border-radius: 99px;
+    border: none;
+    transition: background 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+    box-shadow: 0 2px 8px rgba(216,183,67,0.25);
+  }
+  .wtw-cta:hover {
+    background: #c9ab3a;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(216,183,67,0.35);
+  }
+
+  @media (max-width: 767px) {
+    .wtw-card {
+      padding: 1.75rem 1.5rem;
+    }
+    .wtw-stat-num {
+      font-size: 2.4rem;
+    }
+    .wtw-stats-row {
+      gap: 1.5rem;
+    }
+  }
+
+  /* Credentials stats grid cells */
+  .cred-stat-cell {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.07);
     border-radius: 10px;
-    padding: 1.5rem;
-    height: 100%;
-    border: 1px solid rgba(216, 183, 67, 0.15);
+    padding: 1.4rem 1.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+  .cred-stat-val {
+    font-size: 2.4rem;
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -0.02em;
+  }
+  .cred-stat-lbl {
+    font-size: 0.72rem;
+    color: rgba(255,255,255,0.45);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    line-height: 1.35;
   }
 
-  .cred-card:hover .cred-card-inner {
-    background: #0d2340;
-  }
 
-  .cred-card::before {
+  /* ─── Credentials: Split layout with dashboard ─── */
+
+  /* Decorative ambient glow */
+  #section-credentials {
+    position: relative;
+    overflow: hidden;
+  }
+  #section-credentials::before {
     content: '';
     position: absolute;
-    inset: -1px;
-    border-radius: 13px;
-    border: 1px solid rgba(216, 183, 67, 0.3);
+    top: -20%;
+    left: -10%;
+    width: 50%;
+    height: 140%;
+    background: radial-gradient(ellipse at center, rgba(61,178,221,0.08) 0%, rgba(216,183,67,0.04) 40%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+  }
+  #section-credentials::after {
+    content: '';
+    position: absolute;
+    bottom: -30%;
+    right: -5%;
+    width: 45%;
+    height: 120%;
+    background: radial-gradient(ellipse at center, rgba(107,183,144,0.06) 0%, rgba(61,178,221,0.03) 45%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+  }
+  #section-credentials > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Two-column split */
+  .cred-split {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+  @media (min-width: 1024px) {
+    .cred-split {
+      flex-direction: row;
+      align-items: stretch;
+      gap: 3.5rem;
+    }
+  }
+
+  /* Left column */
+  .cred-left-col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  /* Quote */
+  .cred-section-quote {
+    font-size: clamp(1.4rem, 2.4vw, 2.1rem);
+    font-weight: 800;
+    font-style: italic;
+    line-height: 1.35;
+    color: white;
+  }
+
+  /* Card row — horizontal portrait cards */
+  .cred-cards-row {
+    display: flex;
+    gap: 1rem;
+  }
+
+  /* Individual card — portrait orientation */
+  .cred-card {
+    position: relative;
+    flex: 1;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.08);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+  .cred-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(0,0,0,0.45);
+  }
+
+  /* Tinted backgrounds per card */
+  .cred-card--yellow { background: linear-gradient(165deg, rgba(216,183,67,0.15) 0%, rgba(216,183,67,0.04) 100%); }
+  .cred-card--blue { background: linear-gradient(165deg, rgba(61,178,221,0.15) 0%, rgba(61,178,221,0.04) 100%); }
+  .cred-card--green { background: linear-gradient(165deg, rgba(107,183,144,0.15) 0%, rgba(107,183,144,0.04) 100%); }
+
+  /* Top accent bar */
+  .cred-card-bar {
+    display: block;
+    width: 100%;
+    height: 4px;
+  }
+  .cred-card--yellow .cred-card-bar { background: linear-gradient(90deg, #D8B743, #e5c85a); }
+  .cred-card--blue .cred-card-bar { background: linear-gradient(90deg, #3DB2DD, #5fc4e8); }
+  .cred-card--green .cred-card-bar { background: linear-gradient(90deg, #6BB790, #85c9a6); }
+
+  /* Card content — vertical portrait layout */
+  .cred-card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+    padding: 1.75rem 1.25rem 2rem;
+  }
+  .cred-card-content p {
+    color: rgba(255,255,255,0.88);
+    font-size: clamp(0.95rem, 1.1vw, 1.1rem);
+    line-height: 1.55;
+    margin: 0;
+  }
+
+  /* Card icon */
+  .cred-card-icon {
+    width: 36px;
+    height: 36px;
+    flex-shrink: 0;
+  }
+  .cred-card--yellow .cred-card-icon { color: #D8B743; }
+  .cred-card--blue .cred-card-icon { color: #3DB2DD; }
+  .cred-card--green .cred-card-icon { color: #6BB790; }
+
+  /* Right column */
+  .cred-right-col {
+    flex: 1;
+    display: flex;
+    align-items: stretch;
+  }
+
+  /* Dashboard panel */
+  .cred-dash {
+    position: relative;
+    width: 100%;
+    border-radius: 16px;
+    background: linear-gradient(160deg, #0c1a2e 0%, #091422 100%);
+    border: 1px solid rgba(255,255,255,0.06);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+  }
+
+  /* Dot grid background */
+  .cred-dash-grid {
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle, rgba(255,255,255,0.04) 1px, transparent 1px);
+    background-size: 20px 20px;
     pointer-events: none;
   }
 
-  /* Kill Zone Graphic */
-  .kill-zone-wrapper {
+  /* Stats row */
+  .cred-dash-stats {
     position: relative;
-    padding-bottom: 2.2rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.75rem;
+    z-index: 1;
+  }
+  .cred-dash-stat {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    padding: 0.75rem;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.05);
+  }
+  .cred-dash-stat-label {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: rgba(255,255,255,0.4);
+  }
+  .cred-dash-stat-val {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: white;
+    line-height: 1;
+    font-variant-numeric: tabular-nums;
+  }
+  .cred-dash-stat-delta {
+    font-size: 0.7rem;
+    font-weight: 700;
+  }
+  .cred-dash-stat-delta--good { color: #6BB790; }
+
+  /* Bar chart */
+  .cred-dash-chart {
+    position: relative;
+    z-index: 1;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    min-height: 100px;
+  }
+  .cred-dash-chart-label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: rgba(255,255,255,0.35);
+  }
+  .cred-dash-bars {
+    flex: 1;
+    display: flex;
+    align-items: flex-end;
+    gap: 6px;
+  }
+  .cred-dash-bar {
+    flex: 1;
+    height: 0;
+    border-radius: 4px 4px 0 0;
+    background: linear-gradient(180deg, rgba(61,178,221,0.7) 0%, rgba(61,178,221,0.3) 100%);
+    transition: height 1s cubic-bezier(0.4, 0, 0.2, 1);
+    transition-delay: var(--bar-delay, 0s);
+  }
+  .cred-dash-bar--highlight {
+    background: linear-gradient(180deg, rgba(216,183,67,0.9) 0%, rgba(216,183,67,0.5) 100%);
+  }
+  .cred-dash.animated .cred-dash-bar {
+    height: var(--bar-h);
   }
 
-  .kill-zone-labels {
+  /* Sparkline row */
+  .cred-dash-sparkrow {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+  }
+  .cred-dash-spark {
     display: flex;
-    justify-content: space-between;
-    padding: 0 2rem;
+    flex-direction: column;
+    gap: 0.25rem;
+    padding: 0.5rem 0.6rem;
+    border-radius: 8px;
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(255,255,255,0.04);
+  }
+  .cred-dash-spark-label {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: rgba(255,255,255,0.35);
+  }
+  .cred-dash-sparkline {
+    width: 100%;
+    height: 24px;
+  }
+
+  /* Live indicator */
+  .cred-dash-live {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    z-index: 2;
+  }
+  .cred-dash-live-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #6BB790;
+    animation: dash-pulse 2s ease-in-out infinite;
+  }
+  .cred-dash-live-text {
+    font-size: 0.6rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #6BB790;
+    font-weight: 700;
+  }
+  @keyframes dash-pulse {
+    0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(107,183,144,0.5); }
+    50% { opacity: 0.6; box-shadow: 0 0 0 4px rgba(107,183,144,0); }
+  }
+
+  /* Mobile */
+  @media (max-width: 1023px) {
+    .cred-dash { min-height: 320px; }
+  }
+  @media (max-width: 768px) {
+    .cred-cards-row { flex-direction: column; }
+  }
+  @media (max-width: 640px) {
+    .cred-dash-stats { grid-template-columns: 1fr; }
+    .cred-dash-sparkrow { grid-template-columns: 1fr; }
+  }
+
+  /* Reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    .cred-dash-bar { transition: none; }
+    .cred-dash-live-dot { animation: none; }
+  }
+
+  /* ═══ Kill Zone Section ═══ */
+  .kill-zone-section {
+    padding: 5rem 0 6rem;
+  }
+
+  .kill-zone-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  /* Left column — race visual */
+  .kill-zone-graphic-col {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .kz-race {
+    width: 100%;
+    background: #ffffff;
+    border: 1px solid rgba(6, 21, 40, 0.08);
+    border-radius: 16px;
+    padding: 2.5rem 2rem;
+    box-shadow: 0 4px 24px rgba(6, 21, 40, 0.06);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+
+  .kz-race-title {
+    color: #061528;
+    font-size: clamp(1.5rem, 1.8vw, 2rem);
+    font-weight: 900;
+    letter-spacing: 0.08em;
+    text-align: center;
+    margin-bottom: 0.25rem;
+  }
+
+  .kz-race-tagline {
+    color: rgba(6, 21, 40, 0.45);
+    font-size: clamp(0.92rem, 1vw, 1.1rem);
+    font-style: italic;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    text-align: center;
     margin-bottom: 0.5rem;
   }
 
-  .kill-zone-label-left,
-  .kill-zone-label-right {
+  .kz-race-subtitle {
+    color: rgba(6, 21, 40, 0.55);
+    font-size: clamp(0.82rem, 0.88vw, 0.92rem);
+    line-height: 1.4;
     text-align: center;
+    margin-bottom: 2.5rem;
   }
 
-  .kill-zone-end-label {
-    color: #ffffff;
-    font-size: clamp(0.96rem, 1.04vw, 1.2rem);
-    line-height: 1.05;
+  /* Incoming lead animation */
+  .kz-ring-incoming {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+    opacity: 0;
+    transform: scale(0.5) translateY(8px);
+  }
+
+  .kz-ring-incoming.kz-incoming-pop {
+    animation: kzIncomingPop 600ms cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  }
+
+  .kz-ring-incoming.kz-incoming-fade {
+    animation: kzIncomingFade 400ms ease-out forwards;
+  }
+
+  @keyframes kzIncomingPop {
+    0% { opacity: 0; transform: scale(0.3) translateY(12px); }
+    50% { opacity: 1; transform: scale(1.1) translateY(-2px); }
+    100% { opacity: 1; transform: scale(1) translateY(0); }
+  }
+
+  @keyframes kzIncomingFade {
+    0% { opacity: 1; transform: scale(1); }
+    100% { opacity: 0; transform: scale(0.85); }
+  }
+
+  .kz-incoming-icon {
+    width: 36px;
+    height: 36px;
+    color: #6BB790;
+  }
+
+  .kz-incoming-text {
+    font-size: 0.85rem;
     font-weight: 700;
+    color: #6BB790;
     letter-spacing: 0.01em;
   }
 
-  .kill-zone-bar {
+  .kz-ring-timer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Donut ring */
+  .kz-ring-wrap {
     position: relative;
-    height: 60px;
-    background: repeating-linear-gradient(
-      -45deg,
-      #D8B743,
-      #D8B743 10px,
-      #1a1a1a 10px,
-      #1a1a1a 20px
-    );
-    border: 2px solid #D8B743;
-    border-radius: 8px;
+    width: min(100%, 260px);
+    aspect-ratio: 1;
+    margin: 0 auto 1rem;
+  }
+
+  .kz-ring-svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  .kz-ring-track {
+    stroke: rgba(6, 21, 40, 0.07);
+  }
+
+  .kz-ring-progress {
+    stroke: #6BB790;
+    stroke-dasharray: 603.19;
+    stroke-dashoffset: 603.19;
+    transition: none;
+  }
+
+  .kz-ring-center {
+    position: absolute;
+    inset: 0;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    overflow: visible;
-    box-shadow: 0 0 20px rgba(216, 183, 67, 0.2), inset 0 0 30px rgba(0, 0, 0, 0.5);
+    pointer-events: none;
   }
 
-  .kill-zone-center-text {
-    background: rgba(6, 21, 40, 0.9);
-    padding: 6px 20px;
-    border-radius: 4px;
-    border: 1px solid rgba(216, 183, 67, 0.4);
-    z-index: 2;
+  .kz-ring-time {
+    font-size: clamp(2rem, 3vw, 2.8rem);
+    font-weight: 900;
+    color: #6BB790;
+    font-variant-numeric: tabular-nums;
+    line-height: 1;
+    letter-spacing: -0.02em;
   }
 
-  .kill-zone-bar-title {
-    color: #ffffff;
-    font-size: clamp(1.05rem, 1.28vw, 1.45rem);
-    line-height: 1.1;
-    font-weight: 800;
-    letter-spacing: 0.003em;
-    white-space: nowrap;
+  .kz-ring-label {
+    font-size: 0.75rem;
+    color: rgba(6, 21, 40, 0.4);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-weight: 600;
+    margin-top: 0.35rem;
   }
 
-  .kill-zone-icon {
-    position: absolute;
-    width: 52px;
-    height: 52px;
-    background: #D8B743;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 3px solid #D8B743;
-    box-shadow: 0 0 15px rgba(216, 183, 67, 0.4);
-    z-index: 3;
-  }
-
-  .kill-zone-icon-left {
-    left: -26px;
-  }
-
-  .kill-zone-icon-right {
-    right: -26px;
-  }
-
-  .kill-zone-sublabel {
-    position: absolute;
-    bottom: -2rem;
-    left: 0;
-    right: 0;
+  /* Milestone status — always red */
+  .kz-milestone {
+    margin-top: 1.25rem;
+    min-height: 2rem;
     text-align: center;
+    font-size: clamp(1.15rem, 1.3vw, 1.4rem);
+    font-weight: 800;
+    color: #dc2626;
+    opacity: 0;
+    transform: scale(0.85);
+    transition: none;
   }
 
-  .kill-zone-caption {
-    color: rgba(255, 255, 255, 0.64);
-    font-size: clamp(0.92rem, 0.96vw, 1.05rem);
-    line-height: 1.3;
-    font-weight: 500;
+  .kz-milestone.kz-milestone-green {
+    color: #6BB790;
   }
 
-  .kill-zone-copy-wrap {
-    max-width: 48rem;
-    margin-top: 3.5rem;
+  .kz-milestone.kz-milestone-pop {
+    opacity: 1;
+    transform: scale(1);
+    animation: kzMilestonePop 400ms cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  }
+
+  @keyframes kzMilestonePop {
+    0%   { opacity: 0; transform: scale(0.7); }
+    60%  { opacity: 1; transform: scale(1.08); }
+    100% { opacity: 1; transform: scale(1); }
+  }
+
+  /* Shake animation */
+  @keyframes kzShake {
+    0%, 100% { transform: translateX(0); }
+    10% { transform: translateX(-6px) rotate(-0.5deg); }
+    20% { transform: translateX(5px) rotate(0.5deg); }
+    30% { transform: translateX(-7px) rotate(-0.3deg); }
+    40% { transform: translateX(4px) rotate(0.3deg); }
+    50% { transform: translateX(-5px); }
+    60% { transform: translateX(6px); }
+    70% { transform: translateX(-3px); }
+    80% { transform: translateX(3px); }
+    90% { transform: translateX(-2px); }
+  }
+
+  .kz-race.kz-shaking-light {
+    animation: kzShakeLight 0.4s ease-in-out infinite;
+  }
+
+  @keyframes kzShakeLight {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-3px) rotate(-0.3deg); }
+    50% { transform: translateX(3px) rotate(0.3deg); }
+    75% { transform: translateX(-2px); }
+  }
+
+  .kz-race.kz-shaking {
+    animation: kzShakeMed 0.3s ease-in-out infinite;
+  }
+
+  @keyframes kzShakeMed {
+    0%, 100% { transform: translateX(0); }
+    10% { transform: translateX(-6px) rotate(-0.6deg); }
+    20% { transform: translateX(5px) rotate(0.5deg); }
+    30% { transform: translateX(-7px) rotate(-0.4deg); }
+    40% { transform: translateX(6px) rotate(0.4deg); }
+    50% { transform: translateX(-5px); }
+    60% { transform: translateX(7px); }
+    70% { transform: translateX(-4px); }
+    80% { transform: translateX(4px); }
+    90% { transform: translateX(-3px); }
+  }
+
+  .kz-race.kz-shaking-heavy {
+    animation: kzShakeHeavy 0.15s ease-in-out infinite;
+  }
+
+  @keyframes kzShakeHeavy {
+    0%, 100% { transform: translate(0, 0) rotate(0); }
+    10% { transform: translate(-10px, 2px) rotate(-1.2deg); }
+    20% { transform: translate(8px, -2px) rotate(1deg); }
+    30% { transform: translate(-12px, 1px) rotate(-0.8deg); }
+    40% { transform: translate(10px, -1px) rotate(1.2deg); }
+    50% { transform: translate(-8px, 2px) rotate(-1deg); }
+    60% { transform: translate(12px, -2px) rotate(0.8deg); }
+    70% { transform: translate(-10px, 1px) rotate(-1.2deg); }
+    80% { transform: translate(8px, -1px) rotate(1deg); }
+    90% { transform: translate(-6px, 2px) rotate(-0.6deg); }
+  }
+
+  /* Final death blow */
+  .kz-race-gap {
+    margin-top: 1.25rem;
+    padding-top: 1rem;
+    border-top: 2px solid #dc2626;
+    text-align: center;
+    opacity: 0;
+    transform: scale(0.95);
+    transition: opacity 500ms ease-out, transform 500ms ease-out;
+  }
+
+  .kz-race-gap.kz-gap-visible {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  .kz-race-gap-label {
+    color: #dc2626;
+    font-size: clamp(1.1rem, 1.3vw, 1.35rem);
+    font-weight: 900;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  /* Right column — copy */
+  .kill-zone-copy-col {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .kill-zone-copy-block {
+    padding: 0.6rem 0;
+  }
+
+  .kill-zone-copy-block.kz-copy-final {
+    margin-top: 1.2rem;
+  }
+
+  .kill-zone-copy-divider {
+    height: 1px;
+    background: rgba(6, 21, 40, 0.1);
+    margin: 0.4rem 0;
+  }
+
+  /* Copy reveal animation */
+  .kz-copy-reveal {
+    opacity: 0;
+    transform: translateX(24px);
+    transition: opacity 500ms ease-out, transform 500ms ease-out;
+    transition-delay: var(--kz-delay, 0ms);
+  }
+
+  .kz-copy-reveal.kz-visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  /* Final line underline animation */
+  .kz-copy-final .kill-zone-copy {
+    position: relative;
+    display: inline;
+  }
+
+  .kz-copy-final .kill-zone-copy::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #9e7e20;
+    transition: width 600ms ease-out;
+    transition-delay: 860ms;
+  }
+
+  .kz-copy-final.kz-visible .kill-zone-copy::after {
+    width: 100%;
   }
 
   .kill-zone-copy {
-    color: rgba(255, 255, 255, 0.96);
-    font-size: clamp(1.28rem, 1.55vw, 1.75rem);
-    line-height: 1.38;
-    font-weight: 700;
+    color: rgba(6, 21, 40, 0.88);
+    font-size: clamp(1.12rem, 1.3vw, 1.45rem);
+    line-height: 1.5;
+    font-weight: 600;
     letter-spacing: 0.002em;
-    max-width: 48rem;
-    margin-inline: auto;
   }
+
+  .kz-text-accent {
+    color: #9e7e20;
+    font-weight: 700;
+  }
+
+  .kill-zone-copy-block:hover {
+    background: rgba(6, 21, 40, 0.03);
+    border-radius: 4px;
+  }
+
+  /* Cycle diagram */
+  .cycle-wrap {
+    position: relative; width: 320px; height: 320px; flex-shrink: 0;
+  }
+  .cycle-svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+  .cycle-node-dot { transition: stroke 0.3s ease, filter 0.3s ease; }
+  .cycle-node-dot.active {
+    stroke: rgba(216,183,67,0.9) !important;
+    filter: drop-shadow(0 0 6px rgba(216,183,67,0.6));
+  }
+  .cycle-arc { stroke-dasharray: 200; stroke-dashoffset: 200; transition: stroke-dashoffset 0.6s ease, stroke 0.3s ease; }
+  .cycle-arc.drawn { stroke-dashoffset: 0; }
+  .cycle-arc.active { stroke: rgba(216,183,67,0.7) !important; }
+  .cycle-arc-return.active { stroke: rgba(216,183,67,0.9) !important; }
+  .cycle-label {
+    position: absolute; font-size: 0.65rem; color: rgba(255,255,255,0.45);
+    font-weight: 600; text-align: center; line-height: 1.3;
+    transition: color 0.3s ease;
+  }
+  .cycle-label.active { color: rgba(255,255,255,0.95); }
+  .cycle-center {
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
+    font-size: 0.58rem; font-weight: 700; color: rgba(216,183,67,0.65);
+    text-align: center; line-height: 1.3; letter-spacing: 0.04em; text-transform: uppercase;
+  }
+
+  /* Circular latency diagram */
+  .circ-latency-wrap { display: flex; flex-direction: column; align-items: center; gap: 0; }
+  .circ-diagram-row { display: flex; align-items: center; gap: 3rem; flex-wrap: wrap; justify-content: center; }
+  .circ-svg-container { width: 300px; height: 300px; flex-shrink: 0; }
+  .circ-svg { width: 100%; height: 100%; overflow: visible; }
+
+  .circ-legend { display: flex; flex-direction: column; min-width: 160px; }
+  .circ-legend-item { display: flex; align-items: flex-start; gap: 0.75rem; }
+  .circ-legend-dot { width: 12px; height: 12px; border-radius: 50%; flex-shrink: 0; margin-top: 3px; }
+  .circ-legend-label { font-size: 0.75rem; color: rgba(255,255,255,0.4); text-transform: uppercase; letter-spacing: 0.06em; font-weight: 600; }
+  .circ-legend-val { font-size: 2rem; font-weight: 800; line-height: 1.1; margin-top: 0.1rem; transition: color 0.6s ease; }
+
+  /* Toggle (keep same styling) */
+  .latency-toggle-row { display: flex; align-items: center; gap: 0.75rem; justify-content: center; }
+  .latency-toggle-label { font-size: 0.65rem; color: rgba(255,255,255,0.45); font-weight: 600; letter-spacing: 0.02em; }
+  .latency-toggle {
+    position: relative; width: 44px; height: 24px;
+    background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 12px; cursor: pointer; transition: background 0.25s, border-color 0.25s;
+  }
+  .latency-toggle[aria-pressed="true"] { background: rgba(107,183,144,0.22); border-color: rgba(107,183,144,0.5); }
+  .latency-toggle-knob {
+    position: absolute; top: 3px; left: 3px; width: 16px; height: 16px;
+    background: rgba(255,255,255,0.4); border-radius: 50%; transition: transform 0.25s, background 0.25s;
+  }
+  .latency-toggle[aria-pressed="true"] .latency-toggle-knob { transform: translateX(20px); background: #6BB790; }
 
   .latency-graphic {
     display: block;
@@ -1759,8 +3478,12 @@ const trustedLogos = [
 
   @media (max-width: 640px) {
     .kill-zone-section {
-      padding-top: 1.75rem;
-      padding-bottom: 3.25rem;
+      padding: 2.5rem 0 3.25rem;
+    }
+
+    .kill-zone-grid {
+      grid-template-columns: 1fr;
+      gap: 2rem;
     }
 
     main > .absolute.inset-0.pointer-events-none {
@@ -2017,66 +3740,43 @@ const trustedLogos = [
       line-height: 1.48;
     }
 
-    .kill-zone-labels {
-      padding: 0 0.5rem;
-      margin-bottom: 0.7rem;
+    .kz-race {
+      padding: 1.5rem 1.25rem;
     }
-    .kill-zone-end-label {
-      font-size: 0.8rem;
+    .kz-race-title {
+      font-size: 1.25rem;
     }
-    .kill-zone-bar {
-      height: 44px;
+    .kz-race-tagline {
+      font-size: 0.85rem;
     }
-    .kill-zone-center-text {
-      padding: 4px 10px;
-    }
-    .kill-zone-bar-title {
+    .kz-race-subtitle {
       font-size: 0.82rem;
-      line-height: 1.12;
+      margin-bottom: 1.25rem;
     }
-    .kill-zone-caption {
-      font-size: 0.82rem;
+    .kz-ring-wrap {
+      width: min(100%, 220px);
+      margin-bottom: 0.75rem;
     }
-    .kill-zone-copy-wrap {
-      margin-top: 3.35rem;
+    .kz-ring-time {
+      font-size: 1.8rem;
+    }
+    .kz-incoming-icon {
+      width: 28px;
+      height: 28px;
     }
     .kill-zone-copy {
       font-size: 1.02rem;
       line-height: 1.42;
-      max-width: 33ch;
     }
-    .kill-zone-icon {
-      width: 40px;
-      height: 40px;
+    /* Mobile: copy reveals slide up instead of from right */
+    .kz-copy-reveal {
+      transform: translateY(16px);
     }
-    .kill-zone-icon-left {
-      left: -20px;
+    .kz-copy-reveal.kz-visible {
+      transform: translateY(0);
     }
-    .kill-zone-icon-right {
-      right: -20px;
-    }
-    .kill-zone-icon svg {
-      width: 20px;
-      height: 20px;
-    }
-    .kill-zone-wrapper {
-      padding-bottom: 3.9rem;
-    }
-    .kill-zone-sublabel {
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: -3.2rem;
-      margin-top: 0;
-      padding-inline: 0.45rem;
-      z-index: 2;
-    }
-    .kill-zone-caption {
-      display: block;
-      max-width: calc(100% - 0.6rem);
-      margin-inline: auto;
-      margin-top: 0.42rem;
-      line-height: 1.24;
+    .kz-copy-final {
+      margin-top: 0.8rem;
     }
 
     .section-eight-copy {
@@ -2187,4 +3887,403 @@ const trustedLogos = [
       box-shadow: 5px 5px 0 #000000;
     }
   }
+
+  /* Mobile keyboard — scales to fit screen */
+  @media (max-width: 1023px) {
+    .kb-wrapper { padding: 1.5rem 0; justify-content: center !important; }
+    .kb-container {
+      width: 100%;
+      max-width: 420px;
+      animation: none; /* no float on mobile */
+    }
+    .kb-key { font-size: 0.55rem; padding: 0.4rem 0.25rem; }
+    .kb-key-sm { min-width: 22px; }
+    .kb-key-value { font-size: 0.72rem; padding: 0.55rem 0.4rem; }
+    .kb-screen-content { font-size: 0.85rem; }
+    .kb-screen { min-height: 42px; padding: 0.6rem 0.75rem; }
+    .kb-key-space { font-size: 0.78rem; padding: 0.6rem 0.8rem; }
+  }
+
+  @media (max-width: 480px) {
+    .kb-container { max-width: 360px; }
+    .kb-key { font-size: 0.48rem; padding: 0.35rem 0.2rem; }
+    .kb-key-value { font-size: 0.62rem; padding: 0.5rem 0.35rem; }
+    .kb-screen-content { font-size: 0.75rem; }
+    .kb-key-space { font-size: 0.65rem; }
+  }
+
+
+  /* Infinite marquee scroll */
+  @keyframes marquee-scroll {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-33.333%); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .marquee-track { animation-play-state: paused; }
+  }
+
+
+  @media (max-width: 640px) {
+    .circ-svg-container { width: 240px; height: 240px; }
+    .circ-legend { min-width: 0; flex-direction: row; gap: 1.5rem; flex-wrap: wrap; justify-content: center; }
+    .circ-legend-item { margin-top: 0 !important; }
+    .circ-legend-val { font-size: 1.5rem; }
+  }
+
+  /* ─── Metrics section background atmosphere ─── */
+  .metrics-bg-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.07) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.07) 1px, transparent 1px);
+    background-size: 72px 72px;
+    mask-image: linear-gradient(to bottom, transparent 0%, black 8%, black 92%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 8%, black 92%, transparent 100%);
+    pointer-events: none;
+  }
+  .metrics-bg-glow {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(100px);
+    pointer-events: none;
+    animation: metricsGlowDrift 14s ease-in-out infinite alternate;
+  }
+  .metrics-bg-glow-1 {
+    width: 600px;
+    height: 600px;
+    background: rgba(61,178,221,0.08);
+    top: -15%;
+    right: -8%;
+  }
+  .metrics-bg-glow-2 {
+    width: 500px;
+    height: 500px;
+    background: rgba(216,183,67,0.06);
+    bottom: -15%;
+    left: -8%;
+    animation-delay: -7s;
+  }
+  @keyframes metricsGlowDrift {
+    0%   { transform: translate(0, 0) scale(1); }
+    100% { transform: translate(25px, -15px) scale(1.08); }
+  }
+
+  /* ─── Metrics bento grid ─── */
+  .metrics-bento {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  @media (min-width: 768px) {
+    .metrics-bento {
+      grid-template-columns: 3fr 2fr;
+      gap: 1.15rem;
+    }
+    .m-card-revenue {
+      grid-column: 1 / -1;
+    }
+  }
+
+  /* ─── Card base — glass effect ─── */
+  .m-card {
+    background: linear-gradient(165deg, rgba(18,40,69,0.9) 0%, rgba(12,28,50,0.92) 100%);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255,255,255,0.055);
+    border-radius: 20px;
+    padding: 2.25rem 2rem 1.75rem;
+    opacity: 0;
+    transform: translateY(22px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out, border-color 0.3s ease, box-shadow 0.3s ease;
+    transition-delay: var(--delay, 0ms);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  /* Gradient border shine (top-left highlight) */
+  .m-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 20px;
+    padding: 1px;
+    background: linear-gradient(165deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.015) 40%, transparent 100%);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+  /* Accent glow on hover */
+  .m-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 20px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+  }
+  .m-card-efficiency::after {
+    background: radial-gradient(ellipse at 50% 100%, rgba(216,183,67,0.045) 0%, transparent 60%);
+  }
+  .m-card-speed::after {
+    background: radial-gradient(ellipse at 50% 100%, rgba(61,178,221,0.045) 0%, transparent 60%);
+  }
+  .m-card-revenue::after {
+    background: radial-gradient(ellipse at 80% 100%, rgba(107,183,144,0.045) 0%, transparent 60%);
+  }
+  .m-card:hover {
+    border-color: rgba(255,255,255,0.09);
+    box-shadow: 0 8px 36px rgba(0,0,0,0.22);
+  }
+  .m-card:hover::after {
+    opacity: 1;
+  }
+  .m-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ─── Card text ─── */
+  .m-card-text {
+    margin-bottom: 1.75rem;
+    position: relative;
+    z-index: 1;
+  }
+  .m-card-label {
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 0.7rem;
+  }
+  .m-card-heading {
+    font-size: 1.65rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 0.6rem;
+    line-height: 1.25;
+  }
+  @media (min-width: 1024px) {
+    .m-card-heading { font-size: 2rem; }
+  }
+  .m-card-desc {
+    color: #E1E4E9;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    max-width: 42ch;
+  }
+
+  /* ─── Viz container ─── */
+  .m-viz {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ─── SPEED gauge (compact right card) ─── */
+  .m-viz-gauge {
+    align-items: center;
+  }
+  .gauge-svg {
+    width: 100%;
+    max-width: 210px;
+  }
+  .gauge-fill {
+    stroke-dasharray: 270;
+    stroke-dashoffset: 270;
+    transition: stroke-dashoffset 1.2s cubic-bezier(0.22, 1, 0.36, 1) 0.15s;
+  }
+  .m-card.visible .gauge-fill {
+    stroke-dashoffset: 8;
+  }
+  .gauge-value-text {
+    opacity: 0;
+    transition: opacity 0.35s ease 0.7s;
+  }
+  .m-card.visible .gauge-value-text {
+    opacity: 1;
+  }
+  .gauge-legend {
+    display: flex;
+    gap: 1.1rem;
+    margin-top: 0.9rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .gauge-legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+  }
+  .gauge-legend-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .gauge-legend-text {
+    font-size: 0.82rem;
+    color: #E1E4E9;
+  }
+
+  /* ─── EFFICIENCY bars (large left card) ─── */
+  .m-viz-bars {
+    gap: 0.8rem;
+  }
+  .bar-row {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+  }
+  .bar-row-label {
+    font-size: 0.68rem;
+    font-weight: 600;
+    color: rgba(225,228,233,0.38);
+    width: 72px;
+    flex-shrink: 0;
+    text-align: right;
+    letter-spacing: 0.02em;
+  }
+  .bar-track {
+    flex: 1;
+    height: 34px;
+    background: rgba(255,255,255,0.022);
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+  }
+  .bar-fill {
+    height: 100%;
+    border-radius: 10px;
+    background: var(--bar-color);
+    width: 0%;
+    transition: width 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.1s;
+    display: flex;
+    align-items: center;
+    padding-left: 0.8rem;
+    min-width: 0;
+  }
+  .m-card.visible .bar-fill {
+    width: var(--bar-width);
+  }
+  .bar-val {
+    font-size: 0.68rem;
+    font-weight: 600;
+    color: #fff;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.3s ease 0.75s;
+  }
+  .m-card.visible .bar-val {
+    opacity: 1;
+  }
+  .bar-caption {
+    font-size: 0.85rem;
+    color: rgba(225,228,233,0.65);
+    margin-top: 0.35rem;
+    text-align: right;
+  }
+
+  /* ─── REVENUE chart ─── */
+  .m-card-revenue-inner {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  @media (min-width: 768px) {
+    .m-card-revenue-inner {
+      flex-direction: row;
+      align-items: center;
+      gap: 2.5rem;
+    }
+    .m-card-revenue-inner .m-card-text {
+      flex-shrink: 0;
+      max-width: 300px;
+      margin-bottom: 0;
+    }
+    .m-card-revenue-inner .m-viz-chart {
+      flex: 1;
+    }
+  }
+  .m-viz-chart {
+    position: relative;
+  }
+  .chart-svg {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  .chart-line {
+    stroke-dasharray: 700;
+    stroke-dashoffset: 700;
+    transition: stroke-dashoffset 1.4s cubic-bezier(0.22, 1, 0.36, 1) 0.1s;
+  }
+  .chart-area {
+    opacity: 0;
+    transition: opacity 0.7s ease 0.5s;
+  }
+  .m-card.visible .chart-line {
+    stroke-dashoffset: 0;
+  }
+  .m-card.visible .chart-area {
+    opacity: 1;
+  }
+  .chart-dot {
+    opacity: 0;
+    transition: opacity 0.25s ease 1.2s;
+  }
+  .chart-dot-pulse {
+    opacity: 0;
+    transition: opacity 0.25s ease 1.2s;
+  }
+  .m-card.visible .chart-dot {
+    opacity: 1;
+  }
+  .m-card.visible .chart-dot-pulse {
+    opacity: 0.35;
+    animation: dotPulse 2.5s ease-in-out infinite 1.6s;
+  }
+  @keyframes dotPulse {
+    0%, 100% { r: 4; opacity: 0.35; }
+    50% { r: 10; opacity: 0; }
+  }
+  .chart-x-labels {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.35rem 0 0;
+  }
+  .chart-x-labels span {
+    font-size: 0.62rem;
+    color: rgba(225,228,233,0.18);
+    font-weight: 500;
+  }
+
+  /* ─── Metrics mobile ─── */
+  @media (max-width: 767px) {
+    .m-card {
+      padding: 1.75rem 1.5rem 1.5rem;
+    }
+    .gauge-svg {
+      max-width: 190px;
+    }
+    .bar-row-label {
+      width: 55px;
+      font-size: 0.6rem;
+    }
+    .bar-track {
+      height: 26px;
+    }
+    .m-card-revenue-inner {
+      gap: 1.25rem;
+    }
+  }
+
 </style>
