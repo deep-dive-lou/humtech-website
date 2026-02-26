@@ -871,21 +871,37 @@ const trustedLogos = [
   <div class="max-w-screen-2xl mx-auto px-8 lg:px-16">
     <div class="testi-layout">
 
-      <!-- Photo carousel — scrolling squares -->
-      <div class="film-reel" aria-hidden="true">
-        <div class="film-frames">
-          <div class="film-frame"><div class="film-placeholder">01</div></div>
-          <div class="film-frame"><div class="film-placeholder">02</div></div>
-          <div class="film-frame"><div class="film-placeholder">03</div></div>
-          <div class="film-frame"><div class="film-placeholder">04</div></div>
-          <div class="film-frame"><div class="film-placeholder">05</div></div>
-          <div class="film-frame"><div class="film-placeholder">06</div></div>
-          <div class="film-frame"><div class="film-placeholder">01</div></div>
-          <div class="film-frame"><div class="film-placeholder">02</div></div>
-          <div class="film-frame"><div class="film-placeholder">03</div></div>
-          <div class="film-frame"><div class="film-placeholder">04</div></div>
-          <div class="film-frame"><div class="film-placeholder">05</div></div>
-          <div class="film-frame"><div class="film-placeholder">06</div></div>
+      <!-- Left carousel — scrolling UP -->
+      <div class="film-reel film-reel--left" aria-hidden="true">
+        <div class="film-frames film-frames--up">
+          <div class="film-frame"><img src="/public/carousel/geometric.jpg" alt="" loading="lazy"/></div>
+          <div class="film-frame"><img src="/public/carousel/desk-setup.jpg" alt="" loading="lazy"/></div>
+          <div class="film-frame"><img src="/public/carousel/code-screen.jpg" alt="" loading="lazy"/></div>
+          <div class="film-frame"><img src="/public/carousel/ai-chip.jpg" alt="" loading="lazy"/></div>
+          <div class="film-frame"><img src="/public/carousel/business-team.jpg" alt="" loading="lazy"/></div>
+          <!-- Duplicate for seamless loop -->
+          <div class="film-frame"><img src="/public/carousel/geometric.jpg" alt="" loading="lazy"/></div>
+          <div class="film-frame"><img src="/public/carousel/desk-setup.jpg" alt="" loading="lazy"/></div>
+          <div class="film-frame"><img src="/public/carousel/code-screen.jpg" alt="" loading="lazy"/></div>
+          <div class="film-frame"><img src="/public/carousel/ai-chip.jpg" alt="" loading="lazy"/></div>
+          <div class="film-frame"><img src="/public/carousel/business-team.jpg" alt="" loading="lazy"/></div>
+        </div>
+      </div>
+
+      <!-- Right carousel — scrolling DOWN -->
+      <div class="film-reel film-reel--right" aria-hidden="true">
+        <div class="film-frames film-frames--down">
+          <div class="film-frame"><img src="/public/carousel/business-team.jpg" alt="" loading="lazy"/></div>
+          <div class="film-frame"><img src="/public/carousel/ai-chip.jpg" alt="" loading="lazy"/></div>
+          <div class="film-frame"><img src="/public/carousel/code-screen.jpg" alt="" loading="lazy"/></div>
+          <div class="film-frame"><img src="/public/carousel/desk-setup.jpg" alt="" loading="lazy"/></div>
+          <div class="film-frame"><img src="/public/carousel/geometric.jpg" alt="" loading="lazy"/></div>
+          <!-- Duplicate for seamless loop -->
+          <div class="film-frame"><img src="/public/carousel/business-team.jpg" alt="" loading="lazy"/></div>
+          <div class="film-frame"><img src="/public/carousel/ai-chip.jpg" alt="" loading="lazy"/></div>
+          <div class="film-frame"><img src="/public/carousel/code-screen.jpg" alt="" loading="lazy"/></div>
+          <div class="film-frame"><img src="/public/carousel/desk-setup.jpg" alt="" loading="lazy"/></div>
+          <div class="film-frame"><img src="/public/carousel/geometric.jpg" alt="" loading="lazy"/></div>
         </div>
       </div>
 
@@ -1109,6 +1125,99 @@ const trustedLogos = [
 </section>
 
 
+<script is:inline>
+/* ══ SECTION C — THE PROOF: animations + interactions ══ */
+(function () {
+  /* ── 1. Scroll reveal via IntersectionObserver ── */
+  var revealEls = document.querySelectorAll('[data-proof-reveal]');
+  if (!revealEls.length) return;
+
+  var revealObserver = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('is-visible');
+      revealObserver.unobserve(entry.target);
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+  revealEls.forEach(function (el) {
+    revealObserver.observe(el);
+  });
+
+  /* ── 2. Number counters ── */
+  function animateCounter(el) {
+    var target = parseInt(el.getAttribute('data-target'), 10);
+    if (isNaN(target)) return;
+    var duration = target >= 20 ? 900 : 600;
+    var startTime = null;
+    var startVal = 0;
+
+    function step(timestamp) {
+      if (!startTime) startTime = timestamp;
+      var progress = Math.min((timestamp - startTime) / duration, 1);
+      /* ease-out cubic */
+      var eased = 1 - Math.pow(1 - progress, 3);
+      el.textContent = Math.round(startVal + (target - startVal) * eased);
+      if (progress < 1) requestAnimationFrame(step);
+      else el.textContent = target;
+    }
+    requestAnimationFrame(step);
+  }
+
+  /* ── 3. Star fill-in animation ── */
+  function animateStars() {
+    var stars = document.querySelectorAll('#section-proof .proof-star');
+    stars.forEach(function (star, i) {
+      /* Stars 1-4 fully lit, star 5 is partial (4.9/5) */
+      var delay = i * 160;
+      setTimeout(function () {
+        star.classList.add('lit');
+      }, delay);
+    });
+  }
+
+  /* ── 4. Trigger counters + stars when headline enters view ── */
+  var headline = document.querySelector('#section-proof .proof-zone-headline');
+  if (headline) {
+    var triggered = false;
+    var statsObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting && !triggered) {
+          triggered = true;
+          /* Small delay to let the reveal animation start first */
+          setTimeout(function () {
+            document.querySelectorAll('#section-proof .proof-counter').forEach(animateCounter);
+            animateStars();
+          }, 200);
+          statsObserver.disconnect();
+        }
+      });
+    }, { threshold: 0.3 });
+    statsObserver.observe(headline);
+  }
+
+  /* ── 5. Expandable citation cards ── */
+  var toggles = document.querySelectorAll('[data-cite-toggle]');
+  toggles.forEach(function (toggle) {
+    toggle.addEventListener('click', function () {
+      var expanded = toggle.getAttribute('aria-expanded') === 'true';
+      var drawer = toggle.closest('.proof-card-footer').querySelector('.proof-cite-drawer');
+      var label = toggle.querySelector('.proof-cite-toggle-label');
+
+      toggle.setAttribute('aria-expanded', String(!expanded));
+      drawer.setAttribute('aria-hidden', String(expanded));
+
+      if (!expanded) {
+        drawer.classList.add('is-open');
+        if (label) label.textContent = 'Hide citation';
+      } else {
+        drawer.classList.remove('is-open');
+        if (label) label.textContent = 'View citation';
+      }
+    });
+  });
+})();
+</script>
 
 
 <script is:inline>
@@ -3771,14 +3880,16 @@ const trustedLogos = [
   }
   .testi-link:hover { opacity: 0.75; }
 
-  /* ── Vertical photo carousel ── */
+  /* ── Vertical photo carousels (left + right) ── */
   .film-reel {
     position: absolute;
-    top: 0; bottom: 0; left: 2.5rem;
+    top: 0; bottom: 0;
     width: 140px;
     overflow: hidden;
     z-index: 1;
   }
+  .film-reel--left  { left: 2.5rem; }
+  .film-reel--right { right: 2.5rem; }
   @media (max-width: 900px) {
     .film-reel { display: none; }
   }
@@ -3786,11 +3897,20 @@ const trustedLogos = [
     display: flex;
     flex-direction: column;
     gap: 10px;
+  }
+  .film-frames--up {
     animation: film-scroll-up 18s linear infinite;
+  }
+  .film-frames--down {
+    animation: film-scroll-down 18s linear infinite;
   }
   @keyframes film-scroll-up {
     0%   { transform: translateY(0); }
     100% { transform: translateY(-50%); }
+  }
+  @keyframes film-scroll-down {
+    0%   { transform: translateY(-50%); }
+    100% { transform: translateY(0); }
   }
   .film-frame {
     width: 140px; height: 140px;
@@ -3798,6 +3918,11 @@ const trustedLogos = [
     border-radius: 6px;
     overflow: hidden;
     border: 2px solid rgba(6,21,40,0.15);
+  }
+  .film-frame img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    display: block;
   }
   .film-placeholder {
     width: 100%; height: 100%;
@@ -4078,60 +4203,230 @@ const trustedLogos = [
   }
 
 
+  /* ── Section C proof: shared reveal animation ── */
+  .proof-reveal {
+    opacity: 0;
+    transform: translateY(22px);
+    transition: opacity 0.65s ease, transform 0.65s ease;
+  }
+  .proof-reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ── Zone 1: headline ── */
+  .proof-zone-headline {
+    max-width: 56rem;
+    margin: 0 auto;
+    text-align: center;
+  }
+
   .results-proof-copy {
-    color: rgba(255, 255, 255, 0.95);
-    font-size: clamp(1.08rem, 1.65vw, 1.75rem);
-    line-height: 1.4;
+    color: #061528;
+    font-size: clamp(1.18rem, 1.75vw, 1.9rem);
+    line-height: 1.38;
     font-weight: 700;
-    max-width: 44ch;
+    max-width: 52ch;
     margin: 0 auto;
   }
 
-  .trustpilot-stars {
-    margin-top: 1.75rem;
-    display: flex;
+  /* Inline animated star strip */
+  .proof-stars-inline {
+    display: inline-flex;
     align-items: center;
-    justify-content: center;
-    gap: 0.25rem;
+    gap: 0.05em;
+    white-space: nowrap;
+    vertical-align: middle;
   }
 
-  .trustpilot-star {
-    font-size: clamp(2.2rem, 4.1vw, 3.4rem);
+  .proof-star {
+    font-size: 1.1em;
+    color: rgba(216, 183, 67, 0.2);
+    transition: color 0.25s ease, text-shadow 0.25s ease;
     line-height: 1;
   }
 
-  .trustpilot-star-filled {
+  .proof-star.lit {
     color: #d8b743;
-    text-shadow: 0 0 10px rgba(216, 183, 67, 0.4);
+    text-shadow: 0 0 8px rgba(216, 183, 67, 0.55);
   }
 
-  .trustpilot-star-outline {
-    color: #d8b743;
-    text-shadow: 0 0 10px rgba(216, 183, 67, 0.2);
+  .proof-stars-label {
+    font-size: 0.72em;
+    font-weight: 700;
+    color: rgba(6, 21, 40, 0.55);
+    margin-left: 0.3em;
+    letter-spacing: 0.01em;
   }
 
-  .trustpilot-star-partial {
+  /* Animated counter spans */
+  .proof-counter {
+    display: inline-block;
+    font-variant-numeric: tabular-nums;
+    min-width: 1.4ch;
+    text-align: center;
+  }
+
+  /* ── Zone 2: research bento grid ── */
+  .section-eight-proof-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+    max-width: 56rem;
+    margin: 3.5rem auto 0;
+  }
+
+  .section-eight-proof-card {
     position: relative;
-    color: rgba(216, 183, 67, 0.22);
-    text-shadow: none;
-  }
-
-  .trustpilot-star-partial::before {
-    content: "\2605";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 90%;
+    margin: 0;
+    text-align: left;
+    border-radius: 12px;
+    border: 1px solid rgba(6, 21, 40, 0.12);
+    background: #ffffff;
+    box-shadow:
+      0 2px 8px rgba(6, 21, 40, 0.06),
+      0 12px 28px rgba(6, 21, 40, 0.08);
     overflow: hidden;
-    color: #d8b743;
-    text-shadow: 0 0 10px rgba(216, 183, 67, 0.35);
+    display: flex;
+    flex-direction: column;
   }
 
-  .trustpilot-caption {
-    margin-top: 0.6rem;
-    color: rgba(255, 255, 255, 0.7);
-    font-size: 0.95rem;
+  .proof-card-body {
+    padding: 1.4rem 1.4rem 1rem;
+    flex: 1;
+  }
+
+  .proof-card-footer {
+    border-top: 1px solid rgba(6, 21, 40, 0.07);
+    padding: 0;
+  }
+
+  .section-eight-proof-text {
+    color: rgba(6, 21, 40, 0.82);
+    font-size: 1.05rem;
+    line-height: 1.45;
+    margin: 0;
+    font-weight: 500;
+  }
+
+  .section-eight-proof-highlight {
+    color: #9a7d1e;
+    font-weight: 700;
+  }
+
+  /* Expandable citation toggle */
+  .proof-cite-toggle {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    width: 100%;
+    padding: 0.7rem 1.4rem;
+    background: none;
+    border: 0;
+    cursor: pointer;
+    text-align: left;
+    color: rgba(6, 21, 40, 0.45);
+    font-size: 0.8rem;
     font-weight: 600;
+    letter-spacing: 0.02em;
+    transition: color 0.18s ease;
+  }
+
+  .proof-cite-toggle:hover {
+    color: #061528;
+  }
+
+  .proof-cite-toggle-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 1.5px solid currentColor;
+    font-size: 0.8rem;
+    line-height: 1;
+    flex-shrink: 0;
+    transition: transform 0.25s ease;
+  }
+
+  .proof-cite-toggle[aria-expanded="true"] .proof-cite-toggle-icon {
+    transform: rotate(45deg);
+  }
+
+  .proof-cite-drawer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease, padding 0.35s ease;
+    padding: 0 1.4rem;
+  }
+
+  .proof-cite-drawer.is-open {
+    max-height: 120px;
+    padding: 0 1.4rem 1rem;
+  }
+
+  .section-eight-proof-cite {
+    display: block;
+    color: rgba(6, 21, 40, 0.5);
+    font-size: 0.72rem;
+    line-height: 1.4;
+    font-weight: 500;
+  }
+
+  /* ── Zone 3: testimonial callout ── */
+  .section-eight-testimonial {
+    margin: 3rem auto 0;
+    max-width: 56rem;
+    text-align: left;
+    background: #061528;
+    border-radius: 16px;
+    padding: 2.5rem 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .section-eight-testimonial::before {
+    content: '\201C';
+    position: absolute;
+    top: -0.15em;
+    left: 0.25em;
+    font-size: 10rem;
+    line-height: 1;
+    color: rgba(216, 183, 67, 0.08);
+    font-weight: 900;
+    pointer-events: none;
+  }
+
+  .section-eight-testimonial-text {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: clamp(0.88rem, 1.15vw, 1.05rem);
+    line-height: 1.7;
+    font-style: italic;
+    font-weight: 400;
+    margin-bottom: 1.25rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .testimonial-highlight {
+    color: #ffffff;
+    font-weight: 700;
+    font-style: normal;
+  }
+
+  .section-eight-testimonial-cite {
+    color: #d8b743;
+    font-size: clamp(1rem, 1.3vw, 1.4rem);
+    font-weight: 700;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ── Zone 4: CTA ── */
+  .proof-cta-zone {
+    margin-top: 3.5rem;
+    text-align: center;
   }
 
   .proof-cta-button {
@@ -4143,88 +4438,14 @@ const trustedLogos = [
     border-radius: 14px;
     padding: 1rem 2.5rem;
     border: 0;
-    box-shadow: 7px 7px 0 #000000;
+    box-shadow: 7px 7px 0 rgba(6, 21, 40, 0.25);
     cursor: pointer;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
   }
 
   .proof-cta-button:hover {
-    transform: translateY(-1px);
-    box-shadow: 9px 9px 0 #000000;
-  }
-
-  .section-eight-finish {
-    margin-top: 4.5rem;
-  }
-
-  .section-eight-proof-grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 1.5rem;
-  }
-
-  .section-eight-proof-card {
-    position: relative;
-    margin: 0;
-    text-align: left;
-    padding: 1.15rem 1rem 0.95rem;
-    border: 1px solid rgba(216, 183, 67, 0.42);
-    border-radius: 8px;
-    background:
-      linear-gradient(140deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.02)),
-      radial-gradient(90% 140% at 90% 10%, rgba(216, 183, 67, 0.1), rgba(216, 183, 67, 0)),
-      #0b2141;
-    box-shadow:
-      inset 0 0 24px rgba(255, 255, 255, 0.03),
-      0 14px 28px rgba(0, 0, 0, 0.28);
-  }
-
-  .section-eight-proof-text {
-    color: rgba(255, 255, 255, 0.9);
-    font-size: 1.05rem;
-    line-height: 1.32;
-    margin-bottom: 0.85rem;
-    font-weight: 500;
-  }
-
-  .section-eight-proof-highlight {
-    color: #d8b743;
-    font-weight: 700;
-  }
-
-  .section-eight-proof-cite {
-    display: block;
-    color: rgba(255, 255, 255, 0.56);
-    font-size: 0.72rem;
-    line-height: 1.3;
-    font-weight: 500;
-  }
-
-  .section-eight-testimonial {
-    margin: 3rem auto 0;
-    max-width: 44ch;
-    text-align: left;
-  }
-
-  .section-eight-testimonial-text {
-    color: rgba(255, 255, 255, 0.7);
-    font-size: clamp(0.82rem, 1.1vw, 1rem);
-    line-height: 1.65;
-    font-style: italic;
-    font-weight: 400;
-    margin-bottom: 0.6rem;
-  }
-
-  .testimonial-highlight {
-    color: #ffffff;
-    font-weight: 700;
-    font-style: normal;
-  }
-
-  .section-eight-testimonial-cite {
-    color: #d8b743;
-    font-size: clamp(1.2rem, 1.5vw, 1.7rem);
-    font-weight: 700;
+    transform: translateY(-2px);
+    box-shadow: 9px 9px 0 rgba(6, 21, 40, 0.3);
   }
 
   .final-assessment-headline {
@@ -4638,30 +4859,31 @@ const trustedLogos = [
       max-width: 30ch;
     }
 
-    .trustpilot-stars {
-      gap: 0.1rem;
-    }
-
-    .trustpilot-caption {
-      font-size: 0.78rem;
-    }
-
     .proof-cta-button {
       border-radius: 12px;
-      box-shadow: 5px 5px 0 #000000;
+      box-shadow: 5px 5px 0 rgba(6, 21, 40, 0.22);
     }
 
-    .section-eight-finish {
-      margin-top: 3rem;
+    .proof-cta-zone {
+      margin-top: 2.5rem;
     }
 
     .section-eight-proof-grid {
       grid-template-columns: 1fr;
       gap: 1rem;
+      margin-top: 2.5rem;
     }
 
-    .section-eight-proof-card {
-      padding: 1rem 0.85rem 0.8rem;
+    .proof-card-body {
+      padding: 1.1rem 1.1rem 0.85rem;
+    }
+
+    .proof-cite-toggle {
+      padding: 0.6rem 1.1rem;
+    }
+
+    .proof-cite-drawer.is-open {
+      padding: 0 1.1rem 0.85rem;
     }
 
     .section-eight-proof-text {
@@ -4674,11 +4896,16 @@ const trustedLogos = [
 
     .section-eight-testimonial {
       margin-top: 2rem;
+      padding: 1.75rem 1.5rem;
+    }
+
+    .section-eight-testimonial::before {
+      font-size: 7rem;
     }
 
     .section-eight-testimonial-text {
-      font-size: 0.82rem;
-      line-height: 1.65;
+      font-size: 0.85rem;
+      line-height: 1.68;
     }
 
     .section-eight-testimonial-cite {
