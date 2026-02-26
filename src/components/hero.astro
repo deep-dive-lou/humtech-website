@@ -726,33 +726,40 @@ const trustedLogos = [
 
     </div>
 
-    <!-- Stats section with wave -->
-    <div class="wtw-scale reveal" style="--delay:200ms;">
-      <div class="wtw-wave-wrap">
-        <svg class="wtw-wave-svg" viewBox="0 0 1200 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-          <path class="wtw-wl wtw-wl-1" d="M0,50 C150,20 300,80 450,50 C600,20 750,80 900,50 C1050,20 1200,80 1350,50" stroke="rgba(61,178,221,0.25)" stroke-width="1.5" fill="none"/>
-          <path class="wtw-wl wtw-wl-2" d="M-150,50 C0,80 150,20 300,50 C450,80 600,20 750,50 C900,80 1050,20 1200,50" stroke="rgba(107,183,144,0.18)" stroke-width="1" fill="none"/>
-          <path class="wtw-wl wtw-wl-3" d="M0,65 C150,35 300,75 450,45 C600,25 750,70 900,55 C1050,35 1200,65 1350,45" stroke="rgba(216,183,67,0.15)" stroke-width="1" fill="none"/>
-        </svg>
+    <!-- Industry stats — Stripe-style divider + 4-col numbers -->
+    <div class="wtw-industry reveal" style="--delay:200ms;">
+      <h2 class="wtw-industry-quote">The research is clear.<br/>Expertise is the bottleneck.</h2>
+      <p class="wtw-industry-sub">AI doesn't fail businesses. Bad implementation does.</p>
+      <div class="wtw-divider-line"></div>
+      <div class="wtw-industry-stats wtw-industry-stats--5">
+        <div class="wtw-ind-stat reveal" style="--delay:250ms;">
+          <span class="wtw-ind-num wtw-counter" data-target="95">0%</span>
+          <span class="wtw-ind-label">of AI projects fail<br/>without expert guidance</span>
+        </div>
+        <div class="wtw-ind-stat reveal" style="--delay:350ms;">
+          <span class="wtw-ind-num">Only 5%</span>
+          <span class="wtw-ind-label">of AI pilots achieve<br/>measurable revenue impact</span>
+        </div>
+        <div class="wtw-ind-stat reveal" style="--delay:450ms;">
+          <span class="wtw-ind-num wtw-counter" data-target="72">0%</span>
+          <span class="wtw-ind-label">of companies cite knowledge<br/>gaps as the #1 barrier</span>
+        </div>
+        <div class="wtw-ind-stat reveal" style="--delay:550ms;">
+          <span class="wtw-ind-num wtw-counter" data-target="67">0%</span>
+          <span class="wtw-ind-label">higher success rate with<br/>specialised external experts</span>
+        </div>
+        <div class="wtw-ind-stat reveal" style="--delay:650ms;">
+          <span class="wtw-ind-num">10x</span>
+          <span class="wtw-ind-label">typical cost underestimation<br/>when companies go it alone</span>
+        </div>
       </div>
-      <div class="wtw-big-stats">
-        <div class="wtw-big-stat reveal" style="--delay:280ms;">
-          <span class="wtw-big-num wtw-counter" data-target="98" style="color:#6BB790;">0%</span>
-          <span class="wtw-big-label">client appointment<br/>booking rate</span>
-        </div>
-        <div class="wtw-big-stat reveal" style="--delay:380ms;">
-          <span class="wtw-big-num wtw-counter" data-target="50" style="color:#3DB2DD;">0%</span>
-          <span class="wtw-big-label">increase in<br/>revenue</span>
-        </div>
-        <div class="wtw-big-stat reveal" style="--delay:480ms;">
-          <span class="wtw-big-num wtw-counter" data-target="90" data-suffix="%+" style="color:#D8B743;">0%+</span>
-          <span class="wtw-big-label">appointment<br/>attendance</span>
-        </div>
-      </div>
+      <p class="wtw-ind-source">
+        Data from <a href="https://mlq.ai/media/quarterly_decks/v0.1_State_of_AI_in_Business_2025_Report.pdf" target="_blank" rel="noopener" class="wtw-source-link">MIT &amp; MLQ State of AI in Business 2025</a>, RAND Corporation, S&amp;P Global, McKinsey
+      </p>
     </div>
 
     <!-- CTA -->
-    <div class="text-center mt-16">
+    <div class="text-center mt-12">
       <button onclick="openAssessmentModal()" class="wtw-cta cursor-pointer">
         Would it work for my business?
       </button>
@@ -762,40 +769,134 @@ const trustedLogos = [
 
 
 
-<!-- ══ SECTION A — THE TRAP (cascade animation) ══ -->
-<section id="section-trap" class="relative overflow-hidden" style="background: radial-gradient(ellipse 80% 50% at 50% -5%, rgba(216,183,67,0.14) 0%, transparent 65%), #080e18;">
+<!-- ══ SECTION A — THE TRAP (overwhelm cascade) ══ -->
+<section id="section-trap" class="relative overflow-hidden" style="background: #0a1628;">
+  <!-- Animated background glow -->
+  <div class="trap-bg-glow" aria-hidden="true"></div>
+  <div class="max-w-screen-2xl mx-auto px-8 lg:px-16 pt-20 pb-20 md:pt-28 md:pb-28 relative" style="z-index:1;">
 
-  <!-- ── SECTION A interior ── -->
-  <div class="max-w-screen-2xl mx-auto px-8 lg:px-16 pt-24 pb-20 md:pt-32 md:pb-28">
-
-    <div class="text-center mb-14 reveal">
-      <p class="trap-section-label">SECTION 01 — THE HIRING TRAP</p>
-      <h2 class="trap-display-heading">
+    <div class="text-center mb-12 reveal">
+      <p class="trap-section-label">THE HIRING TRAP</p>
+      <h2 class="section-title text-2xl lg:text-3xl xl:text-4xl font-bold text-white text-center mb-4 leading-tight">
         The Trap of In-House Hiring and Costly "Employee Obsolescence"
       </h2>
     </div>
 
-    <div class="trap-window-outer reveal" style="--delay:100ms;">
-      <div class="trap-window" id="trap-window">
-        <div class="trap-window-bar">
+    <!-- Dashboard mockup with floating overlay notifications -->
+    <div class="trap-scene" id="trap-scene">
+
+      <!-- Browser window with fake HR dashboard inside -->
+      <div class="trap-browser">
+        <div class="trap-browser-bar">
           <span class="trap-dot trap-dot--red" aria-hidden="true"></span>
           <span class="trap-dot trap-dot--amber" aria-hidden="true"></span>
           <span class="trap-dot trap-dot--green" aria-hidden="true"></span>
-          <span class="trap-window-title">AI Hiring Manager — Dashboard</span>
+          <span class="trap-browser-url">hiring-dashboard.internal</span>
         </div>
-        <div class="trap-stage" id="trap-stage" aria-live="polite"></div>
+        <div class="trap-dash">
+          <!-- Sidebar -->
+          <div class="trap-dash-sidebar">
+            <div class="trap-dash-logo">HireOps</div>
+            <div class="trap-dash-nav-item trap-dash-nav-item--active">Dashboard</div>
+            <div class="trap-dash-nav-item">Candidates</div>
+            <div class="trap-dash-nav-item">Job Posts</div>
+            <div class="trap-dash-nav-item">Training</div>
+            <div class="trap-dash-nav-item">Settings</div>
+          </div>
+          <!-- Main content -->
+          <div class="trap-dash-main">
+            <div class="trap-dash-header">Open Positions <span class="trap-dash-count">3 active</span></div>
+            <div class="trap-dash-row">
+              <div class="trap-dash-cell">AI Specialist</div>
+              <div class="trap-dash-cell trap-dash-cell--status">Interviewing</div>
+              <div class="trap-dash-cell trap-dash-cell--date">Posted 4w ago</div>
+            </div>
+            <div class="trap-dash-row">
+              <div class="trap-dash-cell">ML Engineer</div>
+              <div class="trap-dash-cell trap-dash-cell--status trap-dash-cell--warn">No applicants</div>
+              <div class="trap-dash-cell trap-dash-cell--date">Posted 6w ago</div>
+            </div>
+            <div class="trap-dash-row">
+              <div class="trap-dash-cell">Data Analyst</div>
+              <div class="trap-dash-cell trap-dash-cell--status">Offer sent</div>
+              <div class="trap-dash-cell trap-dash-cell--date">Posted 8w ago</div>
+            </div>
+            <div class="trap-dash-header" style="margin-top:1rem;">Recent Activity</div>
+            <div class="trap-dash-row trap-dash-row--dim">
+              <div class="trap-dash-cell">Interview cancelled — candidate withdrew</div>
+            </div>
+            <div class="trap-dash-row trap-dash-row--dim">
+              <div class="trap-dash-cell">Training module outdated — requires update</div>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
 
-    <div class="trap-copy-block max-w-2xl mx-auto mt-16 text-center" id="trap-copy-block">
-      <p class="trap-copy-line" data-trap-copy="0">Internal employees are focused on keeping up with the directives of the company's existing "Eco-Chamber".</p>
-      <p class="trap-copy-line" data-trap-copy="1">They don't consistently have the time to stay plugged into constantly changing applications, methods, and updates.</p>
-      <p class="trap-copy-line" data-trap-copy="2">The investment is not yet worth a full-time hire.</p>
-      <p class="trap-copy-line trap-copy-line--accent" data-trap-copy="3">That's why we exist.</p>
+      <!-- Floating notification cards — positioned absolutely, cascade in on scroll -->
+      <div class="trap-notif trap-notif--1" data-notif="0">
+        <div class="tc-row"><span class="tc-label">Job Board Post</span><span class="tc-tag tc-green">LIVE</span></div>
+        <div class="tc-row tc-row--bot"><span class="tc-meta">LinkedIn &middot; Indeed &middot; Reed</span><span class="tc-detail">&pound;450/month</span></div>
+      </div>
+
+      <div class="trap-notif trap-notif--2" data-notif="1">
+        <div class="tc-row"><span class="tc-label">CV Review Backlog</span><span class="tc-tag tc-blue">ONGOING</span></div>
+        <div class="tc-row tc-row--bot"><span class="tc-meta">47 applicants awaiting review</span><span class="tc-detail">14 hrs spent</span></div>
+      </div>
+
+      <div class="trap-notif trap-notif--3" data-notif="2">
+        <div class="tc-row"><span class="tc-label">Interview Cancelled</span><span class="tc-tag tc-amber">WARNING</span></div>
+        <div class="tc-row tc-row--bot"><span class="tc-meta">2 of 3 candidates withdrew</span></div>
+      </div>
+
+      <div class="trap-notif trap-notif--4" data-notif="3">
+        <div class="tc-row"><span class="tc-label">Offer Accepted</span></div>
+        <div class="tc-row tc-row--bot"><span class="tc-meta">&pound;80,000–&pound;125,000 salary + NI + pension + benefits</span></div>
+      </div>
+
+      <div class="trap-notif trap-notif--5" data-notif="4">
+        <div class="tc-row"><span class="tc-label">Onboarding</span><span class="tc-tag tc-blue">IN PROGRESS</span></div>
+        <div class="tc-row tc-row--bot"><span class="tc-meta">Estimated: 3 months to productivity</span></div>
+      </div>
+
+      <div class="trap-notif trap-notif--6" data-notif="5">
+        <div class="tc-row"><span class="tc-label">Tool Training Required</span><span class="tc-tag tc-red">URGENT</span></div>
+        <div class="tc-row tc-row--bot"><span class="tc-meta">ChatGPT &middot; Jasper &middot; HeyGen &middot; Midjourney &middot; Clay</span><span class="tc-detail">NEW UPDATE</span></div>
+      </div>
+
+      <div class="trap-notif trap-notif--7" data-notif="6">
+        <div class="tc-row"><span class="tc-label">Strategy Outdated</span><span class="tc-tag tc-red">URGENT</span></div>
+        <div class="tc-row tc-row--bot"><span class="tc-meta">GPT-5 released — current skills obsolete</span></div>
+      </div>
+
+      <div class="trap-notif trap-notif--8" data-notif="7">
+        <div class="tc-row"><span class="tc-label">Performance Review</span><span class="tc-tag tc-red">RED</span></div>
+        <div class="tc-row tc-row--bot"><span class="tc-meta">Targets missed across department</span></div>
+      </div>
+
+      <div class="trap-notif trap-notif--9" data-notif="8">
+        <div class="tc-row"><span class="tc-label">Resignation Received</span><span class="tc-tag tc-red">CRITICAL</span></div>
+        <div class="tc-row tc-row--bot"><span class="tc-meta">Notice period: 4 weeks &mdash; cycle restarts</span></div>
+      </div>
+
+    </div><!-- /trap-scene -->
+
+    <!-- Copy beneath -->
+    <div class="trap-copy-block" id="trap-copy-block">
+      <p class="trap-copy-line">
+        Internal employees are focused on keeping up with the directives of the company's existing "Eco-Chamber".
+      </p>
+      <p class="trap-copy-line">
+        They don't consistently have the time to stay plugged into constantly changing applications, methods, and updates.
+      </p>
+      <p class="trap-copy-line">
+        The investment is not yet worth a full-time hire.
+      </p>
+      <p class="trap-copy-line trap-copy-line--accent">
+        That's why we exist.
+      </p>
     </div>
 
   </div>
-
 </section>
 
 
@@ -989,286 +1090,8 @@ const trustedLogos = [
 
   </div>
 
-<!-- closing section-proof -->
-<!-- NOTE: old Beat 2 + Beat 3 content removed — latency donut moved to section-bottleneck above, proof moved to section-proof -->
-      <div class="trap-diagram-col reveal" style="--delay:60ms;">
-        <div class="cycle-wrap-lg" id="cycle-diagram">
-          <!-- Tooltip popovers — positioned absolute inside cycle-wrap-lg -->
-          <div class="cycle-tooltip" id="ct-0">
-            <strong>Avg. hire cost</strong><br/>£8,000–£25,000
-          </div>
-          <div class="cycle-tooltip" id="ct-1">
-            <strong>Training lag</strong><br/>3–6 months to competency
-          </div>
-          <div class="cycle-tooltip" id="ct-2">
-            <strong>AI half-life</strong><br/>Skills outdated in 12–18 months
-          </div>
-          <div class="cycle-tooltip" id="ct-3">
-            <strong>Rehire cycle</strong><br/>Repeated every 1–2 years
-          </div>
-
-          <svg class="cycle-svg" viewBox="0 0 320 320" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <!-- Track circle -->
-            <circle cx="160" cy="160" r="115" stroke="rgba(61,178,221,0.12)" stroke-width="1.5" stroke-dasharray="4 6"/>
-
-            <!-- Arc arrows between nodes (drawn as paths) -->
-            <!-- Top→Right -->
-            <path class="cycle-arc" id="arc-01" d="M185,55 A115,115 0 0,1 265,185" stroke="rgba(61,178,221,0.35)" stroke-width="1.5" fill="none" marker-end="url(#arr-blue)"/>
-            <!-- Right→Bottom -->
-            <path class="cycle-arc" id="arc-12" d="M265,185 A115,115 0 0,1 185,265" stroke="rgba(61,178,221,0.35)" stroke-width="1.5" fill="none" marker-end="url(#arr-blue)"/>
-            <!-- Bottom→Left -->
-            <path class="cycle-arc" id="arc-23" d="M135,265 A115,115 0 0,1 55,135" stroke="rgba(61,178,221,0.35)" stroke-width="1.5" fill="none" marker-end="url(#arr-blue)"/>
-            <!-- Left→Top (dashed — the rehire loop) -->
-            <path class="cycle-arc cycle-arc-return" id="arc-30" d="M55,135 A115,115 0 0,1 135,55" stroke="rgba(216,183,67,0.55)" stroke-width="1.5" fill="none" stroke-dasharray="5 4" marker-end="url(#arr-yellow)"/>
-
-            <!-- Arrow markers -->
-            <defs>
-              <marker id="arr-blue" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
-                <path d="M0,0 L6,3 L0,6 Z" fill="rgba(61,178,221,0.6)"/>
-              </marker>
-              <marker id="arr-yellow" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
-                <path d="M0,0 L6,3 L0,6 Z" fill="rgba(216,183,67,0.8)"/>
-              </marker>
-            </defs>
-
-            <!-- Node circles — r="14" (enlarged from 9) -->
-            <circle class="cycle-node-dot" id="cn-0" cx="160" cy="45"  r="14" stroke="rgba(61,178,221,0.4)" stroke-width="1.5" fill="rgba(8,14,24,0.95)"/>
-            <circle class="cycle-node-dot" id="cn-1" cx="275" cy="160" r="14" stroke="rgba(61,178,221,0.4)" stroke-width="1.5" fill="rgba(8,14,24,0.95)"/>
-            <circle class="cycle-node-dot" id="cn-2" cx="160" cy="275" r="14" stroke="rgba(61,178,221,0.4)" stroke-width="1.5" fill="rgba(8,14,24,0.95)"/>
-            <circle class="cycle-node-dot" id="cn-3" cx="45"  cy="160" r="14" stroke="rgba(61,178,221,0.4)" stroke-width="1.5" fill="rgba(8,14,24,0.95)"/>
-          </svg>
-
-          <!-- Floating labels — font-size bumped to 0.8rem -->
-          <div class="cycle-label" style="top:4px;left:50%;transform:translateX(-50%)" data-node="0">Hire Specialist</div>
-          <div class="cycle-label" style="top:50%;right:-4px;transform:translateY(-50%)" data-node="1">Train on<br/>Current Tech</div>
-          <div class="cycle-label" style="bottom:4px;left:50%;transform:translateX(-50%)" data-node="2">Skills Become<br/>Obsolete</div>
-          <div class="cycle-label" style="top:50%;left:-4px;transform:translateY(-50%)" data-node="3">AI Landscape<br/>Shifts</div>
-          <!-- Center label -->
-          <div class="cycle-center">Retrain/<br/>Rehire</div>
-        </div>
-      </div>
-
-      <!-- Copy -->
-      <div class="trap-copy-col reveal" style="--delay:120ms;">
-        <div class="readable-prose space-y-6">
-          <p class="text-lg md:text-xl text-white font-bold leading-relaxed">
-            Internal employees are focused on keeping up with the directives of the company's existing "Eco-Chamber".
-          </p>
-          <p class="text-lg md:text-xl text-white font-bold leading-relaxed">
-            They don't consistently have the time to stay plugged into constantly changing applications, methods, and updates.
-          </p>
-          <p class="text-lg md:text-xl text-white font-bold leading-relaxed">
-            The investment is not yet worth a full-time hire.
-          </p>
-          <p class="text-lg md:text-xl font-bold leading-relaxed" style="color:#D8B743;">
-            That's why we exist.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ── BEAT 2: The Consequence ── -->
-  <div class="trap-beat-2 max-w-screen-2xl mx-auto px-8 lg:px-16 pb-24 md:pb-32">
-
-    <!-- Bottleneck callout -->
-    <div class="text-center mb-16 reveal">
-      <h3 class="text-2xl lg:text-3xl xl:text-4xl font-bold leading-tight" style="color:#D8B743;">
-        You know the bottleneck... 50% of inquiries vanish before your sales team gets to them
-      </h3>
-    </div>
-
-    <!-- We faced this exact problem -->
-    <div class="text-center mb-10 reveal">
-      <h3 class="text-2xl lg:text-3xl xl:text-4xl font-bold text-white leading-tight">
-        We faced this exact problem
-      </h3>
-    </div>
-
-    <!-- Circular Latency Diagram — enlarged to 420px, full centred moment -->
-    <div class="circ-latency-wrap circ-latency-wrap--large" id="latency-diagram">
-
-      <div class="circ-diagram-row reveal">
-        <!-- Donut SVG — 420px container -->
-        <div class="circ-svg-container circ-svg-container--lg">
-          <svg class="circ-svg" viewBox="0 0 320 320" xmlns="http://www.w3.org/2000/svg">
-            <!-- Blueprint grid bg -->
-            <defs>
-              <pattern id="circ-grid" width="24" height="24" patternUnits="userSpaceOnUse">
-                <path d="M 24 0 L 0 0 0 24" fill="none" stroke="rgba(61,178,221,0.06)" stroke-width="0.5"/>
-              </pattern>
-              <filter id="glow-green">
-                <feGaussianBlur stdDeviation="3" result="blur"/>
-                <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-              </filter>
-            </defs>
-            <rect width="320" height="320" fill="url(#circ-grid)" rx="16"/>
-
-            <!-- Outer guide circle (label ring) -->
-            <circle cx="160" cy="160" r="142" fill="none" stroke="rgba(61,178,221,0.08)" stroke-width="1" stroke-dasharray="4 6"/>
-
-            <!-- Background ring (total inquiries = 100%) -->
-            <circle cx="160" cy="160" r="110" fill="none"
-              stroke="rgba(216,183,67,0.18)" stroke-width="34"/>
-
-            <!-- Lost to Latency ring (amber, sits under green) -->
-            <circle cx="160" cy="160" r="110" fill="none"
-              stroke="rgba(216,183,67,0.45)" stroke-width="34"
-              stroke-dasharray="691.15"
-              stroke-dashoffset="0"
-              transform="rotate(-90 160 160)"/>
-
-            <!-- Responded arc — draws in from 0 on scroll, transitions on toggle -->
-            <circle id="circ-responded-arc" cx="160" cy="160" r="110"
-              fill="none"
-              stroke="#6BB790"
-              stroke-width="34"
-              stroke-linecap="butt"
-              stroke-dasharray="691.15"
-              stroke-dashoffset="691.15"
-              transform="rotate(-90 160 160)"
-              filter="url(#glow-green)"
-              style="transition:stroke-dashoffset 0.9s cubic-bezier(0.4,0,0.2,1);"/>
-
-            <!-- Inner fill circle (bg for text readability) -->
-            <circle cx="160" cy="160" r="90" fill="#080e18"/>
-
-            <!-- Center: percentage -->
-            <text id="circ-center-pct" x="160" y="152"
-              text-anchor="middle"
-              fill="white" font-size="54" font-weight="800"
-              style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">50%</text>
-            <text x="160" y="179" text-anchor="middle"
-              fill="rgba(255,255,255,0.45)" font-size="12" letter-spacing="0.06em"
-              style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;text-transform:uppercase;">Responded</text>
-
-            <!-- Total Inquiries label — top of outer ring -->
-            <text x="160" y="22" text-anchor="middle"
-              fill="rgba(255,255,255,0.3)" font-size="11" letter-spacing="0.05em"
-              style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;text-transform:uppercase;">Total Inquiries (100%)</text>
-          </svg>
-        </div>
-
-        <!-- Right: legend -->
-        <div class="circ-legend">
-          <div class="circ-legend-item">
-            <div class="circ-legend-dot" style="background:#6BB790;box-shadow:0 0 8px rgba(107,183,144,0.6);"></div>
-            <div>
-              <div class="circ-legend-label">Responded</div>
-              <div class="circ-legend-val" id="circ-responded-val" style="color:#6BB790;">50%</div>
-            </div>
-          </div>
-          <div class="circ-legend-item" style="margin-top:1.5rem;">
-            <div class="circ-legend-dot" style="background:rgba(216,183,67,0.7);box-shadow:0 0 8px rgba(216,183,67,0.4);"></div>
-            <div>
-              <div class="circ-legend-label">Lost to Latency</div>
-              <div class="circ-legend-val" id="circ-lost-val" style="color:#D8B743;">50%</div>
-            </div>
-          </div>
-          <div class="circ-legend-item" style="margin-top:1.5rem; opacity:0.6;">
-            <div class="circ-legend-dot" style="background:rgba(255,255,255,0.15);"></div>
-            <div>
-              <div class="circ-legend-label">Total Inquiries</div>
-              <div class="circ-legend-val" style="color:rgba(255,255,255,0.5);">100%</div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Toggle -->
-      <div class="latency-toggle-row" style="margin-top:2.5rem;">
-        <span class="latency-toggle-label">Without AI Revenue Engine</span>
-        <button class="latency-toggle" id="latency-toggle" aria-pressed="false">
-          <span class="latency-toggle-knob"></span>
-        </button>
-        <span class="latency-toggle-label">With AI Revenue Engine</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- ── BEAT 3: The Proof ── -->
-  <div class="trap-beat-3 max-w-screen-2xl mx-auto px-8 lg:px-16 pb-28 md:pb-36">
-
-    <!-- Story Block — sequential scroll reveal -->
-    <div class="section-eight-story max-w-3xl mx-auto" id="story-reveal-block">
-      <p class="section-eight-copy story-line" data-story-index="0">
-        On average, only 50% of new enquiries respond to manual outreach, and just half attend booked consultations.
-      </p>
-      <p class="section-eight-copy story-line" data-story-index="1">
-        Teams are constantly drawn into repetitive admin tasks and distractions which take them away from revenue-producing duties.
-      </p>
-      <p class="section-eight-copy story-line" data-story-index="2">
-        Countless 'out the box' third-party AI tools (multiple different log-ins...), and conversions actually gets worse.
-      </p>
-      <p class="section-eight-copy section-eight-emphasis story-line" data-story-index="3">
-        One AI Revenue Engine&trade; later, and the results speak for themselves...
-      </p>
-    </div>
-
-    <div class="results-panel max-w-3xl mx-auto">
-      <div class="results-panel-grid">
-        <div class="results-panel-cell">
-          <div class="results-panel-value text-yellow">98%</div>
-          <div class="results-panel-label">client appointment booking rate</div>
-        </div>
-        <div class="results-panel-cell">
-          <div class="results-panel-value text-yellow">90%+</div>
-          <div class="results-panel-label">appointment attendance</div>
-        </div>
-        <div class="results-panel-cell">
-          <div class="results-panel-value text-yellow">50%</div>
-          <div class="results-panel-label">increase in revenue</div>
-        </div>
-        <div class="results-panel-cell">
-          <div class="results-panel-value text-white">Zero</div>
-          <div class="results-panel-label">additional team members hired</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="results-proof max-w-3xl mx-auto text-center mt-10">
-      <p class="results-proof-copy">
-        In 24 months, our AI Revenue Engine powered the #1 rated Green Energy Supplier and became the #1 rated Advertising Agency on Trustpilot with 4.9 out of 5.0 Stars and a team of only four people.
-      </p>
-
-      <div class="mt-10">
-        <button onclick="openAssessmentModal()" class="proof-cta-button">
-          Get my free PDF AI Diagnostic
-        </button>
-      </div>
-
-      <div class="section-eight-finish">
-        <div class="section-eight-proof-grid">
-          <blockquote class="section-eight-proof-card">
-            <p class="section-eight-proof-text">
-              "AI-human combination results in higher engagement/conversion rates, reduced costs and optimized lead generation. <span class="section-eight-proof-highlight">3x more calls connected, 20% higher meeting hold rate.</span>"
-            </p>
-            <cite class="section-eight-proof-cite not-italic">
-              -Koch, S. (2024). A Case Study in AI-Augmented Cold Outreach. The Journal of Business and Artificial Intelligence, 1(1), 1-5
-            </cite>
-          </blockquote>
-
-          <blockquote class="section-eight-proof-card">
-            <p class="section-eight-proof-text">
-              "AI chat and scheduling bot reduces 'no show rates', reduces administrative burden, improves client satisfaction and <span class="section-eight-proof-highlight">increases overall efficiency.</span>"
-            </p>
-            <cite class="section-eight-proof-cite not-italic">
-              - Nyako Alhaji Baba et al. (2024). Development of an intelligent chatbot for patient appointment booking system. International Journal of Engineering and Applied Information Systems, 8(10), 55-65
-            </cite>
-          </blockquote>
-        </div>
-
-        <blockquote class="section-eight-testimonial">
-          <p class="section-eight-testimonial-text">
-            "I took the assessment and found we were <span class="testimonial-highlight">losing revenue in areas which we were blind to.</span> We were also taking significant market share risks by being behind in AI adoption across multiple domains of our business, notably, lead generation and sales conversions. We verified the diagnostic report outcomes by engaging a portion of old leads 6 months post enquiry, and found that <span class="testimonial-highlight">almost all initial non-responders had been served by our competitors</span> who beat us to the punch. <span class="testimonial-highlight">Revenue increase was rapid with Hum Tech,</span> and required minimal input from our already very busy team."
-          </p>
-          <cite class="section-eight-testimonial-cite not-italic">RESG UK</cite>
-        </blockquote>
-      </div>
-    </div>
-  </div>
-
 </section>
+
 
 <!-- Final Assessment Section -->
 <section class="py-16 md:py-24 border-t border-yellow/30 relative overflow-hidden" style="background: radial-gradient(ellipse at 50% 0%, rgba(216,183,67,0.13) 0%, transparent 60%), radial-gradient(ellipse at 80% 100%, rgba(61,178,221,0.07) 0%, transparent 50%), #061528;">
@@ -1512,74 +1335,46 @@ const trustedLogos = [
     });
   })();
 
-  /* Cycle diagram — continuous loop (1400ms) + hover pause + node tooltips */
+  /* ══ SECTION A — Floating notification cascade ══ */
   (function() {
-    var nodes  = [0,1,2,3].map(function(i){ return document.getElementById('cn-'+i); });
-    var arcs   = ['arc-01','arc-12','arc-23','arc-30'].map(function(id){ return document.getElementById(id); });
-    var labels = document.querySelectorAll('.cycle-label');
-    var tooltips = [0,1,2,3].map(function(i){ return document.getElementById('ct-'+i); });
-    if (!nodes[0]) return;
+    var scene = document.getElementById('trap-scene');
+    if (!scene) return;
 
-    // Draw all arcs immediately
-    arcs.forEach(function(a){ if(a) a.classList.add('drawn'); });
+    var notifs = Array.from(scene.querySelectorAll('.trap-notif'));
+    var copyBlock = document.getElementById('trap-copy-block');
+    var fired = false;
 
-    var step = 0;
-    var paused = false;
-    var activeTooltip = null;
+    function runCascade() {
+      if (fired) return;
+      fired = true;
 
-    function hideAllTooltips() {
-      tooltips.forEach(function(t){ if(t) t.classList.remove('cycle-tooltip--visible'); });
-      activeTooltip = null;
-    }
+      /* Stagger: first 5 at 600ms, then accelerate to 350ms */
+      var delay = 0;
+      notifs.forEach(function(el, i) {
+        delay += (i < 5 ? 600 : 350);
+        setTimeout(function() {
+          el.classList.add('trap-notif--visible');
+        }, delay);
+      });
 
-    function showTooltip(i) {
-      hideAllTooltips();
-      if (tooltips[i]) {
-        tooltips[i].classList.add('cycle-tooltip--visible');
-        activeTooltip = i;
+      /* After all notifications, reveal copy lines */
+      var totalDelay = delay + 600;
+      if (copyBlock) {
+        var lines = Array.from(copyBlock.querySelectorAll('.trap-copy-line'));
+        lines.forEach(function(line, i) {
+          setTimeout(function() {
+            line.classList.add('trap-copy-line--show');
+          }, totalDelay + (i * 600));
+        });
       }
     }
 
-    function setStep(s) {
-      step = s;
-      nodes.forEach(function(n,i){ if(n) n.classList.toggle('active', i===s); });
-      arcs.forEach(function(a,i){ if(a) a.classList.toggle('active', i===s); });
-      labels.forEach(function(l){ l.classList.toggle('active', parseInt(l.dataset.node)===s); });
-    }
-
-    function advance() {
-      if (!paused) setStep((step + 1) % 4);
-    }
-
-    // 1400ms interval — tighter loop feels more like a trap
-    setInterval(advance, 1400);
-    setStep(0);
-
-    // Node hover: pause loop, show tooltip
-    nodes.forEach(function(n, i){
-      if (!n) return;
-      n.style.cursor = 'pointer';
-      n.addEventListener('mouseenter', function(){
-        paused = true;
-        setStep(i);
-        showTooltip(i);
+    var obs = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) { runCascade(); obs.disconnect(); }
       });
-      n.addEventListener('mouseleave', function(){
-        paused = false;
-        hideAllTooltips();
-      });
-      // Touch / click support
-      n.addEventListener('click', function(){
-        if (activeTooltip === i) {
-          paused = false;
-          hideAllTooltips();
-        } else {
-          paused = true;
-          setStep(i);
-          showTooltip(i);
-        }
-      });
-    });
+    }, { threshold: 0.1 });
+    obs.observe(scene);
   })();
 
   /* Story sequential reveal — paragraphs illuminate one at a time on scroll */
@@ -2859,50 +2654,74 @@ const trustedLogos = [
   }
   .wtw-vcard.visible .wtw-chk { opacity: 1; transform: scale(1); }
 
-  .wtw-scale {
-    position: relative; padding: 3rem 0 1rem;
+  /* Industry stats — Stripe-style */
+  .wtw-industry {
+    position: relative; padding: 2rem 0 0;
     opacity: 0; transform: translateY(20px);
     transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
     transition-delay: var(--delay, 0ms);
   }
-  .wtw-scale.visible { opacity: 1; transform: translateY(0); }
+  .wtw-industry.visible { opacity: 1; transform: translateY(0); }
 
-  .wtw-wave-wrap {
-    position: relative; height: 55px; margin-bottom: 2.5rem; overflow: hidden;
+  .wtw-industry-quote {
+    font-size: 2.2rem; font-weight: 500; color: #061528;
+    text-align: center; margin: 0 0 1rem; letter-spacing: -0.02em;
+    line-height: 1.2;
   }
-  .wtw-wave-svg {
-    position: absolute; inset: 0; width: 120%; height: 100%; left: -10%;
-  }
-  .wtw-wl { stroke-dasharray: 3000; stroke-dashoffset: 3000; }
-  .wtw-scale.visible .wtw-wl {
-    animation: wtwWaveDraw 2.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-  }
-  .wtw-scale.visible .wtw-wl-1 { animation-delay: 0.1s; }
-  .wtw-scale.visible .wtw-wl-2 { animation-delay: 0.35s; }
-  .wtw-scale.visible .wtw-wl-3 { animation-delay: 0.6s; }
-  @keyframes wtwWaveDraw { to { stroke-dashoffset: 0; } }
+  @media (min-width: 768px) { .wtw-industry-quote { font-size: 3rem; } }
+  @media (min-width: 1024px) { .wtw-industry-quote { font-size: 3.8rem; } }
 
-  .wtw-big-stats {
-    display: flex; flex-direction: column; gap: 2rem; align-items: center;
+  .wtw-industry-sub {
+    font-size: 1.15rem; font-weight: 600; color: rgba(6,21,40,0.35);
+    text-align: center; margin: 0 0 3rem;
+  }
+  @media (min-width: 1024px) { .wtw-industry-sub { font-size: 1.35rem; } }
+
+  .wtw-divider-line {
+    height: 3px; border-radius: 2px; margin-bottom: 3rem;
+    background: linear-gradient(90deg, #6BB790, #3DB2DD, #D8B743);
+  }
+
+  .wtw-industry-stats {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem 1.5rem;
   }
   @media (min-width: 768px) {
-    .wtw-big-stats { flex-direction: row; justify-content: center; gap: 5rem; }
+    .wtw-industry-stats { grid-template-columns: repeat(4, 1fr); gap: 2rem; }
+    .wtw-industry-stats--5 { grid-template-columns: repeat(5, 1fr); }
   }
-  .wtw-big-stat {
+
+  .wtw-ind-stat {
     text-align: center; opacity: 0; transform: translateY(16px);
     transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
     transition-delay: var(--delay, 0ms);
   }
-  .wtw-big-stat.visible { opacity: 1; transform: translateY(0); }
-  .wtw-big-num {
-    font-size: 4rem; font-weight: 800; line-height: 1;
-    letter-spacing: -0.04em; display: block;
+  .wtw-ind-stat.visible { opacity: 1; transform: translateY(0); }
+
+  .wtw-ind-num {
+    font-size: 3rem; font-weight: 500; line-height: 1;
+    letter-spacing: -0.03em; display: block; color: #061528;
   }
-  @media (min-width: 768px) { .wtw-big-num { font-size: 5rem; } }
-  @media (min-width: 1024px) { .wtw-big-num { font-size: 5.5rem; } }
-  .wtw-big-label {
-    font-size: 0.82rem; color: rgba(6,21,40,0.4); text-transform: uppercase;
-    letter-spacing: 0.06em; line-height: 1.5; margin-top: 0.5rem; display: block;
+  @media (min-width: 768px) { .wtw-ind-num { font-size: 3.5rem; } }
+  @media (min-width: 1024px) { .wtw-ind-num { font-size: 4rem; } }
+
+  .wtw-ind-label {
+    font-size: 0.88rem; color: rgba(6,21,40,0.5);
+    line-height: 1.55; margin-top: 0.6rem; display: block;
+  }
+  @media (min-width: 1024px) { .wtw-ind-label { font-size: 0.95rem; } }
+
+  .wtw-ind-source {
+    text-align: center; font-size: 0.85rem; color: rgba(6,21,40,0.4);
+    margin: 4rem 0 0;
+  }
+  .wtw-source-link {
+    color: #3DB2DD; text-decoration: underline;
+    text-underline-offset: 3px; text-decoration-color: rgba(61,178,221,0.4);
+    font-weight: 600;
+    transition: color 0.2s ease, text-decoration-color 0.2s ease;
+  }
+  .wtw-source-link:hover {
+    color: #2a9ac2; text-decoration-color: #2a9ac2;
   }
 
   .wtw-cta {
@@ -3706,74 +3525,195 @@ const trustedLogos = [
     border-radius: 4px;
   }
 
-  /* ── Beat layout: Trap section ── */
-  .trap-split-row { display: flex; flex-direction: column; align-items: center; gap: 3rem; }
-  @media (min-width: 900px) { .trap-split-row { flex-direction: row; align-items: center; gap: 5rem; } }
-  .trap-diagram-col { flex-shrink: 0; display: flex; justify-content: center; }
-  .trap-copy-col { flex: 1; }
+  /* ══ SECTION A — Trap: dashboard + floating notifications ══ */
 
-  /* Enlarged wrapper for cycle diagram */
-  .cycle-wrap-lg { position: relative; width: 340px; height: 340px; flex-shrink: 0; }
-  @media (min-width: 640px) { .cycle-wrap-lg { width: 420px; height: 420px; } }
-  .cycle-wrap-lg .cycle-svg { position: absolute; inset: 0; width: 100%; height: 100%; }
-
-  /* Cycle diagram */
-  .cycle-wrap {
-    position: relative; width: 320px; height: 320px; flex-shrink: 0;
+  /* Animated background glow — slow pulse that builds tension */
+  .trap-bg-glow {
+    position: absolute; inset: 0;
+    z-index: 0; pointer-events: none;
+    background:
+      radial-gradient(ellipse 70% 60% at 30% 40%, rgba(216,183,67,0.1) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 50% at 70% 60%, rgba(255,80,80,0.06) 0%, transparent 55%);
+    animation: trap-glow-pulse 8s ease-in-out infinite alternate;
   }
-  .cycle-svg { position: absolute; inset: 0; width: 100%; height: 100%; }
-  .cycle-node-dot { transition: stroke 0.3s ease, filter 0.3s ease; }
-  .cycle-node-dot.active {
-    stroke: rgba(216,183,67,0.9) !important;
-    filter: drop-shadow(0 0 8px rgba(216,183,67,0.7));
-  }
-  .cycle-arc { stroke-dasharray: 200; stroke-dashoffset: 200; transition: stroke-dashoffset 0.6s ease, stroke 0.3s ease; }
-  .cycle-arc.drawn { stroke-dashoffset: 0; }
-  .cycle-arc.active { stroke: rgba(216,183,67,0.7) !important; }
-  .cycle-arc-return.active { stroke: rgba(216,183,67,0.9) !important; }
-  /* Labels — bumped to 0.8rem, pointer-events none */
-  .cycle-label {
-    position: absolute; font-size: 0.8rem; color: rgba(255,255,255,0.45);
-    font-weight: 600; text-align: center; line-height: 1.3;
-    transition: color 0.3s ease; pointer-events: none;
-  }
-  .cycle-label.active { color: rgba(255,255,255,0.95); }
-  .cycle-center {
-    position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
-    font-size: 0.68rem; font-weight: 700; color: rgba(216,183,67,0.65);
-    text-align: center; line-height: 1.3; letter-spacing: 0.04em; text-transform: uppercase;
-    pointer-events: none;
+  @keyframes trap-glow-pulse {
+    0%   { opacity: 0.4; transform: scale(1); }
+    50%  { opacity: 0.8; transform: scale(1.05); }
+    100% { opacity: 1;   transform: scale(1.1); }
   }
 
-  /* Node hover tooltips */
-  .cycle-tooltip {
+  .trap-section-label {
+    font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: rgba(255,255,255,0.3); font-weight: 600; margin-bottom: 1rem;
+    font-family: 'Courier New', 'Menlo', monospace;
+  }
+
+  /* ── Scene container (holds browser + floating cards) ── */
+  .trap-scene {
+    position: relative;
+    width: 100%; max-width: 800px; margin: 0 auto;
+    /* Extra padding so floating cards have room to breathe outside the browser */
+    padding: 2rem 0;
+  }
+
+  /* ── Browser chrome ── */
+  .trap-browser {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 32px 80px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.05);
+  }
+  .trap-browser-bar {
+    display: flex; align-items: center; gap: 0.5rem;
+    padding: 0.75rem 1rem;
+    background: rgba(255,255,255,0.03);
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+  }
+  .trap-dot { width: 12px; height: 12px; border-radius: 50%; flex-shrink: 0; }
+  .trap-dot--red   { background: #ff5f57; }
+  .trap-dot--amber { background: #febc2e; }
+  .trap-dot--green { background: #28c840; }
+  .trap-browser-url {
+    font-size: 0.7rem; color: rgba(255,255,255,0.3);
+    background: rgba(255,255,255,0.05); border-radius: 6px;
+    padding: 0.3rem 0.8rem; margin-left: 0.5rem;
+    font-family: 'Courier New', monospace;
+  }
+
+  /* ── Fake dashboard inside browser ── */
+  .trap-dash {
+    display: flex; min-height: 340px;
+  }
+  .trap-dash-sidebar {
+    width: 160px; flex-shrink: 0;
+    background: rgba(255,255,255,0.03);
+    border-right: 1px solid rgba(255,255,255,0.06);
+    padding: 1.2rem 0.8rem;
+    display: flex; flex-direction: column; gap: 0.15rem;
+  }
+  .trap-dash-logo {
+    font-size: 0.85rem; font-weight: 800; color: rgba(255,255,255,0.6);
+    margin-bottom: 1rem; letter-spacing: -0.02em;
+  }
+  .trap-dash-nav-item {
+    font-size: 0.72rem; color: rgba(255,255,255,0.3);
+    padding: 0.4rem 0.6rem; border-radius: 5px; cursor: default;
+  }
+  .trap-dash-nav-item--active {
+    color: rgba(255,255,255,0.7);
+    background: rgba(255,255,255,0.06);
+  }
+  .trap-dash-main {
+    flex: 1; padding: 1.2rem 1.5rem;
+  }
+  .trap-dash-header {
+    font-size: 0.78rem; font-weight: 700; color: rgba(255,255,255,0.55);
+    margin-bottom: 0.6rem;
+  }
+  .trap-dash-count {
+    font-weight: 400; color: rgba(255,255,255,0.25); margin-left: 0.5rem;
+    font-size: 0.68rem;
+  }
+  .trap-dash-row {
+    display: flex; gap: 1rem; align-items: center;
+    padding: 0.5rem 0.6rem;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+    font-size: 0.72rem; color: rgba(255,255,255,0.4);
+  }
+  .trap-dash-row--dim { opacity: 0.5; }
+  .trap-dash-cell { flex: 1; }
+  .trap-dash-cell--status { flex: 0.6; color: rgba(107,183,144,0.7); font-size: 0.65rem; }
+  .trap-dash-cell--warn { color: rgba(255,80,80,0.7); }
+  .trap-dash-cell--date { flex: 0.5; text-align: right; font-size: 0.62rem; color: rgba(255,255,255,0.2); }
+
+  /* Hide sidebar on small screens */
+  @media (max-width: 640px) {
+    .trap-dash-sidebar { display: none; }
+    .trap-scene { padding: 1rem 0; }
+  }
+
+  /* ── Floating notification cards ── */
+  .trap-notif {
     position: absolute;
-    background: rgba(8,14,24,0.96);
-    border: 1px solid rgba(216,183,67,0.4);
-    border-radius: 8px;
-    padding: 0.55rem 0.85rem;
-    font-size: 0.72rem;
-    line-height: 1.5;
-    color: rgba(255,255,255,0.85);
-    white-space: nowrap;
-    pointer-events: none;
+    background: rgba(18,24,38,0.92);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 10px;
+    padding: 0.7rem 1rem;
+    min-width: 240px; max-width: 320px;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.05);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     opacity: 0;
-    transition: opacity 0.18s ease, transform 0.18s ease;
+    transform: translate(var(--notif-tx, 0), var(--notif-ty, 20px)) scale(0.95);
+    transition: opacity 0.45s cubic-bezier(0.22,0.61,0.36,1),
+                transform 0.45s cubic-bezier(0.22,0.61,0.36,1);
+    pointer-events: none;
     z-index: 10;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.55);
   }
-  .cycle-tooltip strong {
-    color: #D8B743; display: block; margin-bottom: 0.15rem;
-    font-size: 0.7rem; letter-spacing: 0.04em; text-transform: uppercase;
+  .trap-notif.trap-notif--visible {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+    pointer-events: auto;
   }
-  #ct-0 { bottom: calc(100% + 0.5rem); left: 50%; transform: translateX(-50%) translateY(6px); }
-  #ct-0.cycle-tooltip--visible { opacity: 1; transform: translateX(-50%) translateY(0); }
-  #ct-1 { top: 50%; left: calc(100% + 0.5rem); transform: translateY(calc(-50% + 6px)); }
-  #ct-1.cycle-tooltip--visible { opacity: 1; transform: translateY(-50%); }
-  #ct-2 { top: calc(100% + 0.5rem); left: 50%; transform: translateX(-50%) translateY(-6px); }
-  #ct-2.cycle-tooltip--visible { opacity: 1; transform: translateX(-50%) translateY(0); }
-  #ct-3 { top: 50%; right: calc(100% + 0.5rem); transform: translateY(calc(-50% + 6px)); }
-  #ct-3.cycle-tooltip--visible { opacity: 1; transform: translateY(-50%); }
+
+  /* Position each notification around the dashboard edges */
+  /* Right side — well clear of dashboard */
+  .trap-notif--1 { top: 3%;     right: -18%;  --notif-tx: 50px;  --notif-ty: -10px; z-index: 11; }
+  .trap-notif--3 { top: 25%;    right: -22%;  --notif-tx: 60px;  --notif-ty: 0px;   z-index: 13; }
+  .trap-notif--5 { bottom: 30%; right: -20%;  --notif-tx: 50px;  --notif-ty: 10px;  z-index: 15; }
+  .trap-notif--7 { bottom: 6%;  right: -18%;  --notif-tx: 50px;  --notif-ty: 10px;  z-index: 17; }
+  .trap-notif--9 { bottom: -8%; right: 0%;    --notif-tx: 30px;  --notif-ty: 25px;  z-index: 19; }
+  /* Left side — well clear of dashboard */
+  .trap-notif--2 { top: 10%;    left: -20%;   --notif-tx: -50px; --notif-ty: 0px;   z-index: 12; }
+  .trap-notif--4 { top: 38%;    left: -22%;   --notif-tx: -50px; --notif-ty: 10px;  z-index: 14; }
+  .trap-notif--6 { bottom: 16%; left: -20%;   --notif-tx: -60px; --notif-ty: 0px;   z-index: 16; }
+  .trap-notif--8 { bottom: -4%; left: 0%;     --notif-tx: -30px; --notif-ty: 25px;  z-index: 18; }
+
+  /* On mobile, stack notifications more centred */
+  @media (max-width: 768px) {
+    .trap-notif { min-width: 200px; max-width: 260px; font-size: 0.85em; }
+    .trap-notif--1 { top: 2%;   right: -2%; }
+    .trap-notif--2 { top: 10%;  left: -2%; }
+    .trap-notif--3 { top: 22%;  right: -3%; }
+    .trap-notif--4 { top: 34%;  left: -2%; }
+    .trap-notif--5 { bottom: 28%; right: -2%; }
+    .trap-notif--6 { bottom: 18%; left: -3%; }
+    .trap-notif--7 { bottom: 10%; right: -2%; }
+    .trap-notif--8 { bottom: 2%;  left: 2%; }
+    .trap-notif--9 { bottom: -3%; right: 4%; }
+  }
+
+  /* Card internals (shared) */
+  .tc-row { display: flex; align-items: center; justify-content: space-between; gap: 0.75rem; }
+  .tc-row--bot { margin-top: 0.25rem; }
+  .tc-label { font-size: 0.78rem; font-weight: 700; color: rgba(255,255,255,0.9); }
+  .tc-meta  { font-size: 0.68rem; color: rgba(255,255,255,0.4); }
+  .tc-detail { font-size: 0.64rem; color: rgba(255,255,255,0.3); }
+  .tc-tag {
+    font-size: 0.58rem; font-weight: 700; letter-spacing: 0.08em;
+    text-transform: uppercase; padding: 0.18rem 0.45rem; border-radius: 4px;
+    flex-shrink: 0; white-space: nowrap;
+  }
+  .tc-green { background: rgba(107,183,144,0.18); color: #6BB790; border: 1px solid rgba(107,183,144,0.3); }
+  .tc-blue  { background: rgba(61,178,221,0.15);  color: #3DB2DD; border: 1px solid rgba(61,178,221,0.3); }
+  .tc-amber { background: rgba(216,183,67,0.15);  color: #D8B743; border: 1px solid rgba(216,183,67,0.3); }
+  .tc-red   { background: rgba(255,80,80,0.15);   color: #ff6b6b; border: 1px solid rgba(255,80,80,0.3); }
+
+  /* ── Copy block below scene ── */
+  .trap-copy-block {
+    max-width: 640px; margin: 2.5rem auto 0; text-align: center;
+  }
+  .trap-copy-line {
+    font-size: clamp(1rem, 1.3vw, 1.15rem);
+    color: rgba(255,255,255,0.7);
+    font-weight: 500; line-height: 1.65;
+    margin-bottom: 0.85rem;
+    opacity: 0; transform: translateY(10px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+  .trap-copy-line--show { opacity: 1; transform: translateY(0); }
+  .trap-copy-line--accent { color: #D8B743; font-weight: 700; margin-bottom: 0; }
 
   /* Circular latency diagram */
   .circ-latency-wrap { display: flex; flex-direction: column; align-items: center; gap: 0; }
