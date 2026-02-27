@@ -87,7 +87,7 @@ const trustedLogos = [
   <div class="max-w-screen-2xl mx-auto px-8 lg:px-16">
       <!-- Industry stats — Stripe-style divider + 4-col numbers -->
       <div class="wtw-industry reveal" style="--delay:200ms;">
-        <h2 class="wtw-industry-quote">The research is clear.<br/>Expertise is the bottleneck.</h2>
+        <h2 class="wtw-industry-quote">The research is clear<br/>Expertise is the bottleneck</h2>
         <p class="wtw-industry-sub">AI doesn't fail businesses. Bad implementation does.</p>
         <div class="wtw-divider-line"></div>
         <div class="wtw-industry-stats wtw-industry-stats--5">
@@ -1147,10 +1147,10 @@ const trustedLogos = [
 
     var PERSPECTIVE = 600;
     var TILT = 0.55;
-    var WAVE_AMP = 18;
+    var WAVE_AMP = 32;
     var WAVE_SPEED = 0.015;
-    var MOUSE_RADIUS = 150;
-    var MOUSE_FORCE = 35;
+    var MOUSE_RADIUS = 200;
+    var MOUSE_FORCE = 55;
 
     function resize() {
       canvas.width  = wrapper ? wrapper.offsetWidth  : window.innerWidth;
@@ -1225,8 +1225,8 @@ const trustedLogos = [
           else ctx.lineTo(proj.x, proj.y);
         }
         var rowFade = Math.min(row / ROWS * 4, (1 - row / ROWS) * 4, 1);
-        ctx.strokeStyle = 'rgba(61,178,221,' + (0.06 * rowFade) + ')';
-        ctx.lineWidth = 0.5;
+        ctx.strokeStyle = 'rgba(61,178,221,' + (0.09 * rowFade) + ')';
+        ctx.lineWidth = 0.6;
         ctx.stroke();
       }
 
@@ -1240,8 +1240,8 @@ const trustedLogos = [
           else ctx.lineTo(proj.x, proj.y);
         }
         var colFade = Math.min(col / COLS * 4, (1 - col / COLS) * 4, 1);
-        ctx.strokeStyle = 'rgba(61,178,221,' + (0.06 * colFade) + ')';
-        ctx.lineWidth = 0.5;
+        ctx.strokeStyle = 'rgba(61,178,221,' + (0.09 * colFade) + ')';
+        ctx.lineWidth = 0.6;
         ctx.stroke();
       }
 
@@ -1687,42 +1687,42 @@ const trustedLogos = [
   .hero-aurora {
     position: absolute;
     border-radius: 50%;
-    filter: blur(80px);
+    filter: blur(90px);
     will-change: transform, opacity;
     pointer-events: none;
   }
   .hero-aurora-1 {
-    width: 55vw; height: 55vw; max-width: 680px; max-height: 680px;
-    background: radial-gradient(circle, rgba(61,178,221,0.22) 0%, transparent 65%);
+    width: 65vw; height: 65vw; max-width: 820px; max-height: 820px;
+    background: radial-gradient(circle, rgba(61,178,221,0.30) 0%, transparent 65%);
     top: -10%; left: -5%;
-    animation: auroraMove1 14s ease-in-out infinite alternate;
+    animation: auroraMove1 12s ease-in-out infinite alternate;
   }
   .hero-aurora-2 {
-    width: 50vw; height: 50vw; max-width: 600px; max-height: 600px;
-    background: radial-gradient(circle, rgba(216,183,67,0.16) 0%, transparent 65%);
+    width: 60vw; height: 60vw; max-width: 740px; max-height: 740px;
+    background: radial-gradient(circle, rgba(216,183,67,0.22) 0%, transparent 65%);
     top: 5%; right: -8%;
-    animation: auroraMove2 18s ease-in-out infinite alternate;
+    animation: auroraMove2 15s ease-in-out infinite alternate;
   }
   .hero-aurora-3 {
-    width: 40vw; height: 40vw; max-width: 480px; max-height: 480px;
-    background: radial-gradient(circle, rgba(107,183,144,0.14) 0%, transparent 65%);
+    width: 50vw; height: 50vw; max-width: 600px; max-height: 600px;
+    background: radial-gradient(circle, rgba(107,183,144,0.20) 0%, transparent 65%);
     bottom: -15%; left: 30%;
-    animation: auroraMove3 22s ease-in-out infinite alternate;
+    animation: auroraMove3 18s ease-in-out infinite alternate;
   }
   @keyframes auroraMove1 {
     0%   { transform: translate(0, 0) scale(1); }
-    50%  { transform: translate(5vw, 4vh) scale(1.08); }
-    100% { transform: translate(2vw, -3vh) scale(0.95); }
+    50%  { transform: translate(8vw, 6vh) scale(1.12); }
+    100% { transform: translate(3vw, -5vh) scale(0.92); }
   }
   @keyframes auroraMove2 {
     0%   { transform: translate(0, 0) scale(1.05); }
-    50%  { transform: translate(-4vw, 5vh) scale(0.92); }
-    100% { transform: translate(3vw, 2vh) scale(1.1); }
+    50%  { transform: translate(-6vw, 7vh) scale(0.88); }
+    100% { transform: translate(5vw, 3vh) scale(1.14); }
   }
   @keyframes auroraMove3 {
-    0%   { transform: translate(0, 0) scale(0.95); }
-    50%  { transform: translate(3vw, -4vh) scale(1.08); }
-    100% { transform: translate(-5vw, 2vh) scale(1.02); }
+    0%   { transform: translate(0, 0) scale(0.92); }
+    50%  { transform: translate(5vw, -6vh) scale(1.12); }
+    100% { transform: translate(-7vw, 3vh) scale(1.05); }
   }
   .hero-scanline {
     position: absolute; left: 0; right: 0; height: 1px;
