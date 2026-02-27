@@ -290,7 +290,7 @@ const trustedLogos = [
 
     <!-- Title -->
     <h2 class="text-3xl lg:text-4xl xl:text-5xl font-bold leading-tight mb-16 max-w-3xl reveal" style="color:#fff;">
-      You Need a Fractional AI Growth Team That Measures and Optimizes These <span style="color:#D8B743;">3</span> Metrics
+      You Need a Fractional AI Growth Team That Measures and Optimizes These <span style="color:#D8B743;">4</span> Metrics
     </h2>
 
     <!-- Asymmetric bento grid — EFFICIENCY featured, SPEED side -->
@@ -361,15 +361,13 @@ const trustedLogos = [
         </div>
       </div>
 
-      <!-- REVENUE — full-width bottom card -->
+      <!-- REVENUE — line chart -->
       <div class="m-card m-card-revenue reveal" style="--delay:160ms;">
-        <div class="m-card-revenue-inner">
           <div class="m-card-text">
             <span class="m-card-label" style="color:#6BB790;">REVENUE</span>
             <h3 class="m-card-heading">Opportunity Cost</h3>
             <p class="m-card-desc">The impact of current, inefficient strategies on team morale and revenue generation.</p>
           </div>
-          <!-- Line chart -->
           <div class="m-viz m-viz-chart">
             <svg class="chart-svg" viewBox="0 0 480 140" preserveAspectRatio="none">
               <line x1="0" y1="35" x2="480" y2="35" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
@@ -389,6 +387,28 @@ const trustedLogos = [
             <div class="chart-x-labels">
               <span>Q1</span><span>Q2</span><span>Q3</span><span>Q4</span>
             </div>
+          </div>
+      </div>
+
+      <!-- MARKETING — stat counters -->
+      <div class="m-card m-card-pipeline reveal" style="--delay:240ms;">
+        <div class="m-card-text">
+          <span class="m-card-label" style="color:#D8B743;">MARKETING</span>
+          <h3 class="m-card-heading">CAC, CPL &amp; ROAS</h3>
+          <p class="m-card-desc">Industry-leading acquisition costs and return on ad spend.</p>
+        </div>
+        <div class="m-viz m-viz-stats">
+          <div class="stat-row">
+            <span class="stat-value" data-target="42" data-prefix="-" data-suffix="%">-0%</span>
+            <span class="stat-label">CAC</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-value" data-target="38" data-prefix="-" data-suffix="%">-0%</span>
+            <span class="stat-label">CPL</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-value" data-target="4.2" data-suffix="x" data-decimals="1">0x</span>
+            <span class="stat-label">ROAS</span>
           </div>
         </div>
       </div>
@@ -1603,6 +1623,36 @@ const trustedLogos = [
     { threshold: 0.08 }
   );
   document.querySelectorAll(".reveal").forEach((el) => revealObserver.observe(el));
+
+  /* Marketing stat counter animation */
+  (function() {
+    var card = document.querySelector('.m-card-pipeline');
+    if (!card) return;
+    var animated = false;
+    var obs = new MutationObserver(function() {
+      if (animated || !card.classList.contains('visible')) return;
+      animated = true;
+      card.querySelectorAll('.stat-value').forEach(function(el) {
+        var target = parseFloat(el.dataset.target);
+        var prefix = el.dataset.prefix || '';
+        var suffix = el.dataset.suffix || '';
+        var decimals = parseInt(el.dataset.decimals) || 0;
+        var duration = 1200;
+        var startTime = null;
+        function step(ts) {
+          if (!startTime) startTime = ts;
+          var progress = Math.min((ts - startTime) / duration, 1);
+          var eased = 1 - Math.pow(1 - progress, 3);
+          var current = (target * eased).toFixed(decimals);
+          el.textContent = prefix + current + suffix;
+          if (progress < 1) requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+      });
+    });
+    obs.observe(card, { attributes: true, attributeFilter: ['class'] });
+  })();
+
 
   /* ─── Why This Works: animated counters ─── */
   (function() {
@@ -5223,9 +5273,6 @@ const trustedLogos = [
       grid-template-columns: 3fr 2fr;
       gap: 1.15rem;
     }
-    .m-card-revenue {
-      grid-column: 1 / -1;
-    }
   }
 
   /* ─── Card base — glass effect ─── */
@@ -5277,6 +5324,9 @@ const trustedLogos = [
   }
   .m-card-revenue::after {
     background: radial-gradient(ellipse at 80% 100%, rgba(107,183,144,0.045) 0%, transparent 60%);
+  }
+  .m-card-pipeline::after {
+    background: radial-gradient(ellipse at 50% 100%, rgba(216,183,67,0.045) 0%, transparent 60%);
   }
   .m-card:hover {
     border-color: rgba(255,255,255,0.09);
@@ -5436,26 +5486,36 @@ const trustedLogos = [
   }
 
   /* ─── REVENUE chart ─── */
-  .m-card-revenue-inner {
+  /* ── MARKETING stat counters ── */
+  .m-viz-stats {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 0 0.5rem;
+  }
+  .stat-row {
     display: flex;
     flex-direction: column;
-    height: 100%;
+    align-items: center;
+    gap: 0.35rem;
   }
-  @media (min-width: 768px) {
-    .m-card-revenue-inner {
-      flex-direction: row;
-      align-items: center;
-      gap: 2.5rem;
-    }
-    .m-card-revenue-inner .m-card-text {
-      flex-shrink: 0;
-      max-width: 300px;
-      margin-bottom: 0;
-    }
-    .m-card-revenue-inner .m-viz-chart {
-      flex: 1;
-    }
+  .stat-value {
+    font-size: 2.4rem;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    color: #D8B743;
+    font-variant-numeric: tabular-nums;
+    line-height: 1;
   }
+  .stat-label {
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: rgba(255,255,255,0.45);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
   .m-viz-chart {
     position: relative;
   }
@@ -5523,9 +5583,6 @@ const trustedLogos = [
     }
     .bar-track {
       height: 26px;
-    }
-    .m-card-revenue-inner {
-      gap: 1.25rem;
     }
   }
 
