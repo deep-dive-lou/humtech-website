@@ -24,9 +24,29 @@ const trustedLogos = [
 ];
 ---
 
-<!-- Hero background wrapper — covers carousel + hero -->
+<!-- Trusted By Strip — white background, Stripe-style premium logo bar -->
+<section class="trusted-top-strip" style="position:relative; z-index:20; overflow:hidden; padding:1.2rem 0; background:#FFFFFF; border-bottom:1px solid #E5E7EB;">
+  <!-- Edge fade masks (white) -->
+  <div style="position:absolute;top:0;left:0;bottom:0;width:120px;background:linear-gradient(to right,rgba(255,255,255,0.95),transparent);z-index:2;pointer-events:none;"></div>
+  <div style="position:absolute;top:0;right:0;bottom:0;width:120px;background:linear-gradient(to left,rgba(255,255,255,0.95),transparent);z-index:2;pointer-events:none;"></div>
+  <!-- Marquee track — tripled for seamless loop -->
+  <div class="marquee-track" style="display:flex;gap:3rem;width:max-content;animation:marquee-scroll 28s linear infinite;">
+    {[...trustedLogos, ...trustedLogos, ...trustedLogos].map((logo) => (
+      <div style="display:flex;align-items:center;flex-shrink:0;">
+        <Image
+          src={logo.src}
+          alt={logo.alt}
+          class="h-9 max-w-[110px] w-auto object-contain opacity-50 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300"
+          height={48}
+        />
+      </div>
+    ))}
+  </div>
+</section>
+
+<!-- Hero background wrapper — covers hero content -->
 <div class="hero-bg-wrapper" style="position:relative; overflow-x:clip; overflow-y:visible; background:#050a12;">
-  <!-- Canvas background (covers carousel + hero) -->
+  <!-- Canvas background -->
   <div class="absolute inset-0 pointer-events-none" aria-hidden="true" style="z-index:0;">
     <div class="hero-aurora hero-aurora-1"></div>
     <div class="hero-aurora hero-aurora-2"></div>
@@ -35,48 +55,30 @@ const trustedLogos = [
     <div class="absolute inset-0 bg-gradient-to-b from-navy/40 via-transparent to-navy pointer-events-none"></div>
   </div>
 
-<!-- Trusted By Strip — infinite CSS marquee on transparent bg -->
-<section class="trusted-top-strip" style="position:relative; z-index:20; overflow:hidden; padding:1.4rem 0;">
-  <!-- Edge fade masks -->
-  <div style="position:absolute;top:0;left:0;bottom:0;width:120px;background:linear-gradient(to right,rgba(6,21,40,0.95),transparent);z-index:2;pointer-events:none;"></div>
-  <div style="position:absolute;top:0;right:0;bottom:0;width:120px;background:linear-gradient(to left,rgba(6,21,40,0.95),transparent);z-index:2;pointer-events:none;"></div>
-  <!-- Marquee track — tripled for seamless loop -->
-  <div class="marquee-track" style="display:flex;gap:3rem;width:max-content;animation:marquee-scroll 28s linear infinite;">
-    {[...trustedLogos, ...trustedLogos, ...trustedLogos].map((logo) => (
-      <div style="display:flex;align-items:center;flex-shrink:0;">
-        <Image
-          src={logo.src}
-          alt={logo.alt}
-          class="h-9 max-w-[110px] w-auto object-contain opacity-70 hover:opacity-90 transition-opacity duration-300"
-          height={48}
-        />
-      </div>
-    ))}
-  </div>
-</section>
-
 <!-- Hero Section -->
-<main class="pt-10 md:pt-14 pb-0 relative" style="z-index:10;">
+<main class="pt-16 md:pt-24 pb-16 md:pb-24 relative" style="z-index:10;">
 
   <div class="max-w-screen-2xl mx-auto px-6 lg:px-16 relative z-10">
 
-    <!-- Centered hero text -->
-    <div class="max-w-3xl mx-auto text-center animate-fade-in-up pb-10 md:pb-14">
+    <!-- Left-aligned hero text -->
+    <div class="max-w-5xl text-left animate-fade-in-up">
 
       <h1
-        class="hero-main-title text-4xl lg:text-5xl xl:text-6xl font-extrabold tracking-tight text-white">
-        Every Business NOT Using AI in 2026 is Losing Revenue by the Minute
+        class="hero-main-title font-bold tracking-tight text-white"
+        style="font-family: 'Be Vietnam Pro', sans-serif;">
+        Eliminate Friction and Accelerate Growth Using Our Custom AI Revenue Engine&#8482;
       </h1>
-      <p class="hero-subtitle text-xl md:text-2xl mt-4 text-yellow font-bold text-center mx-auto">
-        Eliminate Friction and Accelerate Growth<br/>Using Our Custom AI Revenue Engine
+      <p class="hero-subtitle text-lg md:text-xl mt-6 text-yellow font-semibold"
+        style="font-family: 'Be Vietnam Pro', sans-serif;">
+        Every Business NOT Using AI in 2026<br/>is Losing Revenue by the Minute
       </p>
 
       <!-- CTA button -->
-      <div class="mt-8 animate-fade-in-up delay-300 flex flex-col sm:flex-row gap-4 justify-center">
+      <div class="mt-10 animate-fade-in-up delay-300 flex flex-col sm:flex-row gap-4 justify-start">
         <a
           href="/free-ai-diagnostic"
-          class="hero-cta-link inline-flex items-center justify-center gap-2 bg-yellow hover:bg-yellow-light text-navy font-bold px-8 py-4 rounded-full transition-all duration-300 hover:shadow-lg hover:shadow-yellow/30 text-lg">
-          Take Your Free AI Diagnostic
+          class="hero-cta-link inline-flex items-center justify-center gap-2 bg-yellow hover:bg-yellow-light text-navy font-bold px-8 py-4 rounded-full transition-all duration-300 hover:shadow-lg hover:shadow-yellow/30 text-lg w-full sm:w-auto">
+          Free AI Business Diagnostic
           <svg class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
             <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
           </svg>
@@ -84,117 +86,50 @@ const trustedLogos = [
       </div>
     </div>
 
-    <!-- Keyboard — hero product visual, full width below CTA -->
-    <div class="w-full flex items-center justify-center animate-fade-in-up delay-200 kb-wrapper pb-10 md:pb-16" id="hero-kb-wrapper">
-      <div class="kb-container" id="kb-container">
-
-        <!-- LED Screen -->
-        <div class="kb-screen" id="kb-screen">
-          <div class="kb-screen-content">
-            <span class="kb-screen-prompt">&gt;</span>
-            <span class="kb-screen-text" id="kb-screen-text">AI REVENUE ENGINE&trade;</span>
-            <span class="kb-screen-cursor">&#x2588;</span>
-          </div>
-        </div>
-
-        <!-- Keyboard Body -->
-        <div class="kb-body">
-
-          <!-- Row 1 -->
-          <div class="kb-row">
-            <div class="kb-key kb-key-sm">ESC</div>
-            <div class="kb-key kb-key-sm">Q</div>
-            <div class="kb-key kb-key-sm">W</div>
-            <div class="kb-key kb-key-value kb-key-yellow" data-val="No Retainers / Upfront Costs">No Retainers /<br/>Upfront Costs</div>
-            <div class="kb-key kb-key-sm">R</div>
-            <div class="kb-key kb-key-sm">T</div>
-          </div>
-
-          <!-- Row 2 -->
-          <div class="kb-row">
-            <div class="kb-key kb-key-sm">A</div>
-            <div class="kb-key kb-key-sm">S</div>
-            <div class="kb-key kb-key-value kb-key-blue" data-val="Pay on Results Only">Pay on Results Only</div>
-            <div class="kb-key kb-key-sm">D</div>
-            <div class="kb-key kb-key-value kb-key-yellow" data-val="On Demand Multidisciplinary Team">On Demand<br/>Multidisciplinary Team</div>
-            <div class="kb-key kb-key-sm">F</div>
-          </div>
-
-          <!-- Row 3 -->
-          <div class="kb-row">
-            <div class="kb-key kb-key-sm">Z</div>
-            <div class="kb-key kb-key-sm">X</div>
-            <div class="kb-key kb-key-value kb-key-blue" data-val="Zero Friction, Done for You System">Zero Friction,<br/>Done for You System</div>
-            <div class="kb-key kb-key-sm">V</div>
-            <div class="kb-key kb-key-value kb-key-green" data-val="Results in Weeks">Results in Weeks</div>
-          </div>
-
-          <!-- Spacebar -->
-          <div class="kb-row">
-            <div class="kb-key kb-key-space kb-key-yellow" data-val="AI REVENUE ENGINE™">AI REVENUE ENGINE&trade;</div>
-          </div>
-
-        </div><!-- /kb-body -->
-      </div><!-- /kb-container -->
-    </div><!-- /hero kb wrapper -->
-
   </div>
 </main>
 </div><!-- /hero-bg-wrapper -->
 
-<!-- Credentials Section -->
-<section id="section-credentials" style="background:#061528; padding: 6rem 0 5rem;">
-  <!-- Background photo -->
-  <div class="cred-bg-wrap" aria-hidden="true">
-    <img class="cred-bg-photo" src="/public/cred-bg.jpg" alt="" loading="lazy"/>
-    <div class="cred-bg-overlay"></div>
-  </div>
+<!-- Research Is Clear Section (extracted from Why This Works) -->
+<section id="section-research" class="pt-10 pb-8 md:py-32 relative overflow-hidden" style="background:#EAEDF2;">
   <div class="max-w-screen-2xl mx-auto px-8 lg:px-16">
-    <div class="cred-layout reveal">
-
-      <!-- Left: cards stacked -->
-      <div class="cred-col-right">
-          <!-- Graduation cap — qualifications -->
-          <div class="cred-card cred-card--yellow">
-            <span class="cred-card-bar"></span>
-            <div class="cred-card-content">
-              <svg class="cred-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 1.1 2.7 3 6 3s6-1.9 6-3v-5"/>
-              </svg>
-              <p>Specialists with BSc (Hons) and MSc qualifications in computer science and psychology</p>
-            </div>
+      <!-- Industry stats — Stripe-style divider + 4-col numbers -->
+      <div class="wtw-industry reveal" style="--delay:200ms;">
+        <h2 class="wtw-industry-quote">The research is clear.<br/>Expertise is the bottleneck.</h2>
+        <p class="wtw-industry-sub">AI doesn't fail businesses. Bad implementation does.</p>
+        <div class="wtw-divider-line"></div>
+        <div class="wtw-industry-stats wtw-industry-stats--5">
+          <div class="wtw-ind-stat reveal" style="--delay:250ms;">
+            <span class="wtw-ind-num wtw-counter" data-target="95">0%</span>
+            <span class="wtw-ind-label">of AI projects fail<br/>without expert guidance</span>
           </div>
-          <!-- University building �� top 10 -->
-          <div class="cred-card cred-card--blue">
-            <span class="cred-card-bar"></span>
-            <div class="cred-card-content">
-              <svg class="cred-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M2 20h20M4 20V10l8-6 8 6v10"/><path d="M9 20v-4a3 3 0 016 0v4"/><line x1="12" y1="7" x2="12" y2="7.01"/>
-              </svg>
-              <p>Graduate experts from top 10 universities</p>
-            </div>
+          <div class="wtw-ind-stat reveal" style="--delay:350ms;">
+            <span class="wtw-ind-num">Only 5%</span>
+            <span class="wtw-ind-label">of AI pilots achieve<br/>measurable revenue impact</span>
           </div>
-          <!-- Clock — 15 years experience -->
-          <div class="cred-card cred-card--green">
-            <span class="cred-card-bar"></span>
-            <div class="cred-card-content">
-              <svg class="cred-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
-              </svg>
-              <p>Over 15 years experience in building and optimizing client acquisition systems</p>
-            </div>
+          <div class="wtw-ind-stat reveal" style="--delay:450ms;">
+            <span class="wtw-ind-num wtw-counter" data-target="72">0%</span>
+            <span class="wtw-ind-label">of companies cite knowledge<br/>gaps as the #1 barrier</span>
           </div>
-      </div><!-- /cred-col-right -->
-
-      <!-- Center: keyboard landing zone -->
-      <div class="cred-kb-landing" id="cred-kb-landing"></div>
-
-    </div>
+          <div class="wtw-ind-stat reveal" style="--delay:550ms;">
+            <span class="wtw-ind-num wtw-counter" data-target="67">0%</span>
+            <span class="wtw-ind-label">higher success rate with<br/>specialised external experts</span>
+          </div>
+          <div class="wtw-ind-stat reveal" style="--delay:650ms;">
+            <span class="wtw-ind-num">10x</span>
+            <span class="wtw-ind-label">typical cost underestimation<br/>when companies go it alone</span>
+          </div>
+        </div>
+        <div class="wtw-divider-line" style="margin-top:3.5rem;"></div>
+        <p class="wtw-ind-source">
+          Data from <a href="https://mlq.ai/media/quarterly_decks/v0.1_State_of_AI_in_Business_2025_Report.pdf" target="_blank" rel="noopener" class="wtw-source-link">MIT &amp; MLQ State of AI in Business 2025</a>, RAND Corporation, S&amp;P Global, McKinsey
+        </p>
+      </div>
   </div>
 </section>
 
 <!-- Kill Zone / Engagement Latency Section -->
-<section id="section-killzone" class="kill-zone-section relative overflow-hidden" style="background: #f0f2f5;">
+<section id="section-killzone" class="kill-zone-section relative overflow-hidden" style="background: #EAEDF2;">
   <div class="max-w-screen-2xl mx-auto px-8 lg:px-16">
 
     <!-- Two-column layout: race visual left, copy right -->
@@ -245,8 +180,8 @@ const trustedLogos = [
         </blockquote>
         <div class="kill-zone-copy-block kz-copy-reveal" style="--kz-delay: 0ms">
           <p class="kill-zone-copy">
-            Your competition is already <span class="kz-text-accent">closing this gap with AI.</span><br/>
-            If you don't program <span class="kz-text-accent">instantaneous response, you're invisible.</span>
+            Your competition is already closing this gap with AI.<br/>
+            If you don't program instantaneous response, you're invisible.
           </p>
         </div>
 
@@ -290,7 +225,7 @@ const trustedLogos = [
 
     <!-- Title -->
     <h2 class="text-3xl lg:text-4xl xl:text-5xl font-bold leading-tight mb-16 max-w-3xl reveal" style="color:#fff;">
-      You Need a Fractional AI Growth Team That Measures and Optimizes These <span style="color:#D8B743;">4</span> Metrics
+      You Need a Fractional AI Growth Team to Measure and Optimise These <span style="color:#D8B743;">4</span> Metrics
     </h2>
 
     <!-- Asymmetric bento grid — EFFICIENCY featured, SPEED side -->
@@ -681,38 +616,6 @@ const trustedLogos = [
 
     </div>
 
-    <!-- Industry stats — Stripe-style divider + 4-col numbers -->
-    <div class="wtw-industry reveal" style="--delay:200ms;">
-      <h2 class="wtw-industry-quote">The research is clear.<br/>Expertise is the bottleneck.</h2>
-      <p class="wtw-industry-sub">AI doesn't fail businesses. Bad implementation does.</p>
-      <div class="wtw-divider-line"></div>
-      <div class="wtw-industry-stats wtw-industry-stats--5">
-        <div class="wtw-ind-stat reveal" style="--delay:250ms;">
-          <span class="wtw-ind-num wtw-counter" data-target="95">0%</span>
-          <span class="wtw-ind-label">of AI projects fail<br/>without expert guidance</span>
-        </div>
-        <div class="wtw-ind-stat reveal" style="--delay:350ms;">
-          <span class="wtw-ind-num">Only 5%</span>
-          <span class="wtw-ind-label">of AI pilots achieve<br/>measurable revenue impact</span>
-        </div>
-        <div class="wtw-ind-stat reveal" style="--delay:450ms;">
-          <span class="wtw-ind-num wtw-counter" data-target="72">0%</span>
-          <span class="wtw-ind-label">of companies cite knowledge<br/>gaps as the #1 barrier</span>
-        </div>
-        <div class="wtw-ind-stat reveal" style="--delay:550ms;">
-          <span class="wtw-ind-num wtw-counter" data-target="67">0%</span>
-          <span class="wtw-ind-label">higher success rate with<br/>specialised external experts</span>
-        </div>
-        <div class="wtw-ind-stat reveal" style="--delay:650ms;">
-          <span class="wtw-ind-num">10x</span>
-          <span class="wtw-ind-label">typical cost underestimation<br/>when companies go it alone</span>
-        </div>
-      </div>
-      <div class="wtw-divider-line" style="margin-top:3.5rem;"></div>
-      <p class="wtw-ind-source">
-        Data from <a href="https://mlq.ai/media/quarterly_decks/v0.1_State_of_AI_in_Business_2025_Report.pdf" target="_blank" rel="noopener" class="wtw-source-link">MIT &amp; MLQ State of AI in Business 2025</a>, RAND Corporation, S&amp;P Global, McKinsey
-      </p>
-    </div>
 
     <!-- CTA -->
     <div class="text-center mt-12">
@@ -725,8 +628,212 @@ const trustedLogos = [
 
 
 
+
+<!-- ══ SECTION B — THE BOTTLENECK ══ -->
+<section id="section-bottleneck" class="relative overflow-hidden" style="background: linear-gradient(160deg, #0f2240 0%, #132d54 50%, #0f2240 100%);">
+  <div class="bn-pattern" aria-hidden="true"></div>
+  <div class="max-w-screen-2xl mx-auto px-8 lg:px-16 pt-28 pb-28 md:pt-36 md:pb-36 relative" style="z-index:1;">
+
+    <!-- Bottleneck headings -->
+    <div class="mb-4 reveal">
+      <h3 class="bn-heading-gold">You know the bottleneck... 50% of inquiries vanish before your sales team gets to them</h3>
+    </div>
+    <div class="mb-12 reveal">
+      <h3 class="bn-heading-main">We faced this exact problem</h3>
+    </div>
+
+    <!-- Two-column: Problem → Solution & Results -->
+    <div class="bn-grid" id="bn-grid">
+
+      <!-- LEFT: Text with watermark -->
+      <div class="bn-text">
+        <img src="/public/bg-logo.png" alt="" class="bn-watermark" aria-hidden="true" />
+        <p class="bn-line">On average, only 50% of new enquiries respond to manual outreach, and just half attend booked consultations.</p>
+        <hr class="bn-divider" />
+        <p class="bn-line">Teams are constantly drawn into repetitive admin tasks and distractions which take them away from revenue-producing duties.</p>
+        <hr class="bn-divider" />
+        <p class="bn-line">Countless &lsquo;out the box&rsquo; third-party AI tools (multiple different log-ins...), and conversions actually gets worse.</p>
+        <hr class="bn-divider" />
+        <p class="bn-line bn-line--emphasis">One AI Revenue Engine&trade; later, and the results speak for themselves...</p>
+      </div>
+
+      <!-- RIGHT: Joined visuals (phone + dashboard) -->
+      <div class="bn-visuals">
+        <div class="bn-phone">
+          <div class="bn-phone-frame">
+            <div class="bn-phone-notch"></div>
+            <div class="bn-phone-header"><span class="bn-phone-contact">Sarah (CFO)</span></div>
+            <div class="bn-phone-chat" id="bn-chat">
+              <div class="bn-msg bn-msg--sent" data-chat-idx="0">
+                <p>Have you seen this month&rsquo;s numbers?</p>
+                <span class="bn-msg-time">09:14</span>
+              </div>
+              <div class="bn-msg bn-msg--received" data-chat-idx="1">
+                <p>Just pulled them. Response time is under a second now</p>
+                <span class="bn-msg-time">09:15</span>
+              </div>
+              <div class="bn-msg bn-msg--sent" data-chat-idx="2">
+                <p>Booking rate hit 98%. When did that happen?</p>
+                <span class="bn-msg-time">09:15</span>
+              </div>
+              <div class="bn-msg bn-msg--received" data-chat-idx="3">
+                <p>Since the AI engine went live. Revenue&rsquo;s up 40% this quarter</p>
+                <span class="bn-msg-time">09:16</span>
+              </div>
+              <div class="bn-msg bn-msg--sent" data-chat-idx="4">
+                <p>Set up a review for Monday. I want this across all locations</p>
+                <span class="bn-msg-time">09:16</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="bn-dash" id="bn-dash-wrap">
+          <div class="cred-dash" id="cred-dash">
+            <div class="cred-dash-grid" aria-hidden="true"></div>
+            <div class="cred-dash-stats">
+              <div class="cred-dash-stat">
+                <span class="cred-dash-stat-label">Response Time</span>
+                <span class="cred-dash-stat-val cred-dash-stat-val--static">&lt;1s</span>
+              </div>
+              <div class="cred-dash-stat">
+                <span class="cred-dash-stat-label">Booking Rate</span>
+                <span class="cred-dash-stat-val" data-target="98" data-suffix="%">0%</span>
+              </div>
+              <div class="cred-dash-stat">
+                <span class="cred-dash-stat-label">Revenue Lift</span>
+                <span class="cred-dash-stat-val" data-target="40" data-suffix="%">0%</span>
+                <span class="cred-dash-stat-delta cred-dash-stat-delta--good">+40%</span>
+              </div>
+            </div>
+            <div class="cred-dash-chart">
+              <div class="cred-dash-chart-label">Monthly Revenue</div>
+              <div class="cred-dash-bars">
+                <div class="cred-dash-bar" style="--bar-h:35%;--bar-delay:0s;"></div>
+                <div class="cred-dash-bar" style="--bar-h:48%;--bar-delay:0.1s;"></div>
+                <div class="cred-dash-bar" style="--bar-h:42%;--bar-delay:0.2s;"></div>
+                <div class="cred-dash-bar" style="--bar-h:58%;--bar-delay:0.3s;"></div>
+                <div class="cred-dash-bar" style="--bar-h:52%;--bar-delay:0.4s;"></div>
+                <div class="cred-dash-bar" style="--bar-h:68%;--bar-delay:0.5s;"></div>
+                <div class="cred-dash-bar" style="--bar-h:75%;--bar-delay:0.6s;"></div>
+                <div class="cred-dash-bar cred-dash-bar--highlight" style="--bar-h:92%;--bar-delay:0.7s;"></div>
+              </div>
+            </div>
+            <div class="cred-dash-sparkrow">
+              <div class="cred-dash-spark">
+                <span class="cred-dash-spark-label">Leads</span>
+                <svg class="cred-dash-sparkline" viewBox="0 0 80 24" fill="none" aria-hidden="true">
+                  <polyline points="0,20 10,18 20,14 30,16 40,10 50,12 60,6 70,4 80,2" stroke="#D8B743" stroke-width="2" fill="none"/>
+                  <polyline points="0,20 10,18 20,14 30,16 40,10 50,12 60,6 70,4 80,2" stroke="none" fill="url(#sparkGoldB)" opacity="0.15"/>
+                  <defs><linearGradient id="sparkGoldB" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#D8B743"/><stop offset="100%" stop-color="transparent"/></linearGradient></defs>
+                </svg>
+              </div>
+              <div class="cred-dash-spark">
+                <span class="cred-dash-spark-label">Bookings</span>
+                <svg class="cred-dash-sparkline" viewBox="0 0 80 24" fill="none" aria-hidden="true">
+                  <polyline points="0,22 10,20 20,17 30,15 40,12 50,10 60,7 70,5 80,3" stroke="#3DB2DD" stroke-width="2" fill="none"/>
+                  <polyline points="0,22 10,20 20,17 30,15 40,12 50,10 60,7 70,5 80,3" stroke="none" fill="url(#sparkBlueB)" opacity="0.15"/>
+                  <defs><linearGradient id="sparkBlueB" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#3DB2DD"/><stop offset="100%" stop-color="transparent"/></linearGradient></defs>
+                </svg>
+              </div>
+            </div>
+            <div class="cred-dash-live" id="cred-dash-live">
+              <span class="cred-dash-live-dot"></span>
+              <span class="cred-dash-live-text">Live</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- CTA -->
+    <div class="bn-cta">
+      <button onclick="openAssessmentModal()" class="final-assessment-button">
+        Diagnose My Business!
+      </button>
+      <p class="bn-cta-support">Takes less than 3 minutes - Get immediate results - Completely free.</p>
+    </div>
+
+  </div>
+</section>
+
+
+
+<!-- ══ SECTION C — THE PROOF ══ -->
+<section id="section-proof" class="relative overflow-hidden" style="background: #EAEDF2;">
+  <div class="max-w-screen-2xl mx-auto px-8 lg:px-16 pt-24 pb-28 md:pt-32 md:pb-36">
+
+    <!-- Row 1: Heading left-aligned + CTA paired below it -->
+    <div class="proof-row-header proof-reveal" data-proof-reveal>
+      <p class="results-proof-copy">
+        In <span class="proof-counter" data-target="24">24</span> months, our AI Revenue Engine powered the #1 rated Green Energy Supplier and became the #1 rated Advertising Agency on Trustpilot with <span class="proof-stars-inline" aria-label="4.9 out of 5.0 Stars" role="img">
+          <span class="proof-star" data-star="1" aria-hidden="true">&#9733;</span><span class="proof-star" data-star="2" aria-hidden="true">&#9733;</span><span class="proof-star" data-star="3" aria-hidden="true">&#9733;</span><span class="proof-star" data-star="4" aria-hidden="true">&#9733;</span><span class="proof-star proof-star-partial" data-star="5" aria-hidden="true">&#9733;</span>
+          <span class="proof-stars-label">4.9 out of 5.0 Stars</span>
+        </span> and a team of <span class="proof-tail">only <span class="proof-counter" data-target="4">4</span> people.</span>
+      </p>
+      <div class="proof-cta-zone">
+        <button onclick="openAssessmentModal()" class="proof-cta-button">
+          Get my free PDF AI Diagnostic
+        </button>
+      </div>
+    </div>
+
+    <!-- Row 2: Three cards horizontal -->
+    <div class="proof-card-row proof-reveal" data-proof-reveal style="transition-delay: 0.2s;">
+
+      <!-- Card 1: Research study -->
+      <blockquote class="section-eight-proof-card">
+        <div class="proof-card-eyebrow">Research</div>
+        <div class="proof-card-body">
+          <p class="section-eight-proof-text">
+            "AI-human combination results in higher engagement/conversion rates, reduced costs and optimized lead generation. <span class="section-eight-proof-highlight">3x more calls connected, 20% higher meeting hold rate.</span>"
+          </p>
+        </div>
+        <div class="proof-card-footer">
+          <cite class="section-eight-proof-cite not-italic">
+            -Koch, S. (2024). A Case Study in AI-Augmented Cold Outreach. The Journal of Business and Artificial Intelligence, 1(1), 1-5
+          </cite>
+        </div>
+      </blockquote>
+
+      <!-- Card 2: Research study -->
+      <blockquote class="section-eight-proof-card">
+        <div class="proof-card-eyebrow">Research</div>
+        <div class="proof-card-body">
+          <p class="section-eight-proof-text">
+            "AI chat and scheduling bot reduces 'no show rates', reduces administrative burden, improves client satisfaction and <span class="section-eight-proof-highlight">increases overall efficiency.</span>"
+          </p>
+        </div>
+        <div class="proof-card-footer">
+          <cite class="section-eight-proof-cite not-italic">
+            - Nyako Alhaji Baba et al. (2024). Development of an intelligent chatbot for patient appointment booking system. International Journal of Engineering and Applied Information Systems, 8(10), 55-65
+          </cite>
+        </div>
+      </blockquote>
+
+      <!-- Card 3: Client testimonial — full quote always visible -->
+      <blockquote class="section-eight-proof-card">
+        <div class="proof-card-eyebrow">Client</div>
+        <div class="proof-card-body">
+          <p class="section-eight-testimonial-text">
+            "I took the assessment and found we were <span class="testimonial-highlight">losing revenue in areas which we were blind to.</span> We were also taking significant market share risks by being behind in AI adoption across multiple domains of our business, notably, lead generation and sales conversions. We verified the diagnostic report outcomes by engaging a portion of old leads 6 months post enquiry, and found that <span class="testimonial-highlight">almost all initial non-responders had been served by our competitors</span> who beat us to the punch. <span class="testimonial-highlight">Revenue increase was rapid with Hum Tech,</span> and required minimal input from our already very busy team."
+          </p>
+        </div>
+        <div class="proof-card-footer">
+          <cite class="section-eight-testimonial-cite not-italic">RESG UK</cite>
+        </div>
+      </blockquote>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
 <!-- ══ SECTION A — THE TRAP (overwhelm cascade) ══ -->
-<section id="section-trap" class="relative overflow-hidden" style="background: #0a1628;">
+<section id="section-trap" class="relative overflow-hidden" style="background: #122845;">
   <!-- Animated background glow -->
   <div class="trap-bg-glow" aria-hidden="true"></div>
   <div class="max-w-screen-2xl mx-auto px-8 lg:px-16 pt-20 pb-20 md:pt-28 md:pb-28 relative" style="z-index:1;">
@@ -887,6 +994,7 @@ const trustedLogos = [
 </section>
 
 
+
 <!-- Testimonial bridge -->
 <section class="testi-section">
 
@@ -953,207 +1061,6 @@ const trustedLogos = [
       </div>
 
     </div>
-  </div>
-
-</section>
-
-
-<!-- ══ SECTION B — THE BOTTLENECK ══ -->
-<section id="section-bottleneck" class="relative overflow-hidden" style="background: linear-gradient(160deg, #0f2240 0%, #132d54 50%, #0f2240 100%);">
-  <div class="bn-pattern" aria-hidden="true"></div>
-  <div class="max-w-screen-2xl mx-auto px-8 lg:px-16 pt-28 pb-28 md:pt-36 md:pb-36 relative" style="z-index:1;">
-
-    <!-- Bottleneck headings -->
-    <div class="mb-4 reveal">
-      <h3 class="bn-heading-gold">You know the bottleneck... 50% of inquiries vanish before your sales team gets to them</h3>
-    </div>
-    <div class="mb-12 reveal">
-      <h3 class="bn-heading-main">We faced this exact problem</h3>
-    </div>
-
-    <!-- Two-column: Problem → Solution & Results -->
-    <div class="bn-grid" id="bn-grid">
-
-      <!-- LEFT: Text with watermark -->
-      <div class="bn-text">
-        <img src="/public/bg-logo.png" alt="" class="bn-watermark" aria-hidden="true" />
-        <p class="bn-line">On average, only 50% of new enquiries respond to manual outreach, and just half attend booked consultations.</p>
-        <hr class="bn-divider" />
-        <p class="bn-line">Teams are constantly drawn into repetitive admin tasks and distractions which take them away from revenue-producing duties.</p>
-        <hr class="bn-divider" />
-        <p class="bn-line">Countless &lsquo;out the box&rsquo; third-party AI tools (multiple different log-ins...), and conversions actually gets worse.</p>
-        <hr class="bn-divider" />
-        <p class="bn-line bn-line--emphasis">One AI Revenue Engine&trade; later, and the results speak for themselves...</p>
-      </div>
-
-      <!-- RIGHT: Joined visuals (phone + dashboard) -->
-      <div class="bn-visuals">
-        <div class="bn-phone">
-          <div class="bn-phone-frame">
-            <div class="bn-phone-notch"></div>
-            <div class="bn-phone-header"><span class="bn-phone-contact">Sarah (CFO)</span></div>
-            <div class="bn-phone-chat" id="bn-chat">
-              <div class="bn-msg bn-msg--sent" data-chat-idx="0">
-                <p>Have you seen this month&rsquo;s numbers?</p>
-                <span class="bn-msg-time">09:14</span>
-              </div>
-              <div class="bn-msg bn-msg--received" data-chat-idx="1">
-                <p>Just pulled them. Response time is under a second now</p>
-                <span class="bn-msg-time">09:15</span>
-              </div>
-              <div class="bn-msg bn-msg--sent" data-chat-idx="2">
-                <p>Booking rate hit 98%. When did that happen?</p>
-                <span class="bn-msg-time">09:15</span>
-              </div>
-              <div class="bn-msg bn-msg--received" data-chat-idx="3">
-                <p>Since the AI engine went live. Revenue&rsquo;s up 40% this quarter</p>
-                <span class="bn-msg-time">09:16</span>
-              </div>
-              <div class="bn-msg bn-msg--sent" data-chat-idx="4">
-                <p>Set up a review for Monday. I want this across all locations</p>
-                <span class="bn-msg-time">09:16</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="bn-dash" id="bn-dash-wrap">
-          <div class="cred-dash" id="cred-dash">
-            <div class="cred-dash-grid" aria-hidden="true"></div>
-            <div class="cred-dash-stats">
-              <div class="cred-dash-stat">
-                <span class="cred-dash-stat-label">Response Time</span>
-                <span class="cred-dash-stat-val cred-dash-stat-val--static">&lt;1s</span>
-              </div>
-              <div class="cred-dash-stat">
-                <span class="cred-dash-stat-label">Booking Rate</span>
-                <span class="cred-dash-stat-val" data-target="98" data-suffix="%">0%</span>
-              </div>
-              <div class="cred-dash-stat">
-                <span class="cred-dash-stat-label">Revenue Lift</span>
-                <span class="cred-dash-stat-val" data-target="40" data-suffix="%">0%</span>
-                <span class="cred-dash-stat-delta cred-dash-stat-delta--good">+40%</span>
-              </div>
-            </div>
-            <div class="cred-dash-chart">
-              <div class="cred-dash-chart-label">Monthly Revenue</div>
-              <div class="cred-dash-bars">
-                <div class="cred-dash-bar" style="--bar-h:35%;--bar-delay:0s;"></div>
-                <div class="cred-dash-bar" style="--bar-h:48%;--bar-delay:0.1s;"></div>
-                <div class="cred-dash-bar" style="--bar-h:42%;--bar-delay:0.2s;"></div>
-                <div class="cred-dash-bar" style="--bar-h:58%;--bar-delay:0.3s;"></div>
-                <div class="cred-dash-bar" style="--bar-h:52%;--bar-delay:0.4s;"></div>
-                <div class="cred-dash-bar" style="--bar-h:68%;--bar-delay:0.5s;"></div>
-                <div class="cred-dash-bar" style="--bar-h:75%;--bar-delay:0.6s;"></div>
-                <div class="cred-dash-bar cred-dash-bar--highlight" style="--bar-h:92%;--bar-delay:0.7s;"></div>
-              </div>
-            </div>
-            <div class="cred-dash-sparkrow">
-              <div class="cred-dash-spark">
-                <span class="cred-dash-spark-label">Leads</span>
-                <svg class="cred-dash-sparkline" viewBox="0 0 80 24" fill="none" aria-hidden="true">
-                  <polyline points="0,20 10,18 20,14 30,16 40,10 50,12 60,6 70,4 80,2" stroke="#D8B743" stroke-width="2" fill="none"/>
-                  <polyline points="0,20 10,18 20,14 30,16 40,10 50,12 60,6 70,4 80,2" stroke="none" fill="url(#sparkGoldB)" opacity="0.15"/>
-                  <defs><linearGradient id="sparkGoldB" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#D8B743"/><stop offset="100%" stop-color="transparent"/></linearGradient></defs>
-                </svg>
-              </div>
-              <div class="cred-dash-spark">
-                <span class="cred-dash-spark-label">Bookings</span>
-                <svg class="cred-dash-sparkline" viewBox="0 0 80 24" fill="none" aria-hidden="true">
-                  <polyline points="0,22 10,20 20,17 30,15 40,12 50,10 60,7 70,5 80,3" stroke="#3DB2DD" stroke-width="2" fill="none"/>
-                  <polyline points="0,22 10,20 20,17 30,15 40,12 50,10 60,7 70,5 80,3" stroke="none" fill="url(#sparkBlueB)" opacity="0.15"/>
-                  <defs><linearGradient id="sparkBlueB" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#3DB2DD"/><stop offset="100%" stop-color="transparent"/></linearGradient></defs>
-                </svg>
-              </div>
-            </div>
-            <div class="cred-dash-live" id="cred-dash-live">
-              <span class="cred-dash-live-dot"></span>
-              <span class="cred-dash-live-text">Live</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- CTA -->
-    <div class="bn-cta">
-      <button onclick="openAssessmentModal()" class="final-assessment-button">
-        Diagnose My Business!
-      </button>
-      <p class="bn-cta-support">Takes less than 3 minutes - Get immediate results - Completely free.</p>
-    </div>
-
-  </div>
-</section>
-
-
-<!-- ══ SECTION C — THE PROOF ══ -->
-<section id="section-proof" class="relative overflow-hidden" style="background: #EAEDF2;">
-  <div class="max-w-screen-2xl mx-auto px-8 lg:px-16 pt-24 pb-28 md:pt-32 md:pb-36">
-
-    <!-- Row 1: Heading left-aligned + CTA paired below it -->
-    <div class="proof-row-header proof-reveal" data-proof-reveal>
-      <p class="results-proof-copy">
-        In <span class="proof-counter" data-target="24">24</span> months, our AI Revenue Engine powered the #1 rated Green Energy Supplier and became the #1 rated Advertising Agency on Trustpilot with <span class="proof-stars-inline" aria-label="4.9 out of 5.0 Stars" role="img">
-          <span class="proof-star" data-star="1" aria-hidden="true">&#9733;</span><span class="proof-star" data-star="2" aria-hidden="true">&#9733;</span><span class="proof-star" data-star="3" aria-hidden="true">&#9733;</span><span class="proof-star" data-star="4" aria-hidden="true">&#9733;</span><span class="proof-star proof-star-partial" data-star="5" aria-hidden="true">&#9733;</span>
-          <span class="proof-stars-label">4.9 out of 5.0 Stars</span>
-        </span> and a team of <span class="proof-tail">only <span class="proof-counter" data-target="4">4</span> people.</span>
-      </p>
-      <div class="proof-cta-zone">
-        <button onclick="openAssessmentModal()" class="proof-cta-button">
-          Get my free PDF AI Diagnostic
-        </button>
-      </div>
-    </div>
-
-    <!-- Row 2: Three cards horizontal -->
-    <div class="proof-card-row proof-reveal" data-proof-reveal style="transition-delay: 0.2s;">
-
-      <!-- Card 1: Research study -->
-      <blockquote class="section-eight-proof-card">
-        <div class="proof-card-eyebrow">Research</div>
-        <div class="proof-card-body">
-          <p class="section-eight-proof-text">
-            "AI-human combination results in higher engagement/conversion rates, reduced costs and optimized lead generation. <span class="section-eight-proof-highlight">3x more calls connected, 20% higher meeting hold rate.</span>"
-          </p>
-        </div>
-        <div class="proof-card-footer">
-          <cite class="section-eight-proof-cite not-italic">
-            -Koch, S. (2024). A Case Study in AI-Augmented Cold Outreach. The Journal of Business and Artificial Intelligence, 1(1), 1-5
-          </cite>
-        </div>
-      </blockquote>
-
-      <!-- Card 2: Research study -->
-      <blockquote class="section-eight-proof-card">
-        <div class="proof-card-eyebrow">Research</div>
-        <div class="proof-card-body">
-          <p class="section-eight-proof-text">
-            "AI chat and scheduling bot reduces 'no show rates', reduces administrative burden, improves client satisfaction and <span class="section-eight-proof-highlight">increases overall efficiency.</span>"
-          </p>
-        </div>
-        <div class="proof-card-footer">
-          <cite class="section-eight-proof-cite not-italic">
-            - Nyako Alhaji Baba et al. (2024). Development of an intelligent chatbot for patient appointment booking system. International Journal of Engineering and Applied Information Systems, 8(10), 55-65
-          </cite>
-        </div>
-      </blockquote>
-
-      <!-- Card 3: Client testimonial — full quote always visible -->
-      <blockquote class="section-eight-proof-card">
-        <div class="proof-card-eyebrow">Client</div>
-        <div class="proof-card-body">
-          <p class="section-eight-testimonial-text">
-            "I took the assessment and found we were <span class="testimonial-highlight">losing revenue in areas which we were blind to.</span> We were also taking significant market share risks by being behind in AI adoption across multiple domains of our business, notably, lead generation and sales conversions. We verified the diagnostic report outcomes by engaging a portion of old leads 6 months post enquiry, and found that <span class="testimonial-highlight">almost all initial non-responders had been served by our competitors</span> who beat us to the punch. <span class="testimonial-highlight">Revenue increase was rapid with Hum Tech,</span> and required minimal input from our already very busy team."
-          </p>
-        </div>
-        <div class="proof-card-footer">
-          <cite class="section-eight-testimonial-cite not-italic">RESG UK</cite>
-        </div>
-      </blockquote>
-
-    </div>
-
   </div>
 
 </section>
@@ -1383,102 +1290,6 @@ const trustedLogos = [
     tick();
   })();
 
-  /* Keyboard screen typewriter */
-  (function() {
-    const screenText = document.getElementById('kb-screen-text');
-    if (!screenText) return;
-    const DEFAULT = 'AI REVENUE ENGINE™';
-    const keys = document.querySelectorAll('[data-val]');
-    let typeTimer = null;
-
-    function typewrite(text) {
-      clearTimeout(typeTimer);
-      screenText.textContent = '';
-      let i = 0;
-      function next() {
-        if (i < text.length) {
-          screenText.textContent += text[i++];
-          typeTimer = setTimeout(next, 38);
-        }
-      }
-      next();
-    }
-
-    keys.forEach(function(key) {
-      const val = key.dataset.val || DEFAULT;
-      key.addEventListener('mouseenter', function() { typewrite(val); });
-      key.addEventListener('mouseleave', function() { typewrite(DEFAULT); });
-      key.addEventListener('click', function() { if (val !== DEFAULT) typewrite(val); });
-    });
-  })();
-
-  /* ─── Keyboard scroll migration: hero ↕ credentials ─── */
-  (function() {
-    var kb = document.getElementById('kb-container');
-    var landing = document.getElementById('cred-kb-landing');
-    if (!kb || !landing) return;
-    if (window.innerWidth < 1024) return;
-
-    var ticking = false;
-
-    // Measure the vertical distance between keyboard origin and landing zone
-    // Uses document-relative positions (offsetTop walk) so scroll doesn't affect it
-    function getDocTop(el) {
-      var top = 0;
-      while (el) { top += el.offsetTop; el = el.offsetParent; }
-      return top;
-    }
-
-    // Cache the vertical gap on load (doesn't change unless window resizes)
-    var kbDocTop = getDocTop(kb);
-    var landingDocTop = getDocTop(landing);
-    var dy = landingDocTop + landing.offsetHeight / 2 - (kbDocTop + kb.offsetHeight / 2);
-
-    window.addEventListener('resize', function() {
-      if (window.innerWidth < 1024) {
-        kb.style.transform = '';
-        kb.style.animation = '';
-        return;
-      }
-      kbDocTop = getDocTop(kb);
-      landingDocTop = getDocTop(landing);
-      dy = landingDocTop + landing.offsetHeight / 2 - (kbDocTop + kb.offsetHeight / 2);
-    });
-
-    function easeInOutCubic(t) {
-      return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
-    }
-
-    function tick() {
-      ticking = false;
-      var scrollY = window.scrollY;
-      var vh = window.innerHeight;
-
-      // Start: when keyboard's natural position is about to leave viewport top
-      var triggerStart = kbDocTop - vh * 0.65;
-      // End: when landing zone center is at viewport center
-      var triggerEnd = landingDocTop + landing.offsetHeight / 2 - vh * 0.5;
-
-      if (triggerEnd <= triggerStart) return;
-
-      var progress = (scrollY - triggerStart) / (triggerEnd - triggerStart);
-      progress = Math.max(0, Math.min(1, progress));
-
-      if (progress <= 0) {
-        kb.style.transform = '';
-        kb.style.animation = '';
-        return;
-      }
-
-      var eased = easeInOutCubic(progress);
-      kb.style.animation = 'none';
-      kb.style.transform = 'translateY(' + (dy * eased) + 'px)';
-    }
-
-    window.addEventListener('scroll', function() {
-      if (!ticking) { ticking = true; requestAnimationFrame(tick); }
-    }, { passive: true });
-  })();
 
   /* ══ SECTION A — Floating notification cascade ══ */
   (function() {
@@ -2014,12 +1825,11 @@ const trustedLogos = [
   }
 
   .hero-main-title {
-    font-size: clamp(2rem, 3.6vw, 3.5rem);
+    font-size: clamp(1.75rem, 3.2vw, 3rem);
     font-weight: 700;
     letter-spacing: -0.025em;
-    line-height: 1.14;
+    line-height: 1.18;
     text-wrap: balance;
-    max-width: 42ch;
   }
 
   .kill-zone-headline {
@@ -2031,7 +1841,6 @@ const trustedLogos = [
   .hero-subtitle {
     font-size: clamp(1.05rem, 1.6vw, 1.5rem);
     line-height: 1.28;
-    white-space: nowrap;
   }
 
   .hero-support {
@@ -2239,131 +2048,6 @@ const trustedLogos = [
     backdrop-filter: blur(10px);
     padding: 2rem;
     overflow: hidden;
-  }
-
-
-  /* Futuristic Keyboard Hero Graphic */
-  .kb-wrapper { padding: 1.5rem 0; }
-
-  .kb-container {
-    position: relative;
-    z-index: 50;
-    display: flex;
-    flex-direction: column;
-    gap: 0.8rem;
-    width: 520px;
-    user-select: none;
-    animation: kb-float 5.5s ease-in-out infinite;
-  }
-
-  @keyframes kb-float {
-    0%, 100% { transform: translateY(0px); }
-    50%       { transform: translateY(-8px); }
-  }
-
-  /* LED Screen */
-  .kb-screen {
-    position: relative;
-    background: #060d16;
-    border: 1px solid rgba(107,183,144,0.28);
-    border-radius: 8px 8px 4px 4px;
-    padding: 0.75rem 1rem;
-    overflow: hidden;
-    box-shadow: 0 0 24px rgba(107,183,144,0.08), inset 0 0 30px rgba(0,0,0,0.5);
-    min-height: 52px;
-  }
-  .kb-screen::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: repeating-linear-gradient(
-      to bottom,
-      transparent 0px, transparent 2px,
-      rgba(0,0,0,0.07) 2px, rgba(0,0,0,0.07) 4px
-    );
-    pointer-events: none;
-  }
-  .kb-screen-content {
-    display: flex;
-    align-items: center;
-    gap: 0.4rem;
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 1.1rem;
-    letter-spacing: 0.08em;
-    position: relative;
-    z-index: 1;
-  }
-  .kb-screen-prompt { color: rgba(107,183,144,0.6); }
-  .kb-screen-text   { color: #6BB790; font-weight: 600; }
-  .kb-screen-cursor { color: #6BB790; animation: kb-blink 1s step-end infinite; }
-  @keyframes kb-blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
-
-  /* Keyboard body */
-  .kb-body {
-    background: linear-gradient(160deg, #19222f 0%, #111720 60%, #0c1219 100%);
-    border: 1px solid rgba(255,255,255,0.07);
-    border-radius: 12px;
-    padding: 0.9rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.45rem;
-    box-shadow: 0 24px 64px rgba(0,0,0,0.55), inset 0 1px 0 rgba(255,255,255,0.05);
-  }
-  .kb-row { display: flex; gap: 0.38rem; align-items: stretch; }
-
-  /* Base key */
-  .kb-key {
-    border-radius: 6px;
-    background: linear-gradient(160deg, #1e2a3a 0%, #141d28 100%);
-    border: 1px solid rgba(255,255,255,0.06);
-    box-shadow: 0 3px 0 rgba(0,0,0,0.45), inset 0 1px 0 rgba(255,255,255,0.05);
-    cursor: pointer;
-    transition: transform 0.08s ease, box-shadow 0.08s ease, color 0.12s ease, border-color 0.12s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    font-size: 0.72rem;
-    color: rgba(255,255,255,0.28);
-    font-family: 'Courier New', monospace;
-    font-weight: 500;
-    letter-spacing: 0.03em;
-    padding: 0.45rem 0.3rem;
-    line-height: 1.3;
-  }
-  .kb-key-sm { flex: 1; min-width: 30px; }
-
-  /* Value prop keys */
-  .kb-key-value {
-    flex: 3;
-    font-size: 1rem;
-    font-weight: 700;
-    color: rgba(255,255,255,0.7);
-    padding: 0.65rem 0.55rem;
-    letter-spacing: 0.02em;
-    line-height: 1.4;
-  }
-
-  /* Colour variants */
-  .kb-key-yellow { border-color: rgba(216,183,67,0.30); box-shadow: 0 3px 0 rgba(0,0,0,0.45), 0 0 10px rgba(216,183,67,0.07), inset 0 1px 0 rgba(255,255,255,0.05); }
-  .kb-key-yellow:hover { border-color: rgba(216,183,67,0.65); box-shadow: 0 1px 0 rgba(0,0,0,0.4), 0 0 18px rgba(216,183,67,0.22), inset 0 1px 0 rgba(255,255,255,0.05); transform: translateY(2px); color: #D8B743; }
-  .kb-key-yellow:active { transform: translateY(3px); box-shadow: 0 0 0 rgba(0,0,0,0.4), 0 0 8px rgba(216,183,67,0.12), inset 0 2px 4px rgba(0,0,0,0.3); }
-
-  .kb-key-blue { border-color: rgba(61,178,221,0.30); box-shadow: 0 3px 0 rgba(0,0,0,0.45), 0 0 10px rgba(61,178,221,0.07), inset 0 1px 0 rgba(255,255,255,0.05); }
-  .kb-key-blue:hover { border-color: rgba(61,178,221,0.65); box-shadow: 0 1px 0 rgba(0,0,0,0.4), 0 0 18px rgba(61,178,221,0.22), inset 0 1px 0 rgba(255,255,255,0.05); transform: translateY(2px); color: #3DB2DD; }
-  .kb-key-blue:active { transform: translateY(3px); box-shadow: 0 0 0 rgba(0,0,0,0.4), 0 0 8px rgba(61,178,221,0.12), inset 0 2px 4px rgba(0,0,0,0.3); }
-
-  .kb-key-green { border-color: rgba(107,183,144,0.30); box-shadow: 0 3px 0 rgba(0,0,0,0.45), 0 0 10px rgba(107,183,144,0.07), inset 0 1px 0 rgba(255,255,255,0.05); }
-  .kb-key-green:hover { border-color: rgba(107,183,144,0.65); box-shadow: 0 1px 0 rgba(0,0,0,0.4), 0 0 18px rgba(107,183,144,0.22), inset 0 1px 0 rgba(255,255,255,0.05); transform: translateY(2px); color: #6BB790; }
-  .kb-key-green:active { transform: translateY(3px); box-shadow: 0 0 0 rgba(0,0,0,0.4), 0 0 8px rgba(107,183,144,0.12), inset 0 2px 4px rgba(0,0,0,0.3); }
-
-  /* Spacebar */
-  .kb-key-space {
-    flex: 1;
-    font-size: 1rem;
-    font-weight: 800;
-    letter-spacing: 0.12em;
-    padding: 0.72rem 1rem;
   }
 
 
@@ -2744,7 +2428,7 @@ const trustedLogos = [
   .wtw-vcard.visible:hover { transform: translateY(-4px); }
 
   .wtw-vcard-visual {
-    background: #0a1929;
+    background: #122845;
     padding: 1.75rem 1.25rem;
     display: flex;
     align-items: center;
@@ -2928,7 +2612,7 @@ const trustedLogos = [
     flex-direction: column;
   }
   .wtw-fcard-visual {
-    background: #0a1929;
+    background: #122845;
     padding: 1.5rem 1rem;
     display: flex;
     align-items: center;
@@ -3371,7 +3055,7 @@ const trustedLogos = [
 
   /* ═══ Kill Zone Section ═══ */
   .kill-zone-section {
-    padding: 5rem 0 6rem;
+    padding: 0 0 6rem;
   }
 
   .kill-zone-grid {
@@ -3379,6 +3063,11 @@ const trustedLogos = [
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
     align-items: center;
+    background: #fff;
+    border: 1px solid rgba(6, 21, 40, 0.08);
+    border-radius: 20px;
+    padding: 3rem;
+    box-shadow: 0 1px 3px rgba(6, 21, 40, 0.03), 0 8px 24px rgba(6, 21, 40, 0.05);
   }
 
   /* Left column — race visual */
@@ -3641,11 +3330,11 @@ const trustedLogos = [
     margin-bottom: 0.5rem;
   }
   .kz-quote {
-    font-family: var(--font-heading);
-    font-size: clamp(1.4rem, 2.2vw, 1.9rem);
-    font-weight: 600;
+    font-family: "Open Sans", sans-serif;
+    font-size: clamp(1.2rem, 1.8vw, 1.6rem);
+    font-weight: 400;
     font-style: italic;
-    color: #061528;
+    color: #122845;
     line-height: 1.4;
     margin: 0 0 2rem;
     display: flex;
@@ -3706,10 +3395,11 @@ const trustedLogos = [
   }
 
   .kill-zone-copy {
-    color: #061528;
-    font-size: clamp(1.12rem, 1.3vw, 1.45rem);
-    line-height: 1.5;
-    font-weight: 600;
+    color: #122845;
+    font-family: "Open Sans", sans-serif;
+    font-size: clamp(0.95rem, 1.1vw, 1.15rem);
+    line-height: 1.6;
+    font-weight: 500;
     letter-spacing: 0.002em;
   }
 
@@ -4434,7 +4124,7 @@ const trustedLogos = [
   }
 
   .results-proof-copy {
-    color: #061528;
+    color: #122845;
     font-size: clamp(1.5rem, 2.6vw, 2.8rem);
     line-height: 1.2;
     font-weight: 500;
@@ -4453,7 +4143,7 @@ const trustedLogos = [
   }
 
   .proof-cta-button {
-    background: #061528;
+    background: #122845;
     color: #ffffff;
     font-weight: 700;
     font-size: 1.125rem;
@@ -4555,7 +4245,7 @@ const trustedLogos = [
   }
 
   .section-eight-proof-text {
-    color: rgba(6, 21, 40, 0.82);
+    color: #122845;
     font-size: 0.97rem;
     line-height: 1.5;
     margin: 0;
@@ -4563,7 +4253,7 @@ const trustedLogos = [
   }
 
   .section-eight-proof-highlight {
-    color: #061528;
+    color: #3DB2DD;
     font-weight: 700;
   }
 
@@ -4576,7 +4266,7 @@ const trustedLogos = [
   }
 
   .section-eight-testimonial-text {
-    color: rgba(6, 21, 40, 0.72);
+    color: #122845;
     font-size: 0.88rem;
     line-height: 1.65;
     font-style: italic;
@@ -4585,7 +4275,7 @@ const trustedLogos = [
   }
 
   .testimonial-highlight {
-    color: #061528;
+    color: #D8B743;
     font-weight: 700;
     font-style: normal;
   }
@@ -4700,6 +4390,8 @@ const trustedLogos = [
     .kill-zone-grid {
       grid-template-columns: 1fr;
       gap: 2rem;
+      padding: 1.5rem;
+      border-radius: 14px;
     }
 
     main > .absolute.inset-0.pointer-events-none {
@@ -5112,33 +4804,8 @@ const trustedLogos = [
     }
   }
 
-  /* Mobile keyboard — scales to fit screen */
   @media (max-width: 1023px) {
     .hero-bg-wrapper { overflow-y: clip !important; }
-    /* Fix 1: kill the fade-up entrance animation — keyboard appears static on mobile */
-    .kb-wrapper { padding: 1.5rem 0; justify-content: center !important; animation: none !important; opacity: 1 !important; transform: none !important; position: relative; z-index: 1; }
-    .kb-container {
-      width: 100%;
-      max-width: 420px;
-      animation: none !important;
-      transform: none !important;
-      z-index: 1;
-      position: relative;
-    }
-    .kb-key { font-size: 0.55rem; padding: 0.4rem 0.25rem; }
-    .kb-key-sm { min-width: 22px; }
-    .kb-key-value { font-size: 0.72rem; padding: 0.55rem 0.4rem; }
-    .kb-screen-content { font-size: 0.85rem; }
-    .kb-screen { min-height: 42px; padding: 0.6rem 0.75rem; }
-    .kb-key-space { font-size: 0.78rem; padding: 0.6rem 0.8rem; }
-  }
-
-  @media (max-width: 480px) {
-    .kb-container { max-width: 360px; }
-    .kb-key { font-size: 0.48rem; padding: 0.35rem 0.2rem; }
-    .kb-key-value { font-size: 0.62rem; padding: 0.5rem 0.35rem; }
-    .kb-screen-content { font-size: 0.75rem; }
-    .kb-key-space { font-size: 0.65rem; }
   }
 
 
