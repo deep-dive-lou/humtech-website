@@ -1,51 +1,21 @@
 ---
-import { Image } from "astro:assets";
-import trustedLogoEcop from "@/assets/trusted-logo-ecop.webp";
-import trustedLogoLmf from "@/assets/trusted-logo-lmf.webp";
-import trustedLogoGhs from "@/assets/trusted-logo-ghs.webp";
-import trustedLogoResg from "@/assets/trusted-logo-resg.png";
-import trustedLogoAse from "@/assets/trusted-logo-ase.png";
-import trustedLogoDiversity from "@/assets/trusted-logo-div.png";
-import trustedLogoHnr from "@/assets/trusted-logo-hnr.png";
-import trustedLogoOptama from "@/assets/trusted-logo-optama.png";
-import trustedLogoSr from "@/assets/trusted-logo-sr.png";
-import trustedLogoZenith from "@/assets/trusted-logo-zen.png";
 const trustedLogos = [
-  { src: trustedLogoEcop, alt: "ECOP" },
-  { src: trustedLogoAse, alt: "ASE" },
-  { src: trustedLogoLmf, alt: "LMF" },
-  { src: trustedLogoHnr, alt: "HNR" },
-  { src: trustedLogoGhs, alt: "GHS" },
-  { src: trustedLogoOptama, alt: "Optama" },
-  { src: trustedLogoResg, alt: "RESG" },
-  { src: trustedLogoDiversity, alt: "Diversity" },
-  { src: trustedLogoSr, alt: "SR" },
-  { src: trustedLogoZenith, alt: "Zenith" },
+  { src: "/trusted-by/logo-zen.png", alt: "Zenith Eco Solutions" },
+  { src: "/trusted-by/logo-ase.svg", alt: "All Seasons Energy" },
+  { src: "/trusted-by/logo-div.png", alt: "Diversity Energy Solutions" },
+  { src: "/trusted-by/logo-optama.svg", alt: "Optama Renewables" },
+  { src: "/trusted-by/logo-sr.svg", alt: "South Rings Energy" },
+  { src: "/trusted-by/logo-resg.svg", alt: "Rural Energy Saving Grants" },
+  { src: "/trusted-by/logo-lmf.svg", alt: "LMF Energy Services" },
+  { src: "/trusted-by/logo-hnr.svg", alt: "HR Energy Solutions" },
+  { src: "/trusted-by/logo-ghs.svg", alt: "Green Home Systems" },
+  { src: "/trusted-by/logo-ecop.svg", alt: "Eco Providers" },
 ];
 ---
 
-<!-- Trusted By Strip — white background, Stripe-style premium logo bar -->
-<section class="trusted-top-strip" style="position:relative; z-index:20; overflow:hidden; padding:1.2rem 0; background:#FFFFFF; border-bottom:1px solid #E5E7EB;">
-  <!-- Edge fade masks (white) -->
-  <div style="position:absolute;top:0;left:0;bottom:0;width:120px;background:linear-gradient(to right,rgba(255,255,255,0.95),transparent);z-index:2;pointer-events:none;"></div>
-  <div style="position:absolute;top:0;right:0;bottom:0;width:120px;background:linear-gradient(to left,rgba(255,255,255,0.95),transparent);z-index:2;pointer-events:none;"></div>
-  <!-- Marquee track — tripled for seamless loop -->
-  <div class="marquee-track" style="display:flex;gap:3rem;width:max-content;animation:marquee-scroll 28s linear infinite;">
-    {[...trustedLogos, ...trustedLogos, ...trustedLogos].map((logo) => (
-      <div style="display:flex;align-items:center;flex-shrink:0;">
-        <Image
-          src={logo.src}
-          alt={logo.alt}
-          class="h-9 max-w-[110px] w-auto object-contain opacity-50 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300"
-          height={48}
-        />
-      </div>
-    ))}
-  </div>
-</section>
 
 <!-- Hero background wrapper — covers hero content -->
-<div class="hero-bg-wrapper" style="position:relative; overflow-x:clip; overflow-y:visible; background:#050a12;">
+<div class="hero-bg-wrapper" style="position:relative; overflow:clip; background:#122845;">
   <!-- Canvas background -->
   <div class="absolute inset-0 pointer-events-none" aria-hidden="true" style="z-index:0;">
     <div class="hero-aurora hero-aurora-1"></div>
@@ -56,7 +26,7 @@ const trustedLogos = [
   </div>
 
 <!-- Hero Section -->
-<main class="pt-16 md:pt-24 pb-16 md:pb-24 relative" style="z-index:10;">
+<main class="pt-16 md:pt-24 pb-8 md:pb-10 relative" style="z-index:10;">
 
   <div class="max-w-screen-2xl mx-auto px-6 lg:px-16 relative z-10">
 
@@ -88,10 +58,32 @@ const trustedLogos = [
 
   </div>
 </main>
+
+  <!-- Trusted By — dark marquee strip inside hero -->
+  <div class="trusted-strip" style="position:relative; z-index:10; overflow:hidden;">
+    <!-- Subtle top divider -->
+    <div style="position:absolute;top:0;left:5%;right:5%;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.08) 30%,rgba(255,255,255,0.08) 70%,transparent);"></div>
+    <!-- Edge fade masks (navy) -->
+    <div style="position:absolute;top:0;left:0;bottom:0;width:120px;background:linear-gradient(to right,#122845,transparent);z-index:2;pointer-events:none;"></div>
+    <div style="position:absolute;top:0;right:0;bottom:0;width:120px;background:linear-gradient(to left,#122845,transparent);z-index:2;pointer-events:none;"></div>
+    <div class="marquee-track" style="display:flex;gap:5rem;width:max-content;animation:marquee-scroll 32s linear infinite;">
+      {[...trustedLogos, ...trustedLogos, ...trustedLogos].map((logo) => (
+        <div class="trusted-logo-item">
+          <img
+            src={logo.src}
+            alt={logo.alt}
+            class="trusted-logo-img"
+            loading="lazy"
+          />
+        </div>
+      ))}
+    </div>
+  </div>
+
 </div><!-- /hero-bg-wrapper -->
 
 <!-- Research Is Clear Section (extracted from Why This Works) -->
-<section id="section-research" class="pt-10 pb-8 md:py-32 relative overflow-hidden" style="background:#EAEDF2;">
+<section id="section-research" class="pt-4 pb-8 md:pt-10 md:pb-32 relative overflow-hidden" style="background:#EAEDF2;">
   <div class="max-w-screen-2xl mx-auto px-8 lg:px-16">
       <!-- Industry stats — Stripe-style divider + 4-col numbers -->
       <div class="wtw-industry reveal" style="--delay:200ms;">
@@ -4808,6 +4800,35 @@ const trustedLogos = [
     .hero-bg-wrapper { overflow-y: clip !important; }
   }
 
+
+  /* ─── Trusted-by logo strip ─────────────────────────── */
+  .trusted-logo-item {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+  }
+  .trusted-strip {
+    padding: 1.25rem 0 2rem;
+  }
+  .trusted-logo-img {
+    height: 40px;
+    width: auto;
+    max-width: 160px;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+    opacity: 0.45;
+    transition: opacity 0.3s ease;
+  }
+  .trusted-strip:hover .trusted-logo-img {
+    opacity: 0.65;
+  }
+
+  @media (min-width: 768px) {
+    .trusted-logo-img {
+      height: 48px;
+      max-width: 180px;
+    }
+  }
 
   /* Infinite marquee scroll */
   @keyframes marquee-scroll {

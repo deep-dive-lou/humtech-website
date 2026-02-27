@@ -1,4 +1,7 @@
 @import 'tailwindcss';
+@import '@fontsource/be-vietnam-pro/400.css';
+@import '@fontsource/be-vietnam-pro/600.css';
+@import '@fontsource/be-vietnam-pro/700.css';
 
 @plugin '@tailwindcss/typography';
 
@@ -370,8 +373,7 @@
     line-height: 1.55;
     letter-spacing: 0.005em;
     font-weight: 400;
-    background-color: #061528;
-    padding-top: 72px; /* Space for full-width glass navbar */
+    background-color: #ffffff;
     text-wrap: pretty;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;

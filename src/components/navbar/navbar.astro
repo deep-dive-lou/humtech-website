@@ -7,112 +7,110 @@ const menuitems = [
 ];
 ---
 
-<!-- Floating pill navbar — pill container, plain text items -->
-<div class="fixed top-0 left-0 right-0 z-50 px-4 pt-3">
-  <div class="max-w-7xl mx-auto bg-[#061528]/80 backdrop-blur-xl border border-white/[0.08] rounded-2xl shadow-2xl shadow-black/20">
-    <div class="px-5 lg:px-8">
-      <header class="py-2">
-        <Astronav closeOnClick>
-          <div class="lg:flex lg:w-full lg:items-center lg:justify-between lg:gap-4">
+<!-- Full-width transparent navbar — Stripe style -->
+<div class="humtech-nav relative z-50 transition-colors duration-300" style="font-family: 'Be Vietnam Pro', sans-serif; background: #122845; border-bottom: 1px solid rgba(255,255,255,0.08);">
+  <div class="mx-auto px-6 lg:px-12 xl:px-20">
+    <header class="py-3 lg:py-4">
+      <Astronav closeOnClick>
+        <div class="lg:flex lg:w-full lg:items-center lg:justify-between lg:gap-4">
 
-            <!-- Logo -->
-            <div class="flex w-full lg:w-auto items-center justify-between gap-6">
-              <a href="/" class="shrink-0">
-                <img src="/public/bg-humtech.png" alt="HumTech Logo" class="h-12 w-auto" />
-              </a>
-              <div class="block lg:hidden">
-                <MenuIcon class="h-6 w-6 text-white" />
-              </div>
+          <!-- Logo -->
+          <div class="flex w-full lg:w-auto items-center justify-between gap-6">
+            <a href="/" class="shrink-0">
+              <img src="/public/humtech-logo.svg" alt="HumTech Logo" class="h-10 lg:h-12 w-auto" />
+            </a>
+            <div class="block lg:hidden">
+              <MenuIcon class="h-6 w-6 text-white" />
             </div>
-
-            <MenuItems class="hidden w-full lg:mt-0 lg:flex lg:flex-1 lg:items-center lg:justify-center lg:gap-6">
-              <!-- Nav items — plain text, no individual pill borders -->
-              <ul class="mt-2 flex flex-col border-t border-white/20 py-3 lg:mt-0 lg:flex-row lg:items-center lg:gap-6 lg:border-0 lg:py-0 lg:flex-nowrap">
-                {
-                  menuitems.map((item) => (
-                    <li>
-                      <a
-                        href={item.path}
-                        class="flex px-1 py-1 items-center text-white/70 hover:text-white transition-colors text-sm font-bold">
-                        <span>{item.title}</span>
-                      </a>
-                    </li>
-                  ))
-                }
-
-                <!-- About Us dropdown — hover on desktop, click on mobile -->
-                <li class="relative nav-dropdown-li">
-                  <details class="nav-about-details group">
-                    <summary class="flex items-center gap-1.5 px-1 py-1 text-white/70 hover:text-white transition-colors w-full lg:w-auto text-sm font-bold list-none cursor-pointer">
-                      <span>About Us</span>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke-width="2.5"
-                        stroke="currentColor"
-                        class="w-3 h-3 mt-0.5 transition-transform duration-200 group-open:rotate-180">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"></path>
-                      </svg>
-                    </summary>
-                    <div class="lg:absolute lg:top-full lg:left-0 lg:mt-2 w-full lg:w-64 z-50">
-                      <div class="lg:bg-[#07192e]/98 lg:backdrop-blur-xl lg:rounded-xl lg:border lg:border-white/[0.08] lg:shadow-2xl lg:shadow-black/60 flex flex-col pl-4 lg:pl-0 lg:py-2">
-                        <a href="/services" class="flex items-center gap-3 px-4 py-3 text-sm text-white/70 hover:text-white hover:bg-white/[0.04] transition-colors lg:rounded-lg">
-                          <span class="w-8 h-8 rounded-lg bg-yellow/10 flex items-center justify-center flex-shrink-0">
-                            <svg class="w-4 h-4 text-yellow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                              <rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/>
-                            </svg>
-                          </span>
-                          <div>
-                            <div class="font-medium text-white/90">Services</div>
-                            <div class="text-xs text-white/40 mt-0.5">What we build for you</div>
-                          </div>
-                        </a>
-                        <a href="/team" class="flex items-center gap-3 px-4 py-3 text-sm text-white/70 hover:text-white hover:bg-white/[0.04] transition-colors lg:rounded-lg">
-                          <span class="w-8 h-8 rounded-lg bg-blue/10 flex items-center justify-center flex-shrink-0">
-                            <svg class="w-4 h-4 text-blue" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-                            </svg>
-                          </span>
-                          <div>
-                            <div class="font-medium text-white/90">Meet the Team</div>
-                            <div class="text-xs text-white/40 mt-0.5">The people behind the engine</div>
-                          </div>
-                        </a>
-                        <a href="/faq" class="flex items-center gap-3 px-4 py-3 text-sm text-white/70 hover:text-white hover:bg-white/[0.04] transition-colors lg:rounded-lg">
-                          <span class="w-8 h-8 rounded-lg bg-green/10 flex items-center justify-center flex-shrink-0">
-                            <svg class="w-4 h-4 text-green" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                              <circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/>
-                            </svg>
-                          </span>
-                          <div>
-                            <div class="font-medium text-white/90">Frequently Asked Questions</div>
-                            <div class="text-xs text-white/40 mt-0.5">Common questions answered</div>
-                          </div>
-                        </a>
-                      </div>
-                    </div>
-                  </details>
-                </li>
-              </ul>
-
-              <!-- Right CTA -->
-              <div class="mb-3 lg:mb-0 lg:flex-shrink-0">
-                <a
-                  href="/free-ai-diagnostic"
-                  class="inline-flex items-center gap-2 rounded-full bg-yellow px-5 py-2 text-sm font-semibold text-navy transition-all hover:bg-yellow-light hover:shadow-md hover:shadow-yellow/20">
-                  <svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor">
-                    <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
-                  </svg>
-                  Free AI Diagnostic
-                </a>
-              </div>
-            </MenuItems>
-
           </div>
-        </Astronav>
-      </header>
-    </div>
+
+          <MenuItems class="hidden w-full lg:mt-0 lg:flex lg:flex-1 lg:items-center lg:justify-center lg:gap-10">
+            <ul class="mt-2 flex flex-col border-t border-white/20 py-3 lg:mt-0 lg:flex-row lg:items-center lg:gap-10 lg:border-0 lg:py-0 lg:flex-nowrap">
+              {
+                menuitems.map((item) => (
+                  <li>
+                    <a
+                      href={item.path}
+                      class="flex px-1 py-1 items-center text-white/70 hover:text-white transition-colors text-[15px] font-medium">
+                      <span>{item.title}</span>
+                    </a>
+                  </li>
+                ))
+              }
+
+              <!-- About Us dropdown -->
+              <li class="relative nav-dropdown-li">
+                <details class="nav-about-details group">
+                  <summary class="flex items-center gap-1.5 px-1 py-1 text-white/70 hover:text-white transition-colors w-full lg:w-auto text-[15px] font-medium list-none cursor-pointer">
+                    <span>About Us</span>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="2.5"
+                      stroke="currentColor"
+                      class="w-3 h-3 mt-0.5 transition-transform duration-200 group-open:rotate-180">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"></path>
+                    </svg>
+                  </summary>
+                  <div class="lg:absolute lg:top-full lg:left-0 lg:mt-2 w-full lg:w-64 z-50">
+                    <div class="lg:bg-[#07192e]/75 lg:backdrop-blur-xl lg:rounded-xl lg:border lg:border-white/[0.08] lg:shadow-2xl lg:shadow-black/60 flex flex-col pl-4 lg:pl-0 lg:py-2" style="font-family: 'Be Vietnam Pro', sans-serif;">
+                      <a href="/services" class="flex items-center gap-3 px-4 py-3 text-sm text-white/70 hover:text-white hover:bg-white/[0.04] transition-colors lg:rounded-lg">
+                        <span class="w-8 h-8 rounded-lg bg-yellow/10 flex items-center justify-center flex-shrink-0">
+                          <svg class="w-4 h-4 text-yellow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/>
+                          </svg>
+                        </span>
+                        <div>
+                          <div class="font-medium text-white/90">Services</div>
+                          <div class="text-xs text-white/40 mt-0.5">What we build for you</div>
+                        </div>
+                      </a>
+                      <a href="/team" class="flex items-center gap-3 px-4 py-3 text-sm text-white/70 hover:text-white hover:bg-white/[0.04] transition-colors lg:rounded-lg">
+                        <span class="w-8 h-8 rounded-lg bg-blue/10 flex items-center justify-center flex-shrink-0">
+                          <svg class="w-4 h-4 text-blue" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                          </svg>
+                        </span>
+                        <div>
+                          <div class="font-medium text-white/90">Meet the Team</div>
+                          <div class="text-xs text-white/40 mt-0.5">The people behind the engine</div>
+                        </div>
+                      </a>
+                      <a href="/faq" class="flex items-center gap-3 px-4 py-3 text-sm text-white/70 hover:text-white hover:bg-white/[0.04] transition-colors lg:rounded-lg">
+                        <span class="w-8 h-8 rounded-lg bg-green/10 flex items-center justify-center flex-shrink-0">
+                          <svg class="w-4 h-4 text-green" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/>
+                          </svg>
+                        </span>
+                        <div>
+                          <div class="font-medium text-white/90">Frequently Asked Questions</div>
+                          <div class="text-xs text-white/40 mt-0.5">Common questions answered</div>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                </details>
+              </li>
+            </ul>
+
+            <!-- Right CTA -->
+            <div class="mb-3 lg:mb-0 lg:flex-shrink-0">
+              <a
+                href="/free-ai-diagnostic"
+                class="inline-flex items-center gap-2 rounded-full bg-yellow px-5 py-2 text-sm font-semibold text-navy transition-all hover:bg-yellow-light hover:shadow-md hover:shadow-yellow/20"
+                style="font-family: 'Be Vietnam Pro', sans-serif;">
+                <svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                </svg>
+                Free AI Diagnostic
+              </a>
+            </div>
+          </MenuItems>
+
+        </div>
+      </Astronav>
+    </header>
   </div>
 </div>
 
