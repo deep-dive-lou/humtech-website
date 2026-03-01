@@ -137,7 +137,7 @@ import Layout from "@/layouts/Layout.astro";
 <!-- ══ COMBINED: RESULTS + TESTIMONIAL + BEFORE & AFTER ══ -->
 <section class="relative overflow-hidden py-10 lg:py-14" style="background: #EAEDF2;">
   <!-- BG Logo watermark -->
-  <img src="/public/bg-logo.png" alt="" aria-hidden="true" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] opacity-[0.04] pointer-events-none select-none" />
+  <img src="/public/bg-logo.png" alt="" aria-hidden="true" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] opacity-[0.10] pointer-events-none select-none" />
 
   <div class="max-w-screen-xl mx-auto px-8 lg:px-16 relative" style="z-index:1;">
 
@@ -270,19 +270,25 @@ import Layout from "@/layouts/Layout.astro";
 
 <!-- ══ CTA ══ -->
 <section class="relative overflow-hidden py-8 lg:py-10" style="background: #EAEDF2; border-top: 1px solid rgba(18,40,69,0.1);">
-  <div class="reveal max-w-screen-xl mx-auto px-8 lg:px-16 relative" style="z-index:1;">
-    <h2 class="text-3xl lg:text-4xl font-bold text-[#122845] mb-4" style="font-family:'Be Vietnam Pro',sans-serif;">Ready to learn more?</h2>
-    <p class="text-lg text-[#122845]/60 mb-8 max-w-xl">Get in touch to discover how much revenue you could be leaving on the table.</p>
-    <div class="flex flex-col sm:flex-row gap-4">
-      <a href="/contact" class="inline-flex items-center justify-center gap-2 bg-[#D8B743] hover:bg-[#e5c85a] text-[#061528] font-bold px-8 py-4 rounded-full transition-all duration-300 hover:shadow-lg hover:shadow-[#D8B743]/30 text-lg">
-        Contact us
-        <svg class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" /></svg>
-      </a>
-      <a href="/free-ai-diagnostic" class="inline-flex items-center justify-center gap-2 border-2 border-[#D8B743] text-[#D8B743] font-semibold px-8 py-4 rounded-full transition-all duration-300 hover:bg-[#D8B743]/10 text-lg">
-        Diagnose my business
-        <svg class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" /></svg>
-      </a>
+  <div class="reveal max-w-screen-xl mx-auto px-8 lg:px-16 relative grid grid-cols-1 lg:grid-cols-2 gap-8 items-center" style="z-index:1;">
+    <div>
+      <h2 class="text-3xl lg:text-4xl font-bold text-[#122845] mb-4" style="font-family:'Be Vietnam Pro',sans-serif;">Ready to learn more?</h2>
+      <p class="text-lg text-[#122845]/60 mb-8 max-w-xl">Get in touch to discover how much revenue you could be leaving on the table.</p>
+      <div class="flex flex-col sm:flex-row gap-4">
+        <a href="/contact" class="inline-flex items-center justify-center gap-2 bg-[#D8B743] hover:bg-[#e5c85a] text-[#061528] font-bold px-8 py-4 rounded-full transition-all duration-300 hover:shadow-lg hover:shadow-[#D8B743]/30 text-lg">
+          Contact us
+          <svg class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" /></svg>
+        </a>
+        <a href="/free-ai-diagnostic" class="inline-flex items-center justify-center gap-2 border-2 border-[#D8B743] text-[#D8B743] font-semibold px-8 py-4 rounded-full transition-all duration-300 hover:bg-[#D8B743]/10 text-lg">
+          Diagnose my business
+          <svg class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" /></svg>
+        </a>
+      </div>
     </div>
+    <blockquote class="border-l-4 border-[#D8B743] pl-6 lg:ml-auto lg:max-w-md">
+      <p class="text-xl italic text-[#122845]/80 leading-relaxed">"Do the best you can until you know better. Then when you know better, do better."</p>
+      <cite class="block mt-3 text-sm font-semibold text-[#122845]/60 not-italic">— Maya Angelou</cite>
+    </blockquote>
   </div>
 </section>
 
