@@ -7,6 +7,7 @@ import "../styles/global.css";
 
 export interface Props {
   title: string;
+  description?: string;
   visioptPid?: number;
 }
 
@@ -17,11 +18,15 @@ const resolvedImageWithDomain = new URL(
   Astro.site
 ).toString();
 
-const { title, visioptPid } = Astro.props;
+const { title, description, visioptPid } = Astro.props;
+
+const defaultDescription = "Done-for-you AI Revenue Engine — we build, deploy, and optimise custom AI systems that grow your revenue. Zero risk, cancel anytime.";
 
 const makeTitle = title
   ? title + " | " + "HumTech"
   : "HumTech - AI Solutions for Business";
+
+const pageDescription = description || defaultDescription;
 ---
 
 <!doctype html>
@@ -32,7 +37,7 @@ const makeTitle = title
     )}
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/png" href="/public/logo.png" />
+    <link rel="icon" type="image/png" href="/public/humtech-logo.png" />
     <meta name="generator" content={Astro.generator} />
 
     <!-- <link rel="preload" as="image" href={src} alt="Hero" /> -->
@@ -41,7 +46,7 @@ const makeTitle = title
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <SEO
       title={makeTitle}
-      description="HumTech - AI solutions to help your business grow with zero risk and guaranteed results."
+      description={pageDescription}
       canonical={canonicalURL}
       twitter={{
         card: "summary_large_image",
@@ -50,11 +55,15 @@ const makeTitle = title
         basic: {
           url: canonicalURL,
           type: "website",
-          title: `HumTech - AI Solutions for Business`,
+          title: makeTitle,
           image: resolvedImageWithDomain,
         },
+        optional: {
+          siteName: "HumTech",
+          description: pageDescription,
+        },
         image: {
-          alt: "HumTech",
+          alt: "HumTech — Human Strengths Supercharged by Smart Tech",
         },
       }}
     />
