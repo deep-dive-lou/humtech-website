@@ -37,7 +37,9 @@ const pageDescription = description || defaultDescription;
     )}
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/png" href="/public/logo.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <meta name="generator" content={Astro.generator} />
 
     <!-- <link rel="preload" as="image" href={src} alt="Hero" /> -->
@@ -99,7 +101,37 @@ const pageDescription = description || defaultDescription;
       </div>
     </div>
 
+    <!-- Cookie Consent Banner -->
+    <div
+      id="cookie-banner"
+      style="display:none; position:fixed; bottom:0; left:0; right:0; z-index:9998; background:#061528; border-top:1px solid rgba(255,255,255,0.1); padding:16px 24px;"
+    >
+      <div style="max-width:1200px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap;">
+        <p style="color:#cbd5e1; font-size:14px; margin:0; flex:1; min-width:200px;">
+          We use cookies to ensure you get the best experience on our site.
+          <a href="/privacy" style="color:#3DB2DD; text-decoration:underline;">Privacy Policy</a>
+        </p>
+        <button
+          id="cookie-accept"
+          style="background:#D8B743; color:#061528; border:none; padding:8px 24px; border-radius:6px; font-size:14px; font-weight:600; cursor:pointer; white-space:nowrap;"
+        >
+          Got it
+        </button>
+      </div>
+    </div>
+
     <script is:inline>
+      // Cookie consent
+      (function() {
+        if (!localStorage.getItem('cookie-consent')) {
+          document.getElementById('cookie-banner').style.display = 'block';
+        }
+        document.getElementById('cookie-accept')?.addEventListener('click', function() {
+          localStorage.setItem('cookie-consent', 'accepted');
+          document.getElementById('cookie-banner').style.display = 'none';
+        });
+      })();
+
       // Close modal when clicking outside the content
       document.getElementById('assessment-modal')?.addEventListener('click', function(e) {
         if (e.target === this) {
