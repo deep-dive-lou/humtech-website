@@ -357,6 +357,45 @@ const deliveryFlow = [
     </Container>
   </section>
 
+  <!-- Trusted-by logo marquee -->
+  <div class="trusted-strip" style="position:relative; z-index:10; overflow:hidden; background:#0a1e3a;">
+    <div style="position:absolute;top:0;left:5%;right:5%;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.08) 30%,rgba(255,255,255,0.08) 70%,transparent);"></div>
+    <div style="position:absolute;top:0;left:0;bottom:0;width:120px;background:linear-gradient(to right,#0a1e3a,transparent);z-index:2;pointer-events:none;"></div>
+    <div style="position:absolute;top:0;right:0;bottom:0;width:120px;background:linear-gradient(to left,#0a1e3a,transparent);z-index:2;pointer-events:none;"></div>
+    <div class="marquee-track" style="display:flex;gap:5rem;width:max-content;animation:marquee-scroll 32s linear infinite;">
+      <div class="trusted-logo-item"><img src="/trusted-by/logo-zen.png" alt="Zenith Eco Solutions" class="trusted-logo-img" loading="lazy" /></div>
+      <div class="trusted-logo-item"><img src="/trusted-by/logo-ase.svg" alt="All Seasons Energy" class="trusted-logo-img" loading="lazy" /></div>
+      <div class="trusted-logo-item"><img src="/trusted-by/logo-div.png" alt="Diversity Energy Solutions" class="trusted-logo-img" loading="lazy" /></div>
+      <div class="trusted-logo-item"><img src="/trusted-by/logo-optama.svg" alt="Optama Renewables" class="trusted-logo-img" loading="lazy" /></div>
+      <div class="trusted-logo-item"><img src="/trusted-by/logo-sr.svg" alt="South Rings Energy" class="trusted-logo-img" loading="lazy" /></div>
+      <div class="trusted-logo-item"><img src="/trusted-by/logo-resg.svg" alt="Rural Energy Saving Grants" class="trusted-logo-img" loading="lazy" /></div>
+      <div class="trusted-logo-item"><img src="/trusted-by/logo-lmf.svg" alt="LMF Energy Services" class="trusted-logo-img" loading="lazy" /></div>
+      <div class="trusted-logo-item"><img src="/trusted-by/logo-hnr.svg" alt="HR Energy Solutions" class="trusted-logo-img" loading="lazy" /></div>
+      <div class="trusted-logo-item"><img src="/trusted-by/logo-ghs.svg" alt="Green Home Systems" class="trusted-logo-img" loading="lazy" /></div>
+      <div class="trusted-logo-item"><img src="/trusted-by/logo-ecop.svg" alt="Eco Providers" class="trusted-logo-img" loading="lazy" /></div>
+      <div class="trusted-logo-item"><img src="/trusted-by/logo-zen.png" alt="Zenith Eco Solutions" class="trusted-logo-img" loading="lazy" /></div>
+      <div class="trusted-logo-item"><img src="/trusted-by/logo-ase.svg" alt="All Seasons Energy" class="trusted-logo-img" loading="lazy" /></div>
+      <div class="trusted-logo-item"><img src="/trusted-by/logo-div.png" alt="Diversity Energy Solutions" class="trusted-logo-img" loading="lazy" /></div>
+      <div class="trusted-logo-item"><img src="/trusted-by/logo-optama.svg" alt="Optama Renewables" class="trusted-logo-img" loading="lazy" /></div>
+      <div class="trusted-logo-item"><img src="/trusted-by/logo-sr.svg" alt="South Rings Energy" class="trusted-logo-img" loading="lazy" /></div>
+      <div class="trusted-logo-item"><img src="/trusted-by/logo-resg.svg" alt="Rural Energy Saving Grants" class="trusted-logo-img" loading="lazy" /></div>
+      <div class="trusted-logo-item"><img src="/trusted-by/logo-lmf.svg" alt="LMF Energy Services" class="trusted-logo-img" loading="lazy" /></div>
+      <div class="trusted-logo-item"><img src="/trusted-by/logo-hnr.svg" alt="HR Energy Solutions" class="trusted-logo-img" loading="lazy" /></div>
+      <div class="trusted-logo-item"><img src="/trusted-by/logo-ghs.svg" alt="Green Home Systems" class="trusted-logo-img" loading="lazy" /></div>
+      <div class="trusted-logo-item"><img src="/trusted-by/logo-ecop.svg" alt="Eco Providers" class="trusted-logo-img" loading="lazy" /></div>
+      <div class="trusted-logo-item"><img src="/trusted-by/logo-zen.png" alt="Zenith Eco Solutions" class="trusted-logo-img" loading="lazy" /></div>
+      <div class="trusted-logo-item"><img src="/trusted-by/logo-ase.svg" alt="All Seasons Energy" class="trusted-logo-img" loading="lazy" /></div>
+      <div class="trusted-logo-item"><img src="/trusted-by/logo-div.png" alt="Diversity Energy Solutions" class="trusted-logo-img" loading="lazy" /></div>
+      <div class="trusted-logo-item"><img src="/trusted-by/logo-optama.svg" alt="Optama Renewables" class="trusted-logo-img" loading="lazy" /></div>
+      <div class="trusted-logo-item"><img src="/trusted-by/logo-sr.svg" alt="South Rings Energy" class="trusted-logo-img" loading="lazy" /></div>
+      <div class="trusted-logo-item"><img src="/trusted-by/logo-resg.svg" alt="Rural Energy Saving Grants" class="trusted-logo-img" loading="lazy" /></div>
+      <div class="trusted-logo-item"><img src="/trusted-by/logo-lmf.svg" alt="LMF Energy Services" class="trusted-logo-img" loading="lazy" /></div>
+      <div class="trusted-logo-item"><img src="/trusted-by/logo-hnr.svg" alt="HR Energy Solutions" class="trusted-logo-img" loading="lazy" /></div>
+      <div class="trusted-logo-item"><img src="/trusted-by/logo-ghs.svg" alt="Green Home Systems" class="trusted-logo-img" loading="lazy" /></div>
+      <div class="trusted-logo-item"><img src="/trusted-by/logo-ecop.svg" alt="Eco Providers" class="trusted-logo-img" loading="lazy" /></div>
+    </div>
+  </div>
+
   <!-- Systems Overview -->
   <section class="bg-navy-light" style="border-top: 1px solid transparent; border-image: linear-gradient(90deg, transparent, rgba(216,183,67,0.2), rgba(61,178,221,0.15), transparent) 1;">
     <Container>
@@ -526,6 +565,17 @@ const deliveryFlow = [
 </Layout>
 
 <style>
+  /* Trusted-by logo marquee */
+  .trusted-logo-item { display: flex; align-items: center; flex-shrink: 0; }
+  .trusted-strip { padding: 1.25rem 0 2rem; }
+  .trusted-logo-img {
+    height: 40px; width: auto; max-width: 160px; object-fit: contain;
+    filter: brightness(0) invert(1); opacity: 0.45; transition: opacity 0.3s ease;
+  }
+  .trusted-strip:hover .trusted-logo-img { opacity: 0.65; }
+  @media (min-width: 768px) { .trusted-logo-img { height: 48px; max-width: 180px; } }
+  @keyframes marquee-scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-33.333%); } }
+  @media (prefers-reduced-motion: reduce) { .marquee-track { animation-play-state: paused; } }
   .section-title {
     font-size: clamp(2.1rem, 3.2vw, 3.35rem);
     line-height: 1.16;
