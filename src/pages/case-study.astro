@@ -46,89 +46,38 @@ import Layout from "@/layouts/Layout.astro";
         </div>
       </div>
 
-      <!-- Right column — Dashboard + Results -->
-      <div class="cs-visual-wrap" id="cs-narrative">
-
-        <!-- Dashboard window -->
-        <div class="cs-card cs-dashboard" data-cs-card="0">
-          <!-- Browser chrome -->
-          <div class="flex items-center gap-2 px-4 py-2.5 border-b border-white/5">
-            <span class="w-2.5 h-2.5 rounded-full bg-red-400/60"></span>
-            <span class="w-2.5 h-2.5 rounded-full" style="background:rgba(216,183,67,0.6);"></span>
-            <span class="w-2.5 h-2.5 rounded-full" style="background:rgba(107,183,144,0.6);"></span>
-            <span class="ml-3 text-xs text-white/25 font-mono">resg.co.uk/dashboard</span>
-          </div>
-          <!-- Dashboard content -->
-          <div class="p-4 space-y-3">
-            <!-- Top metric row -->
-            <div class="grid grid-cols-3 gap-2">
-              <div class="cs-metric-card">
-                <div class="text-xs text-white/40 mb-1">Booking Rate</div>
-                <div class="text-xl font-bold" style="color:#D8B743;">80%+</div>
-                <div class="cs-progress-bar mt-2">
-                  <div class="cs-progress-fill" data-target-width="80" style="width:0%; background:#D8B743;"></div>
-                </div>
-              </div>
-              <div class="cs-metric-card">
-                <div class="text-xs text-white/40 mb-1">Attendance</div>
-                <div class="text-xl font-bold" style="color:#6BB790;">98%</div>
-                <div class="cs-progress-bar mt-2">
-                  <div class="cs-progress-fill" data-target-width="98" style="width:0%; background:#6BB790;"></div>
-                </div>
-              </div>
-              <div class="cs-metric-card">
-                <div class="text-xs text-white/40 mb-1">Revenue</div>
-                <div class="text-xl font-bold" style="color:#3DB2DD;">+40%</div>
-                <div class="cs-progress-bar mt-2">
-                  <div class="cs-progress-fill" data-target-width="65" style="width:0%; background:#3DB2DD;"></div>
-                </div>
-              </div>
+      <!-- Right column — Trustpilot -->
+      <div class="reveal w-full" style="animation-delay: 0.2s;">
+        <div class="rounded-2xl p-6 lg:p-8" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); backdrop-filter: blur(10px);">
+          <!-- Trustpilot logo + header -->
+          <div class="flex items-center gap-3 mb-5">
+            <svg viewBox="0 0 24 24" class="w-7 h-7" fill="none"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" fill="#00B67A"/></svg>
+            <div>
+              <span class="text-white font-bold text-lg">Trustpilot</span>
+              <span class="text-white/40 text-sm ml-2">Verified</span>
             </div>
-            <!-- Bar chart -->
-            <div class="cs-metric-card">
-              <div class="flex items-center justify-between mb-2.5">
-                <span class="text-xs text-white/40">Revenue Growth (8 weeks)</span>
-                <span class="text-xs font-semibold" style="color:#6BB790;">+40%</span>
-              </div>
-              <div class="flex items-end gap-1.5 h-14">
-                <div class="cs-bar" data-target-height="30" style="height:0%; background:rgba(61,178,221,0.3);"></div>
-                <div class="cs-bar" data-target-height="35" style="height:0%; background:rgba(61,178,221,0.4);"></div>
-                <div class="cs-bar" data-target-height="42" style="height:0%; background:rgba(61,178,221,0.5);"></div>
-                <div class="cs-bar" data-target-height="52" style="height:0%; background:rgba(61,178,221,0.6);"></div>
-                <div class="cs-bar" data-target-height="63" style="height:0%; background:rgba(61,178,221,0.7);"></div>
-                <div class="cs-bar" data-target-height="74" style="height:0%; background:rgba(61,178,221,0.8);"></div>
-                <div class="cs-bar" data-target-height="87" style="height:0%; background:rgba(61,178,221,0.9);"></div>
-                <div class="cs-bar" data-target-height="100" style="height:0%; background:#3DB2DD;"></div>
-              </div>
+          </div>
+          <!-- Active subscription badge -->
+          <div class="flex items-center gap-2 mb-6 pb-5" style="border-bottom: 1px solid rgba(255,255,255,0.06);">
+            <svg class="w-5 h-5 text-green-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+            <span class="text-white/70 text-sm font-medium">Active Trustpilot subscription</span>
+          </div>
+          <!-- Rankings -->
+          <div class="flex flex-col gap-3">
+            <div class="flex items-center gap-3 rounded-lg px-4 py-3" style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.06);">
+              <span class="text-2xl font-bold" style="color:#6BB790;">#1</span>
+              <span class="text-white/70 text-sm">of 12 best companies in <span class="text-white font-medium">Advertising agency</span></span>
+            </div>
+            <div class="flex items-center gap-3 rounded-lg px-4 py-3" style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.06);">
+              <span class="text-2xl font-bold" style="color:#D8B743;">#4</span>
+              <span class="text-white/70 text-sm">of 40 best companies in <span class="text-white font-medium">Green energy supplier</span></span>
+            </div>
+            <div class="flex items-center gap-3 rounded-lg px-4 py-3" style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.06);">
+              <span class="text-2xl font-bold" style="color:#3DB2DD;">#6</span>
+              <span class="text-white/70 text-sm">of 45 best companies in <span class="text-white font-medium">Energy Equipment and Solutions</span></span>
             </div>
           </div>
         </div>
-
-        <!-- Results summary -->
-        <div class="cs-card cs-results" data-cs-card="1">
-          <div class="text-xs font-semibold text-white/40 uppercase tracking-widest mb-3">Outcomes</div>
-          <div class="flex flex-col gap-2.5">
-            <div class="flex items-center gap-3">
-              <div class="cs-results-icon" style="background:rgba(216,183,67,0.1); color:#D8B743;">
-                <svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"/></svg>
-              </div>
-              <div>
-                <div class="text-lg font-bold leading-none" style="color:#D8B743;">10hrs</div>
-                <div class="text-xs text-white/40 mt-0.5">saved / rep / week</div>
-              </div>
-            </div>
-            <div class="flex items-center gap-3">
-              <div class="cs-results-icon" style="background:rgba(107,183,144,0.1); color:#6BB790;">
-                <svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor"><path d="M8.433 7.418c.155-.103.346-.196.567-.267v1.698a2.305 2.305 0 01-.567-.267C8.07 8.34 8 8.114 8 8c0-.114.07-.34.433-.582zM11 12.849v-1.698c.22.071.412.164.567.267.364.243.433.468.433.582 0 .114-.07.34-.433.582a2.305 2.305 0 01-.567.267z"/><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-13a1 1 0 10-2 0v.092a4.535 4.535 0 00-1.676.662C6.602 6.234 6 7.009 6 8c0 .99.602 1.765 1.324 2.246.48.32 1.054.545 1.676.662v1.941c-.391-.127-.68-.317-.843-.504a1 1 0 10-1.51 1.31c.562.649 1.413 1.076 2.353 1.253V15a1 1 0 102 0v-.092a4.535 4.535 0 001.676-.662C13.398 13.766 14 12.991 14 12c0-.99-.602-1.765-1.324-2.246A4.535 4.535 0 0011 9.092V7.151c.391.127.68.317.843.504a1 1 0 101.511-1.31c-.563-.649-1.413-1.076-2.354-1.253V5z" clip-rule="evenodd"/></svg>
-              </div>
-              <div>
-                <div class="text-lg font-bold leading-none" style="color:#6BB790;">-50%</div>
-                <div class="text-xs text-white/40 mt-0.5">customer acquisition cost</div>
-              </div>
-            </div>
-          </div>
-        </div>
-
       </div>
     </div>
   </div>
@@ -186,6 +135,86 @@ import Layout from "@/layouts/Layout.astro";
     </div>
 
     <!-- ── Row 2: Before & After — side by side ── -->
+    <!-- ── Dashboard ── -->
+    <div class="mt-12 rounded-2xl overflow-hidden" style="background: #122845; border: 1px solid rgba(255,255,255,0.08);" id="cs-narrative">
+      <!-- Browser chrome -->
+      <div class="flex items-center gap-2 px-5 py-3 border-b border-white/5">
+        <span class="w-2.5 h-2.5 rounded-full bg-red-400/60"></span>
+        <span class="w-2.5 h-2.5 rounded-full" style="background:rgba(216,183,67,0.6);"></span>
+        <span class="w-2.5 h-2.5 rounded-full" style="background:rgba(107,183,144,0.6);"></span>
+        <span class="ml-3 text-xs text-white/25 font-mono">resg.co.uk/dashboard</span>
+      </div>
+      <!-- Dashboard body: metrics left, outcomes right -->
+      <div class="grid md:grid-cols-[1.4fr_1fr] gap-0">
+        <!-- Left: metrics + chart -->
+        <div class="p-5 lg:p-6 space-y-4" style="border-right: 1px solid rgba(255,255,255,0.05);">
+          <div class="grid grid-cols-3 gap-3">
+            <div class="cs-metric-card">
+              <div class="text-xs text-white/40 mb-1">Booking Rate</div>
+              <div class="text-xl font-bold" style="color:#D8B743;">80%+</div>
+              <div class="cs-progress-bar mt-2">
+                <div class="cs-progress-fill" data-target-width="80" style="width:0%; background:#D8B743;"></div>
+              </div>
+            </div>
+            <div class="cs-metric-card">
+              <div class="text-xs text-white/40 mb-1">Attendance</div>
+              <div class="text-xl font-bold" style="color:#6BB790;">98%</div>
+              <div class="cs-progress-bar mt-2">
+                <div class="cs-progress-fill" data-target-width="98" style="width:0%; background:#6BB790;"></div>
+              </div>
+            </div>
+            <div class="cs-metric-card">
+              <div class="text-xs text-white/40 mb-1">Revenue</div>
+              <div class="text-xl font-bold" style="color:#3DB2DD;">+40%</div>
+              <div class="cs-progress-bar mt-2">
+                <div class="cs-progress-fill" data-target-width="65" style="width:0%; background:#3DB2DD;"></div>
+              </div>
+            </div>
+          </div>
+          <div class="cs-metric-card">
+            <div class="flex items-center justify-between mb-2.5">
+              <span class="text-xs text-white/40">Revenue Growth (8 weeks)</span>
+              <span class="text-xs font-semibold" style="color:#6BB790;">+40%</span>
+            </div>
+            <div class="flex items-end gap-1.5 h-16">
+              <div class="cs-bar" data-target-height="30" style="height:0%; background:rgba(61,178,221,0.3);"></div>
+              <div class="cs-bar" data-target-height="35" style="height:0%; background:rgba(61,178,221,0.4);"></div>
+              <div class="cs-bar" data-target-height="42" style="height:0%; background:rgba(61,178,221,0.5);"></div>
+              <div class="cs-bar" data-target-height="52" style="height:0%; background:rgba(61,178,221,0.6);"></div>
+              <div class="cs-bar" data-target-height="63" style="height:0%; background:rgba(61,178,221,0.7);"></div>
+              <div class="cs-bar" data-target-height="74" style="height:0%; background:rgba(61,178,221,0.8);"></div>
+              <div class="cs-bar" data-target-height="87" style="height:0%; background:rgba(61,178,221,0.9);"></div>
+              <div class="cs-bar" data-target-height="100" style="height:0%; background:#3DB2DD;"></div>
+            </div>
+          </div>
+        </div>
+        <!-- Right: outcomes -->
+        <div class="p-5 lg:p-6 flex flex-col justify-center">
+          <div class="text-xs font-semibold text-white/40 uppercase tracking-widest mb-4">Outcomes</div>
+          <div class="flex flex-col gap-4">
+            <div class="flex items-center gap-3">
+              <div class="cs-results-icon" style="background:rgba(216,183,67,0.1); color:#D8B743;">
+                <svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"/></svg>
+              </div>
+              <div>
+                <div class="text-lg font-bold leading-none" style="color:#D8B743;">10hrs</div>
+                <div class="text-xs text-white/40 mt-0.5">saved / rep / week</div>
+              </div>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="cs-results-icon" style="background:rgba(107,183,144,0.1); color:#6BB790;">
+                <svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor"><path d="M8.433 7.418c.155-.103.346-.196.567-.267v1.698a2.305 2.305 0 01-.567-.267C8.07 8.34 8 8.114 8 8c0-.114.07-.34.433-.582zM11 12.849v-1.698c.22.071.412.164.567.267.364.243.433.468.433.582 0 .114-.07.34-.433.582a2.305 2.305 0 01-.567.267z"/><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-13a1 1 0 10-2 0v.092a4.535 4.535 0 00-1.676.662C6.602 6.234 6 7.009 6 8c0 .99.602 1.765 1.324 2.246.48.32 1.054.545 1.676.662v1.941c-.391-.127-.68-.317-.843-.504a1 1 0 10-1.51 1.31c.562.649 1.413 1.076 2.353 1.253V15a1 1 0 102 0v-.092a4.535 4.535 0 001.676-.662C13.398 13.766 14 12.991 14 12c0-.99-.602-1.765-1.324-2.246A4.535 4.535 0 0011 9.092V7.151c.391.127.68.317.843.504a1 1 0 101.511-1.31c-.563-.649-1.413-1.076-2.354-1.253V5z" clip-rule="evenodd"/></svg>
+              </div>
+              <div>
+                <div class="text-lg font-bold leading-none" style="color:#6BB790;">-50%</div>
+                <div class="text-xs text-white/40 mt-0.5">customer acquisition cost</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div class="grid md:grid-cols-2 gap-8 mt-12">
 
       <!-- Before -->
@@ -331,17 +360,7 @@ import Layout from "@/layouts/Layout.astro";
     function runSequence() {
       if (triggered) return;
       triggered = true;
-      var cards = document.querySelectorAll('#cs-narrative [data-cs-card]');
-      cards.forEach(function (card) {
-        var index = parseInt(card.getAttribute('data-cs-card'), 10);
-        setTimeout(function () {
-          card.classList.add('cs-visible');
-          // Trigger chart/bar animations after dashboard (card 1) appears
-          if (index === 1) {
-            setTimeout(animateBars, 200);
-          }
-        }, index * STAGGER_MS);
-      });
+      animateBars();
     }
 
     var wrap = document.getElementById('cs-narrative');
