@@ -4,11 +4,11 @@ import Container from "@/components/container.astro";
 ---
 
 <Layout title="Meet the Team" description="Meet the senior specialists behind HumTech — AI strategy, commercial growth, and lead generation experts." visioptPid={170}>
-  <div class="bg-navy">
+  <div class="bg-[#122845]">
     <Container>
-      <!-- Hero + Team -->
-      <section class="py-20 md:py-28">
-        <div class="text-center max-w-4xl mx-auto px-4 mb-16">
+      <!-- 1. Hero -->
+      <section class="pt-20 md:pt-28 pb-12">
+        <div class="max-w-4xl px-4">
           <h1 class="text-4xl lg:text-5xl xl:text-6xl font-bold lg:tracking-tight text-white mb-6">
             Meet Your Multidisciplinary Team
           </h1>
@@ -16,73 +16,111 @@ import Container from "@/components/container.astro";
             HumTech's specialists deliver AI enhancements across sales strategy, technical implementation, and lead generation/marketing.
           </p>
         </div>
-
-        <div class="max-w-5xl mx-auto px-4">
-          <div class="grid md:grid-cols-3 gap-8">
-            <!-- Chris Silver -->
-            <div class="text-center">
-              <div class="w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden border-4 border-yellow/30">
-                <img
-                  src="/public/chris_s.png"
-                  alt="Chris Silver"
-                  class="w-full h-full object-cover"
-                />
-              </div>
-              <h3 class="text-2xl font-bold text-white mb-1">Chris Silver</h3>
-              <p class="text-yellow font-semibold mb-2">AI Strategy Director</p>
-              <p class="text-white/60 text-sm mb-4">BSc (Hons)</p>
-              <p class="text-white/70">
-                Used AI theory to build one of the UK's top performing sales systems. Expert in deflection ROI and strategic AI implementation.
-              </p>
-            </div>
-
-            <!-- Louise Oram-Knight -->
-            <div class="text-center">
-              <div class="w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden border-4 border-blue/30">
-                <img
-                  src="/public/lou.png"
-                  alt="Louise Oram-Knight"
-                  class="w-full h-full object-cover"
-                />
-              </div>
-              <h3 class="text-2xl font-bold text-white mb-1">Louise Oram-Knight</h3>
-              <p class="text-blue font-semibold mb-2">AI Technical Director</p>
-              <p class="text-white/60 text-sm mb-4">BSc (Hons), MSc</p>
-              <p class="text-white/70">
-                Custom built AI and automation systems responsible for highest industry conversions. Specialist in technical implementation and integration.
-              </p>
-            </div>
-
-            <!-- Chris Rocheleau -->
-            <div class="text-center">
-              <div class="w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden border-4 border-green/30">
-                <img
-                  src="/public/chris_r.png"
-                  alt="Chris Rocheleau"
-                  class="w-full h-full object-cover"
-                />
-              </div>
-              <h3 class="text-2xl font-bold text-white mb-1">Chris Rocheleau</h3>
-              <p class="text-green font-semibold mb-2">AI Marketing Director</p>
-              <p class="text-white/60 text-sm mb-4">15 Years Experience</p>
-              <p class="text-white/70">
-                Extensive experience in building high-level customer acquisition systems. Expert in CRO, CPA, CAC optimisation and marketing automation.
-              </p>
-            </div>
-          </div>
-        </div>
       </section>
 
-      <!-- Our Story + Results -->
-      <section class="pb-20 md:pb-28 border-t border-white/10 pt-16">
-        <div class="max-w-4xl mx-auto px-4">
-          <div class="text-center mb-14">
-            <h2 class="text-3xl lg:text-4xl font-bold text-white mb-4">
-              Our Story
+    </Container>
+
+    <!-- 2. Team + Mission (full-width light grey, two-column) -->
+    <section class="py-12 md:py-16" style="background: #EAEDF2;">
+      <div class="max-w-screen-xl mx-auto px-8 lg:px-16">
+        <div class="grid grid-cols-1 lg:grid-cols-[1fr_1.2fr] gap-12 lg:gap-16 items-start">
+
+          <!-- Left: Our Mission -->
+          <div class="lg:sticky lg:top-24">
+            <h2 class="text-3xl lg:text-4xl font-bold text-[#122845] mb-10">
+              Our Mission
             </h2>
+            <div class="mission-note">
+              <div class="mission-pin"></div>
+              <p class="text-base lg:text-lg text-[#122845]/80 leading-relaxed mb-6">
+                In 2026, smaller businesses will not be able to compete with larger enterprises who can afford highly efficient AI systems. Our mission is to increase your revenue and competitive edge by delivering state of the art AI at no cost, so we only win if you do.
+              </p>
+              <p class="text-xl lg:text-2xl font-bold text-[#D8B743] text-center">
+                "Our measure is your success"
+              </p>
+            </div>
           </div>
 
-          <!-- Story timeline -->
+          <!-- Right: Team bios -->
+          <div class="flex flex-col gap-10">
+            <!-- Chris Silver -->
+            <div class="flex flex-col sm:flex-row items-center sm:items-start gap-6">
+              <div class="w-36 h-36 shrink-0 rounded-full overflow-hidden border-4 border-yellow/30">
+                <img src="/public/chris_s.png" alt="Chris Silver" class="team-photo w-full h-full object-cover" />
+              </div>
+              <div>
+                <h3 class="text-2xl font-bold text-[#122845] mb-1">Chris Silver</h3>
+                <p class="text-yellow font-semibold mb-1">Chief Revenue Officer</p>
+                <p class="text-[#122845]/50 text-sm mb-3">BSc (Hons)</p>
+                <p class="text-[#122845]/70">
+                  Built one of the UK's top performing sales systems from the ground up. Specialises in commercial strategy, offer architecture and revenue operations
+                </p>
+              </div>
+            </div>
+
+            <hr class="border-[#122845]/10" />
+
+            <!-- Louise Oram-Knight -->
+            <div class="flex flex-col sm:flex-row items-center sm:items-start gap-6">
+              <div class="w-36 h-36 shrink-0 rounded-full overflow-hidden border-4 border-blue/30">
+                <img src="/public/lou.png" alt="Louise Oram-Knight" class="team-photo w-full h-full object-cover" />
+              </div>
+              <div>
+                <h3 class="text-2xl font-bold text-[#122845] mb-1">Louise Oram-Knight</h3>
+                <p class="text-blue font-semibold mb-1">Chief Technology Officer</p>
+                <p class="text-[#122845]/50 text-sm mb-3">BSc (Hons), MSc</p>
+                <p class="text-[#122845]/70">
+                  Specialist in backend engineering, automation and data intelligence that turns complex technical implementation into measurable client results. Architect of production-grade AI systems and infrastructure.
+                </p>
+              </div>
+            </div>
+
+            <hr class="border-[#122845]/10" />
+
+            <!-- Chris Rocheleau -->
+            <div class="flex flex-col sm:flex-row items-center sm:items-start gap-6">
+              <div class="w-36 h-36 shrink-0 rounded-full overflow-hidden border-4 border-green/30">
+                <img src="/public/chris_r.png" alt="Chris Rocheleau" class="team-photo w-full h-full object-cover" />
+              </div>
+              <div>
+                <h3 class="text-2xl font-bold text-[#122845] mb-1">Chris Rocheleau</h3>
+                <p class="text-green font-semibold mb-1">Chief Marketing Officer</p>
+                <p class="text-[#122845]/50 text-sm mb-3">15 Years Experience</p>
+                <p class="text-[#122845]/70">
+                  Builds high-performance acquisition systems grounded in neural decision science and multivariate testing. Specialises in CRO, messaging strategy and customer acquisition engineering demand that compounds over time.
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Story + Results (full-width, graphical background) -->
+    <section class="story-section relative overflow-hidden py-16 md:py-24">
+      <!-- SVG grid background -->
+      <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
+        <svg class="absolute inset-0 w-full h-full" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
+              <path d="M 60 0 L 0 0 0 60" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#grid)" />
+        </svg>
+        <!-- Gradient glow accents -->
+        <div class="absolute top-0 left-1/4 w-96 h-96 bg-yellow/5 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-0 right-1/4 w-80 h-80 bg-blue/5 rounded-full blur-3xl"></div>
+      </div>
+
+      <div class="max-w-screen-xl mx-auto px-8 lg:px-16 relative" style="z-index:1;">
+        <h2 class="text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-12">
+          Our Story
+        </h2>
+
+        <div class="grid grid-cols-1 lg:grid-cols-[1.3fr_1fr] gap-12 lg:gap-16 items-start">
+          <!-- Left: Story timeline -->
           <div class="story-timeline">
             <!-- Step 1: Achievement -->
             <div class="story-step">
@@ -98,21 +136,7 @@ import Container from "@/components/container.astro";
               </div>
             </div>
 
-            <!-- Step 2: Problem -->
-            <div class="story-step">
-              <div class="story-icon story-icon--red">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.34 16.5c-.77.833.192 2.5 1.732 2.5z"></path>
-                </svg>
-              </div>
-              <div class="story-content">
-                <p class="text-white/70 text-base md:text-lg leading-relaxed">
-                  Delivering fractioned sales and marketing for third-parties, we repeatedly saw the same problem; around 50% of enquiries responded to outreach and just half of them attended booked calls. There teams were constantly drawn in to repetitive admin and distractions which removed them from revenue reducing duties.
-                </p>
-              </div>
-            </div>
-
-            <!-- Step 3: Failed attempts -->
+            <!-- Step 2: Failed attempts -->
             <div class="story-step">
               <div class="story-icon story-icon--blue">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -141,109 +165,106 @@ import Container from "@/components/container.astro";
             </div>
           </div>
 
-          <!-- Results -->
-          <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12">
-            <div class="text-center p-6 bg-white/5 rounded-xl border border-white/10 card-hover">
+          <!-- Right: Results cards -->
+          <div class="grid grid-cols-2 gap-4 lg:mt-24">
+            <div class="text-center p-6 bg-white/5 rounded-xl border border-white/10 backdrop-blur-sm">
               <div class="text-3xl lg:text-4xl font-bold text-yellow">87%</div>
               <div class="text-sm text-white/60 mt-2">appointment booking rate</div>
             </div>
-            <div class="text-center p-6 bg-white/5 rounded-xl border border-white/10 card-hover">
+            <div class="text-center p-6 bg-white/5 rounded-xl border border-white/10 backdrop-blur-sm">
               <div class="text-3xl lg:text-4xl font-bold text-yellow">90%+</div>
               <div class="text-sm text-white/60 mt-2">appointment attendance</div>
             </div>
-            <div class="text-center p-6 bg-white/5 rounded-xl border border-white/10 card-hover">
+            <div class="text-center p-6 bg-white/5 rounded-xl border border-white/10 backdrop-blur-sm">
               <div class="text-3xl lg:text-4xl font-bold text-green">40%</div>
               <div class="text-sm text-white/60 mt-2">increase in revenue</div>
             </div>
-            <div class="text-center p-6 bg-white/5 rounded-xl border border-white/10 card-hover">
+            <div class="text-center p-6 bg-white/5 rounded-xl border border-white/10 backdrop-blur-sm">
               <div class="text-3xl lg:text-4xl font-bold text-blue">Zero</div>
               <div class="text-sm text-white/60 mt-2">additional hires needed</div>
             </div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- Fields of Expertise -->
-      <section class="pb-20 md:pb-28 border-t border-white/10 pt-16">
-        <div class="max-w-5xl mx-auto px-4">
-          <div class="text-center mb-12">
-            <h2 class="text-3xl lg:text-4xl font-bold text-white mb-4">
-              Fields of Expertise
-            </h2>
-          </div>
-
-          <div class="grid md:grid-cols-3 gap-8">
-            <div class="p-8 rounded-xl bg-white/5 border border-white/10">
-              <div class="w-12 h-12 bg-yellow/20 rounded-lg flex items-center justify-center mb-6">
-                <svg class="w-6 h-6 text-yellow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
-                </svg>
-              </div>
-              <h3 class="text-xl font-semibold text-white mb-3">Sales & Front of House</h3>
-              <p class="text-white/70">
-                Deflection ROI means no more manual outreach or new client engagement. Your team have warm leads in their diaries, and only focus on their primary role, while AI does the heavy lifting.
-              </p>
-            </div>
-
-            <div class="p-8 rounded-xl bg-white/5 border border-white/10">
-              <div class="w-12 h-12 bg-blue/20 rounded-lg flex items-center justify-center mb-6">
-                <svg class="w-6 h-6 text-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z"></path>
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z"></path>
-                </svg>
-              </div>
-              <h3 class="text-xl font-semibold text-white mb-3">Lead Generation & Marketing</h3>
-              <p class="text-white/70">
-                Enhancing every vital metric including CRO, CPA, CAC, while advising on creatives and copywriting. Our system supercharges your marketing to procure clients at the lowest possible cost.
-              </p>
-            </div>
-
-            <div class="p-8 rounded-xl bg-white/5 border border-white/10">
-              <div class="w-12 h-12 bg-green/20 rounded-lg flex items-center justify-center mb-6">
-                <svg class="w-6 h-6 text-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
-                </svg>
-              </div>
-              <h3 class="text-xl font-semibold text-white mb-3">Automation & Zero Touch</h3>
-              <p class="text-white/70">
-                Remove manual document processing including compliance docs and signature requests. No more 'chasing' via email — your system follows up for you automatically.
-              </p>
-            </div>
+    <!-- 6. CTA (full-width, outside Container) -->
+    <section class="relative overflow-hidden py-8 lg:py-10" style="background: #EAEDF2; border-top: 1px solid rgba(18,40,69,0.1);">
+      <div class="max-w-screen-xl mx-auto px-8 lg:px-16 relative grid grid-cols-1 lg:grid-cols-2 gap-8 items-center" style="z-index:1;">
+        <div>
+          <h2 class="text-3xl lg:text-4xl font-bold text-[#122845] mb-4" style="font-family:'Be Vietnam Pro',sans-serif;">Ready to Diagnose Your Business?</h2>
+          <p class="text-lg text-[#122845]/60 mb-8 max-w-xl">Start your Free AI Diagnostic to identify your highest-leverage AI opportunities.</p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="/free-ai-diagnostic" class="inline-flex items-center justify-center gap-2 bg-[#D8B743] hover:bg-[#e5c85a] text-[#061528] font-bold px-8 py-4 rounded-full transition-all duration-300 hover:shadow-lg hover:shadow-[#D8B743]/30 text-lg">
+              Diagnose my business
+              <svg class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" /></svg>
+            </a>
+            <a href="/contact" class="inline-flex items-center justify-center gap-2 border-2 border-[#D8B743] text-[#D8B743] font-semibold px-8 py-4 rounded-full transition-all duration-300 hover:bg-[#D8B743]/10 text-lg">
+              Contact us
+              <svg class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" /></svg>
+            </a>
           </div>
         </div>
-      </section>
-
-      <!-- Mission + CTA -->
-      <section class="py-20 md:py-28 border-t border-white/10">
-        <div class="max-w-4xl mx-auto px-4 text-center">
-          <h2 class="text-3xl lg:text-4xl font-bold text-white mb-8">
-            Our Mission
-          </h2>
-          <p class="text-base lg:text-lg text-white/80 leading-relaxed mb-8 max-w-3xl mx-auto">
-            In 2026, smaller businesses will not be able to compete with larger enterprises who can afford highly efficient AI systems. Our mission is to increase your revenue and competitive edge by delivering state of the art AI at no cost, so we only win if you do.
-          </p>
-          <div class="p-8 bg-white/5 rounded-xl border border-white/10 inline-block mb-12">
-            <p class="text-2xl lg:text-3xl font-bold text-yellow">
-              "Our measure is your success"
-            </p>
-          </div>
-          <div>
-            <p class="text-lg text-white/70 mb-8">
-              Start your Free AI Diagnostic to discover how our founders can transform your business.
-            </p>
-            <button
-              onclick="openAssessmentModal()"
-              class="px-8 py-4 rounded-md font-semibold bg-yellow text-navy hover:bg-yellow/90 transition-colors cursor-pointer text-lg">
-              Start Free AI Diagnostic
-            </button>
-          </div>
-        </div>
-      </section>
-    </Container>
+        <blockquote class="border-l-4 border-[#D8B743] pl-6 lg:ml-auto lg:max-w-md">
+          <p class="text-xl italic text-[#122845]/80 leading-relaxed">"Do the best you can until you know better. Then when you know better, do better."</p>
+          <cite class="block mt-3 text-sm font-semibold text-[#122845]/60 not-italic">Maya Angelou</cite>
+        </blockquote>
+      </div>
+    </section>
   </div>
 </Layout>
 
 <style>
+
+  /* Pinned note card */
+  .mission-note {
+    position: relative;
+    max-width: 640px;
+    background: #fff;
+    padding: 3rem 2.5rem 2.5rem;
+    border-radius: 2px;
+    transform: rotate(-1deg);
+    box-shadow:
+      0 2px 8px rgba(0, 0, 0, 0.08),
+      0 8px 24px rgba(0, 0, 0, 0.06);
+    transition: transform 0.3s ease;
+  }
+
+  .mission-note:hover {
+    transform: rotate(0deg);
+  }
+
+  .mission-pin {
+    position: absolute;
+    top: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #D8B743;
+    box-shadow:
+      0 2px 4px rgba(0, 0, 0, 0.2),
+      inset 0 -2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .mission-pin::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+  }
+
+  /* Story section background */
+  .story-section {
+    background: linear-gradient(135deg, #0a1e35 0%, #122845 40%, #0d2238 100%);
+  }
+
   /* Story timeline */
   .story-timeline {
     position: relative;
